@@ -1,0 +1,509 @@
+.section {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%) scale(1);
+   max-width: 1400px;
+   width: 140vmin;
+   height: 78.75%;
+   max-height: 800px;
+   background: url("../assets/images/pc-main-bg.jpg") no-repeat bottom center/contain;
+   background: linear-gradient(to top, rgba(0, 0, 0, 0.05) 0%, rgba(46, 46, 46, 0.1) 100%),
+   url("../assets/images/pc-main-bg.jpg");
+   opacity: 0;
+   transition: transform 0.4s ease, opacity 1s ease;
+   box-shadow: 0 4px 10px 2px rgba(0, 0, 0, 0.5);
+   z-index: 10;
+}
+
+.displayed-section {
+   opacity: 1;
+   transform: translate(-50%, -50%) scale(1);
+   z-index: 10;
+}
+
+.next-section {
+   opacity: 1;
+   transform: translate(50%, -50%) scale(0.7);
+   z-index: -1;
+   box-shadow: 0 0px 4px 0px rgba(0, 0, 0, 0.15);
+}
+
+/* アニメーションステップ */
+.shrink {
+   transform: translate(-50%, -50%) scale(0.7);
+   opacity: 1;
+   z-index: -1;
+   box-shadow: 0 0px 4px 0px rgba(0, 0, 0, 0.15);
+}
+
+.slide-left {
+   transform: translate(35%, -50%) scale(0.7);
+   opacity: 1;
+   z-index: -1;
+   box-shadow: 0 0px 4px 0px rgba(0, 0, 0, 0.15);
+}
+
+.slide-center {
+   transform: translate(-50%, -50%) scale(0.7);
+   opacity: 1;
+   z-index: -1;
+   box-shadow: 0 0px 4px 0px rgba(0, 0, 0, 0.15);
+}
+
+.expand {
+   transform: translate(-50%, -50%) scale(1);
+   opacity: 1;
+   z-index: -1;
+   box-shadow: 0 0px 4px 0px rgba(0, 0, 0, 0.15);
+}
+
+
+/*=============*/
+
+/*.bg-color {
+   position: absolute;
+   left: 5%;
+   width: 30%;
+   height: 67.5%;
+   border: 5px solid var(--text);
+   background: url("/img/pd-bg-img02.jpg") no-repeat top center/cover;
+}*/
+
+/*sec-text*/
+.sec-a {
+   width: fit-content;
+   height: fit-content;
+   display: grid;
+   justify-content: flex-end;
+   align-items: center;
+   position: absolute;
+   bottom: 10vmin;
+   right: 0;
+   gap: 1rem;
+   padding: 3rem 0;
+}
+
+.sec-a a {
+   font-size: clamp(1.6rem, 1.267rem + 0.44vw, 1.8rem);
+   width: 15vmin;
+   padding: 1rem;
+   margin-left: auto;
+   top: 0;
+   right: 0;
+   background-color: var(--bg);
+   box-shadow: inset 1px 1px 4px rgba(0, 0, 0, 0.95);
+   mix-blend-mode: color-burn;
+   transition: all 0.35s ease;
+}
+
+/*
+.top .sec-a a:nth-of-type(2),
+.top .sec-a a:nth-of-type(4) {
+   width: 20vmin;
+}
+.top .sec-a a:nth-of-type(3),
+.top .sec-a a:nth-of-type(5) {
+   width: 15vmin;
+   width: 15vmin;
+}
+*/
+.sec-a a:hover {
+   color: var(--bg);
+   background: var(--bt);
+}
+
+p a {
+   font-size: clamp(1.4rem, 0.733rem + 0.89vw, 1.8rem);
+   width: fit-content;
+   border: 0;
+}
+
+.bottom-btn {
+   position: absolute;
+   left: 1.9vmin;
+   bottom: 0.35rem;
+}
+
+button:nth-last-of-type(1) {
+   margin-left: 0.5rem;
+}
+
+.back a,
+.next a {
+   width: 15vmin;
+   height: 5vmin;
+   display: inline-flex;
+   justify-content: center;
+   align-items: center;
+   box-shadow: inset 0px 0px 3px rgba(0, 0, 0);
+   border: 1px solid;
+   border-image: url("../assets/images/bg-gold_bronze.jpg") 100;
+}
+
+.bottom-btn a:hover {
+   background: var(--text);
+}
+
+.back .arrow span,
+.next .arrow span {
+   content: "";
+   width: 5px;
+   height: 1px;
+   position: absolute;
+   top: 48.5%;
+   background: url("../assets/images/bg-gold_bronze.jpg") no-repeat center center/cover;
+}
+
+.back .arrow span {
+   right: 1.65rem;
+}
+
+.next .arrow span {
+   left: 1.65rem;
+}
+
+.arrow {
+   position: relative;
+   display: inline-block;
+   width: 33px;
+   height: 5vmin;
+}
+
+.arrow::before,
+.arrow::after {
+   content: "";
+   position: absolute;
+   top: calc(50% - 2px);
+   right: 0;
+   width: 20px;
+   height: 2px;
+   transform-origin: calc(100% - 1px) 50%;
+}
+
+.back .arrow::before,
+.back .arrow::after {
+   left: 0;
+   transform-origin: 1px 50%;
+}
+
+.arrow::before {
+   transform: rotate(45deg);
+}
+
+.arrow::after {
+   transform: rotate(-45deg);
+}
+
+#section--first img {
+   position: absolute;
+   left: 10rem;
+   bottom: 15vmin;
+}
+
+.left-text,
+.right-text {
+   font-size: clamp(1.4rem, 1.067rem + 0.44vw, 1.6rem);
+   font-family: serif;
+   font-weight: 600;
+   letter-spacing: 0.5rem;
+   position: absolute;
+}
+
+.left-text {
+   text-align: center;
+   width: 35%;
+   top: 50%;
+   left: -22.25vmin;
+   transform: rotate(90deg);
+}
+
+.left-text::before,
+.left-text::after {
+   content: "";
+   display: block;
+   width: 18vmin;
+   height: 5px;
+   position: absolute;
+   top: 35%;
+   border: 1px solid var(--bg);
+   mix-blend-mode: multiply;
+}
+
+.left-text::before {
+   right: 75.95%;
+}
+
+.left-text::after {
+   left: 75.95%;
+}
+
+.right-text {
+   font-size: clamp(1.4rem, 1.067rem + 0.44vw, 1.6rem);
+   width: fit-content;
+   right: 1rem;
+   bottom: 1rem;
+   transform: rotate(90deg);
+}
+
+/*.right-text::before {
+   content: "";
+   position: absolute;
+   right: -1.25vmin;
+   bottom: -1.25vmin;
+   border-style: solid;
+   border-width: 0px 0px 7.5vmin 9vmin;
+   border-color: transparent transparent var(--bg) transparent;
+   z-index: -1;
+   mix-blend-mode: color-burn;
+}*/
+
+.right-text::before {
+   content: "";
+   width: 5vmin;
+   height: 1px;
+   position: absolute;
+   top: 50%;
+   right: 40px;
+   border-top: 1px solid var(--bg);
+}
+
+
+/*==About */
+.about h3 {
+   font-size: clamp(2rem, 0.667rem + 1.78vw, 2.8rem);
+   color: var(--bg);
+   mix-blend-mode: hard-light;
+}
+
+.about .section ol,
+.service .section ol {
+   position: relative;
+   width: 350px;
+   top: 13vmin;
+   left: 12rem;
+}
+
+.about li span {
+   font-size: clamp(1rem, 0.333rem + 0.89vw, 1.4rem);
+}
+
+/* Grid Layout */
+.icon-grid {
+   display: grid;
+   width: 35%;
+   position: absolute;
+   left: 10vmin;
+   bottom: 20vmin;
+   grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+   gap: 1rem;
+   padding: 1.5rem;
+   background: var(--border);
+   border-radius: 8px;
+}
+
+/* Individual Icon Item */
+.icon-item {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-color: var(--border);
+   border-radius: 50%;
+   width: 65px;
+   height: 65px;
+   margin: 0 auto;
+   transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Icon Styling */
+.icon-item i {
+   font-size: 5rem;
+   color: var(--text);
+}
+
+.icon-item span {
+   font-size: clamp(1rem, 0.667rem + 0.44vw, 1.2rem);
+   color: var(--text);
+   height: 20px;
+   position: absolute;
+   margin-top: 5.5vmin;
+}
+
+/* Hover Effect */
+.icon-item:hover {
+   transform: scale(1.1);
+}
+
+
+/*==About & Service */
+.service .pl li span {
+   font-size: clamp(1rem, 0.667rem + 0.44vw, 1.2rem);
+   color: var(--accent);
+   mix-blend-mode: difference;
+}
+
+.about #section--second ol:nth-last-of-type(1) {
+   margin-top: 3vmin;
+}
+
+.about #section--second ol:nth-last-of-type(1) li {
+   padding-left: 1vmin;
+}
+
+.about #section--second ol:nth-last-of-type(1) li:nth-last-of-type(2) {
+   margin-bottom: 2vmin;
+}
+
+.about .section li,
+.service .section li {
+   font-size: clamp(1.4rem, 1.067rem + 0.44vw, 1.6rem);
+}
+
+.about #section--fourth p {
+   width: 680px;
+}
+
+
+/*==Service*/
+
+.service .section ol {
+   font-size: clamp(1.6rem, 0.933rem + 0.89vw, 2rem);
+   width: fit-content;
+   margin-top: 5rem;
+}
+
+.service .section li {
+   padding-left: 2rem;
+   margin-bottom: 4rem;
+}
+
+.service .section li span {
+   margin: 0 2rem;
+}
+/*
+.service .left-text {
+   width: 30vmin;
+   left: -13vmin;
+}
+
+.service .left-text::before {
+   width: 25.4vmin;
+}
+
+.service .left-text::after {
+   width: 17.4vmin;
+}*/
+
+.service .modal #wrap #container h3 span::before {
+   content: "税込";
+   font-size: clamp(1rem, 0.667rem + 0.44vw, 1.2rem);
+   position: relative;
+   margin-right: 0.25vmin;
+}
+
+/*
+.about .sec-a a:nth-of-type(2),
+.service .sec-a a:nth-of-type(2) {
+   width: 20vmin;
+}
+.about .sec-a a:nth-of-type(3),
+.service .sec-a a:nth-of-type(3) {
+   width: 25vmin;
+}
+.about .sec-a a:nth-of-type(4) {
+   width: 30vmin;
+}
+.about .sec-a a:nth-of-type(5) {
+   width: 35vmin;
+}*/
+
+
+/*==Contact*/
+.contact .modal h3 {
+   font-size: clamp(2rem, 1.333rem + 0.89vw, 2.4rem);
+   margin-top: 3vmin;
+   mix-blend-mode: normal;
+}
+
+.contact .modal p,
+.policy .modal p {
+   color: var(--text);
+   text-shadow: none;
+}
+
+.contact .modal ol,
+.policy .modal ol {
+   padding: 10vmin 15vmin;
+   background: var(--bg);
+   border-radius: 10px;
+}
+
+.contact .modal .accordion-wrap,
+.policy .modal .accordion-wrap {
+   width: 100%;
+   top: 0;
+   left: 0;
+}
+
+.contact .modal .accordion-header h3 {
+   font-size: clamp(1.8rem, 1.467rem + 0.44vw, 2rem);
+   margin-top: 0;
+}
+
+.contact .modal .accordion-wrap ol,
+.policy .modal .accordion-wrap ol {
+   width: 80%;
+   margin: 0 auto;
+   color: var(--text);
+   padding: 1vmin;
+   background: none;
+}
+
+.contact .modal ol h3,
+.policy .modal ol h3 {
+   font-size: clamp(2.4rem, 1.733rem + 0.89vw, 2.8rem);
+   font-weight: 600;
+   color: var(--text);
+   margin: 6vmin auto 1vmin;
+   mix-blend-mode: normal;
+}
+
+/* 親要素でカウンターをリセット */
+.contact .modal {
+   counter-reset: num;
+   /* カウンターを初期化 */
+}
+
+/* リストアイテムでカウンターをインクリメント */
+.contact .modal li,
+.policy .modal li {
+   color: var(--text);
+   padding: 1vmin 4vmin;
+   margin-bottom: 5vmin;
+   border-bottom: 1px solid var(--text);
+   counter-increment: num;
+   /* カウンターを増加 */
+}
+
+/* 各リストアイテムのカウンター値を表示 */
+.contact .modal li::before,
+.policy .modal li::before {
+   content: counter(num, decimal-leading-zero) ". ";
+   /* 例: 01. */
+   font-weight: bold;
+   color: var(--text);
+   /* 必要に応じてカスタマイズ */
+   position: absolute;
+   left: 25.5vmin;
+}
+
+.contact #modal1 li::before {
+   display: none;
+}
+
+.contact #section--second p,
+.contact #section--third p {
+   width: 25vmin;
+}
+
+/*==Policy*/
