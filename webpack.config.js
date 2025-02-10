@@ -66,7 +66,7 @@ module.exports = {
          chunks: ["main"] // contact.html に main.js を適用
       }),
       new MiniCssExtractPlugin({
-         filename: "styles/main.css"
+         filename: "./styles/main.css"
       }),
       new CopyWebpackPlugin({
          patterns: [
