@@ -534,9 +534,12 @@ form a {
 /*===================== noize =====================*/
 
 .noise {
+   /* グラデーション背景 */
    background: linear-gradient(to bottom right, var(--bg), var(--text)) fixed;
+   /* Webkitベースのブラウザ用のテキスト背景 */
    -webkit-background-clip: text;
    -webkit-text-fill-color: darkgray;
+   /* マスク設定 */
    --lines: 0.0003px;
    mask: repeating-radial-gradient(circle at center,
          #000,
@@ -546,11 +549,15 @@ form a {
          #0000,
          calc(var(--lines) * 2),
          #0000 0);
-   /* フォールバック：マスクがサポートされない場合の背景色 */
+   /* フォールバック（マスクがサポートされない場合の背景色） */
    background-color: lightgray;
-   color: var(--text);
-   /* フォールバック用のテキスト色 */
+   color: var(--text);  /* フォールバック用のテキスト色 */
+
+   /* サポートされない場合の代替設定 */
+   background-clip: border-box; /* 追加：他のブラウザ用 */
+   color: transparent; /* 追加：Webkit未対応時にテキストを透明に */
 }
+
 
 @media (prefers-color-scheme: light) {
    .noise {
@@ -558,6 +565,8 @@ form a {
       -webkit-background-clip: text;
       -webkit-text-fill-color: darkgray;
       color: var(--bg);
+      background-clip: border-box; /* 追加：他のブラウザ用 */
+      color: transparent; /* 追加：Webkit未対応時にテキストを透明に */
    }
 }
 /*== NAV ==*/
