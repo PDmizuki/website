@@ -12,7 +12,7 @@ module.exports = {
       path: path.resolve(__dirname, "dist"),
       filename: "js/main.js",
       clean: true,
-      publicPath: "/"
+      publicPath: "./"
    },
    resolve: {
       alias: {
@@ -66,7 +66,7 @@ module.exports = {
          chunks: ["main"] // contact.html に main.js を適用
       }),
       new MiniCssExtractPlugin({
-         filename: "./styles/main.css"
+         filename: "styles/main.css"
       }),
       new CopyWebpackPlugin({
          patterns: [
