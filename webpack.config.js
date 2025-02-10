@@ -27,7 +27,7 @@ module.exports = {
             use: [MiniCssExtractPlugin.loader, "css-loader"]
          },
          {
-            test: /\.js$/,
+            test: /\.js$/i,
             exclude: /node_modules/,
             use: {
                loader: "babel-loader"
@@ -58,7 +58,7 @@ module.exports = {
       new HtmlWebpackPlugin({
          template: "./src/about.html",
          filename: "about.html",
-         chunks: [] // about.html には JS を適用しない
+         chunks: ["main"] // about.html には JS を適用しない
       }),
       new HtmlWebpackPlugin({
          template: "./src/contact.html",
