@@ -19,32 +19,30 @@ import "./style/bot.css"; // bot
 import "./style/footer.css"; // footer
 import "./style/accordion.css"; // accordion
 
-// modal
+// modal（全ページで適用）
 import "./style/modal.css"; // modal
 
 // 各ページ固有の処理
 if (page === "about") {
-   import("./js/modal.js");
+   require("./js/modal.js");
 } else if (page === "service") {
-   import("./style/card.css");
-   import("./style/se-list.css");
-   import("./js/se-list.js");
+   require("./style/card.css");
+   require("./style/se-list.css");
+   require("./js/se-list.js");
 } else if (page === "contact") {
-   import("./style/form.css");
-   import("./js/form.js");
+   require("./style/form.css");
+   require("./js/form.js");
 } else if (page === "mobile") {
-   import("./style/mobile-all.css");
-   import("./style/mobile-page.css");
-   import("./js/tab.js");
+   require("./style/mobile-all.css");
+   require("./style/mobile-page.css");
+   require("./js/tab.js");
 }
 
-
-// Mobile all
+// Mobile all（共通適用）
 import "./style/mobile-all.css"; // all text
 import "./style/mobile-page.css"; // all page
 import "./style/tab.css"; // tab
 import "./style/footer.css"; // footer
-
 
 /////////// all js
 // PC all
@@ -55,8 +53,8 @@ import "./js/chat.js"; // chat
 import "./js/fade.js"; // fade
 import "./js/head-foot.js"; // head foot
 
-// about/service/contact/policy
-import "./js/modal.js"; // modal
+// modal（全ページ共通）
+import "./js/modal.js";
 
 // Service list
 import "./js/se-list.js"; // service list
@@ -66,7 +64,6 @@ import "./js/form.js"; // form
 
 // Mobile all
 import "./js/tab.js"; // tab
-
 
 /////////// all images
 import "./assets/images/pd.png";  // 画像の読み込み
