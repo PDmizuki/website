@@ -33,7 +33,7 @@
    padding: 0.5rem;
    background:
    linear-gradient(to top, rgba(0, 0, 0, 0.65) 0%, rgba(20, 20, 20, 0.4) 100%),
-   url(/assets/images/pc-main-bg.jpg);
+   url("../assets/images/pc-main-bg.jpg");
    border-radius: 8px;
    background-size: cover;
    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
@@ -58,7 +58,7 @@
    width: 360px;
    height: 235px;
    background:
-      url(/assets/images/mobile-main-bg.jpg);
+      url("../assets/images/mobile-main-bg.jpg");
    background-size: cover;
    background-position: center;
    background-repeat: no-repeat;
@@ -169,4 +169,3 @@
 .card-wrapper.active .card-footer {
    opacity: 0.5;
 }
-
