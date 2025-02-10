@@ -4,12 +4,13 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
+   devtool: "source-map", // eval を使わない安全なソースマップ
    entry: {
       main: "./src/index.js", // メインのエントリーファイルのみ
    },
    output: {
       path: path.resolve(__dirname, "dist"),
-      filename: "js/[name].js",
+      filename: "js/main.js",
       clean: true,
       publicPath: "/"
    },
@@ -65,7 +66,7 @@ module.exports = {
          chunks: ["main"] // contact.html に main.js を適用
       }),
       new MiniCssExtractPlugin({
-         filename: "styles/[name].css"
+         filename: "styles/main.css"
       }),
       new CopyWebpackPlugin({
          patterns: [
@@ -82,5 +83,9 @@ module.exports = {
             },
          ]
       })
-   ]
+   ],
+   devServer: {
+      static: path.resolve(__dirname, "dist"),
+      hot: true
+   }
 };

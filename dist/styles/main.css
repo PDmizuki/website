@@ -3504,8 +3504,10 @@ form .close:focus {
             #0000 0);
       /* フォールバック：マスクがサポートされない場合の背景色 */
       background-color: lightgray;
-      color: var(--text);
       /* フォールバック用のテキスト色 */
+      /* サポートされない場合の代替設定 */
+   background-clip: border-box; /* 追加：他のブラウザ用 */
+   color: transparent; /* 追加：Webkit未対応時にテキストを透明に */
    }
 
    @media (prefers-color-scheme: light) {
@@ -3513,7 +3515,9 @@ form .close:focus {
          background: linear-gradient(to bottom, black, gray) fixed;
          -webkit-background-clip: text;
          -webkit-text-fill-color: darkgray;
-         color: var(--bg);
+         /* サポートされない場合の代替設定 */
+   background-clip: border-box; /* 追加：他のブラウザ用 */
+   color: transparent; /* 追加：Webkit未対応時にテキストを透明に */
       }
    }
 
@@ -4595,3 +4599,5 @@ form .close:focus {
         transition: left 0.3s ease;
     }
 }
+
+/*# sourceMappingURL=main.css.map*/
