@@ -5,15 +5,15 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
    entry: {
-      main: "./src/index.js",
+      main: "./src/index.js",  // メインのエントリーファイル
       service: "./src/js/se-list.js",
       contact: "./src/js/form.js"
    },
    output: {
       path: path.resolve(__dirname, "dist"),
-      filename: "js/[name].js",
+      filename: "js/[name].js",  // js/main.js, js/service.js, js/contact.js のように出力
       clean: true,
-      publicPath: "/"
+      publicPath: "./"  // GitHub Pages などでのパス問題を解決
    },
    resolve: {
       alias: {
@@ -54,16 +54,17 @@ module.exports = {
       new HtmlWebpackPlugin({
          template: "./src/index.html",
          filename: "index.html",
-         chunks: ["index"]
+         chunks: ["main"] // index.html に index.js を適用
       }),
       new HtmlWebpackPlugin({
          template: "./src/about.html",
-         filename: "about.html"
+         filename: "about.html",
+         chunks: ["main"] // about.html にも main.js を適用
       }),
       new HtmlWebpackPlugin({
          template: "./src/contact.html",
          filename: "contact.html",
-         chunks: ["contact"]
+         chunks: ["main", "contact"] // contact.html に main.js + contact.js を適用
       }),
       new MiniCssExtractPlugin({
          filename: "styles/[name].css"
@@ -76,6 +77,5 @@ module.exports = {
             }
          ]
       })
-
    ]
 };
