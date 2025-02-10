@@ -560,8 +560,6 @@ form a {
       color: var(--bg);
    }
 }
-@charset "UTF-8";
-
 /*== NAV ==*/
 nav {
     display: block;
