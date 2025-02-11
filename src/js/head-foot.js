@@ -2,12 +2,12 @@ document.addEventListener("DOMContentLoaded", function () {
    // ヘッダーとフッターの読み込みと初期化
    function initializeHeaderFooter() {
       return Promise.all([
-         fetch("header.html")
+         fetch("../header.html")
             .then(response => response.text())
             .then(headerData => {
                document.getElementById("header-container").innerHTML = headerData;
             }),
-         fetch("footer.html")
+         fetch("../footer.html")
             .then(response => response.text())
             .then(footerData => {
                document.getElementById("footer-container").innerHTML = footerData;
