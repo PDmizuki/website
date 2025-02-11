@@ -254,7 +254,7 @@ h2,
 .arrow::after,
 .card-content h3,
 .card-content h3::before {
-   background: url(./assets/images/text-bggold.jpg) no-repeat center center/cover;
+   background: url(./97974bd0ac87fe96946e.jpg) no-repeat center center/cover;
    background-clip: text;
    -webkit-background-clip: text;
    color: transparent;
@@ -268,7 +268,7 @@ h2,
 .right-text::before,
 .bt-text::after,
 .card-content h3 {
-   border-image: url(./assets/images/text-bggold.jpg) 100;
+   border-image: url(./97974bd0ac87fe96946e.jpg) 100;
 }
 
 
@@ -1051,9 +1051,9 @@ nav {
    width: 140vmin;
    height: 78.75%;
    max-height: 800px;
-   background: url(./assets/images/pc-main-bg.jpg) no-repeat bottom center/contain;
+   background: url(./47fb6891f2e0803501e0.jpg) no-repeat bottom center/contain;
    background: linear-gradient(to top, rgba(0, 0, 0, 0.05) 0%, rgba(46, 46, 46, 0.1) 100%),
-   url(./assets/images/pc-main-bg.jpg);
+   url(./47fb6891f2e0803501e0.jpg);
    opacity: 0;
    transition: transform 0.4s ease, opacity 1s ease;
    box-shadow: 0 4px 10px 2px rgba(0, 0, 0, 0.5);
@@ -1182,7 +1182,7 @@ button:nth-last-of-type(1) {
    align-items: center;
    box-shadow: inset 0px 0px 3px rgba(0, 0, 0);
    border: 1px solid;
-   border-image: url(./assets/images/bg-gold_bronze.jpg) 100;
+   border-image: url(./03ea60df7fce1f532c75.jpg) 100;
 }
 
 .bottom-btn a:hover {
@@ -1196,7 +1196,7 @@ button:nth-last-of-type(1) {
    height: 1px;
    position: absolute;
    top: 48.5%;
-   background: url(./assets/images/bg-gold_bronze.jpg) no-repeat center center/cover;
+   background: url(./03ea60df7fce1f532c75.jpg) no-repeat center center/cover;
 }
 
 .back .arrow span {
@@ -2147,7 +2147,7 @@ button:nth-last-of-type(1) {
         padding-left: 3%;
         border-top: 1px solid var(--border);
         z-index: 108;
-        background: url(./assets/images/mobile-main-bg.jpg) no-repeat top center/cover;
+        background: url(./c43b3051ed144ebd07bc.jpg) no-repeat top center/cover;
     }
 
     footer::before {
@@ -2370,7 +2370,7 @@ button:nth-last-of-type(1) {
    background-color: rgba(200, 200,200, 0.15);
    background:
    linear-gradient(to top, rgba(0, 0, 0, 0.15) 0%, rgba(46, 46, 46, 0.25) 100%),
-   url(./assets/images/pc-main-bg.jpg);
+   url(./47fb6891f2e0803501e0.jpg);
    background-size: cover;
    transform: translate(-50%, -50%) scale(0.8);
    box-shadow: 0 3px 13px 0px rgba(0, 0, 0, 0.95);
@@ -2559,7 +2559,7 @@ button:nth-last-of-type(1) {
    padding: 0.5rem;
    background:
    linear-gradient(to top, rgba(0, 0, 0, 0.65) 0%, rgba(20, 20, 20, 0.4) 100%),
-   url(./assets/images/pc-main-bg.jpg);
+   url(./47fb6891f2e0803501e0.jpg);
    border-radius: 8px;
    background-size: cover;
    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
@@ -2584,7 +2584,7 @@ button:nth-last-of-type(1) {
    width: 360px;
    height: 235px;
    background:
-      url(./assets/images/mobile-main-bg.jpg);
+      url(./c43b3051ed144ebd07bc.jpg);
    background-size: cover;
    background-position: center;
    background-repeat: no-repeat;
@@ -3433,7 +3433,7 @@ form .close:focus {
       font-weight: 500;
       font-style: normal;
       color: var(--bg);
-      background: url(./assets/images/mobile-main-bg.jpg) no-repeat bottom center/cover;
+      background: url(./c43b3051ed144ebd07bc.jpg) no-repeat bottom center/cover;
       background-attachment: fixed;
       position: relative;
       width: 100%;
@@ -3447,7 +3447,7 @@ form .close:focus {
    .mobile::after,
    .guide-left,
    .guide-left::after {
-      background: url(./assets/images/mobile-main-second.jpg) no-repeat bottom center/cover;
+      background: url(./5dddbcf339e45def9214.jpg) no-repeat bottom center/cover;
       background-attachment: fixed;
       position: fixed;
       content: "";
@@ -3850,17 +3850,17 @@ form .close:focus {
 
    .se-01:hover::after,
    .se-01:focus::after {
-      background-image: url(./assets/images/mobile-main-bg.jpg);
+      background-image: url(./c43b3051ed144ebd07bc.jpg);
    }
 
    .se-02:hover::after,
    .se-02:focus::after {
-      background-image: url(./assets/images/text-a.png);
+      background-image: url(data:image/png;base64,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);
    }
 
    .se-03:hover::after,
    .se-03:focus::after {
-      background-image: url(./assets/images/text-bggold.jpg);
+      background-image: url(./97974bd0ac87fe96946e.jpg);
    }
 
    .top .se {
@@ -4203,7 +4203,7 @@ form .close:focus {
       border: 1px solid var(--border);
       display: flex;
       overflow-y: scroll;
-      background-image: url(./assets/images/mobile-main-bg.jpg);
+      background-image: url(./c43b3051ed144ebd07bc.jpg);
    }
 
    .option h3 {

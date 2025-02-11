@@ -58,4 +58,16 @@ import "./js/modal.js";
 import "./js/tab.js"; // tab
 
 /////////// all images
-import "./assets/images/pd.png";  // 画像の読み込み
+import "./assets/images/pd.ico";
+import "./assets/images/pd.png";
+import "./assets/images/pc-main-bg.jpg";
+import "./assets/images/bg-gold_bronze.jpg";
+import "./assets/images/bg-gold_bronze.jpg";
+import "./assets/images/text-bggold.jpg";
+import "./assets/images/text-a.png";
+import "./assets/images/text-c.png";
+import "./assets/images/text-s.png";
+import "./assets/images/text-p.png";
+//mobile
+import "./assets/images/mobile-main-bg.jpg";
+import "./assets/images/mobile-main-second.jpg";

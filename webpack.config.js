@@ -2,6 +2,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
+const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 
 module.exports = {
    devtool: "source-map",
@@ -34,11 +35,12 @@ module.exports = {
             }
          },
          {
-            test: /\.(png|jpg|jpeg|gif|svg)$/i,
-            type: "asset/resource",
-            generator: {
-               filename: "assets/images/[name][ext]"
-            }
+            test: /\.(jpe?g|png|gif|webp|svg)$/i,
+            type: "asset/images",
+         },
+         {
+            test: /\.ico$/,
+            type: 'asset/resource',
          },
          {
             test: /\.(woff|woff2|eot|ttf|otf)$/i,
@@ -107,7 +109,20 @@ module.exports = {
                },
             },
          ]
-      })
+      }),
+      new ImageMinimizerPlugin({
+         minimizer: {
+            implementation: ImageMinimizerPlugin.imageminMinify,
+            options: {
+               plugins: [
+                  ["mozjpeg", { quality: 75 }],
+                  ["pngquant", { quality: [0.65, 0.8] }],
+                  ["gifsicle", { interlaced: true }],
+                  ["svgo", {}],
+               ],
+            },
+         },
+      }),
    ],
    devServer: {
       static: path.resolve(__dirname, "dist"),
