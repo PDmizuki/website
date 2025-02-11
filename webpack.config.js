@@ -4,9 +4,9 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
-   devtool: "source-map", // eval を使わない安全なソースマップ
+   devtool: "source-map",
    entry: {
-      main: "./src/index.js", // メインのエントリーファイルのみ
+      main: "./src/index.js",
    },
    output: {
       path: path.resolve(__dirname, "dist"),
@@ -50,35 +50,26 @@ module.exports = {
       ]
    },
    plugins: [
-      new HtmlWebpackPlugin({
-         template: "./src/index.html",
-         filename: "index.html",
-         chunks: ["main"] // index.html に main.js を適用
-      }),
-      new HtmlWebpackPlugin({
-         template: "./src/about.html",
-         filename: "about.html",
-         chunks: ["main"] // about.html には JS を適用しない
-      }),
-      new HtmlWebpackPlugin({
-         template: "./src/contact.html",
-         filename: "contact.html",
-         chunks: ["main"] // contact.html に main.js を適用
-      }),
-      new MiniCssExtractPlugin({
-         filename: "styles/main.css"
-      }),
+      new HtmlWebpackPlugin({ template: "./src/index.html", filename: "index.html", chunks: ["main"] }),
+      new HtmlWebpackPlugin({ template: "./src/about.html", filename: "about.html", chunks: ["main"] }),
+      new HtmlWebpackPlugin({ template: "./src/service.html", filename: "service.html", chunks: ["main"] }),
+      new HtmlWebpackPlugin({ template: "./src/contact.html", filename: "contact.html", chunks: ["main"] }),
+      new HtmlWebpackPlugin({ template: "./src/policy.html", filename: "policy.html", chunks: ["main"] }),
+      new HtmlWebpackPlugin({ template: "./src/blog/categories.html", filename: "categories.html", chunks: ["main"] }),
+      new HtmlWebpackPlugin({ template: "./src/header.html", filename: "header.html", chunks: ["main"] }),
+      new HtmlWebpackPlugin({ template: "./src/footer.html", filename: "footer.html", chunks: ["main"] }),
+      new MiniCssExtractPlugin({ filename: "styles/main.css" }),
       new CopyWebpackPlugin({
          patterns: [
             {
                from: path.resolve(__dirname, "node_modules/@fortawesome/fontawesome-free/webfonts"),
-               to: path.resolve(__dirname, "dist/assets/fonts"), // distにコピー
+               to: path.resolve(__dirname, "dist/assets/fonts"),
             },
             {
-               from: path.resolve(__dirname, "src"), // src 内のすべてのファイルをコピー
+               from: path.resolve(__dirname, "src"),
                to: path.resolve(__dirname, "dist"),
                globOptions: {
-                  ignore: ["**/*.js", "**/*.html"], // JS と HTML はコピーしない（HtmlWebpackPlugin が処理する）
+                  ignore: ["**/*.js", "**/*.html"], // HTML と JS は Webpack で処理するためコピーしない
                },
             },
          ]

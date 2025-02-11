@@ -23,9 +23,7 @@ import "./style/accordion.css"; // accordion
 import "./style/modal.css"; // modal
 
 // 各ページ固有の処理
-if (page === "about") {
-   require("./js/modal.js");
-} else if (page === "service") {
+if (page === "service") {
    require("./style/card.css");
    require("./style/se-list.css");
    require("./js/se-list.js");
@@ -55,12 +53,6 @@ import "./js/head-foot.js"; // head foot
 
 // modal（全ページ共通）
 import "./js/modal.js";
-
-// Service list
-import "./js/se-list.js"; // service list
-
-// Contact and mobile
-import "./js/form.js"; // form
 
 // Mobile all
 import "./js/tab.js"; // tab
