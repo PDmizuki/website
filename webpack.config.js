@@ -50,15 +50,49 @@ module.exports = {
       ]
    },
    plugins: [
-      new HtmlWebpackPlugin({ template: "./src/index.html", filename: "index.html", chunks: ["main"] }),
-      new HtmlWebpackPlugin({ template: "./src/about.html", filename: "about.html", chunks: ["main"] }),
-      new HtmlWebpackPlugin({ template: "./src/service.html", filename: "service.html", chunks: ["main"] }),
-      new HtmlWebpackPlugin({ template: "./src/contact.html", filename: "contact.html", chunks: ["main"] }),
-      new HtmlWebpackPlugin({ template: "./src/policy.html", filename: "policy.html", chunks: ["main"] }),
-      new HtmlWebpackPlugin({ template: "./src/header.html", filename: "header.html", chunks: ["main"] }),
-      new HtmlWebpackPlugin({ template: "./src/footer.html", filename: "footer.html", chunks: ["main"] }),
-      new HtmlWebpackPlugin({ template: "./src/blog/categories.html", filename: "categories.html", chunks: ["blog"] }),
-      new MiniCssExtractPlugin({ filename: "styles/main.css" }),
+      new HtmlWebpackPlugin({
+         template: "./src/index.html",
+         filename: "index.html",
+         chunks: ["main"]
+      }),
+      new HtmlWebpackPlugin({
+         template: "./src/about.html",
+         filename: "about.html",
+         chunks: ["main"]
+      }),
+      new HtmlWebpackPlugin({
+         template: "./src/service.html",
+         filename: "service.html",
+         chunks: ["main"]
+      }),
+      new HtmlWebpackPlugin({
+         template: "./src/contact.html",
+         filename: "contact.html",
+         chunks: ["main"]
+      }),
+      new HtmlWebpackPlugin({
+         template: "./src/policy.html",
+         filename: "policy.html",
+         chunks: ["main"]
+      }),
+      new HtmlWebpackPlugin({
+         template: "./src/blog/categories.html",
+         filename: "categories.html",
+         chunks: ["main"]
+      }),
+      new HtmlWebpackPlugin({
+         template: "./src/header.html",
+         filename: "header.html",
+         chunks: ["main"]
+      }),
+      new HtmlWebpackPlugin({
+         template: "./src/footer.html",
+         filename: "footer.html",
+         chunks: ["main"]
+      }),
+      new MiniCssExtractPlugin({
+         filename: "styles/main.css"
+      }),
       new CopyWebpackPlugin({
          patterns: [
             {
