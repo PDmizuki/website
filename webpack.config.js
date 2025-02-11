@@ -36,7 +36,7 @@ module.exports = {
          },
          {
             test: /\.(jpe?g|png|gif|webp|svg)$/i,
-            type: "asset/images",
+            type: "asset/resource",
          },
          {
             test: /\.ico$/,
