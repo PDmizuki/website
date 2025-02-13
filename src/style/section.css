@@ -7,9 +7,9 @@
    width: 140vmin;
    height: 78.75%;
    max-height: 800px;
-   background: url("../assets/images/pc-main-bg.jpg") no-repeat bottom center/contain;
+   background: url("../assets/images/pc-main-bg.png") no-repeat bottom center/contain;
    background: linear-gradient(to top, rgba(0, 0, 0, 0.05) 0%, rgba(46, 46, 46, 0.1) 100%),
-   url("../assets/images/pc-main-bg.jpg");
+   url("../assets/images/pc-main-bg.png");
    opacity: 0;
    transition: transform 0.4s ease, opacity 1s ease;
    box-shadow: 0 4px 10px 2px rgba(0, 0, 0, 0.5);
@@ -138,21 +138,26 @@ button:nth-last-of-type(1) {
    align-items: center;
    box-shadow: inset 0px 0px 3px rgba(0, 0, 0);
    border: 1px solid;
-   border-image: url("../assets/images/bg-gold_bronze.jpg") 100;
 }
 
 .bottom-btn a:hover {
    background: var(--text);
 }
 
+.bt-text::after,
+.back a,
+.next a {
+   border-image: url("../assets/images/text-gold.png") 100;
+}
+
 .back .arrow span,
 .next .arrow span {
    content: "";
-   width: 5px;
+   width: 7px;
    height: 1px;
    position: absolute;
-   top: 48.5%;
-   background: url("../assets/images/bg-gold_bronze.jpg") no-repeat center center/cover;
+   top: 47.5%;
+   background: url("../assets/images/text-bronze.png") no-repeat center center/cover;
 }
 
 .back .arrow span {
@@ -179,6 +184,7 @@ button:nth-last-of-type(1) {
    width: 20px;
    height: 2px;
    transform-origin: calc(100% - 1px) 50%;
+   background: url("../assets/images/text-gold.png") no-repeat center center/cover;
 }
 
 .back .arrow::before,
@@ -226,16 +232,18 @@ button:nth-last-of-type(1) {
    height: 5px;
    position: absolute;
    top: 35%;
-   border: 1px solid var(--bg);
+   border: 1px solid;
    mix-blend-mode: multiply;
+   border-image: url("../assets/images/text-gold.png") 100;
 }
 
 .left-text::before {
-   right: 75.95%;
+   right: 90.95%;
 }
 
 .left-text::after {
-   left: 75.95%;
+   width: 10vmin;
+   left: 85.95%;
 }
 
 .right-text {

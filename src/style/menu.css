@@ -372,7 +372,8 @@ nav {
     .audio {
         width: 100%;
         padding: 2rem 0.5rem 1rem;
-        border: 1px solid var(--text);
+        border-top: 1px solid var(--text);
+        border-bottom: 1px solid var(--text);
     }
 
     .toggle-switch {
@@ -402,7 +403,7 @@ nav {
     }*/
 
     .toggle-checkbox:checked+.toggle-label i {
-        -webkit-text-fill-color: var(--accent);
+        opacity: 0.5;
         transform: rotate(-135deg);
     }
 

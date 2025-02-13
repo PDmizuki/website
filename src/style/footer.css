@@ -5,7 +5,7 @@
         padding-left: 3%;
         border-top: 1px solid var(--border);
         z-index: 108;
-        background: url("../assets/images/mobile-main-bg.jpg") no-repeat top center/cover;
+        background: url("../assets/images/mobile-main-bg.png") no-repeat top center/cover;
     }
 
     footer::before {

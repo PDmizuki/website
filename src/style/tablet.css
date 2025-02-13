@@ -32,7 +32,7 @@
       font-weight: 500;
       font-style: normal;
       color: var(--bg);
-      background: url("/img/pd-bg-img.jpg") no-repeat bottom center/cover;
+      background: url("../assets/images/mobile-main-bg.png") no-repeat bottom center/cover;
       background-attachment: fixed;
       position: relative;
       width: 100%;
@@ -46,7 +46,7 @@
    .mobile::after,
    .guide-left,
    .guide-left::after {
-      background: url("/img/pd-bg-img02.png") no-repeat bottom center/cover;
+      background: url("../assets/images/mobile-main-second.png") no-repeat bottom center/cover;
       background-attachment: fixed;
       position: fixed;
       content: "";
@@ -443,17 +443,17 @@
    
       .se-01:hover::after,
       .se-01:focus::after {
-         background-image: url('/img/pd-bg-img.jpg');
+         background-image: url('../assets/images/mobile-main-second.png');
       }
    
       .se-02:hover::after,
       .se-02:focus::after {
-         background-image: url('/img/text-a.png');
+         background-image: url('../assets/images/mobile-main-second.png');
       }
    
       .se-03:hover::after,
       .se-03:focus::after {
-         background-image: url('/img/text-bggold.jpg');
+         background-image: url('../assets/images/mobile-main-second.png');
       }
    
       .top .se {

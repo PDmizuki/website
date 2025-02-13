@@ -148,17 +148,17 @@
 
    .se-01:hover::after,
    .se-01:focus::after {
-      background-image: url('../assets/images/mobile-main-bg.jpg');
+      background-image: url('../assets/images/mobile-main-bg.png');
    }
 
    .se-02:hover::after,
    .se-02:focus::after {
-      background-image: url('../assets/images/text-a.png');
+      background-image: url('../assets/images/bg-a.png');
    }
 
    .se-03:hover::after,
    .se-03:focus::after {
-      background-image: url('../assets/images/text-bggold.jpg');
+      background-image: url('../assets/images/text-gold.png');
    }
 
    .top .se {
@@ -501,7 +501,7 @@
       border: 1px solid var(--border);
       display: flex;
       overflow-y: scroll;
-      background-image: url("../assets/images/mobile-main-bg.jpg");
+      background-image: url("../assets/images/mobile-main-bg.png");
    }
 
    .option h3 {

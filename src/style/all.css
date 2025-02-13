@@ -153,8 +153,8 @@ body {
    margin: 0;
    padding: 0;
    box-sizing: border-box;
-   font-family: "Jost", sans-serif;
-   font-weight: 400;
+   font-family: "Jost", serif;
+   font-weight: 500;
    font-style: normal;
    text-align: justify;
    width: 100vw;
@@ -173,12 +173,12 @@ body {
 h1 {
    /*font-size: 62.5%;=16px 12rem=120px*/
    font-size: clamp(2.8rem, 1.323rem + 1.23vw, 3.2rem);
-   font-family: "Jost", sans-serif;
+   font-family: "Jost", serif;
    font-style: normal;
    font-optical-sizing: auto;
    font-weight: 500;
    width: fit-content;
-   line-height: 5rem;
+   line-height: 4rem;
    letter-spacing: 0.6rem;
 }
 
@@ -190,7 +190,7 @@ h1 span {
 h2,
 h3,
 h4 {
-   font-family: "Jost", sans-serif;
+   font-family: "Jost", serif;
    font-optical-sizing: auto;
    font-weight: 400;
    font-style: normal;
@@ -200,7 +200,6 @@ h4 {
 
 h2 {
    /*font-size: 62.5%;=16px 6rem=62px*/
-   font-family: sans-serif;
    font-weight: 500;
    font-size: clamp(2rem, 0.923rem + 1.23vw, 2.8rem);
    width: fit-content;
@@ -216,11 +215,9 @@ h2,
 .right-text,
 .bt-text,
 .bottom-btn,
-.arrow::before,
-.arrow::after,
 .card-content h3,
 .card-content h3::before {
-   background: url("../assets/images/text-bggold.jpg") no-repeat center center/cover;
+   background: url("../assets/images/text-gold.png") no-repeat center center/cover;
    background-clip: text;
    -webkit-background-clip: text;
    color: transparent;
@@ -229,24 +226,22 @@ h2,
 }
 
 /* gold border */
-.left-text::before,
-.left-text::after,
 .right-text::before,
-.bt-text::after,
 .card-content h3 {
-   border-image: url("../assets/images/text-bggold.jpg") 100;
+   background: url("../assets/images/text-gold.png") 100;
+   border-image: url("../assets/images/text-gold.png") 100;
 }
 
 
 .section h1,
 .section h2 {
    position: relative;
-   top: 10rem;
+   top: 10vmin;
    left: 10rem;
 }
 
 .section h2 {
-   top: 11rem;
+   top: 11vmin;
 }
 
 h3 {
@@ -263,7 +258,7 @@ h4 {
 p {
    /*font-size: 62.5%;=16px 1.2rem=12px*/
    font-size: clamp(1.4rem, 1.067rem + 0.44vw, 1.6rem);
-   font-family: "Jost", sans-serif;
+   font-family: "Jost", serif;
    width: fit-content;
    letter-spacing: 0.035rem;
    line-height: 3rem;
@@ -364,7 +359,7 @@ main a {
 }
 
 a {
-   font-family: "Jost", sans-serif;
+   font-family: "Jost", serif;
    font-size: clamp(1.8rem, 0.8rem + 1.33vw, 2.4rem);
    font-weight: 500;
    color: var(--text);
@@ -407,7 +402,7 @@ footer a:hover::after {
 }
 
 .section .button {
-   top: 20rem;
+   top: 15vmin;
    left: 10rem;
    padding-bottom: 1rem;
 }

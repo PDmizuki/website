@@ -4,15 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <title>PD_Service Us</title>
-    <link rel="icon" href="img/pd-logo-gold.ico">
+    <link rel="icon" href="./assets/images/pd.ico">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
     <!--Search-->
     <meta name="description" content="想いを形に、こだわりをデザインする。">
     <meta name="keywords" content="Precision Design, こだわり, デザイン, 想い, 伝える">
-
-    <!-- jQueryの読み込み -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <!-- Meta Tags -->
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
@@ -23,55 +21,27 @@
     default-src 'self';
     style-src 'self' https://use.typekit.net https://cdnjs.cloudflare.com https://fonts.googleapis.com https://p.typekit.net 'unsafe-inline';
     font-src 'self' https://fonts.gstatic.com https://use.typekit.net https://cdnjs.cloudflare.com data:;
-    script-src 'self' https://code.jquery.com 'unsafe-inline';
+    script-src 'self' https://code.jquery.com 'nonce-random1234';
     img-src 'self' data: https:;
     connect-src 'self' https:;
     object-src 'none';
     base-uri 'self';
     ">
 
-    <!-- CSSファイルの読み込み -->
-    <link rel="stylesheet" href="cs/all.css">
-    <link rel="stylesheet" href="cs/section.css">
-    <link rel="stylesheet" href="cs/menu.css">
-    <link rel="stylesheet" href="cs/cursor.css">
-    <link rel="stylesheet" href="cs/modal.css">
-    <link rel="stylesheet" href="cs/card.css">
-    <link rel="stylesheet" href="cs/se-list.css">
-    <link rel="stylesheet" href="bot.css">
-    <link rel="stylesheet" href="https://mizukioyama.github.io/pd/bot/bot.css">
-    <!-- mobile -->
-    <link rel="stylesheet" href="cs/tab.css">
-    <link rel="stylesheet" href="cs/mobile-all.css">
-    <link rel="stylesheet" href="cs/mobile-page.css">
-    <link rel="stylesheet" href="cs/se-list.css">
-    <link rel="stylesheet" href="cs/footer.css">
-    <link rel="stylesheet" href="cs/accordion.css">
+    <script nonce="random1234">
+        console.log("This script is allowed");
+    </script>
 
-<!-- Preconnect を追加 -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
-
-    <!-- JavaScriptファイルの読み込み -->
-    <script src="js/cursor.js"></script>
-    <script src="js/card.js"></script>
-    <script src="js/modal.js"></script>
-    <script src="js/section.js"></script>
-    <script src="js/se-list.js"></script>
-    <script src="js/loading.js"></script>
-    <script src="js/head-foot.js"></script>
-    <script src="https://mizukioyama.github.io/pd/bot/chat.js"></script>
-    <!-- mobile -->
-    <script src="js/tab.js"></script>
-    <script src="js/fade.js"></script>
-    <script src="js/accordion.js"></script>
-
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 
 <!--作品保護-->
 
-<body oncontextmenu="return false;" class="service">
+<body data-page="contact" oncontextmenu="return false;" class="service">
     <div id="header-container"></div>
 
     <!-- ChatBot ウィンドウ -->
@@ -114,20 +84,19 @@
             <div class="section displayed-section" id="section--first">
                 <h1>
                     Service Us
-                <br>
+                    <br>
                     <span>Contents/Flow.</span>
                 </h1>
-                <img src="/img/text-s.png" alt="Precision Design,about,M.Oyama"
-                    class="text-a">
+                <img src="./assets/images/bg-s.png" alt="Precision Design,about,M.Oyama" class="text-a">
                 <p>
                     このページでは、「サービス内容、オプション、プラン、作業Flow」を紹介しています。
                 </p>
                 <div class="sec-a">
-                    <a href="#" onclick="showSection('section--second')" id="link-section--second">Contents.</a>
-                    <a href="#" onclick="showSection('section--third')" id="link-section--third">Option.</a>
-                    <a href="#" onclick="showSection('section--fourth')" id="link-section--fourth">Plan.</a>
-                    <a href="#" onclick="showSection('section--fifth')" id="link-section--fifth">Flow.</a>
-                    <a href="index.html">Top.</a>
+                    <a href="#" data-section="section--second">Contents.</a>
+                    <a href="#" data-section="section--third">Option.</a>
+                    <a href="#" data-section="section--fourth">Plan.</a>
+                    <a href="#" data-section="section--fifth">Flow.</a>
+                    <a href="index.html">Home.</a>
                 </div>
                 <div class="bt-text">PD_Service Us
                     <br>
@@ -135,10 +104,16 @@
                 </div>
 
                 <div class="bottom-btn">
-                    <button class="back"><a href="#" onclick="showSection('section--fifth')"><span
-                                class="arrow"><span></span></span></a></button>
-                    <button class="next"><a href="#" onclick="showSection('section--second')"><span
-                                class="arrow"><span></span></span></a></button>
+                    <button class="back">
+                        <a href="#" data-section="section--fifth">
+                            <span class="arrow"><span></span></span>
+                        </a>
+                    </button>
+                    <button class="next">
+                        <a href="#" data-section="section--second">
+                            <span class="arrow"><span></span></span>
+                        </a>
+                    </button>
                 </div>
                 <div class="left-text">PD_Service Us</div>
                 <div class="right-text">01</div>
@@ -146,8 +121,7 @@
 
             <div class="section next-section" id="section--second">
                 <h2>Contents</h2>
-                <img src="/img/text-s.png" alt="Precision Design,about,M.Oyama"
-                    class="text-a">
+                <img src="./assets/images/bg-s.png" alt="Precision Design,about,M.Oyama" class="text-a">
                 <p>
                     Contents List
                     <br>
@@ -155,19 +129,25 @@
                 </p>
                 <a href="#" class="button" data-modal="modal--first">Service View</a>
                 <div class="sec-a">
-                    <a href="#" onclick="showSection('section--third')">Option.</a>
-                    <a href="#" onclick="showSection('section--fourth')">Plan.</a>
-                    <a href="#" onclick="showSection('section--fifth')">Flow.</a>
-                    <a href="#" onclick="showSection('section--first')">Service Top.</a>
+                    <a href="#" data-section="section--third">Option.</a>
+                    <a href="#" data-section="section--fourth">Plan.</a>
+                    <a href="#" data-section="section--fifth">Flow.</a>
+                    <a href="#" data-section="section--first">Service Top.</a>
                 </div>
 
                 <div class="bt-text"></div>
 
                 <div class="bottom-btn">
-                    <button class="back"><a href="#" onclick="showSection('section--first')"><span
-                                class="arrow"><span></span></span></a></button>
-                    <button class="next"><a href="#" onclick="showSection('section--third')"><span
-                                class="arrow"><span></span></span></a></button>
+                    <button class="back">
+                        <a href="#" data-section="section--first">
+                            <span class="arrow"><span></span></span>
+                        </a>
+                    </button>
+                    <button class="next">
+                        <a href="#" data-section="section--third">
+                            <span class="arrow"><span></span></span>
+                        </a>
+                    </button>
                 </div>
                 <div class="left-text">PD_Service - Contents</div>
                 <div class="right-text">02</div>
@@ -184,7 +164,7 @@
 
                 <!--Card 01 -->
                 <div class="cd-layout">
-                    <div class="card-wrapper" onclick="cardClick(this)">
+                    <div class="card-wrapper">
                         <div class="card-background">
                             <h4>Contents</h4>
                             <h5>Webサイト制作</h5>
@@ -220,7 +200,7 @@
                     </div>
 
                     <!--Card 02 -->
-                    <div class="card-wrapper" onclick="cardClick(this)">
+                    <div class="card-wrapper">
                         <div class="card-background">
                             <h4>Contents</h4>
                             <h5>Art作品 オーダー制作</h5>
@@ -254,7 +234,7 @@
                     </div>
 
                     <!--Card 03 -->
-                    <div class="card-wrapper" onclick="cardClick(this)">
+                    <div class="card-wrapper">
                         <div class="card-background">
                             <h4>Contents</h4>
                             <h5>事業サポート</h5>
@@ -291,7 +271,7 @@
                 <h3 class="sr">Sub</h3>
                 <div class="cd-layout">
                     <!--Card 01 -->
-                    <div class="card-wrapper" onclick="cardClick(this)">
+                    <div class="card-wrapper">
                         <div class="card-background">
                             <h4>Contents</h4>
                             <h5>サイトデザイン</h5>
@@ -324,7 +304,7 @@
                     </div>
 
                     <!--Card 02 -->
-                    <div class="card-wrapper" onclick="cardClick(this)">
+                    <div class="card-wrapper">
                         <div class="card-background">
                             <h4>Contents</h4>
                             <h5>コーディング / 実装</h5>
@@ -357,7 +337,7 @@
                     </div>
 
                     <!--Card 03 -->
-                    <div class="card-wrapper" onclick="cardClick(this)">
+                    <div class="card-wrapper">
                         <div class="card-background">
                             <h4>Contents</h4>
                             <h5>Webサイトリニューアル</h5>
@@ -388,7 +368,7 @@
                     </div>
 
                     <!--Card 04 -->
-                    <div class="card-wrapper" onclick="cardClick(this)">
+                    <div class="card-wrapper">
                         <div class="card-background">
                             <h4>Contents</h4>
                             <h5>バナー 制作</h5>
@@ -416,7 +396,7 @@
                     </div>
 
                     <!--Card 05 -->
-                    <div class="card-wrapper" onclick="cardClick(this)">
+                    <div class="card-wrapper">
                         <div class="card-background">
                             <h4>Contents</h4>
                             <h5>ロゴ 制作</h5>
@@ -446,7 +426,7 @@
                     </div>
 
                     <!--Card 06 -->
-                    <div class="card-wrapper" onclick="cardClick(this)">
+                    <div class="card-wrapper">
                         <div class="card-background">
                             <h4>Contents</h4>
                             <h5>チラシ/メニュー表</h5>
@@ -476,7 +456,7 @@
                     </div>
 
                     <!--Card 07 -->
-                    <div class="card-wrapper" onclick="cardClick(this)">
+                    <div class="card-wrapper">
                         <div class="card-background">
                             <h4>Contents</h4>
                             <h5>名刺 制作</h5>
@@ -509,8 +489,7 @@
 
             <div class="section next-section" id="section--third">
                 <h2>Option</h2>
-                <img src="/img/text-s.png" alt="Precision Design,about,M.Oyama"
-                    class="text-a">
+                <img src="./assets/images/bg-s.png" alt="Precision Design,about,M.Oyama" class="text-a">
                 <p>
                     Option List
                     <br>
@@ -519,19 +498,25 @@
                 </p>
                 <a href="#" class="button" data-modal="modal--second">Option View</a>
                 <div class="sec-a">
-                    <a href="#" onclick="showSection('section--fourth')">Plan.</a>
-                    <a href="#" onclick="showSection('section--fifth')">Flow.</a>
-                    <a href="#" onclick="showSection('section--first')">Service Top.</a>
-                    <a href="#" onclick="showSection('section--second')">Contents.</a>
+                    <a href="#" data-section="section--fourth">Plan.</a>
+                    <a href="#" data-section="section--fifth">Flow.</a>
+                    <a href="#" data-section="section--first">Service Top.</a>
+                    <a href="#" data-section="section--second">Contents.</a>
                 </div>
 
                 <div class="bt-text"></div>
 
                 <div class="bottom-btn">
-                    <button class="back"><a href="#" onclick="showSection('section--second')"><span
-                                class="arrow"><span></span></span></a></button>
-                    <button class="next"><a href="#" onclick="showSection('section--fourth')"><span
-                                class="arrow"><span></span></span></a></button>
+                    <button class="back">
+                        <a href="#" data-section="section--second">
+                            <span class="arrow"><span></span></span>
+                        </a>
+                    </button>
+                    <button class="next">
+                        <a href="#" data-section="section--fourth">
+                            <span class="arrow"><span></span></span>
+                        </a>
+                    </button>
                 </div>
                 <div class="left-text">PD_Service - Option</div>
                 <div class="right-text">03</div>
@@ -545,7 +530,7 @@
 
                 <!--Card 01 -->
                 <div class="cd-layout">
-                    <div class="card-wrapper" onclick="cardClick(this)">
+                    <div class="card-wrapper">
                         <div class="card-background">
                             <h4>Contents</h4>
                             <h5>Webライティング</h5>
@@ -576,7 +561,7 @@
                     </div>
 
                     <!--Card 02 -->
-                    <div class="card-wrapper" onclick="cardClick(this)">
+                    <div class="card-wrapper">
                         <div class="card-background">
                             <h4>Contents</h4>
                             <h5>イラスト作成</h5>
@@ -608,7 +593,7 @@
                     </div>
 
                     <!--Card 03 -->
-                    <div class="card-wrapper" onclick="cardClick(this)">
+                    <div class="card-wrapper">
                         <div class="card-background">
                             <h4>Contents</h4>
                             <h5>写真撮影</h5>
@@ -636,7 +621,7 @@
                     </div>
 
                     <!--Card 04 -->
-                    <div class="card-wrapper" onclick="cardClick(this)">
+                    <div class="card-wrapper">
                         <div class="card-background">
                             <h4>Contents</h4>
                             <h5>写真加工</h5>
@@ -664,7 +649,7 @@
                     </div>
 
                     <!--Card 05 -->
-                    <div class="card-wrapper" onclick="cardClick(this)">
+                    <div class="card-wrapper">
                         <div class="card-background">
                             <h4>Contents</h4>
                             <h5>サイト管理</h5>
@@ -692,7 +677,7 @@
                     </div>
 
                     <!--Card 06 -->
-                    <div class="card-wrapper" onclick="cardClick(this)">
+                    <div class="card-wrapper">
                         <div class="card-background">
                             <h4>Contents</h4>
                             <h5>Webサイトメンテナンス</h5>
@@ -722,7 +707,7 @@
                     </div>
 
                     <!--Card 07 -->
-                    <div class="card-wrapper" onclick="cardClick(this)">
+                    <div class="card-wrapper">
                         <div class="card-background">
                             <h4>Contents</h4>
                             <h5>Webサイト パフォーマンス最適化</h5>
@@ -757,7 +742,7 @@
                     </div>
 
                     <!--Card 08 -->
-                    <div class="card-wrapper" onclick="cardClick(this)">
+                    <div class="card-wrapper">
                         <div class="card-background">
                             <h4>Contents</h4>
                             <h5>分析と改善提案</h5>
@@ -792,8 +777,7 @@
 
             <div class="section next-section" id="section--fourth">
                 <h2>Plan</h2>
-                <img src="/img/text-s.png" alt="Precision Design,about,M.Oyama"
-                    class="text-a">
+                <img src="./assets/images/bg-s.png" alt="Precision Design,about,M.Oyama" class="text-a">
                 <p>
                     お申込み前にPlan内容をご確認ください。
                     <br>
@@ -801,19 +785,25 @@
                 </p>
                 <a href="#" class="button" data-modal="modal--third">Paln View</a>
                 <div class="sec-a">
-                    <a href="#" onclick="showSection('section--fifth')">Flow.</a>
-                    <a href="#" onclick="showSection('section--first')">Service Top.</a>
-                    <a href="#" onclick="showSection('section--second')">Contents.</a>
-                    <a href="#" onclick="showSection('section--third')">Option.</a>
+                    <a href="#" data-section="section--fifth">Flow.</a>
+                    <a href="#" data-section="section--first">Service Top.</a>
+                    <a href="#" data-section="section--second">Contents.</a>
+                    <a href="#" data-section="section--third">Option.</a>
                 </div>
 
                 <div class="bt-text"></div>
 
                 <div class="bottom-btn">
-                    <button class="back"><a href="#" onclick="showSection('section--third')"><span
-                                class="arrow"><span></span></span></a></button>
-                    <button class="next"><a href="#" onclick="showSection('section--fifth')"><span
-                                class="arrow"><span></span></span></a></button>
+                    <button class="back">
+                        <a href="#" data-section="section--third">
+                            <span class="arrow"><span></span></span>
+                        </a>
+                    </button>
+                    <button class="next">
+                        <a href="#" data-section="section--fifth">
+                            <span class="arrow"><span></span></span>
+                        </a>
+                    </button>
                 </div>
                 <div class="left-text">PD_Service - Plan</div>
                 <div class="right-text">04</div>
@@ -1294,8 +1284,7 @@
 
             <div class="section next-section" id="section--fifth">
                 <h2>Flow</h2>
-                <img src="/img/text-s.png" alt="Precision Design,about,M.Oyama"
-                    class="text-a">
+                <img src="./assets/images/bg-s.png" alt="Precision Design,about,M.Oyama" class="text-a">
                 <p>
                     ご契約から納品までの、おおまかな作業Flowを簡単にご説明しています。
                     ※具体的な作業の流れや手順を知りたい方は、Contact Formからお問い合わせください。
@@ -1315,19 +1304,25 @@
                     </li>
                 </ol>
                 <div class="sec-a">
-                    <a href="#" onclick="showSection('section--first')">Service Top.</a>
-                    <a href="#" onclick="showSection('section--second')">Contents.</a>
-                    <a href="#" onclick="showSection('section--third')">Option.</a>
-                    <a href="#" onclick="showSection('section--fourth')">Plan.</a>
+                    <a href="#" data-section="section--first">Service Top.</a>
+                    <a href="#" data-section="section--second">Contents.</a>
+                    <a href="#" data-section="section--third">Option.</a>
+                    <a href="#" data-section="section--fourth">Plan.</a>
                 </div>
 
                 <div class="bt-text"></div>
 
                 <div class="bottom-btn">
-                    <button class="back"><a href="#" onclick="showSection('section--fourth')"><span
-                                class="arrow"><span></span></span></a></button>
-                    <button class="next"><a href="#" onclick="showSection('section--first')"><span
-                                class="arrow"><span></span></span></a></button>
+                    <button class="back">
+                        <a href="#" data-section="section--fourth">
+                            <span class="arrow"><span></span></span>
+                        </a>
+                    </button>
+                    <button class="next">
+                        <a href="#" data-section="section--first">
+                            <span class="arrow"><span></span></span>
+                        </a>
+                    </button>
                 </div>
                 <div class="left-text">PD_Service - Flow</div>
                 <div class="right-text">05</div>

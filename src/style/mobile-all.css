@@ -32,7 +32,7 @@
       font-weight: 500;
       font-style: normal;
       color: var(--bg);
-      background: url("../assets/images/mobile-main-bg.jpg") no-repeat bottom center/cover;
+      background: url("../assets/images/mobile-main-bg.png") no-repeat bottom center/cover;
       background-attachment: fixed;
       position: relative;
       width: 100%;
@@ -46,7 +46,7 @@
    .mobile::after,
    .guide-left,
    .guide-left::after {
-      background: url("../assets/images/mobile-main-second.jpg") no-repeat bottom center/cover;
+      background: url("../assets/images/mobile-main-second.png") no-repeat bottom center/cover;
       background-attachment: fixed;
       position: fixed;
       content: "";

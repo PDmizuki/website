@@ -1,5 +1,15 @@
 let isAnimating = false;
 
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll('a[data-section]').forEach(link => {
+        link.addEventListener("click", (event) => {
+            event.preventDefault(); // デフォルトのリンク動作を無効化
+            const sectionId = event.target.getAttribute("data-section");
+            showSection(sectionId);
+        });
+    });
+});
+
 function showSection(sectionId) {
     if (isAnimating) return; // アニメーション中はクリックを無効化
     isAnimating = true;
@@ -7,9 +17,9 @@ function showSection(sectionId) {
     const currentSection = document.querySelector('.displayed-section');
     const nextSection = document.getElementById(sectionId);
 
-    if (currentSection === nextSection) {
+    if (!nextSection || currentSection === nextSection) {
         isAnimating = false;
-        return; // 同じセクションをクリックした場合は何もしない
+        return; // 無効なセクション or 同じセクションなら何もしない
     }
 
     // メニュー項目のアクティブ状態を更新
@@ -40,32 +50,18 @@ function showSection(sectionId) {
 }
 
 function updateActiveMenu(activeSectionId) {
-    // すべてのメニューリンクのアクティブクラスをリセット
     document.querySelectorAll('.menu a').forEach(link => link.classList.remove('active'));
-
-    // すべてのセクションの状態クラスをリセット
     document.querySelectorAll('section').forEach(section => section.classList.remove('active-section', 'next-section'));
 
-    // 表示中のセクションに対応するリンクとセクションにクラスを追加
     const activeSection = document.getElementById(activeSectionId);
-    const activeLink = document.getElementById('link-' + activeSectionId);
+    const activeLink = document.querySelector(`a[data-section="${activeSectionId}"]`);
 
-    if (activeSection) {
-        activeSection.classList.add('active-section'); // 表示中のセクション
-    }
-    if (activeLink) {
-        activeLink.classList.add('active'); // 表示中のリンク
-    }
+    if (activeSection) activeSection.classList.add('active-section');
+    if (activeLink) activeLink.classList.add('active');
 
-    // 次に表示されるセクション以外を `next-section` 状態にする
     document.querySelectorAll('section').forEach(section => {
         if (section !== activeSection) {
             section.classList.add('next-section');
         }
     });
 }
-
-
-//セクションの位置を調整
-//next 斜下、left 斜上、表示しているセクション 中央
-//セクションアニメーション 指定のセクションまで回転

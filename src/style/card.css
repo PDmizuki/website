@@ -33,7 +33,7 @@
    padding: 0.5rem;
    background:
    linear-gradient(to top, rgba(0, 0, 0, 0.65) 0%, rgba(20, 20, 20, 0.4) 100%),
-   url("../assets/images/pc-main-bg.jpg");
+   url("../assets/images/pc-main-bg.png");
    border-radius: 8px;
    background-size: cover;
    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
@@ -58,7 +58,7 @@
    width: 360px;
    height: 235px;
    background:
-      url("../assets/images/mobile-main-bg.jpg");
+      url("../assets/images/mobile-main-bg.png");
    background-size: cover;
    background-position: center;
    background-repeat: no-repeat;
@@ -134,30 +134,15 @@
    left: 1rem;
 }
 
-.card-wrapper.active {
-   z-index: 11;
-   transition: z-index 0.5s ease;
-}
-
-.card-wrapper.active .card-background {
-   font-family: sans-serif;
-   color: var(--text);
-   top: 0;
-   left: 47%;
-   width: 75vmin;
-   height: auto;
-   min-height: 40vmin;
-   padding: 1vmin 4vmin 2vmin 22vmin;
-   transition: all 0.25s ease, heigth 1s ease;
-}
 .card-wrapper.active .card-background h4 {
    font-size: clamp(2rem, 2rem + 0.5vw, 2.4rem);
    font-weight: 600;
    margin: 0;
 }
 .card-wrapper.active .card-background p {
+   font-size: 14rem;
    opacity: 1;
-   transition: opacity 1s ease;
+   transition: opacity 4.75s ease;
 }
 
 .card-wrapper.active .card {
@@ -167,5 +152,5 @@
 .card-wrapper.active .card-content,
 .card-wrapper.active .card-header,
 .card-wrapper.active .card-footer {
-   opacity: 0.5;
+   opacity: 0.65;
 }

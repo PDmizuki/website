@@ -4,10 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <title>Precision Design</title>
-  <link rel="icon" href="img/pd.ico">
+  <link rel="icon" href="./assets/images/pd.ico">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  
+
   <!-- Search -->
   <meta name="description" content="想いを形に、こだわりをデザインする。">
   <meta name="keywords" content="Precision Design, こだわり, デザイン, 想い, 伝える">
@@ -18,15 +18,21 @@
 
   <!-- Content-Security-Policy -->
   <meta http-equiv="Content-Security-Policy" content="
-  default-src 'self';
-  style-src 'self' https://use.typekit.net https://cdnjs.cloudflare.com https://fonts.googleapis.com https://p.typekit.net 'unsafe-inline';
-  font-src 'self' https://fonts.gstatic.com https://use.typekit.net https://cdnjs.cloudflare.com data:;
-  script-src 'self' https://code.jquery.com;
-  img-src 'self' data: https:;
-  connect-src 'self' https:;
-  object-src 'none';
-  base-uri 'self';
-  ">
+    default-src 'self';
+    style-src 'self' https://use.typekit.net https://cdnjs.cloudflare.com https://fonts.googleapis.com https://p.typekit.net 'unsafe-inline';
+    font-src 'self' https://fonts.gstatic.com https://use.typekit.net https://cdnjs.cloudflare.com data:;
+    script-src 'self' https://code.jquery.com 'nonce-random1234';
+    img-src 'self' data: https:;
+    connect-src 'self' https:;
+    object-src 'none';
+    base-uri 'self';
+    ">
+
+  <script nonce="random1234">
+    console.log("This script is allowed");
+  </script>
+
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
   <!-- Preconnect -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,6 +40,7 @@
 </head>
 
 <!--作品保護-->
+
 <body data-page="contact" oncontextmenu="return false;" class="cotact">
   <div id="header-container"></div>
 
@@ -84,12 +91,12 @@
         <p>
           このページでは、「 コンタクトフォーム、よくある質問、ご依頼前に準備しておいてほしいもの」などを紹介しています。
         </p>
-        <img src="/img/text-c.png" alt="Precision Design,about,M.Oyama" class="text-a">
+        <img src="./assets/images/bg-c.png" alt="Precision Design,about,M.Oyama" class="text-a">
         <div class="sec-a">
-          <a href="#" onclick="showSection('section--second')" id="link-section--second">Form.</a>
-          <a href="#" onclick="showSection('section--third')" id="link-section--third">FAQ.</a>
-          <a href="#" onclick="showSection('section--fourth')" id="link-section--fourth">Reserve.</a>
-          <a href="index.html">Top</a>
+          <a href="#" data-section="section--second">Form.</a>
+          <a href="#" data-section="section--third">FAQ.</a>
+          <a href="#" data-section="section--fourth">Reserve.</a>
+          <a href="index.html">Home.</a>
         </div>
 
         <div class="bt-text">PD_Contact Us
@@ -98,10 +105,16 @@
         </div>
 
         <div class="bottom-btn">
-          <button class="back"><a href="#" onclick="showSection('section--fourth')"><span
-                class="arrow"><span></span></span></a></button>
-          <button class="next"><a href="#" onclick="showSection('section--second')"><span
-                class="arrow"><span></span></span></a></button>
+          <button class="back">
+            <a href="#" data-section="section--fourth">
+              <span class="arrow"><span></span></span>
+            </a>
+          </button>
+          <button class="next">
+            <a href="#" data-section="section--second">
+              <span class="arrow"><span></span></span>
+            </a>
+          </button>
         </div>
         <div class="left-text">PD_Contact Us</div>
         <div class="right-text">01</div>
@@ -110,7 +123,7 @@
 
       <div class="section next-section" id="section--second">
         <h2>Form</h2>
-        <img src="/img/text-c.png" alt="Precision Design,about,M.Oyama">
+        <img src="./assets/images/bg-c.png" alt="Precision Design,about,M.Oyama">
         <p>
           Contact Form / お問合せ・お申込み
           <br>
@@ -162,18 +175,24 @@
         </div>
 
         <div class="sec-a">
-          <a href="#" onclick="showSection('section--third')">FAQ.</a>
-          <a href="#" onclick="showSection('section--fourth')">Reserve.</a>
-          <a href="#" onclick="showSection('section--first')">Contact Top.</a>
+          <a href="#" data-section="section--third">FAQ.</a>
+          <a href="#" data-section="section--fourth">Reserve.</a>
+          <a href="#" data-section="section--first">Contact Top.</a>
         </div>
 
         <div class="bt-text"></div>
 
         <div class="bottom-btn">
-          <button class="back"><a href="#" onclick="showSection('section--first')"><span
-                class="arrow"><span></span></span></a></button>
-          <button class="next"><a href="#" onclick="showSection('section--third')"><span
-                class="arrow"><span></span></span></a></button>
+          <button class="back">
+            <a href="#" data-section="section--first">
+              <span class="arrow"><span></span></span>
+            </a>
+          </button>
+          <button class="next">
+            <a href="#" data-section="section--third">
+              <span class="arrow"><span></span></span>
+            </a>
+          </button>
         </div>
         <div class="left-text">PD_Contact - Form</div>
         <div class="right-text">02</div>
@@ -182,7 +201,7 @@
 
       <div class="section next-section" id="section--third">
         <h2>FAQ</h2>
-        <img src="/img/text-c.png" alt="Precision Design,about,M.Oyama">
+        <img src="./assets/images/bg-c.png" alt="Precision Design,about,M.Oyama">
         <p>
           よくある質問を掲載していますので、お問合せ前に一度ご覧ください。
           FAQ Viewに、よくいただく質問をまとめてます。
@@ -343,18 +362,24 @@
 
 
         <div class="sec-a">
-          <a href="#" onclick="showSection('section--fourth')">Reserve.</a>
-          <a href="#" onclick="showSection('section--first')">Contact Top.</a>
-          <a href="#" onclick="showSection('section--second')">Form.</a>
+          <a href="#" data-section="section--fourth">Reserve.</a>
+          <a href="#" data-section="section--first">Contact Top.</a>
+          <a href="#" data-section="section--second">Form.</a>
         </div>
 
         <div class="bt-text"></div>
 
         <div class="bottom-btn">
-          <button class="back"><a href="#" onclick="showSection('section--second')"><span
-                class="arrow"><span></span></span></a></button>
-          <button class="next"><a href="#" onclick="showSection('section--fourth')"><span
-                class="arrow"><span></span></span></a></button>
+          <button class="back">
+            <a href="#" data-section="section--second">
+              <span class="arrow"><span></span></span>
+            </a>
+          </button>
+          <button class="next">
+            <a href="#" data-section="section--fourth">
+              <span class="arrow"><span></span></span>
+            </a>
+          </button>
         </div>
         <div class="left-text">PD_Contact - FAQ</div>
         <div class="right-text">03</div>
@@ -605,7 +630,7 @@
 
       <div class="section next-section" id="section--fourth">
         <h2>Reserve</h2>
-        <img src="/img/text-c.png" alt="Precision Design,about,M.Oyama">
+        <img src="./assets/images/bg-c.png" alt="Precision Design,about,M.Oyama">
         <p>
           準備 / 用意
           <br>
@@ -613,18 +638,24 @@
         </p>
         <a href="#" class="button" data-modal="modal--second">Reserve View</a>
         <div class="sec-a">
-          <a href="#" onclick="showSection('section--first')">Contact Top.</a>
-          <a href="#" onclick="showSection('section--second')">Form.</a>
-          <a href="#" onclick="showSection('section--third')">FAQ.</a>
+          <a href="#" data-section="section--first">Contact Top.</a>
+          <a href="#" data-section="section--second">Form.</a>
+          <a href="#" data-section="section--third">FAQ.</a>
         </div>
 
         <div class="bt-text"></div>
 
         <div class="bottom-btn">
-          <button class="back"><a href="#" onclick="showSection('section--third')"><span
-                class="arrow"><span></span></span></a></button>
-          <button class="next"><a href="#" onclick="showSection('section--first')"><span
-                class="arrow"><span></span></span></a></button>
+          <button class="back">
+            <a href="#" data-section="section--third">
+              <span class="arrow"><span></span></span>
+            </a>
+          </button>
+          <button class="next">
+            <a href="#" data-section="section--first">
+              <span class="arrow"><span></span></span>
+            </a>
+          </button>
         </div>
         <div class="left-text">PD_Contact - Reserve</div>
         <div class="right-text">04</div>
@@ -1055,7 +1086,6 @@
 
   <p class="pc" style="color: var(--bg); position: absolute; right: 23vmin; bottom: 1rem;">©Precision Design</p>
 
-  <script src="dist/index.js"></script>
 </body>
 
 </html>
