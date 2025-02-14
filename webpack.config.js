@@ -10,10 +10,10 @@ module.exports = {
       main: "./src/index.js",
    },
    output: {
-      path: path.resolve(__dirname, "docs"), // `dist` → `docs` に変更
+      path: path.resolve(__dirname, "docs"), // `dist` → `docs`
       filename: "js/main.js",
       clean: true,
-      publicPath: "./" // GitHub Pages 用に修正
+      publicPath: "./" // GitHub Pages 用
    },
    resolve: {
       alias: {
@@ -52,7 +52,7 @@ module.exports = {
             test: /\.(png|jpe?g|gif|svg|ico)$/i,
             type: "asset/resource",
             generator: {
-               filename: "../assets/images/[name][ext]"
+               filename: "assets/images/[name][ext]" // `docs/` を含めず、相対パスを調整
             }
          }
       ]
@@ -89,11 +89,11 @@ module.exports = {
          patterns: [
             {
                from: path.resolve(__dirname, "node_modules/@fortawesome/fontawesome-free/webfonts"),
-               to: path.resolve(__dirname, "docs/assets/fonts"), // コピー先を変更
+               to: path.resolve(__dirname, "docs/assets/fonts"),
             },
             {
                from: path.resolve(__dirname, "src/assets/images"),
-               to: path.resolve(__dirname, "docs/assets/images"), // コピー先を変更
+               to: path.resolve(__dirname, "docs/assets/images"),
             },
          ]
       }),
@@ -103,7 +103,7 @@ module.exports = {
             options: {
                plugins: [
                   ["mozjpeg", { quality: 75 }],
-                  ["pngquant", { quality: [0.6, 0.8] }], // PNG の圧縮調整
+                  ["pngquant", { quality: [0.6, 0.8] }],
                   ["gifsicle", { interlaced: true }],
                   ["svgo", {}],
                ],
@@ -112,7 +112,7 @@ module.exports = {
       }),
    ],
    devServer: {
-      static: path.resolve(__dirname, "docs"), // `dist` → `docs`
+      static: path.resolve(__dirname, "docs"),
       hot: true,
       historyApiFallback: true,
    }
