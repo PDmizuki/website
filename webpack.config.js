@@ -10,10 +10,10 @@ module.exports = {
       main: "./src/index.js",
    },
    output: {
-      path: path.resolve(__dirname, "dist"),
+      path: path.resolve(__dirname, "docs"), // `dist` → `docs` に変更
       filename: "js/main.js",
       clean: true,
-      publicPath: "/"  // ← ここを修正
+      publicPath: "./" // GitHub Pages 用に修正
    },
    resolve: {
       alias: {
@@ -80,7 +80,7 @@ module.exports = {
       }),
       new HtmlWebpackPlugin({
          template: "./src/blog/categories.html",
-         filename: "blog/categories.html",  // blog フォルダ内に配置
+         filename: "blog/categories.html",
       }),
       new MiniCssExtractPlugin({
          filename: "styles/main.css"
@@ -89,11 +89,11 @@ module.exports = {
          patterns: [
             {
                from: path.resolve(__dirname, "node_modules/@fortawesome/fontawesome-free/webfonts"),
-               to: path.resolve(__dirname, "dist/assets/fonts"),
+               to: path.resolve(__dirname, "docs/assets/fonts"), // コピー先を変更
             },
             {
                from: path.resolve(__dirname, "src/assets/images"),
-               to: path.resolve(__dirname, "dist/assets/images"),
+               to: path.resolve(__dirname, "docs/assets/images"), // コピー先を変更
             },
          ]
       }),
@@ -112,8 +112,8 @@ module.exports = {
       }),
    ],
    devServer: {
-      static: path.resolve(__dirname, "dist"),
+      static: path.resolve(__dirname, "docs"), // `dist` → `docs`
       hot: true,
-      historyApiFallback: true, // SPA の場合追加
+      historyApiFallback: true,
    }
 };
