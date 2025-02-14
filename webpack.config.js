@@ -61,6 +61,12 @@ module.exports = {
       new HtmlWebpackPlugin({
          template: "./src/index.html",
          filename: "index.html",
+         meta: {
+            "Content-Security-Policy": {
+               "http-equiv": "Content-Security-Policy",
+               content: "default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'"
+            }
+         }
       }),
       new HtmlWebpackPlugin({
          template: "./src/about.html",
@@ -81,6 +87,15 @@ module.exports = {
       new HtmlWebpackPlugin({
          template: "./src/blog/categories.html",
          filename: "blog/categories.html",
+      }),
+      // 🔹 header.html & footer.html を docs/ に出力
+      new HtmlWebpackPlugin({
+         template: "./src/header.html",
+         filename: "header.html",
+      }),
+      new HtmlWebpackPlugin({
+         template: "./src/footer.html",
+         filename: "footer.html",
       }),
       new MiniCssExtractPlugin({
          filename: "styles/main.css"
