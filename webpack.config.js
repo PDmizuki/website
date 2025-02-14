@@ -13,7 +13,7 @@ module.exports = {
       path: path.resolve(__dirname, "dist"),
       filename: "js/main.js",
       clean: true,
-      publicPath: "./"
+      publicPath: "/"  // ← ここを修正
    },
    resolve: {
       alias: {
@@ -30,9 +30,7 @@ module.exports = {
                MiniCssExtractPlugin.loader,
                {
                   loader: "css-loader",
-                  options: {
-                     url: true  // CSS 内の画像 URL を正しく解決
-                  }
+                  options: { url: true }
                }
             ]
          },
@@ -54,7 +52,7 @@ module.exports = {
             test: /\.(png|jpe?g|gif|svg|ico)$/i,
             type: "asset/resource",
             generator: {
-               filename: "assets/images/[name][ext]" // ハッシュなしのファイル名
+               filename: "assets/images/[name][ext]"
             }
          }
       ]
@@ -82,15 +80,7 @@ module.exports = {
       }),
       new HtmlWebpackPlugin({
          template: "./src/blog/categories.html",
-         filename: "categories.html",
-      }),
-      new HtmlWebpackPlugin({
-         template: "./src/header.html",
-         filename: "header.html",
-      }),
-      new HtmlWebpackPlugin({
-         template: "./src/footer.html",
-         filename: "footer.html",
+         filename: "blog/categories.html",  // blog フォルダ内に配置
       }),
       new MiniCssExtractPlugin({
          filename: "styles/main.css"
@@ -102,7 +92,7 @@ module.exports = {
                to: path.resolve(__dirname, "dist/assets/fonts"),
             },
             {
-               from: path.resolve(__dirname, "src/assets/images"), // 画像のみコピー
+               from: path.resolve(__dirname, "src/assets/images"),
                to: path.resolve(__dirname, "dist/assets/images"),
             },
          ]
@@ -112,10 +102,10 @@ module.exports = {
             implementation: ImageMinimizerPlugin.imageminMinify,
             options: {
                plugins: [
-                  ["mozjpeg", { quality: 75 }], // JPEG 圧縮
-                  ["pngquant", { quality: [0.65, 0.8] }], // PNG 圧縮
-                  ["gifsicle", { interlaced: true }], // GIF 最適化
-                  ["svgo", {}], // SVG 最適化
+                  ["mozjpeg", { quality: 75 }],
+                  ["pngquant", { quality: [0.6, 0.8] }], // PNG の圧縮調整
+                  ["gifsicle", { interlaced: true }],
+                  ["svgo", {}],
                ],
             },
          },
@@ -123,6 +113,7 @@ module.exports = {
    ],
    devServer: {
       static: path.resolve(__dirname, "dist"),
-      hot: true
+      hot: true,
+      historyApiFallback: true, // SPA の場合追加
    }
 };
