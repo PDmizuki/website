@@ -251,7 +251,7 @@ h2,
 .bottom-btn,
 .card-content h3,
 .card-content h3::before {
-   background: url(./assets/images/text-gold.png) no-repeat center center/cover;
+   background: url(./images/text-gold.png) no-repeat center center/cover;
    background-clip: text;
    -webkit-background-clip: text;
    color: transparent;
@@ -262,8 +262,8 @@ h2,
 /* gold border */
 .right-text::before,
 .card-content h3 {
-   background: url(./assets/images/text-gold.png) 100;
-   border-image: url(./assets/images/text-gold.png) 100;
+   background: url(./images/text-gold.png) 100;
+   border-image: url(./images/text-gold.png) 100;
 }
 
 
@@ -1047,9 +1047,9 @@ nav {
    width: 140vmin;
    height: 78.75%;
    max-height: 800px;
-   background: url(./assets/images/pc-main-bg.png) no-repeat bottom center/contain;
+   background: url(./images/pc-main-bg.png) no-repeat bottom center/contain;
    background: linear-gradient(to top, rgba(0, 0, 0, 0.05) 0%, rgba(46, 46, 46, 0.1) 100%),
-   url(./assets/images/pc-main-bg.png);
+   url(./images/pc-main-bg.png);
    opacity: 0;
    transition: transform 0.4s ease, opacity 1s ease;
    box-shadow: 0 4px 10px 2px rgba(0, 0, 0, 0.5);
@@ -1187,7 +1187,7 @@ button:nth-last-of-type(1) {
 .bt-text::after,
 .back a,
 .next a {
-   border-image: url(./assets/images/text-gold.png) 100;
+   border-image: url(./images/text-gold.png) 100;
 }
 
 .back .arrow span,
@@ -1197,7 +1197,7 @@ button:nth-last-of-type(1) {
    height: 1px;
    position: absolute;
    top: 47.5%;
-   background: url(./assets/images/text-bronze.png) no-repeat center center/cover;
+   background: url(./images/text-bronze.png) no-repeat center center/cover;
 }
 
 .back .arrow span {
@@ -1224,7 +1224,7 @@ button:nth-last-of-type(1) {
    width: 20px;
    height: 2px;
    transform-origin: calc(100% - 1px) 50%;
-   background: url(./assets/images/text-gold.png) no-repeat center center/cover;
+   background: url(./images/text-gold.png) no-repeat center center/cover;
 }
 
 .back .arrow::before,
@@ -1274,7 +1274,7 @@ button:nth-last-of-type(1) {
    top: 35%;
    border: 1px solid;
    mix-blend-mode: multiply;
-   border-image: url(./assets/images/text-gold.png) 100;
+   border-image: url(./images/text-gold.png) 100;
 }
 
 .left-text::before {
@@ -2151,7 +2151,7 @@ button:nth-last-of-type(1) {
         padding-left: 3%;
         border-top: 1px solid var(--border);
         z-index: 108;
-        background: url(./assets/images/mobile-main-bg.png) no-repeat top center/cover;
+        background: url(./images/mobile-main-bg.png) no-repeat top center/cover;
     }
 
     footer::before {
@@ -2374,7 +2374,7 @@ button:nth-last-of-type(1) {
    background-color: rgba(200, 200,200, 0.15);
    background:
    linear-gradient(to top, rgba(0, 0, 0, 0.15) 0%, rgba(46, 46, 46, 0.25) 100%),
-   url(./assets/images/pc-main-bg.png);
+   url(./images/pc-main-bg.png);
    background-size: cover;
    transform: translate(-50%, -50%) scale(0.8);
    box-shadow: 0 3px 13px 0px rgba(0, 0, 0, 0.95);
@@ -3097,7 +3097,7 @@ svg {
    padding: 0.5rem;
    background:
    linear-gradient(to top, rgba(0, 0, 0, 0.65) 0%, rgba(20, 20, 20, 0.4) 100%),
-   url(./assets/images/pc-main-bg.png);
+   url(./images/pc-main-bg.png);
    border-radius: 8px;
    background-size: cover;
    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
@@ -3122,7 +3122,7 @@ svg {
    width: 360px;
    height: 235px;
    background:
-      url(./assets/images/mobile-main-bg.png);
+      url(./images/mobile-main-bg.png);
    background-size: cover;
    background-position: center;
    background-repeat: no-repeat;
@@ -3253,7 +3253,7 @@ svg {
       font-weight: 500;
       font-style: normal;
       color: var(--bg);
-      background: url(./assets/images/mobile-main-bg.png) no-repeat bottom center/cover;
+      background: url(./images/mobile-main-bg.png) no-repeat bottom center/cover;
       background-attachment: fixed;
       position: relative;
       width: 100%;
@@ -3267,7 +3267,7 @@ svg {
    .mobile::after,
    .guide-left,
    .guide-left::after {
-      background: url(./assets/images/mobile-main-second.png) no-repeat bottom center/cover;
+      background: url(./images/mobile-main-second.png) no-repeat bottom center/cover;
       background-attachment: fixed;
       position: fixed;
       content: "";
@@ -3670,17 +3670,17 @@ svg {
 
    .se-01:hover::after,
    .se-01:focus::after {
-      background-image: url(./assets/images/mobile-main-bg.png);
+      background-image: url(./images/mobile-main-bg.png);
    }
 
    .se-02:hover::after,
    .se-02:focus::after {
-      background-image: url(./assets/images/bg-a.png);
+      background-image: url(./images/bg-a.png);
    }
 
    .se-03:hover::after,
    .se-03:focus::after {
-      background-image: url(./assets/images/text-gold.png);
+      background-image: url(./images/text-gold.png);
    }
 
    .top .se {
@@ -4023,7 +4023,7 @@ svg {
       border: 1px solid var(--border);
       display: flex;
       overflow-y: scroll;
-      background-image: url(./assets/images/mobile-main-bg.png);
+      background-image: url(./images/mobile-main-bg.png);
    }
 
    .option h3 {
