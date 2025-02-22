@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自己分析シート</title>
+    <script>
+        let answers = {};
+
+        function saveAnswer(question, answer) {
+            answers[question] = answer;
+            nextStep(answer);
+        }
+
+        function nextStep(answer) {
+            let next = {
+                "はい": 2, "いいえ": 99,
+                "人間関係": 10, "子育て": 20, "教育": 30, "仕事": 40, "その他": 50,
+                "家族": 11, "親族": 11, "親戚": 11, "職場の上司": 11, "学校の先生": 11, "その他": 11,
+                "0～1才": 11, "2～3才": 11, "4～5才": 11, "5～6才": 11, "それ以上": 11,
+                "経営": 41, "人材": 41, "売り上げ": 41, "認知": 41, "その他": 41,
+                "直ぐにでも": 12, "2週間以内": 12, "1カ月以内": 12, "半年以内": 12, "それ以外": 12,
+                "ある": 2, "ない": 99
+            }[answer] || 12;
+
+            showQuestion(next);
+        }
+
+        function showQuestion(step) {
+            document.querySelectorAll('.question').forEach(q => q.style.display = 'none');
+            document.getElementById('q' + step).style.display = 'block';
+        }
+
+        function submitForm() {
+            fetch('https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec', {
+                method: 'POST',
+                body: JSON.stringify(answers),
+                headers: {'Content-Type': 'application/json'}
+            }).then(response => response.text()).then(data => {
+                alert("データが保存されました。");
+                showQuestion(99);
+            });
+        }
+    </script>
+</head>
+<body>
+    <div id="q1" class="question">
+        <p>お名前もしくはニックネーム</p>
+        <input type="text" id="nameInput">
+        <button onclick="saveAnswer('名前', document.getElementById('nameInput').value)">次へ</button>
+    </div>
+    <div id="q2" class="question" style="display:none;">
+        <p>今、困っていることや悩み事はありますか？</p>
+        <button onclick="saveAnswer('悩み', 'はい')">はい</button>
+        <button onclick="saveAnswer('悩み', 'いいえ')">いいえ</button>
+    </div>
+    <div id="q10" class="question" style="display:none;">
+        <p>どのようなことに困っていますか？</p>
+        <button onclick="saveAnswer('悩み内容', '人間関係')">人間関係</button>
+        <button onclick="   saveAnswer('悩み内容', '子育て')">子育て</button>
+        <button onclick="saveAnswer('悩み内容', '教育')">教育</button>
+        <button onclick="saveAnswer('悩み内容', '仕事')">仕事</button>
+        <input type="text" id="otherInput">
+        <button onclick="saveAnswer('悩み内容', document.getElementById('otherInput').value)">その他</button>
+    </div>
+    <div id="q99" class="question" style="display:none;">
+        <p>診断が完了しました！</p>
+        <button onclick="submitForm()">データを保存</button>
+    </div>
+</body>
+</html>

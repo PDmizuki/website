@@ -3,12 +3,24 @@ let isAnimating = false;
 document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll('a[data-section]').forEach(link => {
         link.addEventListener("click", (event) => {
-            event.preventDefault(); // デフォルトのリンク動作を無効化
-            const sectionId = event.target.getAttribute("data-section");
-            showSection(sectionId);
+            // `_blank` で開くリンクは制御しない
+            if (event.currentTarget.target === "_blank") {
+                return;
+            }
+
+            event.preventDefault(); // デフォルト動作を防ぐ
+            console.log("Clicked:", event.currentTarget); // デバッグ用
+            const sectionId = event.currentTarget.getAttribute("data-section");
+            if (sectionId) {
+                console.log("Target Section ID:", sectionId); // デバッグ用
+                showSection(sectionId);
+            } else {
+                window.location.href = event.currentTarget.href; // 通常のリンクはそのまま開く
+            }
         });
     });
 });
+
 
 function showSection(sectionId) {
     if (isAnimating) return; // アニメーション中はクリックを無効化

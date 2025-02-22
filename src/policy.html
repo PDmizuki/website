@@ -16,23 +16,21 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta name="referrer" content="strict-origin-when-cross-origin">
 
-  <!-- Content-Security-Policy -->
-  <meta http-equiv="Content-Security-Policy" content="
+<!-- Content-Security-Policy -->
+<meta http-equiv="Content-Security-Policy" content="
     default-src 'self';
-    style-src 'self' https://use.typekit.net https://cdnjs.cloudflare.com https://fonts.googleapis.com https://p.typekit.net 'unsafe-inline';
-    font-src 'self' https://fonts.gstatic.com https://use.typekit.net https://cdnjs.cloudflare.com data:;
-    script-src 'self' https://code.jquery.com 'nonce-random1234';
-    img-src 'self' data: https:;
-    connect-src 'self' https:;
+    script-src 'self' https://code.jquery.com 'nonce-random1234' 'unsafe-inline';
+    style-src 'self' https://cdnjs.cloudflare.com https://fonts.googleapis.com 'unsafe-inline';
+    font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com data:;
+    img-src 'self' https://pdmizuki.github.io/website/ data:;
+    connect-src 'self' https://pdmizuki.github.io;
+    frame-ancestors 'self';  /* 'none' から 'self' に変更 */
     object-src 'none';
     base-uri 'self';
-    ">
+    form-action 'self' https://pdmizuki.github.io;
+">
 
-  <script nonce="random1234">
-    console.log("This script is allowed");
-  </script>
-
-  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script nonce="random1234" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
   <!-- Preconnect -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -92,7 +90,7 @@
           このページでは、「サイトを利用する際の注意事項、個人情報の取り扱いについて」を紹介しています。
         </p>
         <img src="./assets/images/bg-p.png" alt="Precision Design,about,M.Oyama" class="text-a">
-        <a href="#" class="button" data-modal="modal--first">Policy View</a>
+        <a href="#" class="button-a" data-modal="modal--first">Policy View</a>
 
         <div class="sec-a">
           <a href="index.html">Home.</a>
@@ -423,7 +421,7 @@
       <section class="slide section--first" id="tab--first">
         <div class="top-s">
 
-          <a href="#" class="button" data-modal="modal--first">Policy View</a>
+          <a href="#" class="button-a" data-modal="modal--first">Policy View</a>
           <p class="text fade_bottom">
             PrecisionDesign（以下、「当方」という。）は，本ウェブサイト上で提供するサービス（以下、「本サービス」という。）
             における、ユーザーの個人情報の取扱いについて、以下のとおりプライバシーポリシー（以下、「本ポリシー」という。）を定めます。

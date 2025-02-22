@@ -16,23 +16,21 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta name="referrer" content="strict-origin-when-cross-origin">
 
-    <!-- Content-Security-Policy -->
-    <meta http-equiv="Content-Security-Policy" content="
+<!-- Content-Security-Policy -->
+<meta http-equiv="Content-Security-Policy" content="
     default-src 'self';
-    style-src 'self' https://use.typekit.net https://cdnjs.cloudflare.com https://fonts.googleapis.com https://p.typekit.net 'unsafe-inline';
-    font-src 'self' https://fonts.gstatic.com https://use.typekit.net https://cdnjs.cloudflare.com data:;
-    script-src 'self' https://code.jquery.com 'nonce-random1234';
-    img-src 'self' data: https:;
-    connect-src 'self' https:;
+    script-src 'self' https://code.jquery.com 'nonce-random1234' 'unsafe-inline';
+    style-src 'self' https://cdnjs.cloudflare.com https://fonts.googleapis.com 'unsafe-inline';
+    font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com data:;
+    img-src 'self' https://pdmizuki.github.io/website/ data:;
+    connect-src 'self' https://pdmizuki.github.io;
+    frame-ancestors 'self';  /* 'none' から 'self' に変更 */
     object-src 'none';
     base-uri 'self';
-    ">
+    form-action 'self' https://pdmizuki.github.io;
+">
 
-    <script nonce="random1234">
-        console.log("This script is allowed");
-    </script>
-
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script nonce="random1234" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
     <!-- Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -104,16 +102,12 @@
                 </div>
 
                 <div class="bottom-btn">
-                    <button class="back">
-                        <a href="#" data-section="section--fifth">
+                        <a href="#" data-section="section--fifth" class="back">
                             <span class="arrow"><span></span></span>
                         </a>
-                    </button>
-                    <button class="next">
-                        <a href="#" data-section="section--second">
+                        <a href="#" data-section="section--second" class="next">
                             <span class="arrow"><span></span></span>
                         </a>
-                    </button>
                 </div>
                 <div class="left-text">PD_Service Us</div>
                 <div class="right-text">01</div>
@@ -127,7 +121,7 @@
                     <br>
                     Mainサービス、Subサービスを記載しています。
                 </p>
-                <a href="#" class="button" data-modal="modal--first">Service View</a>
+                <a href="#" class="button button-a" data-modal="modal--first">Service View</a>
                 <div class="sec-a">
                     <a href="#" data-section="section--third">Option.</a>
                     <a href="#" data-section="section--fourth">Plan.</a>
@@ -138,16 +132,12 @@
                 <div class="bt-text"></div>
 
                 <div class="bottom-btn">
-                    <button class="back">
-                        <a href="#" data-section="section--first">
+                        <a href="#" data-section="section--first" class="back">
                             <span class="arrow"><span></span></span>
                         </a>
-                    </button>
-                    <button class="next">
-                        <a href="#" data-section="section--third">
+                        <a href="#" data-section="section--third" class="next">
                             <span class="arrow"><span></span></span>
                         </a>
-                    </button>
                 </div>
                 <div class="left-text">PD_Service - Contents</div>
                 <div class="right-text">02</div>
@@ -160,7 +150,7 @@
                 <button class="close">&times;</button>
                 <h3>Maine</h3>
                 <p>※各Serviceの料金はPlanに記載しています。</p>
-                <a href="#" class="button" data-modal="modal--third">Paln View</a>
+                <a href="#" class="button button-a" data-modal="modal--third">Paln View</a>
 
                 <!--Card 01 -->
                 <div class="cd-layout">
@@ -496,7 +486,7 @@
                     Optionサービスを記載しています。
                     単体・セットでお申込みできますので、お気軽にお申し付けください。
                 </p>
-                <a href="#" class="button" data-modal="modal--second">Option View</a>
+                <a href="#" class="button button-a" data-modal="modal--second">Option View</a>
                 <div class="sec-a">
                     <a href="#" data-section="section--fourth">Plan.</a>
                     <a href="#" data-section="section--fifth">Flow.</a>
@@ -507,16 +497,12 @@
                 <div class="bt-text"></div>
 
                 <div class="bottom-btn">
-                    <button class="back">
-                        <a href="#" data-section="section--second">
+                        <a href="#" data-section="section--second" class="back">
                             <span class="arrow"><span></span></span>
                         </a>
-                    </button>
-                    <button class="next">
-                        <a href="#" data-section="section--fourth">
+                        <a href="#" data-section="section--fourth" class="next">
                             <span class="arrow"><span></span></span>
                         </a>
-                    </button>
                 </div>
                 <div class="left-text">PD_Service - Option</div>
                 <div class="right-text">03</div>
@@ -526,7 +512,7 @@
                 <button class="close">&times;</button>
                 <h3>Option</h3>
                 <p>※単体・セットプランの料金はPlanに掲載しています。</p>
-                <a href="#" class="button" data-modal="modal--third">Paln View</a>
+                <a href="#" class="button button-a" data-modal="modal--third">Paln View</a>
 
                 <!--Card 01 -->
                 <div class="cd-layout">
@@ -783,7 +769,7 @@
                     <br>
                     また、サービスの内容はContentsページからご確認いただけます。
                 </p>
-                <a href="#" class="button" data-modal="modal--third">Paln View</a>
+                <a href="#" class="button button-a" data-modal="modal--third">Paln View</a>
                 <div class="sec-a">
                     <a href="#" data-section="section--fifth">Flow.</a>
                     <a href="#" data-section="section--first">Service Top.</a>
@@ -794,16 +780,12 @@
                 <div class="bt-text"></div>
 
                 <div class="bottom-btn">
-                    <button class="back">
-                        <a href="#" data-section="section--third">
+                        <a href="#" data-section="section--third" class="back">
                             <span class="arrow"><span></span></span>
                         </a>
-                    </button>
-                    <button class="next">
-                        <a href="#" data-section="section--fifth">
+                        <a href="#" data-section="section--fifth" class="next">
                             <span class="arrow"><span></span></span>
                         </a>
-                    </button>
                 </div>
                 <div class="left-text">PD_Service - Plan</div>
                 <div class="right-text">04</div>
@@ -1313,16 +1295,12 @@
                 <div class="bt-text"></div>
 
                 <div class="bottom-btn">
-                    <button class="back">
-                        <a href="#" data-section="section--fourth">
+                        <a href="#" data-section="section--fourth" class="back">
                             <span class="arrow"><span></span></span>
                         </a>
-                    </button>
-                    <button class="next">
-                        <a href="#" data-section="section--first">
+                        <a href="#" data-section="section--first" class="next">
                             <span class="arrow"><span></span></span>
                         </a>
-                    </button>
                 </div>
                 <div class="left-text">PD_Service - Flow</div>
                 <div class="right-text">05</div>

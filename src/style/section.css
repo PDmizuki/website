@@ -125,12 +125,12 @@ p a {
    bottom: 0.35rem;
 }
 
-button:nth-last-of-type(1) {
+.bottom-btn a:nth-last-of-type(1) {
    margin-left: 0.5rem;
 }
 
-.back a,
-.next a {
+.back,
+.next {
    width: 15vmin;
    height: 5vmin;
    display: inline-flex;
@@ -145,8 +145,8 @@ button:nth-last-of-type(1) {
 }
 
 .bt-text::after,
-.back a,
-.next a {
+.back,
+.next {
    border-image: url("../assets/images/text-gold.png") 100;
 }
 

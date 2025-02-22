@@ -4,42 +4,64 @@ jQuery.noConflict();
     $(function () {
         var cursor = $("<div id='cursor'></div>");
         var stalker = $("<div id='stalker'></div>");
+
+        // カスタムカーソル用の要素を追加
         $("body").addClass("custom-cursor").append(cursor).append(stalker);
 
-        // すべての a タグにホバーアニメーションを動的に適用
-        $(document).on("mouseenter", ".accordion-wrap , a , .card , .se-tab-w", function () {
+        // カーソルがクリックを阻害しないように設定
+        cursor.css({
+            "opacity": "0",
+            "pointer-events": "none",
+            "position": "fixed",
+            "z-index": "9999"
+        });
+
+        stalker.css({
+            "opacity": "0",
+            "pointer-events": "none",
+            "position": "fixed",
+            "z-index": "9998"
+        });
+
+        // ホバーアニメーション
+        $(document).on("mouseenter", "a, .accordion-wrap, .card, .se-tab-w", function () {
             cursor.addClass('cursor--hover');
             stalker.addClass('stalker--hover');
         });
 
-        $(document).on("mouseleave", ".accordion-wrap , a , .card , .se-tab-w", function () {
+        $(document).on("mouseleave", "a, .accordion-wrap, .card, .se-tab-w", function () {
             cursor.removeClass('cursor--hover');
             stalker.removeClass('stalker--hover');
         });
 
+        // マウス移動時にカーソル位置を更新
         $(document).on("mousemove", function (e) {
             var x = e.clientX;
             var y = e.clientY;
 
-            // カーソルの位置をマウスの位置に追従させる
             cursor.css({
                 "opacity": "1",
                 "top": y + "px",
                 "left": x + "px"
             });
 
-            // ストーカー要素を少し遅れて追従させる
             setTimeout(function () {
                 stalker.css({
                     "opacity": "1",
                     "top": y + "px",
                     "left": x + "px"
                 });
-            }, 150); // 150ms遅延
+            }, 150);
         });
 
-        // 初期状態で透明に設定
-        cursor.css("opacity", "0");
-        stalker.css("opacity", "0");
+        // クリックイベントの調整（不要な e.preventDefault を削除）
+        $(document).on("click", "a", function (e) {
+            var href = $(this).attr("href");
+
+            // href が "#" や "javascript:void(0)" の場合のみ遷移を防ぐ
+            if (!href || href.startsWith("#") || href === "javascript:void(0)") {
+                e.preventDefault();
+            }
+        });
     });
 })(jQuery);

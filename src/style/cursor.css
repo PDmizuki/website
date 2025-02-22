@@ -8,6 +8,9 @@
     pointer-events: none;
     transform: translate(-50%, -50%);
     mix-blend-mode: difference;
+    pointer-events: none; /* クリックを無効化 */
+    z-index: 9999; /* 最前面に配置 */
+    transition: transform 0.1s ease-out;
 }
 
 /* カーソルのスタイル #894646*/

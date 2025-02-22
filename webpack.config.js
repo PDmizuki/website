@@ -13,7 +13,7 @@ module.exports = {
       path: path.resolve(__dirname, "docs"), // `dist` → `docs`
       filename: "js/main.js",
       clean: true,
-      publicPath: "./" // GitHub Pages 用
+      publicPath: "auto" // GitHub Pages 用
    },
    resolve: {
       alias: {
@@ -27,12 +27,14 @@ module.exports = {
          {
             test: /\.css$/i,
             use: [
-               MiniCssExtractPlugin.loader,
+               "style-loader",
                {
                   loader: "css-loader",
-                  options: { url: true }
-               }
-            ]
+                  options: {
+                     esModule: false, // ✅ これを追加
+                  },
+               },
+            ],
          },
          {
             test: /\.js$/i,
@@ -45,7 +47,7 @@ module.exports = {
             test: /\.(woff|woff2|eot|ttf|otf)$/i,
             type: 'asset/resource',
             generator: {
-               filename: 'fonts/[name][ext]',
+               filename: 'assets/fonts/[name][ext]',
             },
          },
          {

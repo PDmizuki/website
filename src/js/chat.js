@@ -1,62 +1,47 @@
-// JavaScriptでテンプレートを読み込む
-function loadChatBotTemplate() {
-  fetch('bot.html')
-    .then(response => response.text())
-    .then(data => {
-      document.body.insertAdjacentHTML('beforeend', data);
-      initializeChatBot();
-    })
-    .catch(error => console.error('Error loading chatbot template:', error));
-}
-
-// グローバルスコープの toggleChatWindow
-function toggleChatWindow() {
-  const chatWindow = document.getElementById('chat-window');
-  if (chatWindow) {
-    chatWindow.style.display = chatWindow.style.display === 'block' ? 'none' : 'block';
-  } else {
-    console.error("Chat window not found!");
-  }
-}
-
-function initializeChatBot() {
-  console.log("ChatBot initialized");
-}
-
-// 質問を送信する関数
-function askQuestion() {
-  const userQuestion = document.getElementById('user-input').value;
-
-  if (!userQuestion) {
-    console.error("質問を入力してください。");
-    return;
-  }
-
-  const request = {
-    queryInput: {
-      text: {
-        text: userQuestion,
-        languageCode: 'ja',
-      },
-    },
-  };
-
-  document.getElementById('user-input').value = '';
-  // ここにAPI呼び出しを追加する予定
-}
-
-function handleResponse(response) {
-  const botReply = response.queryResult.fulfillmentText;
-  addMessage('ChatBot', botReply);
-}
-
-function addMessage(sender, message) {
-  const chatLog = document.getElementById('chat-log');
-  chatLog.innerHTML += `<div><strong>${sender}:</strong> ${message}</div>`;
-}
-
-// DOMが読み込まれた後の処理
 document.addEventListener('DOMContentLoaded', function () {
+  function loadChatBotTemplate() {
+    fetch('bot.html')
+      .then(response => response.text())
+      .then(data => {
+        document.body.insertAdjacentHTML('beforeend', data);
+        initializeChatBot();
+      })
+      .catch(error => console.error('Error loading chatbot template:', error));
+  }
+
+  function toggleChatWindow() {
+    let chatWindow = document.getElementById('chat-window');
+
+    if (!chatWindow) {
+      loadChatBotTemplate();
+      setTimeout(() => {
+        chatWindow = document.getElementById('chat-window');
+        if (chatWindow) {
+          chatWindow.style.display = 'block';
+        }
+      }, 500);
+    } else {
+      chatWindow.style.display = chatWindow.style.display === 'block' ? 'none' : 'block';
+    }
+  }
+
+  function initializeChatBot() {
+    console.log("ChatBot initialized");
+
+    const chatIcon = document.getElementById('chat-icon');
+    const closeButton = document.getElementById('close-button');
+
+    if (chatIcon) {
+      chatIcon.addEventListener('click', toggleChatWindow);
+    }
+
+    if (closeButton) {
+      closeButton.addEventListener('click', toggleChatWindow);
+    }
+  }
+
+  document.getElementById('chat-icon').addEventListener('click', toggleChatWindow);
+
   jQuery.noConflict();
   jQuery(document).ready(function ($) {
     const chatWindow = $('#chat');
@@ -65,7 +50,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const sendButton = $('#send-button');
     const clearButton = $('#clear-button');
 
-    // Send ボタンのクリックイベント
+    updateKeywordOptions();
+
     sendButton.on('click', function () {
       const selectedCategory = categoryRadio.filter(':checked').val();
       if (!selectedCategory) {
@@ -81,19 +67,16 @@ document.addEventListener('DOMContentLoaded', function () {
       appendMessage('bot', botResponse);
     });
 
-    // Clear ボタンのクリックイベント
     clearButton.on('click', function () {
       chatWindow.html('');
     });
 
-    // メッセージ追加
     function appendMessage(sender, message) {
       const messageDiv = $('<p>').addClass(sender).text(message);
       chatWindow.append(messageDiv);
       chatWindow.scrollTop(chatWindow[0].scrollHeight);
     }
 
-    // カテゴリーとキーワードに基づく応答生成
     function generateResponse(category, keyword) {
       if (category === 'about') {
         return `カテゴリー：${category}, キーワード：${keyword}`;
@@ -104,7 +87,6 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }
 
-    // カテゴリー変更時にキーワード選択肢を更新
     categoryRadio.on('change', function () {
       updateKeywordOptions();
     });
@@ -114,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function () {
       keywordRadioContainer.empty();
 
       if (selectedCategory === 'about') {
-        addKeywordOptions(['想い：', '目的', '活動']);
+        addKeywordOptions(['想い', '目的', '活動']);
       } else if (selectedCategory === 'works') {
         addKeywordOptions(['PDでできること', '事業内容', '作業の流れ']);
       } else if (selectedCategory === 'その他') {
@@ -125,9 +107,9 @@ document.addEventListener('DOMContentLoaded', function () {
     function addKeywordOptions(keywords) {
       for (const keyword of keywords) {
         const label = $('<label>').html(`
-              <input type="radio" name="keyword" value="${keyword}">
-              <span>${keyword}</span>
-            `);
+                  <input type="radio" name="keyword" value="${keyword}">
+                  <span>${keyword}</span>
+              `);
         keywordRadioContainer.append(label);
       }
     }

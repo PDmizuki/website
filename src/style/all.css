@@ -374,6 +374,7 @@ a {
    text-decoration: none;
    z-index: 100;
    mix-blend-mode: color-burn;
+   pointer-events: auto !important;
 }
 
 a:hover {
@@ -401,13 +402,15 @@ footer a:hover::after {
    transform: scale(1, 1);
 }
 
-.section .button {
+.section .button-a {
    top: 15vmin;
    left: 10rem;
    padding-bottom: 1rem;
+   pointer-events: auto !important;  /* クリックを有効化 */
+   z-index: 1;
 }
 
-main .button {
+main .button-a {
    position: relative;
    display: flex;
    align-items: center;
@@ -417,10 +420,12 @@ main .button {
    height: 40px;
    margin-left: 0.5vmin;
    transition: 0.3s;
+   pointer-events: auto !important;  /* クリックを有効化 */
+   z-index: 1;
 }
 
-main .button::before,
-main .button::after {
+main .button-a::before,
+main .button-a::after {
    content: "";
    display: block;
    position: absolute;
@@ -428,20 +433,21 @@ main .button::after {
    width: 100%;
    height: 100%;
    transition: 0.3s;
+   z-index: -1;
 }
 
-main .button::before {
+main .button-a::before {
    top: -3px;
    left: -3px;
 }
 
-main .button::after {
+main .button-a::after {
    top: 3px;
    left: 3px;
 }
 
-main .button:hover::before,
-main .button:hover::after {
+main .button-a:hover::before,
+main .button-a:hover::after {
    top: 0;
    left: 0;
    border: 1px solid var(--accent);
