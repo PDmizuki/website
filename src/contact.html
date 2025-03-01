@@ -37,45 +37,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 
-<!--作品保護-->
-
+<!--保護-->
 <body data-page="contact" oncontextmenu="return false;" class="cotact">
   <div id="header-container"></div>
-
-  <!-- ChatBot ウィンドウ -->
-  <div id="chat-window">
-    <div id="close-button" onclick="toggleChatWindow()">CLOSE</div>
-    <div class="chatbot-container">
-      <div id="chat" class="chat-window"></div>
-
-      <p>項目を選択してください</p>
-      <div class="input-container">
-        <div class="radio-options">
-          <label>
-            <input type="radio" name="category" value="about">
-            <span>PDについて</span>
-          </label>
-          <label>
-            <input type="radio" name="category" value="works">
-            <span>PDでできること</span>
-          </label>
-          <label>
-            <input type="radio" name="category" value="その他">
-            <span>その他</span>
-          </label>
-        </div>
-        <div class="radio-options keyword-options">
-          <!-- キーワード選択肢はカテゴリー選択後にJSで動的に生成 -->
-        </div>
-
-        <div class="button-container">
-          <button id="send-button" class="send-button panel">Send</button>
-          <button id="clear-button" class="clear-button panel">Clear</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
 
   <main class="contact">
     <div class="pc">
@@ -159,7 +123,7 @@
               <div class="form-field col align-center">
                 <div>
                   お問合せ、お申込み前にFAQ「よくある質問」をご覧ください。<br>
-                  当サイトをご利用の際は、<a href="/policy.html">SitePolicy</a>
+                  当サイトをご利用の際は、<a href="https://pdmizuki.github.io/website/policy.html">SitePolicy</a>
                   をご確認ください。
                 </div>
                 <button type="submit" class="submit-btn">Send</button>
@@ -196,7 +160,7 @@
           よくある質問を掲載していますので、お問合せ前に一度ご覧ください。
           FAQ Viewに、よくいただく質問をまとめてます。
         </p>
-        <a href="#" class="button-a" data-modal="modal--first">FAQ View</a>
+        <a href="#" class="button button-a" data-modal="modal--first">FAQ View</a>
 
         <!-- アコーディオン -->
         <div class="accordion-wrap">
@@ -622,7 +586,7 @@
           <br>
           Reserveではご契約前に準備しておいてほしいこと、用意していただきたいものを記載しています。
         </p>
-        <a href="#" class="button-a" data-modal="modal--second">Reserve View</a>
+        <a href="#" class="button button-a" data-modal="modal--second">Reserve View</a>
         <div class="sec-a">
           <a href="#" data-section="section--first">Contact Top.</a>
           <a href="#" data-section="section--second">Form.</a>

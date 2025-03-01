@@ -99,6 +99,10 @@ module.exports = {
          template: "./src/footer.html",
          filename: "footer.html",
       }),
+      new HtmlWebpackPlugin({
+         template: "./src/bot.html",
+         filename: "bot.html",
+      }),
       new MiniCssExtractPlugin({
          filename: "styles/main.css"
       }),

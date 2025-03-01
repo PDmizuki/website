@@ -37,45 +37,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 
-<!--作品保護-->
-
+<!--保護-->
 <body data-page="contact" oncontextmenu="return false;" class="policy">
   <div id="header-container"></div>
-
-  <!-- ChatBot ウィンドウ -->
-  <div id="chat-window">
-    <div id="close-button" onclick="toggleChatWindow()">CLOSE</div>
-    <div class="chatbot-container">
-      <div id="chat" class="chat-window"></div>
-
-      <p>項目を選択してください</p>
-      <div class="input-container">
-        <div class="radio-options">
-          <label>
-            <input type="radio" name="category" value="about">
-            <span>PDについて</span>
-          </label>
-          <label>
-            <input type="radio" name="category" value="works">
-            <span>PDでできること</span>
-          </label>
-          <label>
-            <input type="radio" name="category" value="その他">
-            <span>その他</span>
-          </label>
-        </div>
-        <div class="radio-options keyword-options">
-          <!-- キーワード選択肢はカテゴリー選択後にJSで動的に生成 -->
-        </div>
-
-        <div class="button-container">
-          <button id="send-button" class="send-button panel">Send</button>
-          <button id="clear-button" class="clear-button panel">Clear</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
 
   <main class="policy">
     <div class="pc">
@@ -90,7 +54,7 @@
           このページでは、「サイトを利用する際の注意事項、個人情報の取り扱いについて」を紹介しています。
         </p>
         <img src="./assets/images/bg-p.png" alt="Precision Design,about,M.Oyama" class="text-a">
-        <a href="#" class="button-a" data-modal="modal--first">Policy View</a>
+        <a href="#" class="button button-a" data-modal="modal--first">Policy View</a>
 
         <div class="sec-a">
           <a href="index.html">Home.</a>
@@ -107,8 +71,12 @@
         </div>
 
         <div class="bottom-btn">
-          <button class="back"><a href="#"><span class="arrow"><span></span></span></a></button>
-          <button class="next"><a href="#"><span class="arrow"><span></span></span></a></button>
+            <a href="#" class="back">
+              <span class="arrow"><span></span></span>
+            </a>
+            <a href="#" class="next">
+              <span class="arrow"><span></span></span>
+            </a>
         </div>
         <div class="left-text">PD_Site Policey</div>
         <div class="right-text">01</div>
@@ -421,7 +389,7 @@
       <section class="slide section--first" id="tab--first">
         <div class="top-s">
 
-          <a href="#" class="button-a" data-modal="modal--first">Policy View</a>
+          <a href="#" class="button button-a" data-modal="modal--first">Policy View</a>
           <p class="text fade_bottom">
             PrecisionDesign（以下、「当方」という。）は，本ウェブサイト上で提供するサービス（以下、「本サービス」という。）
             における、ユーザーの個人情報の取扱いについて、以下のとおりプライバシーポリシー（以下、「本ポリシー」という。）を定めます。
