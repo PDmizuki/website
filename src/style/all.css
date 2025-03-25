@@ -177,15 +177,15 @@ body::before {
    z-index: 10;
    pointer-events: none;
    /* クリックを無効化 */
-   box-shadow: inset 0px 1px 10px rgba(46, 46, 46, 0.85);
+   box-shadow: inset -3px -3px 10px rgba(46, 46, 46, 0.85);
 }
 
 body::after {
    content: "";
    position: fixed;
    top: 2vh;
-   left: 2vw;
-   width: 96vw;
+   left: 2vh;
+   width: 97.65vw;
    height: 96vh;
    border: 1px solid;
    pointer-events: none;
