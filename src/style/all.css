@@ -159,7 +159,7 @@ body {
    text-align: justify;
    width: 100vw;
    height: 100vh;
-   color: var(--text);
+   color: var(--bg);
    background: var(--bg);
 /*   background: url(/img/pd-bg-img05.png);
    background-position: center;
@@ -175,7 +175,7 @@ body::before {
    border: 10px solid;
    border-left: 15px solid;
    border-right: 15px solid;
-   border-image: url("../assets/images/mobile-main-bg.png") 100;
+   border-image: url("../assets/images/mobile-main-second.png") 100;
    z-index: 10;
    pointer-events: none;
    /* クリックを無効化 */
@@ -221,7 +221,6 @@ h4 {
    font-weight: 400;
    font-style: normal;
    color:  light-dark(var(--bg));
-   mix-blend-mode: color-burn;
 }
 
 h2 {
@@ -234,9 +233,12 @@ h2 {
 }
 
 /* gold text bg */
+.pc_menu a,
+.pc_menu #chat-icon,
 h1,
 h2,
 .fa-power-off:before,
+.audio span,
 .left-text,
 .right-text,
 .bt-text,
@@ -247,14 +249,15 @@ h2,
    background-clip: text;
    -webkit-background-clip: text;
    color: transparent;
-   mix-blend-mode: luminosity;
-   mix-blend-mode: multiply;
+   /*mix-blend-mode: luminosity;*/
 }
 
 /* gold border */
 body::after,
 .right-text::before,
-.card-content h3 {
+.card-content h3,
+main .button-a::before,
+main .button-a::after {
    background: url("../assets/images/text-gold.png") 100;
    border-image: url("../assets/images/text-gold.png") 100;
 }
@@ -400,7 +403,6 @@ a {
    display: inline-block;
    text-decoration: none;
    z-index: 100;
-   mix-blend-mode: color-burn;
    pointer-events: auto !important;
 }
 
@@ -456,7 +458,7 @@ main .button-a::after {
    content: "";
    display: block;
    position: absolute;
-   border: 1px solid var(--text);
+   border: 1px solid;
    width: 100%;
    height: 100%;
    transition: 0.3s;

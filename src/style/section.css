@@ -4,13 +4,15 @@
    left: 50%;
    transform: translate(-50%, -50%) scale(1);
    max-width: 1400px;
-   width: 140vmin;
+   width: 90%;
    height: 78.75%;
-   max-height: 800px;
-   background: url("../assets/images/pc-main-bg.png") no-repeat bottom center/contain;
+   max-height: 90%;
    background: linear-gradient(to top, rgba(0, 0, 0, 0.05) 0%, rgba(46, 46, 46, 0.1) 100%),
    url("../assets/images/pc-main-bg.png");
+   background: url("../assets/images/mobile-main-second.png") no-repeat bottom center/cover;
    opacity: 0;
+   border: 5px solid;
+   border-image: url("../assets/images/text-gold.png") 100;
    transition: transform 0.4s ease, opacity 1s ease;
    box-shadow: 0 4px 10px 2px rgba(0, 0, 0, 0.5);
    z-index: 10;
@@ -93,7 +95,8 @@
    right: 0;
    background-color: var(--bg);
    box-shadow: inset 1px 1px 4px rgba(0, 0, 0, 0.95);
-   mix-blend-mode: color-burn;
+   border-radius: 20px;
+   mix-blend-mode: hard-light;
    transition: all 0.35s ease;
 }
 
@@ -121,8 +124,8 @@ p a {
 
 .bottom-btn {
    position: absolute;
-   left: 1.9vmin;
-   bottom: 0.35rem;
+   left: 0.25%;
+   bottom: 0;
 }
 
 .bottom-btn a:nth-last-of-type(1) {
@@ -140,8 +143,14 @@ p a {
    border: 1px solid;
 }
 
+.back a,
+.next a {
+   border-radius: 20px;
+}
+
 .bottom-btn a:hover {
-   background: var(--text);
+   background: var(--bg);
+   mix-blend-mode: difference;
 }
 
 .bt-text::after,
@@ -157,7 +166,7 @@ p a {
    height: 1px;
    position: absolute;
    top: 47.5%;
-   background: url("../assets/images/text-bronze.png") no-repeat center center/cover;
+   background: url("../assets/images/text-gold.png") no-repeat center center/cover;
 }
 
 .back .arrow span {
@@ -233,7 +242,6 @@ p a {
    position: absolute;
    top: 35%;
    border: 1px solid;
-   mix-blend-mode: multiply;
    border-image: url("../assets/images/text-gold.png") 100;
 }
 
