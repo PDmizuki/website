@@ -280,44 +280,42 @@ nav {
         -webkit-text-fill-color: cadetblue;
     }
 
+    .pc_menu,
+    .pc_menu ul,
+    .logo,
+    .audio  {
+        border-image: url("../assets/images/text-bronze.png") 100;
+    }
     .pc_menu {
         position: fixed;
         display: flex;
-        flex-direction: column;
         align-items: center;
         justify-content: space-around;
         text-align: center;
-        width: clamp(3%, 10%, 4%);
-        height: 100%;
-        top: 0;
+        width: 100%;
+        height: fit-content;
+        top: 1%;
         left: 0;
-        border: 1px solid var(--text);
-        border-left: 10px solid var(--text);
-        /*background-image:
-            linear-gradient(100deg, transparent 1%, rgba(217, 217, 217, 0.15) 60%),
-            linear-gradient(120deg, transparent 1%, rgba(46, 46, 46, 0.15) 60%);
-        background-size: 5px 2px, 2px 5px;*/
+        border-bottom: 1px solid;
         z-index: 100;
         animation: fadeIn_bg 3s ease forwards;
         transition: background-color 0.45s ease;
     }
 
     .pc_menu ul {
-        width: 100%;
         padding: 0;
         margin: 0;
         list-style: none;
         display: flex;
-        flex-direction: column;
         align-items: center;
         justify-content: center;
         gap: 3rem;
-        border-bottom: 1px solid var(--text);
+        /*border-bottom: 1px solid;*/
     }
 
-    .pc_menu li {
+    /*.pc_menu li {
         height: 110px;
-    }
+    }*/
 
     .pc_menu a,
     .pc_menu #chat-icon {
@@ -330,10 +328,7 @@ nav {
         padding: 0.5rem 0;
         display: flex;
         justify-content: center;
-        transform: rotate(90deg);
         transition: color 0.3s ease;
-        /*-webkit-text-stroke-width: 0.75px;*/
-        /*-webkit-text-stroke-color: var(--text);*/
     }
 
     .manu_p a {
@@ -344,37 +339,37 @@ nav {
     .pc_menu #chat-icon:hover {
         -webkit-text-stroke-color: cadetblue;
         color: var(--accent);
+        -webkit-text-stroke-width: 0.75px;
+        -webkit-text-stroke-color: var(--text);
     }
 
 
     .logo {
         position: relative;
         top: 0;
-        transform: rotate(-90deg);
-        border-left: 1px solid var(--text);
-        border-right: 1px solid var(--text);
+        border-left: 1px;
+        border-right: 1px;
         z-index: 1;
 
         img {
             width: 5vmin;
         }
+        img:hover {
+            width: 8vmin;
+        }
 
         a {
             width: 55px;
         }
-
-        a:hover {
-            background: none;
-        }
     }
 
-    /*=========== audio*/
+    /*=========== audio
     .audio {
         width: 100%;
         padding: 2rem 0.5rem 1rem;
-        border-top: 1px solid var(--text);
-        border-bottom: 1px solid var(--text);
-    }
+        border-left: 1px solid;
+        border-right: 1px solid;
+    }*/
 
     .toggle-switch {
         position: relative;
