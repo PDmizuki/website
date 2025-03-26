@@ -9,7 +9,7 @@
    max-height: 90%;
    background: linear-gradient(to top, rgba(0, 0, 0, 0.05) 0%, rgba(46, 46, 46, 0.1) 100%),
    url("../assets/images/pc-main-bg.png");
-   background: url("../assets/images/mobile-main-second.png") no-repeat bottom center/cover;
+   background: url("../assets/images/pd-bg-img.jpg") no-repeat bottom center/cover;
    opacity: 0;
    border: 5px solid;
    border-image: url("../assets/images/text-gold.png") 100;

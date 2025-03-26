@@ -926,7 +926,7 @@ git push origin gh-pages
 
 npm run build
 git add docs
-git commit -m "faq,modal,"
+git commit -m "bg img"
 git push origin gh-pages
 
 
