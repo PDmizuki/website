@@ -10,6 +10,7 @@
       body {
          display: flex;
       }
+
       main {
          background: none;
          max-width: 1200px;
@@ -20,13 +21,18 @@
          margin: 0 auto;
          top: 20vmin;
       }
-h1,h2,p {
-   color: var(--text);
-}
-.article a:hover,.categories a:hover {
-   color: var(--accent);
-   text-decoration: underline;
-}
+
+      h1,
+      h2,
+      p {
+         color: var(--text);
+      }
+
+      .article a:hover,
+      .categories a:hover {
+         color: var(--accent);
+         text-decoration: underline;
+      }
 
       h1 {
          padding-top: 15vmin;
@@ -68,12 +74,14 @@ h1,h2,p {
          left: calc(5% - 5%);
          z-index: 1;
       }
+
       .categories h2 {
          font-size: 2rem;
          position: absolute;
          top: -10%;
          left: -10%;
       }
+
       .categories a {
          color: var(--a);
          text-align: left;
@@ -85,8 +93,8 @@ h1,h2,p {
 <body>
    <header>
       <div class="logo"><a href="index.html">
-         <img src="../assets/images/log-tyep.png" alt="">
-      </a></div>
+            <img src="../assets/images/log-tyep.png" alt="">
+         </a></div>
       <nav class="navbar">
          <ul>
             <li><a href="index.html">HOME</a></li>
@@ -113,10 +121,10 @@ h1,h2,p {
    </section>
 
    <main>
-   <!-- カテゴリーに応じたブログ記事 -->
-   <h1>Category: <span id="category-name"></span></h1>
-   <div id="articles-container"></div>
-</main>
+      <!-- カテゴリーに応じたブログ記事 -->
+      <h1>Category: <span id="category-name"></span></h1>
+      <div id="articles-container"></div>
+   </main>
    <footer>
       <p>&copy; PD Blog.</p>
    </footer>
