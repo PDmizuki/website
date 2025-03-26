@@ -107,6 +107,7 @@
 .contact .modal .accordion-header h3 {
    font-size: clamp(1.8rem, 1.467rem + 0.44vw, 2rem);
    margin-top: 0;
+   color: var(--text);
 }
 
 .contact .modal .accordion-wrap ol,

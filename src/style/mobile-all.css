@@ -106,6 +106,7 @@
       /* フォールバック用のテキスト色 */
       /* サポートされない場合の代替設定 */
    background-clip: border-box; /* 追加：他のブラウザ用 */
+   background-clip: text; /* 追加：他のブラウザ用 */
    color: transparent; /* 追加：Webkit未対応時にテキストを透明に */
    }
 
@@ -116,6 +117,7 @@
          -webkit-text-fill-color: darkgray;
          /* サポートされない場合の代替設定 */
    background-clip: border-box; /* 追加：他のブラウザ用 */
+   background-clip: text; /* 追加：他のブラウザ用 */
    color: transparent; /* 追加：Webkit未対応時にテキストを透明に */
       }
    }

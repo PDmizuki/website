@@ -104,7 +104,7 @@ input:-webkit-autofill:focus {
    height: 35pt;
    display: inline-block;
    color: rgba(200, 200, 200, 0.5);
-   background-color: rgba(75, 75, 75, 0.5);
+   background-color: rgba(125, 125, 125, 0.5);
    text-transform: uppercase;
    letter-spacing: 0.2rem;
    line-height: 1.5rem;
@@ -112,7 +112,7 @@ input:-webkit-autofill:focus {
    margin-top: 1.5rem;
    margin-bottom: 1.5rem;
    border: none;
-   border: 1px solid rgba(217, 217, 217, 0.2);
+   box-shadow: inset 0px 0px 5.5px rgba(0, 0, 0, 0.95);
    cursor: pointer;
    transition: all 0.35s ease;
 }
@@ -126,15 +126,14 @@ input:-webkit-autofill:focus {
 .align-center {
    display: flex;
    align-items: center;
-   justify-content: flex-end;
-   padding-right: 1.5rem;
-   gap: 5em;
+   justify-content: space-between;
+   padding: 0 1.6rem;
+   gap: 1.75em;
 }
 
 .align-center div {
    font-size: clamp(1rem, 0.667rem + 0.44vw, 1.2rem);
    font-family: sans-serif;
-   width: 52%;
    line-height: 1;
    z-index: 1;
 }

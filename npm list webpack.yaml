@@ -926,7 +926,7 @@ git push origin gh-pages
 
 npm run build
 git add docs
-git commit -m "form,mo noize"
+git commit -m "faq,modal,"
 git push origin gh-pages
 
 
