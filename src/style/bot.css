@@ -35,11 +35,6 @@
         }
     }
 
-    #chat-icon:focus {
-        opacity: 0.1;
-        transition: all 0.5s ease;
-    }
-
     /* 閉じるボタンのスタイル */
     #close-button {
         font-size: 1.4rem;
@@ -367,8 +362,8 @@
             top: 50%;
             left: -50%;
             width: 100%;
-            padding: 0.15em;
-            transform: rotate(90deg) translate(0, -144%);
+            padding: 0.5vmin;
+            transform: rotate(90deg) translate(0, -4.5vmin);
             border-top: 1px solid;
             border-image: url("../assets/images/text-gold.png") 100;
             background: url("../assets/images/mobile-main-second.png");
@@ -382,7 +377,7 @@
             animation: fadeIn_bg 4s ease forwards;*/
         }
         #chat-icon:hover {
-            transform: rotate(90deg) translate(0, -154%);
+            transform: rotate(90deg) translate(0, -5vmin);
         }
         #chat-icon span {
             background-clip: text;

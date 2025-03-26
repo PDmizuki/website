@@ -81,7 +81,7 @@
    align-items: center;
    position: absolute;
    bottom: 10vmin;
-   right: 0;
+   right: 1%;
    gap: 1rem;
    padding: 3rem 0;
 }
