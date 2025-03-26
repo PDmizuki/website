@@ -57,7 +57,7 @@ import "./js/card.js"; // tab
 
 /////////// all images
 import "./assets/images/pd.ico";
-import "./assets/images/pd.png";
+import "./assets/images/logo-tyep.png";
 import "./assets/images/pc-main-bg.png";
 // bg
 import "./assets/images/text-gold.png";

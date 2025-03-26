@@ -26,13 +26,14 @@
    }
 
    /*===================== body text =====================*/
+   
    .mobile {
       /*font-family: zen-maru-gothic, sans-serif;*/
       font-family: sans-serif;
       font-weight: 500;
       font-style: normal;
       color: var(--bg);
-      background: url("../assets/images/mobile-main-bg.png") no-repeat bottom center/cover;
+      background: url("../assets/images/pd-bg-img.jpg") no-repeat bottom center/cover;
       background-attachment: fixed;
       position: relative;
       width: 100%;

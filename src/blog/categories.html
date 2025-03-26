@@ -5,9 +5,7 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>PD_Blog / Categories</title>
-   <link rel="stylesheet" href="../style/all.css">
-   <link rel="stylesheet" href="../style/blog.css">
-   
+
    <style>
       body {
          display: flex;
@@ -16,12 +14,14 @@
          background: none;
          max-width: 1200px;
          height: 100%;
+         display: flex;
          align-items: center;
          flex-direction: column;
          margin: 0 auto;
+         top: 20vmin;
       }
 h1,h2,p {
-   color: var(--bg);
+   color: var(--text);
 }
 .article a:hover,.categories a:hover {
    color: var(--accent);
@@ -63,8 +63,9 @@ h1,h2,p {
       }
 
       .categories {
-         top: 20vmin;
-         left: calc(15% - 5%);
+         position: relative;
+         top: 25vmin;
+         left: calc(5% - 5%);
          z-index: 1;
       }
       .categories h2 {

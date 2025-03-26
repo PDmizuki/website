@@ -501,7 +501,7 @@
       border: 1px solid var(--border);
       display: flex;
       overflow-y: scroll;
-      background-image: url("../assets/images/mobile-main-bg.png");
+      background-image: url("../assets/images/pd-bg-img.jpg");
    }
 
    .option h3 {
