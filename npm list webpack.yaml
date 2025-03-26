@@ -926,7 +926,7 @@ git push origin gh-pages
 
 npm run build
 git add docs
-git commit -m "bot icon"
+git commit -m "menu,log"
 git push origin gh-pages
 
 
