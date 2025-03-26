@@ -483,7 +483,7 @@ main .button-a:hover::after {
 }
 
 form a {
-   font-size: clamp(1.8rem, 1.467rem + 0.44vw, 2rem);
+   font-size: clamp(1.6rem, 1.181rem + 0.52vw, 1.8rem);
    width: fit-content;
    color: var(--accent);
    letter-spacing: 0.065rem;
@@ -510,7 +510,7 @@ form a {
 }
 
 .bt-text span {
-   font-size: 1.85rem;
+   font-size: clamp(1.4rem, 0.981rem + 0.52vw, 1.6rem);
 }
 
 .bt-text::after {
@@ -550,7 +550,7 @@ form a {
    color: var(--text);  /* フォールバック用のテキスト色 */
 
    /* サポートされない場合の代替設定 */
-   background-clip: border-box; /* 追加：他のブラウザ用 */
+   background-clip: text; /* 追加：他のブラウザ用 */
    color: transparent; /* 追加：Webkit未対応時にテキストを透明に */
 }
 
@@ -562,6 +562,7 @@ form a {
       -webkit-text-fill-color: darkgray;
       color: var(--bg);
       background-clip: border-box; /* 追加：他のブラウザ用 */
+      background-clip: text; /* 追加：他のブラウザ用 */
       color: transparent; /* 追加：Webkit未対応時にテキストを透明に */
    }
 }

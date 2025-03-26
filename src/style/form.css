@@ -29,7 +29,7 @@ input:-webkit-autofill:focus {
 }
 
 .content-wrapper {
-   width: calc(60% - 100px);
+   width: calc(60% - 145px);
    position: absolute;
    top: 25%;
    right: 17.5%;
@@ -57,7 +57,7 @@ input:-webkit-autofill:focus {
    width: 270px;
    height: 75px;
    border-width: 0;
-   background-color: var(--text);
+   background-color: var(--bg);
    border: 1px solid var(--text);
    box-shadow: inset 0px 0px 5.5px rgba(0, 0, 0, 0.95);
    backdrop-filter: blur(3px);
@@ -83,7 +83,7 @@ input:-webkit-autofill:focus {
 
 .contact-form .label {
    font-family: sans-serif;
-   font-size: clamp(1.8rem, 1.467rem + 0.44vw, 2rem);
+   font-size: clamp(1.6rem, 1.181rem + 0.52vw, 1.8rem);
    font-weight: 400;
    color: rgba(10, 10, 10, 0.65);
    /*-webkit-text-stroke: 0.5px rgba(50, 50, 50, 0.5);*/
@@ -128,13 +128,13 @@ input:-webkit-autofill:focus {
    align-items: center;
    justify-content: flex-end;
    padding-right: 1.5rem;
+   gap: 5em;
 }
 
 .align-center div {
    font-size: clamp(1rem, 0.667rem + 0.44vw, 1.2rem);
    font-family: sans-serif;
-   color: var(--bg);
-   width: 39vmin;
+   width: 52%;
    line-height: 1;
    z-index: 1;
 }
