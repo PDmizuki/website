@@ -161,6 +161,7 @@ body {
    height: 100vh;
    color: var(--bg);
    background: var(--bg);
+   background: url("../assets/images/pc-main-bg.png") no-repeat center center/cover;
 /*   background: url(/img/pd-bg-img05.png);
    background-position: center;
    background-repeat: no-repeat;
@@ -173,6 +174,8 @@ body::before {
    height: 100%;
    position: fixed;
    border: 2vh solid;
+   border-left: 2vw solid;
+   border-right: 2vw solid;
    border-image: url("../assets/images/mobile-main-second.png") 100;
    z-index: 10;
    pointer-events: none;
@@ -184,8 +187,8 @@ body::after {
    content: "";
    position: fixed;
    top: 2vh;
-   left: 2vh;
-   width: 97.65vw;
+   left: 2vw;
+   width: 96vw;
    height: 96vh;
    border: 1px solid;
    pointer-events: none;
@@ -232,7 +235,7 @@ h2 {
 
 /* gold text bg */
 .pc_menu a,
-.pc_menu #chat-icon,
+#chat-icon span,
 h1,
 h2,
 .fa-power-off:before,
@@ -390,7 +393,6 @@ a {
    font-family: "Jost", serif;
    font-size: clamp(1.8rem, 0.8rem + 1.33vw, 2.4rem);
    font-weight: 500;
-   color: var(--text);
    width: 20vmin;
    height: fit-content;
    text-align: center;

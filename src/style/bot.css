@@ -368,7 +368,7 @@
             left: -50%;
             width: 100%;
             padding: 0.15em;
-            transform: rotate(90deg) translate(0, -114%);
+            transform: rotate(90deg) translate(0, -144%);
             border-top: 1px solid;
             border-image: url("../assets/images/text-gold.png") 100;
             background: url("../assets/images/mobile-main-second.png");
@@ -380,6 +380,9 @@
             padding: 0 1rem;
             transition: all 0.5s ease;
             animation: fadeIn_bg 4s ease forwards;*/
+        }
+        #chat-icon:hover {
+            transform: rotate(90deg) translate(0, -154%);
         }
         #chat-icon span {
             background-clip: text;

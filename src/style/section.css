@@ -93,6 +93,7 @@
    margin-left: auto;
    top: 0;
    right: 0;
+   color: var(--text);
    background-color: var(--bg);
    box-shadow: inset 1px 1px 4px rgba(0, 0, 0, 0.95);
    border-radius: 20px;
@@ -229,7 +230,7 @@ p a {
    text-align: center;
    width: 35%;
    top: 50%;
-   left: -22.25vmin;
+   left: -16%;
    transform: rotate(90deg);
 }
 
@@ -246,12 +247,12 @@ p a {
 }
 
 .left-text::before {
-   right: 90.95%;
+   right: 80%;
 }
 
 .left-text::after {
-   width: 10vmin;
-   left: 85.95%;
+   width: 13vmin;
+   left: 80%;
 }
 
 .right-text {
