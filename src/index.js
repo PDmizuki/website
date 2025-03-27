@@ -2,6 +2,30 @@ console.log("Hello, Webpack!");
 
 // ページ判定
 const page = document.body.dataset.page; // 例: <body data-page="contact"> のように設定
+// 各ページ固有の処理
+switch (page) {
+   case "service":
+      import("./style/se_card.css");
+      import("./style/card.css");
+      import("./style/se-list.css");
+      import("./js/se_card.js");
+      import("./js/se-list.js");
+      break;
+
+   case "contact":
+      import("./style/form.css");
+      import("./js/form.js");
+      break;
+
+   case "mobile":
+      import("./js/tab.js");
+      break;
+
+   case "blog":
+      import("./style/blog.css");
+      import("./js/blog.js");
+      break;
+}
 
 /////////// all css
 
@@ -30,39 +54,6 @@ import "./style/mobile-all.css"; // all text
 import "./style/mobile-page.css"; // all page
 import "./style/tab.css"; // tab
 
-// 各ページ固有の処理
-if (page === "service") {
-   import("./style/se_card.css");
-   import("./style/card.css");
-   import("./style/se-list.css");
-   import("./js/se_card.js");
-   import("./js/se-list.js");
-} else if (page === "contact") {
-   import("./style/form.css");
-   import("./js/form.js");
-} else if (page === "mobile") {
-   import("./js/tab.js");
-} else if (page === "blog") {
-   import("./style/blog.css");
-   import("./js/blog.js");
-}
-
-// 各ページ固有の処理
-if (page === "service") {
-import("./style/se_card.css");
-import("./style/card.css");
-import("./style/se-list.css");
-import("./js/se_card.js");
-import("./js/se-list.js");
-} else if (page === "contact") {
-import("./style/form.css");
-import("./js/form.js");
-} else if (page === "mobile") {
-import("./js/tab.js");
-} else if (page === "blog") {
-import("./style/blog.css");
-import("./js/blog.js");
-}
 
 // 共通 JavaScript
 import "./js/section.js"; // section

@@ -940,7 +940,7 @@ git push origin gh-pages --force
 
 //プッシュ
 git add docs/
-git commit -m "icon body data blog js"
+git commit -m "index.js"
 git push origin gh-pages
 
 //docs削除
