@@ -1,0 +1,2 @@
+(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[346],{9346:()=>{var e;(e=jQuery)(document).ready((function(){console.log("Document ready"),e(".list-tab").click((function(){console.log("Tab clicked");var s=e(this).attr("id").replace("li-tab--","");console.log("Tab ID: "+s),e(".list-tab").removeClass("selected"),e(this).addClass("selected"),e(".container").removeClass("show"),e("#content--"+s).addClass("show")})),e("#li-tab--first").trigger("click")}))}}]);
+//# sourceMappingURL=346.main.js.map

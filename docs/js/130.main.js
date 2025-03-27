@@ -1,0 +1,2 @@
+(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[130],{130:()=>{window.addEventListener("click",(function(e){const t=document.getElementById("dynamic-modal");!t||t.contains(e.target)||e.target.closest(".se_card")||function(){const e=document.getElementById("dynamic-modal");e&&e.remove(),document.querySelectorAll(".se_card").forEach((e=>{e.style.transform="none",e.classList.remove("card-clicked"),e.style.opacity="1"}))}()}))}}]);
+//# sourceMappingURL=130.main.js.map
