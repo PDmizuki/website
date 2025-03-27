@@ -94,7 +94,7 @@
    top: 0;
    right: 0;
    color: var(--text);
-   background-color: var(--bg);
+   background-color: rgba(199, 199, 199, 0.5);
    box-shadow: inset 1px 1px 4px rgba(0, 0, 0, 0.95);
    border-radius: 20px;
    mix-blend-mode: hard-light;

@@ -297,10 +297,12 @@
          width: 100%;
          padding: 1rem;
          background: var(--border);
-         margin-top: 20px;
+         position: absolute;
+         bottom: 0;
       }
 
       footer p {
+         width: 100%;
          text-align: center;
       }
 
