@@ -931,10 +931,30 @@ git push origin gh-pages
 
 //webpack修正時
 npm run build
+//確認
+ls docs/blog
+
+//強制上書き
+git push origin gh-pages --force
+
+
 //プッシュ
 git add docs/
-git commit -m "webpac"
+git commit -m "webpack blog img"
 git push origin gh-pages
+
+//docs削除
+rm -rf docs
+//ビルド実行
+npm run build
+
+
+
+//docs/ ディレクトリを再生成
+npx webpack --mode production
+//blog.html確認
+ls src/blog
+
 
 
 //変更の追加

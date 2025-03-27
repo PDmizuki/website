@@ -62,7 +62,8 @@ import "./js/card.js"; // tab
 /////////// all images
 import "./assets/images/pd.ico";
 import "./assets/images/logo-tyep.png";
-import "./assets/images/pc-main-bg.png";
+import "./assets/images/pd-bg-img.jpg";
+import "./assets/images/pd-body-bg.jpg";
 // bg
 import "./assets/images/text-gold.png";
 import "./assets/images/text-bronze.png";
@@ -72,5 +73,4 @@ import "./assets/images/bg-c.png";
 import "./assets/images/bg-s.png";
 import "./assets/images/bg-p.png";
 //mobile
-import "./assets/images/mobile-main-bg.png";
 import "./assets/images/mobile-main-second.png";

@@ -148,7 +148,7 @@
 
    .se-01:hover::after,
    .se-01:focus::after {
-      background-image: url('../assets/images/mobile-main-bg.png');
+      background-image: url('../assets/images/mobile-main-second.png');
    }
 
    .se-02:hover::after,
