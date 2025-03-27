@@ -929,6 +929,14 @@ git add docs
 git commit -m "blog/webpack,index.js"
 git push origin gh-pages
 
+//webpack修正時
+npm run build
+//プッシュ
+git add docs/
+git commit -m "webpac"
+git push origin gh-pages
+
+
 //変更の追加
 git add .
 //再コミット（メモ付け）
