@@ -70,6 +70,7 @@ module.exports = {
             }
          }
       }),
+      // 🔹 html を docs/ に出力
       new HtmlWebpackPlugin({
          template: "./src/about.html",
          filename: "about.html",
@@ -90,7 +91,22 @@ module.exports = {
          template: "./src/blog/categories.html",
          filename: "blog/categories.html",
       }),
-      // 🔹 header.html & footer.html を docs/ に出力
+      new HtmlWebpackPlugin({
+         template: "./src/blog/blog_seo.html",
+         filename: "blog/blog_seo.html",
+      }),
+      new HtmlWebpackPlugin({
+         template: "./src/blog/blog_design.html",
+         filename: "blog/blog_design.html",
+      }),
+      new HtmlWebpackPlugin({
+         template: "./src/blog/blog_seo-keyword.html",
+         filename: "blog/blog_seo-keyword.html",
+      }),
+      new HtmlWebpackPlugin({
+         template: "./src/blog/blog_seo-contents.html",
+         filename: "blog/blog_seo-contents.html",
+      }),
       new HtmlWebpackPlugin({
          template: "./src/header.html",
          filename: "header.html",

@@ -22,6 +22,8 @@ import "./style/modal.css"; // modal
 import "./style/se-list.css"; // modal
 import "./style/se_card.css"; // modal
 import "./style/card.css"; // modal
+//blog
+import "./style/blog.css"; // modal
 
 // Mobile all（共通適用）
 import "./style/mobile-all.css"; // all text
@@ -40,6 +42,8 @@ if (page === "service") {
    import("./js/form.js");
 } else if (page === "mobile") {
    import("./js/tab.js");
+} else if (page === "blog") {
+   import("./style/blog.css");
 }
 
 // 共通 JavaScript

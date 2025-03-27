@@ -926,7 +926,7 @@ git push origin gh-pages
 
 npm run build
 git add docs
-git commit -m "head"
+git commit -m "blog/webpack,index.js"
 git push origin gh-pages
 
 
