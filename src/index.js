@@ -47,6 +47,23 @@ if (page === "service") {
    import("./js/blog.js");
 }
 
+// 各ページ固有の処理
+if (page === "service") {
+import("./style/se_card.css");
+import("./style/card.css");
+import("./style/se-list.css");
+import("./js/se_card.js");
+import("./js/se-list.js");
+} else if (page === "contact") {
+import("./style/form.css");
+import("./js/form.js");
+} else if (page === "mobile") {
+import("./js/tab.js");
+} else if (page === "blog") {
+import("./style/blog.css");
+import("./js/blog.js");
+}
+
 // 共通 JavaScript
 import "./js/section.js"; // section
 import "./js/cursor.js"; // cursor

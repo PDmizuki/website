@@ -3,15 +3,40 @@
 
 <head>
    <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta name="description" content="SEO Keyword">
    <meta name="keywords" content="PD, PrecisionDesign, ブログ, SEO, デザイナー, Webデザイン">
    <title>PD_Blog / SEO Keyword</title>
-   <link rel="stylesheet" href="/cs/all.css">
-   <link rel="stylesheet" href="/cs/blog.css">
+   <link rel="icon" href="../assets/images/pd.ico">
+
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+   <!-- Meta Tags -->
+   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+   <meta name="referrer" content="strict-origin-when-cross-origin">
+
+   <!-- Content-Security-Policy -->
+   <meta http-equiv="Content-Security-Policy" content="
+      default-src 'self';
+      script-src 'self' https://code.jquery.com 'nonce-random1234' 'unsafe-inline';
+      style-src 'self' https://cdnjs.cloudflare.com https://fonts.googleapis.com 'unsafe-inline';
+      font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com data:;
+      img-src 'self' https://pdmizuki.github.io/website/ data:;
+      connect-src 'self' https://pdmizuki.github.io;
+      frame-ancestors 'self';  /* 'none' から 'self' に変更 */
+      object-src 'none';
+      base-uri 'self';
+      form-action 'self' https://pdmizuki.github.io;
+   ">
+
+   <script nonce="random1234" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+   <!-- Preconnect -->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 </head>
 
-<body class="blog-key">
+<body data-page="blog" class="blog-key">
    <header>
       <div class="logo"><a href="index.html">PD</a></div>
       <nav class="navbar">

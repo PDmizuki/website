@@ -3,27 +3,41 @@
 
 <head>
    <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta name="description" content="SEOの基本">
    <meta name="keywords" content="PD, PrecisionDesign, ブログ, SEO, SEO対策, Webデザイン,Webマーケティング">
    <title>PD_Blog / SEO</title>
 
-   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <link rel="icon" href="../assets/images/pd.ico">
 
-   <!-- font -->
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+   <!-- Meta Tags -->
+   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+   <meta name="referrer" content="strict-origin-when-cross-origin">
+
+   <!-- Content-Security-Policy -->
+   <meta http-equiv="Content-Security-Policy" content="
+      default-src 'self';
+      script-src 'self' https://code.jquery.com 'nonce-random1234' 'unsafe-inline';
+      style-src 'self' https://cdnjs.cloudflare.com https://fonts.googleapis.com 'unsafe-inline';
+      font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com data:;
+      img-src 'self' https://pdmizuki.github.io/website/ data:;
+      connect-src 'self' https://pdmizuki.github.io;
+      frame-ancestors 'self';  /* 'none' から 'self' に変更 */
+      object-src 'none';
+      base-uri 'self';
+      form-action 'self' https://pdmizuki.github.io;
+   ">
+
+   <script nonce="random1234" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+   <!-- Preconnect -->
    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet">
-
-   <link rel="stylesheet" href="/cs/all.css">
-   <link rel="stylesheet" href="/cs/modal.css">
-   <link rel="stylesheet" href="/cs/blog.css">
-   <link rel="stylesheet" href="/cs/mobile-page.css">
 
 </head>
 
-<body>
+<body data-page="blog">
    <header>
       <div class="logo"><a href="index.html">PD</a></div>
       <nav class="navbar">
