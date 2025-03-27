@@ -1,21 +1,29 @@
-<!doctype html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>PD_Blog / Categories</title><link rel="stylesheet" href="../style/all.css"><link rel="stylesheet" href="../style/blog.css"><style>body {
+<!doctype html><html lang="ja"><head><meta charset="UTF-8"><title>PD_Blog / Categories</title><link rel="icon" href="./assets/images/pd.ico"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><meta name="description" content="想いを形に、こだわりをデザインする。"><meta name="keywords" content="Precision Design, こだわり, デザイン, 想い, 伝える"><meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta name="referrer" content="strict-origin-when-cross-origin"><meta http-equiv="Content-Security-Policy" content=" default-src 'self'; script-src 'self' https://code.jquery.com 'nonce-random1234' 'unsafe-inline'; style-src 'self' https://cdnjs.cloudflare.com https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com data:; img-src 'self' https://pdmizuki.github.io/website/ data:; connect-src 'self' https://pdmizuki.github.io; frame-ancestors 'self'; /* 'none' から 'self' に変更 */ object-src 'none'; base-uri 'self'; form-action 'self' https://pdmizuki.github.io; "><script nonce="random1234" src="https://code.jquery.com/jquery-3.7.1.min.js"></script><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><style>body {
          display: flex;
       }
+
       main {
          background: none;
          max-width: 1200px;
          height: 100%;
+         display: flex;
          align-items: center;
          flex-direction: column;
          margin: 0 auto;
+         top: 20vmin;
       }
-h1,h2,p {
-   color: var(--bg);
-}
-.article a:hover,.categories a:hover {
-   color: var(--accent);
-   text-decoration: underline;
-}
+
+      h1,
+      h2,
+      p {
+         color: var(--text);
+      }
+
+      .article a:hover,
+      .categories a:hover {
+         color: var(--accent);
+         text-decoration: underline;
+      }
 
       h1 {
          padding-top: 15vmin;
@@ -52,16 +60,19 @@ h1,h2,p {
       }
 
       .categories {
-         top: 20vmin;
-         left: calc(15% - 5%);
+         position: relative;
+         top: 25vmin;
+         left: calc(5% - 5%);
          z-index: 1;
       }
+
       .categories h2 {
          font-size: 2rem;
          position: absolute;
          top: -10%;
          left: -10%;
       }
+
       .categories a {
          color: var(--a);
          text-align: left;
