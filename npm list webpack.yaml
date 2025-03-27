@@ -929,6 +929,15 @@ git add docs
 git commit -m "blog/webpack,index.js"
 git push origin gh-pages
 
+//変更の追加
+git add .
+//再コミット（メモ付け）
+git commit -m "blog"
+//リモートにプッシュ
+git push origin gh-pages
+//全ての変更をコミット
+git commit -am "your message"
+
 
 メモ
 bot js 動作しない
