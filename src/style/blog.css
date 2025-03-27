@@ -97,8 +97,7 @@
          height: auto;
          margin: 10vmin auto 5vmin;
          gap: 5vmin;
-         /*background: rgba(186, 186, 186, 0.76);*/
-         background: var(--bg);
+         background: rgba(186, 186, 186, 0.76);
       }
 
       main h1 {
