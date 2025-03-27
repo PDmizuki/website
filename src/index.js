@@ -2,6 +2,7 @@ console.log("Hello, Webpack!");
 
 // ページ判定
 const page = document.body.dataset.page; // 例: <body data-page="contact"> のように設定
+
 // 各ページ固有の処理
 switch (page) {
    case "service":
@@ -9,6 +10,7 @@ switch (page) {
       import("./style/card.css");
       import("./style/se-list.css");
       import("./js/se_card.js");
+      import("./js/card.js");
       import("./js/se-list.js");
       break;
 
@@ -16,8 +18,11 @@ switch (page) {
       import("./style/form.css");
       import("./js/form.js");
       break;
-
+// Mobile all（共通適用）
    case "mobile":
+      import("./style/mobile-all.css");
+      import("./style/mobile-page.css");
+      import("./style/tab.css");
       import("./js/tab.js");
       break;
 
@@ -35,25 +40,14 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import "./assets/fonts/fonts.css";
 
 // PC all
-import "./style/all.css";  // all page
-import "./style/menu.css"; // menu
-import "./style/cursor.css"; // cursor
-import "./style/section.css"; // section
-import "./style/bot.css"; // bot
-import "./style/footer.css"; // footer
-import "./style/accordion.css"; // accordion
-import "./style/modal.css"; // modal
-import "./style/se-list.css"; // modal
-import "./style/se_card.css"; // modal
-import "./style/card.css"; // modal
-//blog
-import "./style/blog.css"; // modal
-
-// Mobile all（共通適用）
-import "./style/mobile-all.css"; // all text
-import "./style/mobile-page.css"; // all page
-import "./style/tab.css"; // tab
-
+import "./style/all.css";      // 全ページ共通
+import "./style/menu.css";     // メニュー
+import "./style/cursor.css";   // カーソル
+import "./style/section.css";  // セクション
+import "./style/bot.css";      // ボット
+import "./style/footer.css";   // フッター
+import "./style/accordion.css";// アコーディオン
+import "./style/modal.css";    // モーダル
 
 // 共通 JavaScript
 import "./js/section.js"; // section
@@ -63,10 +57,6 @@ import "./js/chat.js"; // chat
 import "./js/fade.js"; // fade
 import "./js/head-foot.js"; // head foot
 import "./js/modal.js"; // modal
-import "./js/tab.js"; // tab
-import "./js/se-list.js"; // tab
-import "./js/se_card.js"; // tab
-import "./js/card.js"; // tab
 
 /////////// all images
 import "./assets/images/pd.ico";
