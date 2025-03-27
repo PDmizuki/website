@@ -940,7 +940,7 @@ git push origin gh-pages --force
 
 //プッシュ
 git add docs/
-git commit -m "webpack blog img"
+git commit -m "blog js"
 git push origin gh-pages
 
 //docs削除

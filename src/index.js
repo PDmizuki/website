@@ -44,6 +44,7 @@ if (page === "service") {
    import("./js/tab.js");
 } else if (page === "blog") {
    import("./style/blog.css");
+   import("./js/blog.js");
 }
 
 // 共通 JavaScript
