@@ -927,7 +927,7 @@ git push origin gh-pages
 //プッシュ
 npm run build
 git add docs
-git commit -m "blog/script修正"
+git commit -m "blog/meta 一時停止"
 git push origin gh-pages
 
 //webpack修正時
