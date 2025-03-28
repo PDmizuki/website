@@ -22,6 +22,7 @@ switch (page) {
    case "blog":
       import("./style/blog.css");
       import("./js/blog.js");
+      import("./js/blog-categories.js");
       break;
 }
 

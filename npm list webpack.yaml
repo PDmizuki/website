@@ -924,6 +924,7 @@ git checkout gh-pages
 git commit --allow-empty -m "Trigger GitHub Pages update"
 git push origin gh-pages
 
+//プッシュ
 npm run build
 git add docs
 git commit -m "blog/webpack,index.js"
@@ -937,11 +938,6 @@ ls docs/blog
 //強制上書き
 git push origin gh-pages --force
 
-
-//プッシュ
-git add docs/
-git commit -m "blog head"
-git push origin gh-pages
 
 //docs削除
 rm -rf docs
