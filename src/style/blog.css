@@ -69,15 +69,15 @@
 
       /* ヘッダー */
       header {
-         width: 100%;
-         color: var(--bg);
+         color: var(--text);
          padding: 1vmin 2vmin;
          display: flex;
          justify-content: space-between;
          align-items: center;
          position: fixed;
-         mix-blend-mode: difference;
          z-index: 100;
+         top: 0;
+         left: 0;
       }
 
       .navbar ul {
@@ -98,6 +98,8 @@
          margin: 10vmin auto 5vmin;
          gap: 5vmin;
          background: rgba(186, 186, 186, 0.76);
+         -webkit-backdrop-filter: blur(8px);
+         backdrop-filter: blur(8px);
       }
 
       main h1 {
@@ -127,7 +129,6 @@
 
       .category a {
          line-height: 1;
-         border-bottom: 1px solid;
       }
 
       .category::before {

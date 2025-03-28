@@ -39,6 +39,17 @@
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
    <style>
+      nav {
+         width: fit-content;
+         top: 3.5%;
+         right: 3.5%;
+         mix-blend-mode: normal;
+         background: none;
+      }
+      .logo img {
+         background: var(--text);
+         padding: 0.5rem 0.75rem;
+      }
       body {
          display: flex;
       }
@@ -51,7 +62,11 @@
          display: flex;
          align-items: center;
          flex-direction: column;
-         margin: 0 auto;
+         margin: 0;
+         margin-left: 10vmin;
+         padding-top: 10rem;
+         -webkit-backdrop-filter: blur(8px);
+         backdrop-filter: blur(8px);
       }
 
       h1,
@@ -125,7 +140,7 @@
 <body data-page="blog" class="category">
    <header>
       <div class="logo"><a href="index.html">
-            <img src="../assets/images/log-tyep.png" alt="">
+            <img src="../assets/images/logo-tyep.png" alt="">
          </a></div>
       <nav class="navbar">
          <ul>

@@ -26,6 +26,7 @@
    opacity: 0;
    visibility: hidden;
    overflow-y: auto;
+   -webkit-backdrop-filter: blur(8px);
    backdrop-filter: blur(8px);
    background-color: rgba(200, 200,200, 0.15);
    background:
