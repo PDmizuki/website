@@ -1,36 +1,37 @@
-document.addEventListener('DOMContentLoaded', function () {
-    // JSONデータ（例: サーバーやAPIから取得可能）
+// jQueryが完全に読み込まれてから実行
+$(document).ready(function () {
+    // JSONデータ
     const blogPosts = [
-             //{
-             //   title: "Works Blog 1",
-             //   content: "Works content 1",
-             //   category: "works",
-             //   url: "blog-details.html?id=1"
-             //},
-             //{
-             //   title: "実績 Blog 1",
-             //   content: "実績 content 1",
-             //   category: "results",
-             //   url: "blog-details.html?id=2"
-             //},
-             //{
-             //   title: "Web制作",
-             //   content: "Web制作 デザイン",
-             //   category: "web",
-             //   url: "blog-details.html?id=4"
-             //},
-             //{
-             //   title: "マーケティング Blog 1",
-             //   content: "マーケティング content 1",
-             //   category: "marketing",
-             //   url: "blog-details.html?id=6"
-             //}
-             //{
-             //   title: "個人事業サポート Blog 1",
-             //   content: "個人事業サポート content 1",
-             //   category: "business-support",
-             //   url: "blog-details.html?id=7"
-             //}
+                    //{
+              //   title: "Works Blog 1",
+              //   content: "Works content 1",
+              //   category: "works",
+              //   url: "blog-details.html?id=1"
+              //},
+              //{
+              //   title: "実績 Blog 1",
+              //   content: "実績 content 1",
+              //   category: "results",
+              //   url: "blog-details.html?id=2"
+              //},
+              //{
+              //   title: "Web制作",
+              //   content: "Web制作 デザイン",
+              //   category: "web",
+              //   url: "blog-details.html?id=4"
+              //},
+              //{
+              //   title: "マーケティング Blog 1",
+              //   content: "マーケティング content 1",
+              //   category: "marketing",
+              //   url: "blog-details.html?id=6"
+              //}
+              //{
+              //   title: "個人事業サポート Blog 1",
+              //   content: "個人事業サポート content 1",
+              //   category: "business-support",
+              //   url: "blog-details.html?id=7"
+              //}
        {
           title: "デザイン Blog",
           content: "デザイン基礎 UI/UX",
@@ -58,23 +59,19 @@ document.addEventListener('DOMContentLoaded', function () {
     ];
  
     // DOM要素を取得
-    const categoryNameElement = document.getElementById('category-name');
-    const articlesContainer = document.getElementById('articles-container');
- 
-    // 要素が正しく取得できているか確認
-    if (!categoryNameElement || !articlesContainer) {
-       console.error('必要なDOM要素が見つかりません。HTMLを確認してください。');
-       return;
-    }
+    const $categoryName = $('#category-name');
+    const $articlesContainer = $('#articles-container');
  
     // URLパラメータからカテゴリを取得
     const urlParams = new URLSearchParams(window.location.search);
     const category = urlParams.get('category');
  
     // カテゴリ名を表示
-    categoryNameElement.textContent = category
-       ? category.charAt(0).toUpperCase() + category.slice(1)
-       : 'All';
+    if (category) {
+       $categoryName.text(category.charAt(0).toUpperCase() + category.slice(1));
+    } else {
+       $categoryName.text('All');
+    }
  
     // 指定されたカテゴリに応じた記事を表示
     const filteredPosts = blogPosts.filter(post => !category || post.category === category);
@@ -82,17 +79,17 @@ document.addEventListener('DOMContentLoaded', function () {
     // 記事の表示
     if (filteredPosts.length > 0) {
        filteredPosts.forEach(post => {
-          const articleDiv = document.createElement('div');
-          articleDiv.className = 'article';
-          articleDiv.innerHTML = `
-             <h2>${post.title}</h2>
-             <p>${post.content}</p>
-             <a href="${post.url}" target="_blank">続きを読む</a>
+          const articleHTML = `
+             <div class="article">
+                <h2>${post.title}</h2>
+                <p>${post.content}</p>
+                <a href="${post.url}" target="_blank">続きを読む</a>
+             </div>
           `;
-          articlesContainer.appendChild(articleDiv);
+          $articlesContainer.append(articleHTML);
        });
     } else {
-       articlesContainer.innerHTML = '<p>該当する記事がありません。</p>';
+       $articlesContainer.html('<p>該当する記事がありません。</p>');
     }
  });
  
