@@ -940,7 +940,7 @@ git push origin gh-pages --force
 
 //プッシュ
 git add docs/
-git commit -m "blog"
+git commit -m "blog head"
 git push origin gh-pages
 
 //docs削除

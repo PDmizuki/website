@@ -18,13 +18,6 @@ switch (page) {
       import("./style/form.css");
       import("./js/form.js");
       break;
-// Mobile all（共通適用）
-   case "mobile":
-      import("./style/mobile-all.css");
-      import("./style/mobile-page.css");
-      import("./style/tab.css");
-      import("./js/tab.js");
-      break;
 
    case "blog":
       import("./style/blog.css");
@@ -38,6 +31,12 @@ switch (page) {
 import '@fortawesome/fontawesome-free/css/all.min.css';
 // font
 import "./assets/fonts/fonts.css";
+
+// Mobile all（共通適用）
+import("./style/mobile-all.css");
+import("./style/mobile-page.css");
+import("./style/tab.css");
+import("./js/tab.js");
 
 // PC all
 import "./style/all.css";      // 全ページ共通
