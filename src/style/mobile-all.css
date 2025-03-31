@@ -27,15 +27,16 @@
 
    /*===================== body text =====================*/
    body::before {
-      border: 3vh solid;
-      border-left: 3vw solid;
-      border-right: 3vw solid;
+      border: 2vh solid;
+      border-left: 4vw solid;
+      border-right: 4vw solid;
+      border-image: url("../assets/images/mobile-main-second.png") 100;
    }   
    body::after {
-      top: 3vh;
-      left: 5vw;
-      width: 90vw;
-      height: 94vh;
+      top: 2vh;
+      left: 4vw;
+      width: 92vw;
+      height: 96vh;
       box-shadow: inset 0px 2px 5px #000;
    }
    .mobile {
@@ -188,7 +189,6 @@
       position: relative;
       display: inline-block;
       text-decoration: none;
-      z-index: 100;
    }
    a:active {
       color: rgba(217, 217, 217, 0.5);
