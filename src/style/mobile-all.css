@@ -31,6 +31,7 @@
       border-left: 4vw solid;
       border-right: 4vw solid;
       border-image: url("../assets/images/mobile-main-second.png") 100;
+      z-index: 1000;
    }   
    body::after {
       top: 2vh;
@@ -38,6 +39,7 @@
       width: 92vw;
       height: 96vh;
       box-shadow: inset 0px 2px 5px #000;
+      z-index: 1000;
    }
    .mobile {
       /*font-family: zen-maru-gothic, sans-serif;*/
@@ -50,7 +52,6 @@
       position: relative;
       width: 100%;
       height: auto;
-      padding: 0 2vmin;
       overflow: visible;
    }
 
@@ -107,7 +108,7 @@
       width: fit-content;
       line-height: 7.5rem;
       letter-spacing: 0.5rem;
-      padding-left: 4.5vmin;
+      padding-left: 4vmin;
    }
 
    h2,
@@ -155,7 +156,7 @@
       line-height: 3rem;
    }
    .text {
-      padding: 1vh 4vh;
+      padding: 1vh 10vmin;
    }
 
    ol,
@@ -222,7 +223,7 @@
       text-decoration: none;
       width: 150px;
       height: 40px;
-      margin-left: 0.5vmin;
+      margin: 0 auto;
       position: relative;
       transition: 0.3s;
    }
