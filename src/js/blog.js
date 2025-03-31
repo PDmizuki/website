@@ -3,17 +3,21 @@ document.addEventListener("DOMContentLoaded", () => {
    const tocList = document.getElementById("toc-list");
    const headings = document.querySelectorAll("article h2, article h3");
 
-   headings.forEach((heading, index) => {
-      const listItem = document.createElement("li");
-      const link = document.createElement("a");
-      link.href = `#section-${index}`;
-      link.textContent = heading.textContent;
-      listItem.appendChild(link);
-      tocList.appendChild(listItem);
+   if (tocList && headings.length > 0) {
+      headings.forEach((heading, index) => {
+         const listItem = document.createElement("li");
+         const link = document.createElement("a");
+         link.href = `#section-${index}`;
+         link.textContent = heading.textContent;
+         listItem.appendChild(link);
+         tocList.appendChild(listItem);
 
-      // IDを追加してリンク対応
-      heading.id = `section-${index}`;
-   });
+         // IDを追加してリンク対応
+         heading.id = `section-${index}`;
+      });
+   } else {
+      console.warn("目次のリストが見つからないか、h2/h3 見出しがありません。");
+   }
 
    /** 🏷️ カテゴリーリストの自動生成 */
    const categories = [
@@ -28,14 +32,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
    const categoryList = document.getElementById("category-list");
 
-   categories.forEach(category => {
-      const listItem = document.createElement("li");
-      const link = document.createElement("a");
-      link.href = `categories.html?category=${category.slug}`;
-      link.textContent = category.name;
-      listItem.appendChild(link);
-      categoryList.appendChild(listItem);
-   });
+   if (categoryList) {
+      categories.forEach(category => {
+         const listItem = document.createElement("li");
+         const link = document.createElement("a");
+         link.href = `categories.html?category=${category.slug}`;
+         link.textContent = category.name;
+         listItem.appendChild(link);
+         categoryList.appendChild(listItem);
+      });
+   } else {
+      console.warn("カテゴリーリストの ul#category-list が見つかりません。");
+   }
 });
 
 
