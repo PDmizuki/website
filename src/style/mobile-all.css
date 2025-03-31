@@ -26,7 +26,18 @@
    }
 
    /*===================== body text =====================*/
-   
+   body::before {
+      border: 3vh solid;
+      border-left: 3vw solid;
+      border-right: 3vw solid;
+   }   
+   body::after {
+      top: 3vh;
+      left: 5vw;
+      width: 90vw;
+      height: 94vh;
+      box-shadow: inset 0px 2px 5px #000;
+   }
    .mobile {
       /*font-family: zen-maru-gothic, sans-serif;*/
       font-family: sans-serif;
@@ -38,55 +49,8 @@
       position: relative;
       width: 100%;
       height: auto;
-      padding: 5vmin 2vmin 0;
-      overflow: hidden;
+      padding: 0 2vmin;
       overflow: visible;
-   }
-
-   .mobile::before,
-   .mobile::after,
-   .guide-left,
-   .guide-left::after {
-      background: url("../assets/images/mobile-main-second.png") no-repeat bottom center/cover;
-      background-attachment: fixed;
-      position: fixed;
-      content: "";
-      z-index: 110;
-   }
-
-   .mobile::before,
-   .mobile::after {
-      left: 0;
-      width: 100%;
-      height: 5vmin;
-      z-index: 109;
-   }
-
-   .mobile::before {
-      top: 0;
-      border-bottom: 1px solid var(--border);
-   }
-
-   .mobile::after {
-      bottom: 0;
-      border-top: 1px solid var(--border);
-   }
-
-   .guide-left,
-   .guide-left::after {
-      width: 5vmin;
-      height: 100%;
-      top: 0;
-   }
-
-   .guide-left {
-      left: 0;
-      border-right: 1px solid var(--border);
-   }
-
-   .guide-left::after {
-      right: 0;
-      border-left: 1px solid var(--border);
    }
 
    .noise {
@@ -190,7 +154,7 @@
       line-height: 3rem;
    }
    .text {
-      margin-top: 1%;
+      padding: 1vh 4vh;
    }
 
    ol,

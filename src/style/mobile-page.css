@@ -1,5 +1,4 @@
 @media screen and (max-width: 599px) {
-
    .tabs video {
       width: 80%;
       position: absolute;
@@ -12,15 +11,11 @@
    .tabs .top-h1 {
       display: grid;
       gap: 10px;
-      width: 95%;
+      width: 100vw;
       position: absolute;
       top: 7.65%;
-      left: 3vmin;
-      padding-left: 0;
+      left: 0;
       border-bottom: 1px solid var(--border);
-      /*backdrop-filter: blur(15px);*/
-      /*border: 1px solid rgba(217, 217, 217, 0.45);*/
-      /*box-shadow: 0 2px 3px rgba(46, 46, 46, 0.4);*/
    }
 
    .tabs .top-h1::after {
@@ -66,34 +61,28 @@
    /*===================== section =====================*/
    section .top-s {
       height: auto;
-      min-height: 85vh;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      padding: 12vh 3vh;
+      min-height: 100vh;
       text-align: justify;
-      display: flex;
       position: relative;
-      /* 縦に並べる */
+      /*display: flex;
+      縦に並べる
       flex-direction: column;
+      縦方向の中央寄せ
+      justify-content: flex-start;*/
       align-items: center;
-      /*縦方向の中央寄せ*/
-      justify-content: flex-start;
-      gap: 20px;
    }
 
 
    .h2-bg {
       font-family: sans-serif;
-      width: 100%;
+      width: 100vw;
       height: 100px;
       border-bottom: 1px solid var(--border);
-      padding-left: 2.5rem;
       align-content: center;
       position: absolute;
       top: 0;
       left: 0;
-      display: grid;
-      gap: 0;
+      padding: 0 7vh;
    }
 
    .policy .h2-bg span {
