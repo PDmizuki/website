@@ -1,21 +1,26 @@
-// 自動目次生成
 document.addEventListener("DOMContentLoaded", () => {
    const tocList = document.getElementById("toc-list");
-   const headings = document.querySelectorAll("article h2,article h3");
+   if (!tocList) return; // `toc-list` が存在しない場合は処理を中断
 
-   headings.forEach((heading, index) => {
+   const headings = document.querySelectorAll("article h2, article h3");
+
+   if (headings.length === 0) {
+      console.warn("記事内に見出しが見つかりません");
+      return;
+   }
+
+   Array.from(headings).forEach((heading, index) => {
       const listItem = document.createElement("li");
       const link = document.createElement("a");
-      link.href = `#section-${index}`;
+      const id = `section-${index}`;
+
+      heading.id = id; // 見出しにIDを設定
+      link.href = `#${id}`;
       link.textContent = heading.textContent;
       listItem.appendChild(link);
       tocList.appendChild(listItem);
-
-      // IDを追加してリンク対応
-      heading.id = `section-${index}`;
    });
 });
-
 
 // サンプル記事データ
 const articles = [

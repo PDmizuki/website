@@ -79,17 +79,17 @@
          top: 0;
          left: 0;
       }
-      .logo {
-         position: relative;
-         top: 0;
-         z-index: 1;
- 
-         img {
-             width: 100%;
-             max-width: 100%;
-             filter: iinvert(1);
-         }
-     }
+      nav {
+         width: fit-content;
+         height: fit-content;
+         top: 3.5%;
+         right: 3.5%;
+         mix-blend-mode: normal;
+         background: none;
+      }
+      .logo img {
+         padding: 0.5rem 0.75rem;
+      }
       .navbar ul {
          display: flex;
          gap: 15px;
