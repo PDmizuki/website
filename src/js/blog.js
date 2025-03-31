@@ -1,26 +1,43 @@
 document.addEventListener("DOMContentLoaded", () => {
+   /** 🏷️ 目次の自動生成 */
    const tocList = document.getElementById("toc-list");
-   if (!tocList) return; // `toc-list` が存在しない場合は処理を中断
-
    const headings = document.querySelectorAll("article h2, article h3");
 
-   if (headings.length === 0) {
-      console.warn("記事内に見出しが見つかりません");
-      return;
-   }
-
-   Array.from(headings).forEach((heading, index) => {
+   headings.forEach((heading, index) => {
       const listItem = document.createElement("li");
       const link = document.createElement("a");
-      const id = `section-${index}`;
-
-      heading.id = id; // 見出しにIDを設定
-      link.href = `#${id}`;
+      link.href = `#section-${index}`;
       link.textContent = heading.textContent;
       listItem.appendChild(link);
       tocList.appendChild(listItem);
+
+      // IDを追加してリンク対応
+      heading.id = `section-${index}`;
+   });
+
+   /** 🏷️ カテゴリーリストの自動生成 */
+   const categories = [
+      { name: "Works", slug: "works" },
+      { name: "実績", slug: "results" },
+      { name: "デザイン", slug: "design" },
+      { name: "Web制作", slug: "web-development" },
+      { name: "SEO", slug: "seo" },
+      { name: "マーケティング", slug: "marketing" },
+      { name: "個人事業サポート", slug: "business-support" }
+   ];
+
+   const categoryList = document.getElementById("category-list");
+
+   categories.forEach(category => {
+      const listItem = document.createElement("li");
+      const link = document.createElement("a");
+      link.href = `categories.html?category=${category.slug}`;
+      link.textContent = category.name;
+      listItem.appendChild(link);
+      categoryList.appendChild(listItem);
    });
 });
+
 
 // サンプル記事データ
 const articles = [

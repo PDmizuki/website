@@ -79,7 +79,7 @@
          top: 0;
          left: 0;
       }
-      nav {
+     nav {
          width: fit-content;
          height: fit-content;
          top: 3.5%;
@@ -88,7 +88,7 @@
          background: none;
       }
       .logo img {
-         padding: 0.5rem 0.75rem;
+         filter: iinvert(1);
       }
       .navbar ul {
          display: flex;
