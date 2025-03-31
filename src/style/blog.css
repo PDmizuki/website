@@ -79,7 +79,17 @@
          top: 0;
          left: 0;
       }
-
+      .logo {
+         position: relative;
+         top: 0;
+         z-index: 1;
+ 
+         img {
+             width: 100%;
+             max-width: 100%;
+             filter: iinvert(1);
+         }
+     }
       .navbar ul {
          display: flex;
          gap: 15px;
@@ -295,15 +305,11 @@
 
       /* フッター */
       footer {
-         width: 100%;
-         padding: 1rem;
-         background: var(--border);
-         position: absolute;
-         bottom: 0;
+         position: relative;
+         bottom: 5%;
       }
 
       footer p {
-         width: 100%;
          text-align: center;
       }
 
