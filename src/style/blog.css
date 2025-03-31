@@ -71,12 +71,13 @@
          color: var(--text);
          padding: 1vmin 2vmin;
          display: flex;
+         padding: 0;
          justify-content: space-between;
          align-items: center;
          position: fixed;
          z-index: 100;
-         top: 0;
-         left: 0;
+         top: 3%;
+         left: 2%;
       }
      nav {
          width: fit-content;
@@ -85,9 +86,10 @@
          right: 3.5%;
          mix-blend-mode: normal;
          background: none;
+         filter: drop-shadow(1px 2px 2px var(--text));
       }
       .logo img {
-         filter: iinvert(1);
+         filter: invert(1);
       }
       .navbar ul {
          display: flex;
@@ -107,6 +109,7 @@
          margin: 10vmin auto 5vmin;
          gap: 5vmin;
          background: rgba(216, 216, 216, 0.65);
+         border-radius: 20px;
       }
 
       main h1 {
@@ -120,7 +123,6 @@
          border: 0;
          padding: 0;
          border-bottom: 1px solid var(--side-a);
-         border-radius: 20px;
       }
 
 

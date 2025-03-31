@@ -1,22 +1,29 @@
 document.addEventListener("DOMContentLoaded", () => {
+   console.log("DOM fully loaded and parsed");
+
    /** 🏷️ 目次の自動生成 */
    const tocList = document.getElementById("toc-list");
    const headings = document.querySelectorAll("article h2, article h3");
 
-   if (tocList && headings.length > 0) {
-      headings.forEach((heading, index) => {
-         const listItem = document.createElement("li");
-         const link = document.createElement("a");
-         link.href = `#section-${index}`;
-         link.textContent = heading.textContent;
-         listItem.appendChild(link);
-         tocList.appendChild(listItem);
+   if (tocList) {
+      if (headings.length > 0) {
+         headings.forEach((heading, index) => {
+            const listItem = document.createElement("li");
+            const link = document.createElement("a");
+            link.href = `#section-${index}`;
+            link.textContent = heading.textContent;
+            listItem.appendChild(link);
+            tocList.appendChild(listItem);
 
-         // IDを追加してリンク対応
-         heading.id = `section-${index}`;
-      });
+            // IDを追加してリンク対応
+            heading.id = `section-${index}`;
+         });
+         console.log("✅ 目次が正常に追加されました。");
+      } else {
+         console.warn("⚠️ `article` 内に `h2` や `h3` がありません。目次を生成できません。");
+      }
    } else {
-      console.warn("目次のリストが見つからないか、h2/h3 見出しがありません。");
+      console.error("❌ `#toc-list` が見つかりません。");
    }
 
    /** 🏷️ カテゴリーリストの自動生成 */
@@ -41,8 +48,9 @@ document.addEventListener("DOMContentLoaded", () => {
          listItem.appendChild(link);
          categoryList.appendChild(listItem);
       });
+      console.log("✅ カテゴリーリストが正常に追加されました。");
    } else {
-      console.warn("カテゴリーリストの ul#category-list が見つかりません。");
+      console.error("❌ `#category-list` が見つかりません。");
    }
 });
 
