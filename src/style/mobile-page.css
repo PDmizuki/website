@@ -10,7 +10,7 @@
    /*===================== tabs h1 top =====================*/
    .tabs .top-h1 {
       position: relative;
-      top: 15%;
+      top: 0;
       left: 0;
       border-bottom: 1px solid var(--border);
    }
@@ -20,6 +20,7 @@
       width: 100%;
       padding: 1rem 6vmin;
       margin: 0;
+      position: relative;
       border-top: 1px solid var(--border);
    }
 
@@ -29,12 +30,6 @@
       position: absolute;
       top: 0;
       border-right: 1px solid var(--border);
-   }
-
-   .caption:last-child {
-      position: absolute;
-      left: 0;
-      bottom: 0;
    }
 
    /*===================== h1 top =====================*/

@@ -38,8 +38,12 @@
     .foot {
         font-family: sans-serif;
         font-size: clamp(1.2rem, 1.127rem + 0.36vw, 1.4rem);
-        position: absolute;
-        bottom: 6%;
-        left: 22%;
+        position: absolute; /* 位置を固定 */
+        left: 4vmin;
+        bottom: 5vmin;
+        transform: rotate(90deg);
+        transform-origin: left bottom; /* 左下を基準に回転 */
+        white-space: nowrap;
+        writing-mode: vertical-rl; /* 文字の向きを縦書きに */
     }
 }
