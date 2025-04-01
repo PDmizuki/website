@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const inputs = document.querySelectorAll(".input-text");
 
   function toggleLabel(input) {
-    if (input.value.trim() !== "") {  // 空白のみの場合を考慮
+    if (input.value.trim() !== "") {  // 空白のみの入力を防ぐ
       input.classList.add("not-empty");
     } else {
       input.classList.remove("not-empty");
@@ -10,20 +10,24 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   inputs.forEach(input => {
-    // 初期チェック
+    // 初期状態のチェック
     toggleLabel(input);
 
-    // 入力イベントでクラスを切り替え
-    input.addEventListener("input", function () {
-      toggleLabel(this); // `this` を渡して修正
+    // 入力時にラベルを移動
+    input.addEventListener("input", () => {
+      toggleLabel(input);
     });
 
     // フォーカスが外れた時もチェック
-    input.addEventListener("blur", function () {
-      toggleLabel(this);
+    input.addEventListener("blur", () => {
+      toggleLabel(input);
+    });
+
+    // フォーカス時にラベルを適切に処理
+    input.addEventListener("focus", () => {
+      input.classList.add("not-empty");
     });
   });
-
 
   const modal = document.getElementById('thanksModal');
   const closeButton = document.getElementsByClassName('close')[0];
