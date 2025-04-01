@@ -61,7 +61,6 @@ input:-webkit-autofill:focus {
    border: 1px solid var(--text);
    box-shadow: inset 0px 0px 5.5px rgba(0, 0, 0, 0.95);
    backdrop-filter: blur(3px);
-   mix-blend-mode: difference;
 }
 
 .contact-form #message {
@@ -315,21 +314,24 @@ form .close:focus {
    }
 
    .content-wrapper {
-      width: 95%;
+      width: 80%;
       padding: 0.5rem 1rem;
       margin: 0 auto;
       position: relative;
       right: 0;
       top: 5%;
+      border: 0;
+      filter: none;
    }
 
    .contact-form .input-text {
       font-size: clamp(1.8rem, 1.343rem + 2.29vw, 2.2rem);
       color: var(--text);
       width: 100%;
-      height: 38  pt;
+      height: 40pt;
       padding-left: 1rem;
-      background: rgba(217, 217, 217, 0.5);
+      box-shadow: inset 1px 1px 4px rgba(0, 0, 0, 0.95);
+      border-radius: 8px;
    }
 
    .contact-form #message {
@@ -338,7 +340,7 @@ form .close:focus {
 
    .contact-form .label {
       font-size: clamp(1.4rem, 1.171rem + 1.14vw, 1.6rem);
-      color: rgba(217, 217, 217, 0.75);
+      color: rgba(107, 107, 107, 0.75);
       left: 2.75%;
       top: 13.75%;
       line-height: 2rem;
@@ -349,9 +351,10 @@ form .close:focus {
    }
 
    .contact-form .submit-btn {
-      font-size: clamp(2rem, 1.771rem + 1.14vw, 2.2rem);
+      font-size: 1.8rem;
       width: 100%;
-      height: 30pt;
+      height: 25pt;
+      color: var(--bg);
       padding: 0;
       margin: 0;
       margin-bottom: 0.5rem;

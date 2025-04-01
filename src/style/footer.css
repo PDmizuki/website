@@ -41,7 +41,6 @@
         position: absolute; /* 位置を固定 */
         left: 4vmin;
         bottom: 5vmin;
-        transform: rotate(90deg);
         transform-origin: left bottom; /* 左下を基準に回転 */
         white-space: nowrap;
         writing-mode: vertical-rl; /* 文字の向きを縦書きに */

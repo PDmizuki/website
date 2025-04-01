@@ -927,7 +927,7 @@ git push origin gh-pages
 //プッシュ
 npm run build
 git add docs
-git commit -m "mobile"
+git commit -m "mobile form"
 git push origin gh-pages
 
 //webpack修正時

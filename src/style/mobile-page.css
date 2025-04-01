@@ -18,7 +18,7 @@
    .caption {
       font-size: clamp(1.4rem, 1.255rem + 0.73vw, 1.8rem);
       width: 100%;
-      padding: 1rem 6vmin;
+      padding: 1rem 10vmin;
       margin: 0;
       position: relative;
       border-top: 1px solid var(--border);

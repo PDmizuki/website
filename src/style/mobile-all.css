@@ -108,7 +108,7 @@
       width: fit-content;
       line-height: 7.5rem;
       letter-spacing: 0.5rem;
-      padding-left: 6vmin;
+      padding-left: 10vmin;
    }
 
    h2,
@@ -178,7 +178,7 @@
 
    a {
       font-family: futura-pt, sans-serif;
-      font-size: clamp(1.8rem, 1.114rem + 3.43vw, 2.4rem);
+      font-size: 1.8rem;
       font-weight: 400;
       color: var(--accent);
       width: fit-content;
@@ -221,10 +221,9 @@
       justify-content: center;
       line-height: 1;
       text-decoration: none;
-      width: 150px;
-      height: 40px;
-      margin: 0 auto;
-      position: relative;
+      width: 130px;
+      height: 30px;
+      margin: 10% auto 0;
       transition: 0.3s;
    }
 
@@ -240,8 +239,8 @@
    }
 
    section .button::before {
-      top: -5px;
-      left: -5px;
+      top: -3px;
+      left: -3px;
    }
 
    section .button::after {
@@ -259,8 +258,7 @@
 
    .hr {
       height: 25px;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
+      margin-bottom: 15vmin;
    }
 
    main {
