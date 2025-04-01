@@ -1,33 +1,27 @@
+// グローバル変数 'submitted' を宣言
+let submitted = false;
+
 document.addEventListener("DOMContentLoaded", function () {
   const inputs = document.querySelectorAll(".input-text");
 
-  function toggleLabel(input) {
-    if (input.value.trim() !== "") {  // 空白のみの入力を防ぐ
-      input.classList.add("not-empty");
-    } else {
-      input.classList.remove("not-empty");
-    }
-  }
-
   inputs.forEach(input => {
-    // 初期状態のチェック
+    // 初期チェック
     toggleLabel(input);
 
-    // 入力時にラベルを移動
-    input.addEventListener("input", () => {
+    // 入力イベントに応じてクラスを切り替え
+    input.addEventListener("input", function () {
       toggleLabel(input);
     });
 
-    // フォーカスが外れた時もチェック
-    input.addEventListener("blur", () => {
-      toggleLabel(input);
-    });
-
-    // フォーカス時にラベルを適切に処理
-    input.addEventListener("focus", () => {
-      input.classList.add("not-empty");
-    });
+    function toggleLabel(input) {
+      if (input.value !== "") {
+        input.classList.add("not-empty");
+      } else {
+        input.classList.remove("not-empty");
+      }
+    }
   });
+
 
   const modal = document.getElementById('thanksModal');
   const closeButton = document.getElementsByClassName('close')[0];
