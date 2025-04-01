@@ -17,7 +17,6 @@
     <meta name="referrer" content="strict-origin-when-cross-origin">
 
     <!-- Content-Security-Policy -->
-<!-- 修正後のCSP（frame-ancestors を削除） -->
 <meta http-equiv="Content-Security-Policy" content="
 default-src 'self';
 script-src 'self' https://code.jquery.com 'nonce-random1234' 'unsafe-inline';
@@ -463,7 +462,8 @@ Slide ----->
                         <h2>Contact</h2>
                         <p>問合せ / 申込</p>
                     </div>
-                    <div class="content-wrapper fade_bottom">
+
+                    <div class="content-wrapper">
                         <div class="get-in-touch">
 
                             <form id="contactForm" class="contact-form"
@@ -493,6 +493,7 @@ Slide ----->
                                 </div>
 
                                 <div class="form-field col align-center">
+                                    <input type="checkbox" name="inquiryType" value="チェック" required>
                                     <p>当サイトをご利用の際は、
                                         <a href="https://mizukioyama.github.io/pd/policy.html">SitePolicy</a>をご確認ください。
                                     </p>
