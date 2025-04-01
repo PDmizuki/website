@@ -12,6 +12,19 @@
    .mobile {
       display: block;
    }
+   .mobile-page {
+      /*font-family: zen-maru-gothic, sans-serif;*/
+      font-family: sans-serif;
+      font-weight: 500;
+      font-style: normal;
+      color: var(--bg);
+      background: url("../assets/images/pd-bg-img.jpg") no-repeat bottom center/cover;
+      background-attachment: fixed;
+      position: relative;
+      width: 100%;
+      height: auto;
+      overflow: visible;
+   }
 
    /*===================== fade =====================*/
    .fade_bottom {
@@ -38,21 +51,8 @@
       left: 4vw;
       width: 92vw;
       height: 96vh;
-      box-shadow: inset 0px 2px 5px #000;
+      box-shadow: inset 0px 2px 6px 2px #000;
       z-index: 1000;
-   }
-   .mobile {
-      /*font-family: zen-maru-gothic, sans-serif;*/
-      font-family: sans-serif;
-      font-weight: 500;
-      font-style: normal;
-      color: var(--bg);
-      background: url("../assets/images/pd-bg-img.jpg") no-repeat bottom center/cover;
-      background-attachment: fixed;
-      position: relative;
-      width: 100%;
-      height: auto;
-      overflow: visible;
    }
 
    .noise {
@@ -108,7 +108,7 @@
       width: fit-content;
       line-height: 7.5rem;
       letter-spacing: 0.5rem;
-      padding-left: 4vmin;
+      padding-left: 6vmin;
    }
 
    h2,

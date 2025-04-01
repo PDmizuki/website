@@ -1,20 +1,19 @@
-@media only screen and (max-width:600px) {
+@media only screen and (max-width:599px) {
     footer {
         position: relative;
-        height: 420px;
-        padding-left: 3%;
+        height: 80svh;
+        padding-left: 6vmin;
         border-top: 1px solid var(--border);
         background: url("../assets/images/pd-bg-img.jpg") no-repeat top center/cover;
+        z-index: 10;
     }
 
     footer::before {
         content: "";
-        width: 5%;
         height: 100%;
         border-right: 1px solid var(--border);
         position: absolute;
-        left: 0;
-        z-index: 101;
+        left: 8vmin;
     }
 
     footer .noise {

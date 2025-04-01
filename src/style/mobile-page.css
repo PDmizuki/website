@@ -9,19 +9,16 @@
 
    /*===================== tabs h1 top =====================*/
    .tabs .top-h1 {
-      width: 100vw;
       position: relative;
       top: 15%;
       left: 0;
       border-bottom: 1px solid var(--border);
    }
 
-   .tabs .top-h1 .caption {
+   .caption {
       font-size: clamp(1.4rem, 1.255rem + 0.73vw, 1.8rem);
       width: 100%;
       padding: 1rem 6vmin;
-      left: 0;
-      bottom: 0;
       margin: 0;
       border-top: 1px solid var(--border);
    }
@@ -32,6 +29,12 @@
       position: absolute;
       top: 0;
       border-right: 1px solid var(--border);
+   }
+
+   .caption:last-child {
+      position: absolute;
+      left: 0;
+      bottom: 0;
    }
 
    /*===================== h1 top =====================*/
