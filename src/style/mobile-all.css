@@ -18,7 +18,10 @@
       font-weight: 500;
       font-style: normal;
       color: var(--bg);
-      background: url("../assets/images/pd-bg-img.jpg") no-repeat bottom center/cover;
+      background:
+      linear-gradient(to top, rgba(0, 0, 0, 0.4) 0%,
+      rgba(0, 0, 0, 0.4) 100%),
+      url("../assets/images/pd-bg-img.jpg") no-repeat bottom center/cover;
       background-attachment: fixed;
       position: relative;
       width: 100%;

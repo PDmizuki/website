@@ -1,6 +1,3 @@
-// グローバル変数 'submitted' を宣言
-let submitted = false;
-
 document.addEventListener("DOMContentLoaded", function () {
   const inputs = document.querySelectorAll(".input-text");
 
@@ -16,11 +13,17 @@ document.addEventListener("DOMContentLoaded", function () {
     // 初期チェック
     toggleLabel(input);
 
-    // 入力イベントに応じてクラスを切り替え
+    // 入力イベントでクラスを切り替え
     input.addEventListener("input", function () {
-      toggleLabel(input);
+      toggleLabel(this); // `this` を渡して修正
+    });
+
+    // フォーカスが外れた時もチェック
+    input.addEventListener("blur", function () {
+      toggleLabel(this);
     });
   });
+
 
   const modal = document.getElementById('thanksModal');
   const closeButton = document.getElementsByClassName('close')[0];
