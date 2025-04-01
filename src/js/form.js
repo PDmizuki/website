@@ -3,46 +3,49 @@ let submitted = false;
 
 document.addEventListener("DOMContentLoaded", function () {
   const inputs = document.querySelectorAll(".input-text");
+  const modal = document.getElementById('thanksModal');
+  const closeButton = document.getElementsByClassName('close')[0];
+  const contactForm = document.getElementById('contactForm');
 
+  // 初期状態でモーダルを非表示
+  modal.style.display = "none";
+
+  // 入力欄のラベル管理関数
+  function toggleLabel(input) {
+    if (input.value.trim() !== "") {
+      input.classList.add("not-empty");
+    } else {
+      input.classList.remove("not-empty");
+    }
+  }
+
+  // 各入力欄のイベントリスナーを設定
   inputs.forEach(input => {
-    // 初期チェック
-    toggleLabel(input);
-
-    // 入力イベントに応じてクラスを切り替え
+    toggleLabel(input); // 初期チェック
     input.addEventListener("input", function () {
       toggleLabel(input);
     });
-
-    function toggleLabel(input) {
-      if (input.value !== "") {
-        input.classList.add("not-empty");
-      } else {
-        input.classList.remove("not-empty");
-      }
-    }
   });
 
-  const modal = document.getElementById('thanksModal');
-  const closeButton = document.getElementsByClassName('close')[0];
-
-  // 初期状態でモーダルを非表示
-  modal.classList.remove("show");
-
-  document.getElementById('contactForm').addEventListener('submit', function (e) {
+  // フォーム送信処理
+  contactForm.addEventListener('submit', function (e) {
     e.preventDefault();
-    const form = e.target;
-    const formData = new FormData(form);
+    const formData = new FormData(contactForm);
 
-    fetch(form.action, {
+    fetch(contactForm.action, {
       method: 'POST',
       body: formData
     }).then(response => {
       if (response.ok) {
         submitted = true;
-        modal.classList.add("show"); // モーダルをフェードイン
-        form.reset();
-        document.querySelectorAll('.input-text').forEach(input => {
-          input.classList.remove('not-empty');
+        modal.style.display = "block"; // モーダルを表示
+        setTimeout(() => {
+          modal.classList.add("show");
+        }, 10); // ちょっと遅延させるとアニメーションが綺麗になる
+
+        contactForm.reset(); // フォームリセット
+        inputs.forEach(input => {
+          input.classList.remove("not-empty");
         });
 
       } else {
@@ -70,5 +73,4 @@ document.addEventListener("DOMContentLoaded", function () {
       }, 400);
     }
   };
-
 });
