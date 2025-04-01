@@ -321,7 +321,7 @@ form .close:focus {
       right: 0;
       top: 5%;
       border: 0;
-      filter: none;
+      backdrop-filter: none;
    }
 
    .contact-form .input-text {

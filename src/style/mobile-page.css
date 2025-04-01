@@ -12,7 +12,6 @@
       position: relative;
       top: 0;
       left: 0;
-      border-bottom: 1px solid var(--border);
    }
 
    .caption {
@@ -139,14 +138,14 @@
       position: absolute;
       right: 0;
       bottom: 0%;
-      padding: 0 2rem;
+      padding: 0 6vmin;
       border-bottom: 1px solid var(--border);
    }
 
    .top .se p {
       position: absolute;
-      right: 5%;
-      bottom: 15%;
+      right: 6vmin;
+      bottom: 0;
    }
 
    /*video size*/
