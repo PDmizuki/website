@@ -1,74 +1,74 @@
+// グローバル変数 'submitted' を宣言
+let submitted = false;
+
 document.addEventListener("DOMContentLoaded", function () {
   const inputs = document.querySelectorAll(".input-text");
 
-  function toggleLabel(input) {
-    if (input.value.trim() !== "") {
-      input.classList.add("not-empty");
-    } else {
-      input.classList.remove("not-empty");
-    }
-  }
-
   inputs.forEach(input => {
+    // 初期チェック
     toggleLabel(input);
-    input.addEventListener("input", () => toggleLabel(input));
-  });
 
+    // 入力イベントに応じてクラスを切り替え
+    input.addEventListener("input", function () {
+      toggleLabel(input);
+    });
+
+    function toggleLabel(input) {
+      if (input.value !== "") {
+        input.classList.add("not-empty");
+      } else {
+        input.classList.remove("not-empty");
+      }
+    }
+  });
 
   const modal = document.getElementById('thanksModal');
   const closeButton = document.getElementsByClassName('close')[0];
-  const form = document.getElementById('contactForm');
 
-  if (form) {
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      const formData = new FormData(form);
+  // 初期状態でモーダルを非表示
+  modal.classList.remove("show");
 
-      fetch(form.action, {
-        method: 'POST',
-        body: formData
-      }).then(response => {
-        return response.text().then(text => {  // レスポンスの内容を取得
-          console.log("Server Response:", text);
-          if (response.ok) {
-            submitted = true;  // 送信成功時にフラグを true に
-            if (modal) modal.style.display = "block";  // モーダルを表示
-            form.reset();  // フォームをリセット
-            inputs.forEach(input => input.classList.remove('not-empty'));
-          } else {
-            alert('送信に問題が発生しました。サーバーからエラーが返されました。');
-            console.error('送信エラー:', text);
-          }
+  document.getElementById('contactForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const form = e.target;
+    const formData = new FormData(form);
+
+    fetch(form.action, {
+      method: 'POST',
+      body: formData
+    }).then(response => {
+      if (response.ok) {
+        submitted = true;
+        modal.classList.add("show"); // モーダルをフェードイン
+        form.reset();
+        document.querySelectorAll('.input-text').forEach(input => {
+          input.classList.remove('not-empty');
         });
-      }).catch(error => {
-        alert('送信に問題が発生しました。ネットワークエラーの可能性があります。');
-        console.error('ネットワークエラー:', error);
-      });
-    });
-  }
 
-  // iframe の onload イベントを設定
-  const hiddenIframe = document.getElementById('hidden_iframe');
-  if (hiddenIframe) {
-    hiddenIframe.onload = function () {
-      if (submitted) {
-        alert('送信が完了しました。');
-        submitted = false;  // フラグをリセット
+      } else {
+        alert('送信に問題が発生しました。');
       }
-    };
-  }
+    }).catch(error => {
+      alert('送信に問題が発生しました。');
+    });
+  });
 
-  // モーダルのクローズ処理
-  if (modal && closeButton) {
-    closeButton.onclick = function () {
+  // モーダルのクローズボタン
+  closeButton.onclick = function () {
+    modal.classList.remove("show");
+    setTimeout(() => {
       modal.style.display = "none";
-    };
-  }
+    }, 400);
+  };
 
-  // モーダル外をクリックしたときの閉じる処理
+  // モーダル外をクリックで閉じる
   window.onclick = function (event) {
-    if (modal && event.target === modal) {
-      modal.style.display = "none";
+    if (event.target == modal) {
+      modal.classList.remove("show");
+      setTimeout(() => {
+        modal.style.display = "none";
+      }, 400);
     }
   };
+
 });

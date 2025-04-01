@@ -927,7 +927,7 @@ git push origin gh-pages
 //プッシュ
 npm run build
 git add docs
-git commit -m "csp"
+git commit -m "form"
 git push origin gh-pages
 
 //webpack修正時
