@@ -16,7 +16,7 @@ jQuery(document).ready(function ($) {
             }
 
             let self = this;
-            $('.tabs-container .tab').click(function (event) { // ID を指定してリンクを制限
+            $('.tabs-container .tab').on('click', function (event) { // 特定のタブにのみ適用
                 self.onTabClick(event, $(this));
             });
 
@@ -83,7 +83,7 @@ jQuery(document).ready(function ($) {
             let newCurrentTab = null;
             let self = this;
 
-            $('.tabs-container .tab').each(function () { // ID 指定で制限
+            $('.tabs-container .tab').each(function () {
                 let id = $(this).attr('href');
                 let target = $(id);
 
@@ -125,7 +125,7 @@ jQuery(document).ready(function ($) {
     new StickyNavigation();
 
     // 他のリンクタグのデフォルト動作を維持
-    $('a:not(.tabs-container .tab)').click(function (event) {
+    $('a:not(.tabs-container .tab)').on('click', function (event) {
         let href = $(this).attr('href');
         if (href && href.startsWith('#')) {
             event.preventDefault();
@@ -135,4 +135,7 @@ jQuery(document).ready(function ($) {
             }
         }
     });
+
+    // デバッグ用
+    console.log('StickyNavigation initialized successfully!');
 });
