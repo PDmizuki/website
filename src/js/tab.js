@@ -10,13 +10,13 @@ jQuery(document).ready(function ($) {
 
         init() {
             // 必要な要素が存在するか確認
-            if (!$('.tabs').length || !$('.tab').length) {
+            if (!$('.tabs-container').length || !$('.tab').length) {
                 console.error('必要な要素が見つかりません。');
                 return; // 要素がない場合は初期化を中止
             }
 
             let self = this;
-            $('.tab').click(function (event) {
+            $('.tabs-container .tab').click(function (event) { // tabs-container 内の .tab のみに影響
                 self.onTabClick(event, $(this));
             });
 
@@ -59,10 +59,7 @@ jQuery(document).ready(function ($) {
         }
 
         checkTabContainerPosition() {
-            // $('.tabs') が存在しない場合は処理を中断
-            if (!$('.tabs').length) return;
-
-            let offset = $('.tabs').offset().top + $('.tabs').outerHeight() - this.tabContainerHeight + this.offsetAdjust;
+            let offset = $('.tabs-container').offset().top + $('.tabs-container').outerHeight() - this.tabContainerHeight + this.offsetAdjust;
 
             if ($(window).scrollTop() > offset) {
                 $('.tabs-container').addClass('tabs-container--top');
@@ -76,7 +73,7 @@ jQuery(document).ready(function ($) {
             let newCurrentTab = null;
             let self = this;
 
-            $('.tab').each(function () {
+            $('.tabs-container .tab').each(function () { // tabs-container 内の .tab のみに影響
                 let id = $(this).attr('href');
                 let target = $(id);
 
@@ -91,7 +88,6 @@ jQuery(document).ready(function ($) {
                 }
             });
 
-            // 選択されているタブが変更された場合のみ更新
             if (this.currentId !== newCurrentId) {
                 this.currentId = newCurrentId;
                 this.currentTab = newCurrentTab;
@@ -104,7 +100,7 @@ jQuery(document).ready(function ($) {
                 let width = this.currentTab.outerWidth();
                 let left = this.currentTab.position().left;
 
-                $('.tab-slider').css({
+                $('.tabs-container .tab-slider').css({
                     width: width,
                     left: left
                 });

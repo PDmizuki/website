@@ -121,6 +121,7 @@
     }
     .tabs-container a span {
         font-size: 1.6rem;
+        margin-bottom: -2px;
     }
     
     .tab-slider {
