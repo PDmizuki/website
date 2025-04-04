@@ -1,9 +1,6 @@
 .tabs {
     padding-top: 2em;
 }
-.slide {
-    border-top: 1px solid;
-}
 .tabs,
 .slide {
     display: flex;
@@ -11,7 +8,6 @@
     justify-content: flex-start;
     min-height: 100vh;
     position: relative;
-    border-bottom: 1px solid;
 }
 
 .tabs-container {
