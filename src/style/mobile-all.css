@@ -42,6 +42,9 @@
    }
 
    /*===================== body text =====================*/
+   html,body {
+      border-image: url("../assets/images/text-gold.png") 100;
+   }
    body::before {
       border: 2vh solid;
       border-left: 4vw solid;
@@ -262,6 +265,13 @@
    .hr {
       height: 25px;
       margin-bottom: 15vmin;
+      background:
+      linear-gradient(to top, rgba(0, 0, 0, 0.4) 0%,
+      rgba(0, 0, 0, 0.4) 100%),
+      url("../assets/images/pd-bg-img.jpg") no-repeat bottom center/cover;
+      border-top: 1px solid;
+      border-bottom: 1px solid;
+      border-image: url("../assets/images/text-gold.png") 100;
    }
 
    main {

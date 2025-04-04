@@ -282,7 +282,7 @@ p a {
    position: absolute;
    top: 50%;
    right: 40px;
-   border-top: 1px solid var(--bg);
+   border-top: 1px solid;
 }
 
 

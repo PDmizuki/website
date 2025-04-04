@@ -259,7 +259,6 @@ body::after,
 .card-content h3,
 main .button-a::before,
 main .button-a::after {
-   background: url("../assets/images/text-gold.png") 100;
    border-image: url("../assets/images/text-gold.png") 100;
 }
 
