@@ -42,9 +42,6 @@
    }
 
    /*===================== body text =====================*/
-   html,body {
-      border-image: url("../assets/images/text-gold.png") 100;
-   }
    body::before {
       border: 2vh solid;
       border-left: 4vw solid;
@@ -95,6 +92,12 @@
       }
    }
 
+   /*===================== border =====================*/
+   section .button::before,
+   section .button::after,
+   .hr {
+      border-image: url("../assets/images/text-gold.png") 100;
+   }
 
    /*===================== img =====================*/
    img {
@@ -238,7 +241,7 @@
       content: "";
       display: block;
       position: absolute;
-      border: 1px solid var(--border);
+      border: 1px solid;
       width: 100%;
       height: 100%;
       transition: 0.3s;
@@ -264,14 +267,13 @@
 
    .hr {
       height: 25px;
-      margin-bottom: 15vmin;
+      margin: 10vmin 0;
       background:
       linear-gradient(to top, rgba(0, 0, 0, 0.4) 0%,
       rgba(0, 0, 0, 0.4) 100%),
       url("../assets/images/pd-bg-img.jpg") no-repeat bottom center/cover;
       border-top: 1px solid;
       border-bottom: 1px solid;
-      border-image: url("../assets/images/text-gold.png") 100;
    }
 
    main {
