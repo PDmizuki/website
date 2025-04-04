@@ -270,7 +270,7 @@
       margin: 10vmin 0;
       border-top: 1px solid;
       border-bottom: 1px solid;
-      box-shadow: inset 0px 0px 10px 6px #000;
+      box-shadow: inset 0px 0px 10px 4px #000;
    }
 
    main {
