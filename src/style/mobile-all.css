@@ -269,11 +269,12 @@
       height: 25px;
       margin: 10vmin 0;
       background:
-      linear-gradient(to top, rgba(0, 0, 0, 0.4) 0%,
-      rgba(0, 0, 0, 0.4) 100%),
+      linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%,
+      rgba(0, 0, 0, 0.8) 100%),
       url("../assets/images/pd-bg-img.jpg") no-repeat bottom center/cover;
       border-top: 1px solid;
       border-bottom: 1px solid;
+      box-shadow: inset 0px 2px 6px 2px #000;
    }
 
    main {
