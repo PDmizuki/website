@@ -38,9 +38,8 @@ jQuery(document).ready(function ($) {
             if (target.length) {
                 let scrollTop = target.offset().top - this.tabContainerHeight + 1 + this.offsetAdjust;
 
-                // アニメーションの速度を500msに設定
                 $('html, body').animate({ scrollTop: scrollTop }, 500, () => {
-                    this.updateTabPosition(); // アニメーション完了後に更新
+                    this.updateTabPosition();
                 });
             } else {
                 console.warn(`ターゲット要素が存在しません: ${element.attr('href')}`);
@@ -113,4 +112,16 @@ jQuery(document).ready(function ($) {
     }
 
     new StickyNavigation();
+
+    // 他のリンクタグのデフォルト動作を維持
+    $('a:not(#specific-tabs-container .tab)').click(function (event) {
+        let href = $(this).attr('href');
+        if (href && href.startsWith('#')) {
+            event.preventDefault();
+            let target = $(href);
+            if (target.length) {
+                $('html, body').animate({ scrollTop: target.offset().top }, 500);
+            }
+        }
+    });
 });
