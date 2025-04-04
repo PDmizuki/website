@@ -33,17 +33,28 @@ jQuery(document).ready(function ($) {
 
         onTabClick(event, element) {
             event.preventDefault();
-            let target = $(element.attr('href'));
 
-            if (target.length) {
-                let scrollTop = target.offset().top - this.tabContainerHeight + 1 + this.offsetAdjust;
-
-                $('html, body').animate({ scrollTop: scrollTop }, 500, () => {
-                    this.updateTabPosition();
-                });
-            } else {
-                console.warn(`ターゲット要素が存在しません: ${element.attr('href')}`);
+            // href 属性の取得
+            let href = element.attr('href');
+            if (!href || !href.startsWith('#')) {
+                console.warn(`無効な href 属性: ${href}`);
+                return; // href が不正の場合は処理中止
             }
+
+            // ターゲット要素の取得
+            let target = $(href);
+            if (target.length === 0) {
+                console.warn(`ターゲット要素が存在しません: ${href}`);
+                return; // ターゲットが見つからない場合は処理中止
+            }
+
+            // スクロール位置の計算
+            let scrollTop = target.offset().top - this.tabContainerHeight + 1 + this.offsetAdjust;
+
+            // アニメーション処理
+            $('html, body').animate({ scrollTop: scrollTop }, 500, () => {
+                this.updateTabPosition(); // アニメーション完了後に更新
+            });
         }
 
         onScroll() {
