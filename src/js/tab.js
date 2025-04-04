@@ -10,13 +10,13 @@ jQuery(document).ready(function ($) {
 
         init() {
             // 必要な要素が存在するか確認
-            if (!$('#specific-tabs-container').length || !$('#specific-tabs-container .tab').length) {
+            if (!$('.tabs-container').length || !$('.tabs-container .tab').length) {
                 console.error('必要な要素が見つかりません。');
                 return; // 要素がない場合は初期化を中止
             }
 
             let self = this;
-            $('#specific-tabs-container .tab').click(function (event) { // ID を指定してリンクを制限
+            $('.tabs-container .tab').click(function (event) { // ID を指定してリンクを制限
                 self.onTabClick(event, $(this));
             });
 
@@ -58,12 +58,12 @@ jQuery(document).ready(function ($) {
         }
 
         checkTabContainerPosition() {
-            let offset = $('#specific-tabs-container').offset().top + $('#specific-tabs-container').outerHeight() - this.tabContainerHeight + this.offsetAdjust;
+            let offset = $('.tabs-container').offset().top + $('.tabs-container').outerHeight() - this.tabContainerHeight + this.offsetAdjust;
 
             if ($(window).scrollTop() > offset) {
-                $('#specific-tabs-container').addClass('tabs-container--top');
+                $('.tabs-container').addClass('tabs-container--top');
             } else {
-                $('#specific-tabs-container').removeClass('tabs-container--top');
+                $('.tabs-container').removeClass('tabs-container--top');
             }
         }
 
@@ -72,7 +72,7 @@ jQuery(document).ready(function ($) {
             let newCurrentTab = null;
             let self = this;
 
-            $('#specific-tabs-container .tab').each(function () { // ID 指定で制限
+            $('.tabs-container .tab').each(function () { // ID 指定で制限
                 let id = $(this).attr('href');
                 let target = $(id);
 
@@ -99,7 +99,7 @@ jQuery(document).ready(function ($) {
                 let width = this.currentTab.outerWidth();
                 let left = this.currentTab.position().left;
 
-                $('#specific-tabs-container .tab-slider').css({
+                $('.tabs-container .tab-slider').css({
                     width: width,
                     left: left
                 });
@@ -114,7 +114,7 @@ jQuery(document).ready(function ($) {
     new StickyNavigation();
 
     // 他のリンクタグのデフォルト動作を維持
-    $('a:not(#specific-tabs-container .tab)').click(function (event) {
+    $('a:not(.tabs-container .tab)').click(function (event) {
         let href = $(this).attr('href');
         if (href && href.startsWith('#')) {
             event.preventDefault();
