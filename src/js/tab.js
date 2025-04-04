@@ -10,13 +10,13 @@ jQuery(document).ready(function ($) {
 
         init() {
             // 必要な要素が存在するか確認
-            if (!$('.tabs-container').length || !$('.tab').length) {
+            if (!$('#specific-tabs-container').length || !$('#specific-tabs-container .tab').length) {
                 console.error('必要な要素が見つかりません。');
                 return; // 要素がない場合は初期化を中止
             }
 
             let self = this;
-            $('.tabs-container .tab').click(function (event) { // tabs-container 内の .tab のみに影響
+            $('#specific-tabs-container .tab').click(function (event) { // ID を指定してリンクを制限
                 self.onTabClick(event, $(this));
             });
 
@@ -59,12 +59,12 @@ jQuery(document).ready(function ($) {
         }
 
         checkTabContainerPosition() {
-            let offset = $('.tabs-container').offset().top + $('.tabs-container').outerHeight() - this.tabContainerHeight + this.offsetAdjust;
+            let offset = $('#specific-tabs-container').offset().top + $('#specific-tabs-container').outerHeight() - this.tabContainerHeight + this.offsetAdjust;
 
             if ($(window).scrollTop() > offset) {
-                $('.tabs-container').addClass('tabs-container--top');
+                $('#specific-tabs-container').addClass('tabs-container--top');
             } else {
-                $('.tabs-container').removeClass('tabs-container--top');
+                $('#specific-tabs-container').removeClass('tabs-container--top');
             }
         }
 
@@ -73,7 +73,7 @@ jQuery(document).ready(function ($) {
             let newCurrentTab = null;
             let self = this;
 
-            $('.tabs-container .tab').each(function () { // tabs-container 内の .tab のみに影響
+            $('#specific-tabs-container .tab').each(function () { // ID 指定で制限
                 let id = $(this).attr('href');
                 let target = $(id);
 
@@ -100,7 +100,7 @@ jQuery(document).ready(function ($) {
                 let width = this.currentTab.outerWidth();
                 let left = this.currentTab.position().left;
 
-                $('.tabs-container .tab-slider').css({
+                $('#specific-tabs-container .tab-slider').css({
                     width: width,
                     left: left
                 });
