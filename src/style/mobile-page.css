@@ -28,6 +28,7 @@
       height: 100%;
       position: absolute;
       top: 0;
+      right: 10%;
       border-right: 1px solid var(--border);
    }
 
@@ -312,6 +313,8 @@
    .profile {
       display: grid;
       gap: 2rem;
+      width: 80%;
+      margin: 1vh auto 0;
    }
 
    .profile ol {
@@ -333,7 +336,7 @@
 
    .profile li {
       font-size: clamp(1.6rem, 1.371rem + 1.14vw, 1.8rem);
-      width: 100%;
+      width: fit-content;
       line-height: 20px;
       margin-bottom: -2%;
    }
@@ -375,10 +378,11 @@
    /*========== .color */
 
    .about .section--fourth .color {
-      width: 100%;
+      width: 80%;
       display: grid;
       gap: 0.5rem;
       padding: 0.75rem;
+      margin: 0 auto;
       background-color: var(--border);
    }
 

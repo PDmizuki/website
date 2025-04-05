@@ -953,7 +953,7 @@ npx webpack --mode production
 ls src/blog
 
 
-
+npm run build
 //変更の追加
 git add .
 //再コミット（メモ付け）
