@@ -78,8 +78,9 @@
         flex-direction: row;
         position: absolute;
         left: 5vmin;
+        bottom: 4.5vmin;
         width: 90%;
-        height: 20vmin;
+        height: 35vmin;
         padding: 0;
         box-shadow: 0 0px 1px 2px rgba(46, 46, 46, 0.35);
         backdrop-filter: blur(3px);
@@ -107,9 +108,9 @@
     
     .tabs-container a {
         position: relative;
-        bottom: 0;
         border: 1px solid;
         border-image: url("../assets/images/text-gold.png") 100;
+        transform: rotate(-90deg);
     }
     
     .tabs-container a::after,

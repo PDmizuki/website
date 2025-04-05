@@ -349,6 +349,7 @@ form .close:focus {
       font-size: 1.8rem;
       width: 100%;
       height: 25pt;
+      color: rgba(165, 165, 165, 0.2);
       padding: 0;
       margin: 0;
       margin-bottom: 0.5rem;

@@ -59,12 +59,18 @@
       top: 0;
       left: 0;
       padding: 0 10vmin;
+      display: grid;
+      gap: 2em;
    }
 
    .policy .h2-bg span {
       font-size: clamp(6rem, calc(6rem + 0.1vw), 6.4rem);
    }
 
+   .h2-bg p {
+      margin-left: 0.5vmin;
+   }
+   
    .h2-bg p::before {
       content: "";
       width: 100%;

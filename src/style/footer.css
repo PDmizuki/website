@@ -8,6 +8,7 @@
         linear-gradient(to top, rgba(0, 0, 0, 0.35) 0%,
       rgba(0, 0, 0, 0.35) 100%),
         url("../assets/images/pd-bg-img.jpg") no-repeat top center/cover;
+        border-top: 1px solid var(--border);
         z-index: 10;
     }
 
