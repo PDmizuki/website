@@ -957,11 +957,11 @@ npm run build
 //変更の追加
 git add .
 //再コミット（メモ付け）
-git commit -m "mobile"
+git commit -m "タブjs"
 //リモートにプッシュ
 git push origin gh-pages
 //全ての変更をコミット
-git commit -am "mobile html"
+git commit -am "タブ"
 
 
 メモ

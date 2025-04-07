@@ -9,41 +9,29 @@ jQuery(document).ready(function ($) {
         }
 
         init() {
-            // 必要な要素が存在するか確認
-            if (!$('.tabs').length || !$('.tab').length) {
-                console.error('必要な要素が見つかりません。');
-                return; // 要素がない場合は初期化を中止
-            }
-
             let self = this;
             $('.tab').click(function (event) {
                 self.onTabClick(event, $(this));
             });
-
-            $(window).on('scroll', () => {
+            $(window).scroll(() => {
                 this.onScroll();
             });
-
-            $(window).on('resize', () => {
+            $(window).resize(() => {
                 this.onResize();
             });
-
             this.onScroll();
         }
 
         onTabClick(event, element) {
             event.preventDefault();
             let target = $(element.attr('href'));
-
             if (target.length) {
                 let scrollTop = target.offset().top - this.tabContainerHeight + 1 + this.offsetAdjust;
-
                 // アニメーションの速度を500msに設定
                 $('html, body').animate({ scrollTop: scrollTop }, 500, () => {
-                    this.updateTabPosition(); // アニメーション完了後に更新
+                    // アニメーション完了後に強制的にスクロールイベントをトリガー
+                    this.updateTabPosition();
                 });
-            } else {
-                console.warn(`ターゲット要素が存在しません: ${element.attr('href')}`);
             }
         }
 
@@ -59,40 +47,31 @@ jQuery(document).ready(function ($) {
         }
 
         checkTabContainerPosition() {
-            // $('.tabs') が存在しない場合は処理を中断
-            if (!$('.tabs').length) return;
-
-            let offset = $('.tabs').offset().top + $('.tabs').outerHeight() - this.tabContainerHeight + this.offsetAdjust;
-
+            let offset = $('.tabs').offset().top + $('.tabs').height() - this.tabContainerHeight + this.offsetAdjust;
             if ($(window).scrollTop() > offset) {
                 $('.tabs-container').addClass('tabs-container--top');
             } else {
                 $('.tabs-container').removeClass('tabs-container--top');
             }
-        }
+        }        
 
         findCurrentTabSelector() {
-            let newCurrentId = null;
-            let newCurrentTab = null;
+            let newCurrentId;
+            let newCurrentTab;
             let self = this;
-
             $('.tab').each(function () {
                 let id = $(this).attr('href');
                 let target = $(id);
-
                 if (target.length) {
                     let offsetTop = target.offset().top - self.tabContainerHeight + self.offsetAdjust;
-                    let offsetBottom = offsetTop + target.outerHeight();
-
-                    if ($(window).scrollTop() >= offsetTop && $(window).scrollTop() < offsetBottom) {
+                    let offsetBottom = target.offset().top + target.height() - self.tabContainerHeight + self.offsetAdjust;
+                    if ($(window).scrollTop() > offsetTop && $(window).scrollTop() < offsetBottom) {
                         newCurrentId = id;
                         newCurrentTab = $(this);
                     }
                 }
             });
-
-            // 選択されているタブが変更された場合のみ更新
-            if (this.currentId !== newCurrentId) {
+            if (this.currentId !== newCurrentId || this.currentId === null) {
                 this.currentId = newCurrentId;
                 this.currentTab = newCurrentTab;
                 this.setSliderCss();
@@ -100,19 +79,23 @@ jQuery(document).ready(function ($) {
         }
 
         setSliderCss() {
-            if (this.currentTab && this.currentTab.length) {
+            if (this.currentTab) {
+                // 幅を正確に取得
                 let width = this.currentTab.outerWidth();
+                // タブの左からの位置を取得
                 let left = this.currentTab.position().left;
-
+                
+                // タブスライダーのCSSを設定
                 $('.tab-slider').css({
-                    width: width,
-                    left: left
+                    width: width,  // 高さではなく幅を設定
+                    left: left     // leftの位置を設定
                 });
             }
         }
 
         updateTabPosition() {
-            $(window).trigger('scroll'); // スクロールイベントを強制発火
+            // 強制的にスクロールイベントをトリガーしてバーの位置を更新
+            $(window).scroll();
         }
     }
 
