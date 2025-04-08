@@ -107,7 +107,6 @@
     }
     
     .tabs-container a {
-        position: relative;
         border: 1px solid;
         border-image: url("../assets/images/text-gold.png") 100;
         transform: rotate(-90deg);
