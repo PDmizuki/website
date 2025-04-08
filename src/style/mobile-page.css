@@ -331,7 +331,6 @@
 
    .profile ol p {
       position: relative;
-      letter-spacing: 0.25rem;
       margin-bottom: -1rem;
    }
 
@@ -341,7 +340,6 @@
    }
 
    .profile li {
-      font-size: clamp(1.6rem, 1.371rem + 1.14vw, 1.8rem);
       width: fit-content;
       line-height: 20px;
       margin-bottom: -2%;
@@ -354,11 +352,15 @@
    }
 
    .profile li::before {
-      content: "・";
+      content: "";
       display: block;
       position: relative;
       left: -13px;
       bottom: -20px;
+      width: 10px;
+      height: 10px;
+      background: var(--bg);
+      z-index: -1;
    }
 
    .profile li span {
