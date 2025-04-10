@@ -26,8 +26,8 @@ switch (page) {
       break;
 
    case "matching":
-      import("./style/machting.css");
-      import("./js/machting.js");
+      import("./style/matching.css");
+      import("./js/matching.js");
       break;
 }
 

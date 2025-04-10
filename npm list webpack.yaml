@@ -957,11 +957,11 @@ npm run build
 //変更の追加
 git add .
 //再コミット（メモ付け）
-git commit -m "maching"
+git commit -m "matching"
 //リモートにプッシュ
 git push origin gh-pages
 //全ての変更をコミット
-git commit -am "maching"
+git commit -am "matching"
 
 
 メモ
