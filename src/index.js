@@ -27,7 +27,7 @@ switch (page) {
 
    case "matching":
       import("./style/matching.css");
-      import("./js/matching.js");
+      import("./js/hearing.js");
       break;
 }
 
