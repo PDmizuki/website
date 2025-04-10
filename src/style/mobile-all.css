@@ -115,8 +115,9 @@
       font-weight: 500;
       color: var(--bg);
       width: fit-content;
-      line-height: 7.5rem;
+      line-height: 1.2;
       letter-spacing: 0.5rem;
+      margin-bottom: 2rem;
       padding-left: 10vmin;
    }
 
