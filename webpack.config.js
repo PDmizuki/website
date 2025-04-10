@@ -88,6 +88,10 @@ module.exports = {
          filename: "policy.html",
       }),
       new HtmlWebpackPlugin({
+         template: "./src/matching.html",
+         filename: "matching.html",
+      }),
+      new HtmlWebpackPlugin({
          template: "./src/blog/categories.html",
          filename: "blog/categories.html",
       }),

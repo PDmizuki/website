@@ -24,6 +24,11 @@ switch (page) {
       import("./js/blog.js");
       import("./js/blog-categories.js");
       break;
+
+   case "matching":
+      import("./style/machting.css");
+      import("./js/machting.js");
+      break;
 }
 
 /////////// all css
