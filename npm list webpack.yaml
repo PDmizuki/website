@@ -965,14 +965,12 @@ c
 
 
 メモ
-bot js 動作しない
-
-html img 修正する ../ => ./
 リンク反応しない
 アニメーション動作が遅い
-カードデザイン
+カードデザイン 見直し
 
 追加修正
+CONTACTForm
 aoudio webpack設定
 section js 回転左右
 div.section => section

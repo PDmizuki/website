@@ -52,8 +52,7 @@
    .h2-bg {
       font-family: sans-serif;
       width: 100vw;
-      height: 30vmin;
-      border-bottom: 1px solid var(--border);
+      height: 35vmin;
       align-content: center;
       position: relative;
       top: 0;
@@ -74,6 +73,7 @@
       width: 100%;
       padding-left: 10vmin;
       border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
    }
 
    .section--third .button {

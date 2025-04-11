@@ -5,11 +5,10 @@
     top: -5vmin;
     left: 9.5vmin;
     padding: 1rem;
-    margin: 0 auto;
+    margin: 0 auto 1em;
     border: 1px solid var(--border);
     background-color: rgba(255, 255, 255, 0.12);
     backdrop-filter: blur(3px);
-    margin-bottom: 1rem;
     mix-blend-mode: difference;
     box-shadow: inset 1px 1px 4px rgba(0, 0, 0, 0.5);
 }
@@ -114,11 +113,14 @@
 
 @media screen and (max-width: 600px) {
     .accordion-wrap {
-        width: 95%;
+        width: 85%;
         left: 0;
         top: 0;
         padding: 0.15rem;
-        margin-bottom: 0;
+        margin: 1em auto;
+        background-color: rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(3px);
+        box-shadow: inset 1px 1px 4px rgba(0, 0, 0, 0.5);
     }
 
     .accordion-item {
@@ -128,7 +130,7 @@
     .contact .mobile .accordion-header h3 {
         font-size: clamp(1.6rem, 1.371rem + 1.14vw, 1.8rem);
         line-height: 3rem;
-        padding: 0.75rem;
+        padding: 0.75rem 2em;
     }
 
     .accordion-text p {
