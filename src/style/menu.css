@@ -63,56 +63,6 @@ nav {
     bottom: 0;
 }
 
-/* .toggle_btn styles */
-.toggle_btn {
-    position: fixed;
-    bottom: 30vmin;
-    right: 0;
-    width: 15%;
-    cursor: pointer;
-    z-index: 9997;
-}
-
-.image-container {
-    position: relative;
-}
-
-#menu-img {
-    width: 75%;
-    mix-blend-mode: difference;
-    position: absolute;
-    cursor: grab;
-}
-
-.menu-img {
-    animation: rotate-r 45s infinite linear;
-}
-
-@keyframes rotate-r {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-.menu-img2 {
-    animation: rotate-l 30s infinite linear;
-}
-
-@keyframes rotate-l {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(-360deg);
-    }
-}
-
-/* .toggle_btn styles
 .toggle_btn {
     display: block;
     position: fixed;
@@ -166,13 +116,13 @@ nav {
     100% {
         transform: translateX(100%);
     }
-}*/
+}
 /*== OPEN ==*/
 .open nav {
     right: 0;
 }
 
-/*.open .toggle_btn {
+.open .toggle_btn {
     transition: all 1s ease;
 }
 .open .toggle_btn span {
@@ -214,7 +164,7 @@ nav {
     transform: translate(0%, 0%) rotate(0deg);
     transition: all 1s ease;
     opacity: 1;
-}*/
+}
 /* Mask */
 #mask {
     display: none;

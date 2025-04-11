@@ -28,7 +28,7 @@ input:-webkit-autofill:focus {
    transition: background-color 0s 600000s, color 0s 600000s !important;
 }
 
-.content-wrapper {
+.content-form {
    width: calc(60% - 145px);
    position: absolute;
    top: 25%;
@@ -213,8 +213,8 @@ form .close:focus {
       transform: translateY(-2rem);
    }
 
-   .content-wrapper {
-      width: 95%;
+   .contact-form {
+      width: 80%;
       padding: 0.5rem 1rem;
       margin: 0 auto;
       position: relative;
@@ -310,7 +310,7 @@ form .close:focus {
       transform: translateY(-2rem);
    }
 
-   .content-wrapper {
+   .contact-form {
       width: 80%;
       padding: 0.5rem 1rem;
       margin: 0 auto;
