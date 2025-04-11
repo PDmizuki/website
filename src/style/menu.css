@@ -68,11 +68,13 @@ nav {
     position: fixed;
     top: 0;
     right: 0;
-    width: 10%;
-    height: 5%;
-    border-left: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
+    width: 13vmin;
+    height: 13vmin;
+    border-left: 1px solid;
+    border-bottom: 1px solid;
     transition: all 1.3s;
+    background: url("../assets/images/mobile-main-second.png");
+    border-image: url("../assets/images/text-gold.png") 100;
     cursor: pointer;
     z-index: 9999;
     transform: translate(0, 0);
@@ -81,10 +83,11 @@ nav {
 .toggle_btn span {
     display: block;
     position: absolute;
-    top: 25px;
-    width: 30px;
-    height: 1px;
-    background: var(--text-color);
+    top: 6vmin;
+    width: 7.5vmin;
+    height: 0.35vmin;
+    right: 0;
+    background: url("../assets/images/text-gold.png");
     overflow: hidden;
     z-index: 10000;
 }
@@ -98,8 +101,8 @@ nav {
     height: 100%;
     background: linear-gradient(90deg,
             transparent,
-            var(--accent-color) 0%,
-            var(--text-color) 100%,
+            var(--bg) 0%,
+            var(--text) 100%,
             transparent);
     animation: scroll-left 2s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
     background-size: 200% 100%;
@@ -126,7 +129,6 @@ nav {
     transition: all 1s ease;
 }
 .open .toggle_btn span {
-    background-color: var(--text-color);
     box-shadow: -4px -4px 0px 0 var(--hover-color);
     width: 100%;
     height: 0.5px;
@@ -224,11 +226,6 @@ nav {
 @media screen and (min-width: 1300px) {
 
     /* PC_Menu */
-    header .noise {
-        -webkit-text-fill-color: linen;
-        -webkit-text-fill-color: cadetblue;
-    }
-
     .pc_menu,
     .pc_menu ul,
     .logo,

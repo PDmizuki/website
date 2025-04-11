@@ -1,3 +1,51 @@
+:where(input[type="checkbox"], input[type="radio"]) {
+   font-size: inherit;
+   line-height: inherit;
+   margin: 0;
+   block-size: 2.4rem;
+   inline-size: 2.4rem;
+   vertical-align: sub;
+}
+form input {
+   position: relative;
+   appearance: none;
+   width: 2.4rem;
+   height: 2.4rem;
+   border: 1px solid var(--text);
+   border-radius: 50%;
+   background: var(--border);
+   box-shadow: inset hsla(0, 0%, 0%, 0.5) 0px 1px 2px 0px;
+}
+form input[type="checkbox"] {
+   border-radius: 2px;
+}
+/* チェックされたらラジオボタン内側を表示 */
+form input[type="checkbox"]:checked::before,
+form input[type="radio"]:checked::before {
+   opacity: 1;
+}
+form input[type="checkbox"]::before,
+form input[type="radio"]::before {
+   background-color: var(--text);
+   box-shadow: 0 1px 2px 0px rgba(46, 46, 46, 0.45);
+   border-radius: 50%;
+   bottom: 0;
+   content: "";
+   left: 0;
+   margin: auto;
+   opacity: 0;
+   position: absolute;
+   right: 0;
+   top: 0;
+   width: 1.25rem;
+   height: 1.25rem;
+}
+form input[type="checkbox"]::before {
+   border-radius: 0;
+   width: 1.5rem;
+   height: 1.5rem;
+}
+
 .form-row {
    display: flex;
    justify-content: space-between;
@@ -28,7 +76,7 @@ input:-webkit-autofill:focus {
    transition: background-color 0s 600000s, color 0s 600000s !important;
 }
 
-.content-form {
+.contact-form {
    width: calc(60% - 145px);
    position: absolute;
    top: 25%;
@@ -295,14 +343,10 @@ form .close:focus {
       padding: 0;
    }
 
-   .col.x-50 {
-      padding: 0;
-      margin: 0.5rem auto 1rem;
-   }
-
+   .col.x-50,
    .col.x-100 {
       padding: 0;
-      margin-top: 1.5rem;
+      margin: 0.5rem auto 1rem;
    }
 
    .contact-form .input-text:focus+.label,
@@ -312,11 +356,11 @@ form .close:focus {
 
    .contact-form {
       width: 80%;
-      padding: 0.5rem 1rem;
+      padding: 0;
       margin: 0 auto;
       position: relative;
       right: 0;
-      top: 5%;
+      top: 10vmin;
    }
 
    .contact-form .input-text {
@@ -335,7 +379,7 @@ form .close:focus {
 
    .contact-form .label {
       font-size: clamp(1.4rem, 1.171rem + 1.14vw, 1.6rem);
-      color: rgba(107, 107, 107, 0.75);
+      color: rgba(87, 87, 87, 0.75);
       left: 2.75%;
       top: 13.75%;
       line-height: 2rem;
@@ -347,25 +391,23 @@ form .close:focus {
 
    .contact-form .submit-btn {
       font-size: 1.8rem;
-      width: 100%;
       height: 25pt;
       color: rgba(165, 165, 165, 0.2);
       padding: 0;
       margin: 0;
       margin-bottom: 0.5rem;
       margin-top: 1rem;
-      border-radius: 10px;
+      border-radius: 8px;
    }
 
    .contact-form .submit-btn:active {
       color: var(--text);
-      background: var(--accent);
+      background: var(--border);
    }
 
    .align-center {
-      display: grid;
+      display: block;
       align-items: center;
-      justify-content: flex-end;
    }
 
    .align-center p {
@@ -376,12 +418,16 @@ form .close:focus {
       line-height: 1.2;
       text-align: left;
    }
+   .align-center p a,
+   .align-center p a::before,
+   .align-center p a::after {
+      border: none;
+   }
 
    .align-center p a {
       font-size: clamp(1.6rem, 1.143rem + 2.29vw, 2rem);
       margin-top: 0;
       padding: 0.5rem;
-      border: 0;
    }
 
    /*===================== モーダルウィンドウ =====================*/
