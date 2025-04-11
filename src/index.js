@@ -42,7 +42,7 @@ import "./assets/fonts/fonts.css";
 import("./style/mobile-all.css");
 import("./style/mobile-page.css");
 import("./style/tab.css");
-
+import("./js/tab.js");
 
 // PC all
 import "./style/all.css";      // 全ページ共通
