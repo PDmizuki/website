@@ -6,7 +6,7 @@
     <title>Precision Design</title>
     <link rel="icon" href="./assets/images/pd.ico">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Search -->
     <meta name="description" content="想いを形に、こだわりをデザインする。">
@@ -460,80 +460,71 @@ Slide ----->
                 <div class="top-s">
                     <div class="h2-bg noise fade_bottom">
                         <h2>Contact</h2>
-                        <p>問合せ / 申込</p>
+                        <p>問合せ / 依頼</p>
                     </div>
 
-                    <div class="content-wrapper">
-                        <div class="get-in-touch">
-
-                            <form id="contactForm" class="contact-form"
-                                action="https://script.google.com/macros/s/AKfycbyN2Gl35qjTCreWck6ZkWL2Nf9wrxUD7ZWyQ0yEtPqqGnfcJmMDyaozg90feIz6z51P/exec"
-                                method="POST" target="hidden_iframe" onsubmit="submitted=true;">
-
-                                <div class="form-field col align-center">
-                                    <div class="radio-group">
-                                        <label>
-                                        <input type="radio" name="inquiryType" value="相談" required>
-                                            質問、相談
-                                        </label>
-                                        <label>
-                                        <input type="radio" name="inquiryType" value="申込" required>
-                                            依頼の申込み
-                                        </label>
-                                    </div>
-                                </div>
-
-                                <div class="form-row">
-                                    <div class="form-col">
-                                        <div class="form-field col x-50">
-                                            <input type="text" id="name" name="name" class="input-text" required>
-                                            <label for="name" class="label">Name</label>
-                                        </div>
-                                        <div class="form-field col x-50">
-                                            <input type="email" id="email" name="email" class="input-text" required>
-                                            <label for="email" class="label">Address</label>
-                                        </div>
-                                        <div class="form-field col x-50">
-                                            <input type="text" id="companyName" name="companyName" class="input-text"
-                                                required>
-                                            <label for="companyName" class="label">Business</label>
-                                        </div>
-                                    </div>
-                                    <div class="form-field col x-100">
-                                        <textarea id="message" name="message" class="input-text" required></textarea>
-                                        <label for="message" class="label label-test">Text</label>
-                                    </div>
-                                </div>
-
-                                <div class="form-field col align-center">
-                                    <input type="checkbox" name="inquiryType" value="チェック" required>
-                                    <p>当サイトをご利用の際は、
-                                        <a href="https://mizukioyama.github.io/pd/policy.html">SitePolicy</a>をご確認ください。
-                                    </p>
-                                    <button type="submit" class="submit-btn">Send</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
+                    <!-- フォームテンプレート -->
+<form id="contactForm" class="contact-form" action="https://script.google.com/macros/s/AKfycbywCgodNF4hlCe6p9NdbtlnA-QvDRK2zcCHNKnDmiwv-31JZqLKvSdLZoi3EeG4uJiI/exec" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
+    <div class="form-field col align-center">
+      <h3>Contact Form</h3>
+      <div class="radio-group">
+        <label>
+          <input type="radio" name="inquiryType" value="相談" required>問合せ
+        </label>
+        <label>
+          <input type="radio" name="inquiryType" value="申込" required>依頼
+        </label>
+      </div>
+    </div>
+  
+    <div class="form-row">
+      <div class="form-col">
+        <div class="form-field col x-50">
+          <input type="text" id="name" name="name" class="input-text" required>
+          <label for="name" class="label">氏名</label>
+        </div>
+        <div class="form-field col x-50">
+          <input type="email" id="email" name="email" class="input-text" required>
+          <label for="email" class="label">アドレス</label>
+        </div>
+      </div>
+  
+      <div class="form-field col x-100">
+        <textarea id="message" name="message" class="input-text" required></textarea>
+        <label for="message" class="label label-test">問合せ内容</label>
+      </div>
+    </div>
+  
+    <div class="form-field col align-center">
+      <label>
+        <p>
+          <input type="checkbox" name="consent" value="同意する" required>
+          当サイトをご利用の際は、
+          <a href="#" class="button" data-modal="modal--third">SitePolicy</a>
+          をご確認ください。
+        </p>
+      </label>
+      <button type="submit" class="submit-btn">送信</button>
+    </div>
+  </form>
 
                 </div>
             </section>
 
             <div id="footer-container"></div>
-            <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
-
             <!-- モーダルウィンドウ -->
+            <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+            <!-- modal -->
             <div id="thanksModal" class="modal">
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <p>
-                        問合せありがとうございます。
-                        <br>
-                        返信まで1日～2日ほどお待ちください。
-                    </p>
-                </div>
+              <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>
+                  問合せありがとうございます。
+                  <br>
+                  確認できましたら折り返しご連絡いたしますので、返信まで1日～2日ほどお待ちください。
+                </p>
+              </div>
             </div>
-        </div>
 <!---- mobile ----->
 
     </main>

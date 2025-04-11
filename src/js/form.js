@@ -1,16 +1,11 @@
-// グローバル変数 'submitted' を宣言
-let submitted = false;
-
 document.addEventListener("DOMContentLoaded", function () {
   const inputs = document.querySelectorAll(".input-text");
   const modal = document.getElementById('thanksModal');
-  const closeButton = document.getElementsByClassName('close')[0];
+  const closeButton = document.querySelector('.close');
   const contactForm = document.getElementById('contactForm');
 
-  // 初期状態でモーダルを非表示
   modal.style.display = "none";
 
-  // 入力欄のラベル管理関数
   function toggleLabel(input) {
     if (input.value.trim() !== "") {
       input.classList.add("not-empty");
@@ -19,58 +14,48 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // 各入力欄のイベントリスナーを設定
   inputs.forEach(input => {
-    toggleLabel(input); // 初期チェック
-    input.addEventListener("input", function () {
-      toggleLabel(input);
-    });
+    toggleLabel(input);
+    input.addEventListener("input", () => toggleLabel(input));
   });
 
-  // フォーム送信処理
-  contactForm.addEventListener('submit', function (e) {
+  contactForm.addEventListener("submit", function (e) {
     e.preventDefault();
-    const formData = new FormData(contactForm);
+    const form = e.target;
+    const formData = new FormData(form);
 
-    fetch(contactForm.action, {
+    // 送信処理
+    fetch(form.action, {
       method: 'POST',
       body: formData
     }).then(response => {
       if (response.ok) {
-        submitted = true;
-        modal.style.display = "block"; // モーダルを表示
-        setTimeout(() => {
-          modal.classList.add("show");
-        }, 10); // ちょっと遅延させるとアニメーションが綺麗になる
-
-        contactForm.reset(); // フォームリセット
-        inputs.forEach(input => {
-          input.classList.remove("not-empty");
+        submitted = true;  // 送信成功時に submitted を true にする
+        modal.style.display = "block";  // モーダルを表示
+        modal.classList.add("show");
+        form.reset();  // フォームをリセット
+        document.querySelectorAll('.input-text').forEach(input => {
+          input.classList.remove('not-empty');
         });
-
       } else {
-        alert('送信に問題が発生しました。');
+        alert('送信に問題が発生しました。サーバーからエラーが返されました。');
+        console.error('送信エラー:', response);
       }
     }).catch(error => {
-      alert('送信に問題が発生しました。');
+      alert('送信に問題が発生しました。ネットワークエラーの可能性があります。');
+      console.error('ネットワークエラー:', error);  // エラーをコンソールに出力
     });
   });
 
-  // モーダルのクローズボタン
-  closeButton.onclick = function () {
+  closeButton.onclick = () => {
     modal.classList.remove("show");
-    setTimeout(() => {
-      modal.style.display = "none";
-    }, 400);
+    setTimeout(() => (modal.style.display = "none"), 300);
   };
 
-  // モーダル外をクリックで閉じる
-  window.onclick = function (event) {
+  window.onclick = event => {
     if (event.target == modal) {
       modal.classList.remove("show");
-      setTimeout(() => {
-        modal.style.display = "none";
-      }, 400);
+      setTimeout(() => (modal.style.display = "none"), 300);
     }
   };
 });
