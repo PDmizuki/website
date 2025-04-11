@@ -6,11 +6,21 @@
    inline-size: 2.4rem;
    vertical-align: sub;
 }
-form input {
+
+form .radio-group label {
+   margin-right: 0.3rem;
+}
+
+form .radio-group label:nth-child(2) {
+   margin-left: 1rem;
+}
+
+form input[type="checkbox"],
+form input[type="radio"] {
    position: relative;
    appearance: none;
-   width: 0.5em;
-   height: 0.5em;
+   width: 1.4em;
+   height: 1.4em;
    border: 1px solid var(--text);
    border-radius: 50%;
    background: var(--border);
@@ -33,16 +43,15 @@ form input[type="radio"]::before {
    margin: auto;
    opacity: 0;
    position: absolute;
-   top: 0.1em;
+   top: 0.14em;
    right: 0;
    bottom: 0;
    left: 0;
-   width: 0.3em;
-   height: 0.3em;
+   width: 0.7em;
+   height: 0.7em;
 }
 form input[type="checkbox"]::before {
-   border-radius: 0;
-   top: 0.11em;
+   border-radius: 3px;
 }
 
 .radio-group label {
