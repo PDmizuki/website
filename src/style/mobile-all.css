@@ -117,6 +117,8 @@
       line-height: 1.2;
       letter-spacing: 0.1rem;
       margin-bottom: 2rem;
+      color: var(--bg);
+      mix-blend-mode: color-dodge;
    }
 
    h2,

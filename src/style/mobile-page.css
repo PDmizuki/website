@@ -82,11 +82,11 @@
 
    /*===================== .service =====================*/
 
-   /*.link {
+   .link {
       position: relative;
       right: 0;
       bottom: 0;
-   }*/
+   }
 
    .link-in::after {
       content: "";
