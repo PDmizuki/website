@@ -37,7 +37,7 @@
    /*===================== section =====================*/
    section .top-s {
       height: auto;
-      min-height: 100vh;
+      min-height: 80vh;
       text-align: justify;
       position: relative;
       /*display: flex;
