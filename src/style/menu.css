@@ -76,7 +76,7 @@ nav {
     background: url("../assets/images/mobile-main-second.png");
     border-image: url("../assets/images/text-gold.png") 100;
     cursor: pointer;
-    z-index: 9999;
+    z-index: 999;
     transform: translate(0, 0);
 }
 
