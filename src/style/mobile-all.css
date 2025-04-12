@@ -119,11 +119,6 @@
       margin-bottom: 2rem;
    }
 
-   h1,h2 {
-      color: var(--bg);
-      mix-blend-mode: color-dodge;
-   }
-
    h2,
    h3,
    h4 {
@@ -184,18 +179,19 @@
 
    /*===================== リンク =====================*/
    section a {
-      border: 0;
+      margin: 0;
+      padding: 0;
+      letter-spacing: normal;
    }
-
    a {
       font-family: futura-pt, sans-serif;
       font-size: 1.8rem;
       color: var(--border);
-      width: fit-content;
+      width: auto;
       height: fit-content;
       padding: 0.25rem 0.5rem;
       position: relative;
-      display: inline-block;
+      display: block;
       text-decoration: none;
       z-index: 9;
    }
@@ -223,45 +219,6 @@
       transform: scale(1, 1);
    }
 
-   section .button {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      line-height: 1;
-      text-decoration: none;
-      width: 130px;
-      height: 30px;
-      margin: 10% auto 0;
-      transition: 0.3s;
-   }
-
-   section .button::before,
-   section .button::after {
-      content: "";
-      display: block;
-      position: absolute;
-      border: 1px solid;
-      width: 100%;
-      height: 100%;
-      transition: 0.3s;
-   }
-
-   section .button::before {
-      top: -3px;
-      left: -3px;
-   }
-
-   section .button::after {
-      top: 3px;
-      left: 3px;
-   }
-
-   section .button:hover::before,
-   section .button:hover::after {
-      top: 0;
-      left: 0;
-   }
-
    /*===================== リンク =====================*/
 
    .hr {
@@ -272,7 +229,4 @@
       box-shadow: inset 0px 0px 10px 4px #000;
    }
 
-   main {
-      background: none;
-   }
 }

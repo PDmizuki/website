@@ -82,11 +82,11 @@
 
    /*===================== .service =====================*/
 
-   .link {
+   /*.link {
       position: relative;
       right: 0;
       bottom: 0;
-   }
+   }*/
 
    .link-in::after {
       content: "";
@@ -109,36 +109,37 @@
       opacity: 1;
    }
 
-   .se:hover::after,
-   .se:focus::after {
+   .link-in:hover::after,
+   .link-in:focus::after {
       background-image: url('../assets/images/mobile-main-second.png');
    }
 
-   .se-02:hover::after,
-   .se-02:focus::after {
+   .link-in:nth-child(3)::after,
+   .link-in:nth-child(3):focus::after {
       background-image: url('../assets/images/bg-a.png');
    }
 
-   .se-03:hover::after,
-   .se-03:focus::after {
+   .link-in:nth-child(4):hover::after,
+   .link-in:nth-child(4):focus::after {
       background-image: url('../assets/images/text-gold.png');
    }
 
    .top .link-in {
       position: relative;
-      height: 20vmin;
+      height: 4.5em;
       bottom: 0;
       border: 1px solid var(--border);
    }
 
    .top .link-in h3 {
-      font-size: clamp(2rem, 1.273rem + 3.64vw, 4rem);
-      line-height: 1.2;
-      padding: 1vmin 10vmin 0;
+      font-size: 2.4rem;
+      line-height: 2;
+      padding: 0 10vmin;
       border-bottom: 1px solid var(--border);
    }
 
    .top .link-in p {
+      line-height: 1.6;
       position: absolute;
       right: 6vmin;
       bottom: 0;
