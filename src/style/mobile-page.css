@@ -46,6 +46,7 @@
       縦方向の中央寄せ
       justify-content: flex-start;*/
       align-items: center;
+      padding-bottom: 10vmin;
    }
 
 

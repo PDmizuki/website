@@ -78,7 +78,6 @@
 @media screen and (max-width: 600px) {
     .tabs-container {
         flex-direction: row;
-        position: absolute;
         left: 5%;
         bottom: 4.5vmin;
         width: 90%;
