@@ -109,7 +109,7 @@
    /*===================== text =====================*/
    h1 {
       /*font-size: 62.5%;=16px 12rem=120px*/
-      font-size: clamp(2rem, -2.571rem + 22.86vw, 6rem);
+      font-size: clamp(2rem, -0.182rem + 10.91vw, 8rem);
       font-family: "Jost", sans-serif;
       font-optical-sizing: auto;
       font-weight: 500;
@@ -135,13 +135,12 @@
       /*font-size: 62.5%;=16px 6rem=62px*/
       font-family: serif;
       font-weight: 500;
-      font-size: clamp(4.2rem, 2.143rem + 10.29vw, 6rem);
+      font-size: clamp(2rem, 0.545rem + 7.27vw, 6rem);
       width: fit-content;
       line-height: 1;
    }
 
    .policy h2 {
-      font-size: clamp(2rem, 1.543rem + 2.29vw, 2.4rem);
       line-height: 3rem;
       -webkit-text-stroke-width: 0;
    }

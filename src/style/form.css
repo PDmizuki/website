@@ -380,14 +380,14 @@ form .close:focus {
       font-weight: 600;
       color: var(--text);
       width: 100%;
-      height: 50pt;
+      height: 17vmin;
       padding-left: 1rem;
       box-shadow: inset 1px 1px 4px rgba(0, 0, 0, 0.95);
       border-radius: 8px;
    }
 
    .contact-form #message {
-      height: 130pt;
+      height: 50vmin;
    }
 
    .contact-form .label {
@@ -405,7 +405,7 @@ form .close:focus {
    .contact-form .submit-btn {
       font-size: 1.8rem;
       width: 100%;
-      height: 35pt;
+      height: 10vmin;
       color: rgba(165, 165, 165, 0.7);
       background: rgba(85, 85, 85, 0.5);
       padding: 0;
