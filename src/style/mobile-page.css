@@ -82,12 +82,7 @@
 
    /*===================== .service =====================*/
 
-   .link {
-      position: relative;
-      right: 0;
-      bottom: 0;
-   }
-
+   
    .link-in::after {
       content: "";
       position: absolute;
@@ -133,6 +128,7 @@
 
    .top .link-in h3 {
       font-size: 2.4rem;
+      text-align: left;
       line-height: 2;
       padding: 0 10vmin;
       border-bottom: 1px solid var(--border);

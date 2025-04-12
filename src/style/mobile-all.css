@@ -120,7 +120,7 @@
       color: var(--bg);
       mix-blend-mode: color-dodge;
    }
-
+   
    h2,
    h3,
    h4 {
@@ -180,11 +180,6 @@
 
 
    /*===================== リンク =====================*/
-   section a {
-      margin: 0;
-      padding: 0;
-      letter-spacing: normal;
-   }
    a {
       font-family: futura-pt, sans-serif;
       font-size: 1.8rem;
