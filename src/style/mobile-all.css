@@ -113,12 +113,15 @@
       font-family: "Jost", sans-serif;
       font-optical-sizing: auto;
       font-weight: 500;
-      color: var(--bg);
       width: fit-content;
       line-height: 1.2;
-      letter-spacing: 0.5rem;
+      letter-spacing: 0.1rem;
       margin-bottom: 2rem;
-      padding-left: 10vmin;
+   }
+
+   h1,h2 {
+      color: var(--bg);
+      mix-blend-mode: color-dodge;
    }
 
    h2,
@@ -133,13 +136,11 @@
 
    h2 {
       /*font-size: 62.5%;=16px 6rem=62px*/
-      font-family: sans-serif;
+      font-family: serif;
       font-weight: 500;
       font-size: clamp(4.2rem, 2.143rem + 10.29vw, 6rem);
       width: fit-content;
       line-height: 1;
-      -webkit-text-stroke-width: 1px;
-      -webkit-text-stroke-color: var(--bg);
    }
 
    .policy h2 {
@@ -189,14 +190,10 @@
    a {
       font-family: futura-pt, sans-serif;
       font-size: 1.8rem;
-      font-weight: 400;
       color: var(--border);
       width: fit-content;
       height: fit-content;
       padding: 0.25rem 0.5rem;
-      left: 0;
-      bottom: 65%;
-      bottom: 0;
       position: relative;
       display: inline-block;
       text-decoration: none;

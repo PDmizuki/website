@@ -1,7 +1,7 @@
 @media only screen and (max-width:599px) {
     footer {
         position: relative;
-        height: 80svh;
+        height: 30svh;
         padding-left: 6vmin;
         border-right: 1px solid var(--border);
         background:
@@ -25,13 +25,13 @@
     }
 
     footer a {
-        font-size: clamp(2rem, 1.855rem + 0.73vw, 2.4rem);
+        font-size: 1.8rem;
         margin: 1rem 0 0 2rem;
         padding: 0.5rem;
     }
 
-    .fo-a {
-        margin-top: 1rem;
+    .fo-a a {
+        font-size: 1.4rem;
     }
 
     footer a:hover,

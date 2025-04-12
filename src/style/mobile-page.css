@@ -82,14 +82,13 @@
 
    /*===================== .service =====================*/
 
-   .se-list {
-      width: 100%;
+   .link {
       position: relative;
       right: 0;
       bottom: 0;
    }
 
-   .se::after {
+   .link-in::after {
       content: "";
       position: absolute;
       pointer-events: none;
@@ -105,13 +104,13 @@
    }
 
    /* Hover or Focus Animation */
-   .se:hover::after,
-   .se:focus::after {
+   .link-in:hover::after,
+   .link-in:focus::after {
       opacity: 1;
    }
 
-   .se-01:hover::after,
-   .se-01:focus::after {
+   .se:hover::after,
+   .se:focus::after {
       background-image: url('../assets/images/mobile-main-second.png');
    }
 
@@ -125,101 +124,24 @@
       background-image: url('../assets/images/text-gold.png');
    }
 
-   .top .se {
+   .top .link-in {
       position: relative;
-      height: 15vmin;
-      margin-top: 2.5rem;
+      height: 20vmin;
       bottom: 0;
+      border: 1px solid var(--border);
    }
 
-   .top .se h3 {
+   .top .link-in h3 {
       font-size: clamp(2rem, 1.273rem + 3.64vw, 4rem);
-      width: 100%;
-      position: absolute;
-      right: 0;
-      bottom: 0%;
-      padding: 0 6vmin;
+      line-height: 1.2;
+      padding: 1vmin 10vmin 0;
       border-bottom: 1px solid var(--border);
    }
 
-   .top .se p {
+   .top .link-in p {
       position: absolute;
       right: 6vmin;
       bottom: 0;
-   }
-
-   /*video size*/
-   .top .se .video-1,
-   .top .se .video-2,
-   .top .se .video-3 {
-      width: 100%;
-      height: 90%;
-      position: absolute;
-      top: 0;
-      right: 0;
-      border: 1px solid var(--border);
-      border-left: 0;
-      border-right: 0;
-   }
-
-   .se .video-1::before,
-   .se .video-2::before,
-   .se .video-3::before {
-      content: "";
-      width: 35px;
-      height: 100%;
-      position: absolute;
-      left: 0;
-      border-right: 1px solid var(--border);
-   }
-
-   /*===================== .works =====================*/
-
-   .top .work {
-      bottom: 0;
-   }
-   .work {
-      position: absolute;
-      left: 0;
-      width: 100%;
-   }
-
-   .design h4,
-   .art h4 {
-      font-size: clamp(3.8rem, 3.343rem + 2.29vw, 4.2rem);
-      padding-left: 0.5rem;
-   }
-
-   .design,
-   .art,
-   .design video,
-   .art video {
-      position: absolute;
-      bottom: 0;
-      border: 1px solid var(--border);
-   }
-
-   .design video,
-   .art video {
-      border: 5px solid var(--bg);
-      background: var(--border);
-   }
-
-   .design,
-   .art {
-      left: 4%;
-      width: 45%;
-      height: 65vmin;
-   }
-
-   .design video,
-   .art video {
-      width: 95%;
-      height: 95%;
-   }
-
-   .art {
-      left: 51%;
    }
 
    /*===================== section in-box =====================*/
