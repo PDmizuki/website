@@ -17,11 +17,8 @@
       font-family: sans-serif;
       font-weight: 500;
       font-style: normal;
-      color: var(--bg);
-      background:
-      linear-gradient(to top, rgba(0, 0, 0, 0.4) 0%,
-      rgba(0, 0, 0, 0.4) 100%),
-      url("../assets/images/pd-bg-img.jpg") no-repeat bottom center/cover;
+      color: var(--text);
+      background: url("../assets/images/mobile-bg.jpg") no-repeat bottom center/cover;
       background-attachment: fixed;
       position: relative;
       width: 100%;
@@ -41,12 +38,17 @@
       transform: translateY(0);
    }
 
-   /*===================== body text =====================*/
+   /*===================== border =====================*/
+   body::before,
+   .hr {
+      border-image: url("../assets/images/mobile-bg.jpg") 100;
+   }
+
+   /*===================== body =====================*/
    body::before {
       border: 2vh solid;
       border-left: 4vw solid;
       border-right: 4vw solid;
-      border-image: url("../assets/images/mobile-main-second.png") 100;
       z-index: 1000;
    }   
    body::after {
@@ -90,13 +92,6 @@
    background-clip: text; /* 追加：他のブラウザ用 */
    color: transparent; /* 追加：Webkit未対応時にテキストを透明に */
       }
-   }
-
-   /*===================== border =====================*/
-   section .button::before,
-   section .button::after,
-   .hr {
-      border-image: url("../assets/images/text-gold.png") 100;
    }
 
    /*===================== img =====================*/
@@ -178,7 +173,7 @@
    a {
       font-family: futura-pt, sans-serif;
       font-size: 1.8rem;
-      color: var(--border);
+      color: var(--text);
       width: auto;
       height: fit-content;
       padding: 0.25rem 0.5rem;

@@ -20,7 +20,7 @@
       padding: 1rem 10vmin;
       margin: 0;
       position: relative;
-      border-top: 1px solid var(--border);
+      border-top: 1px solid var(--text);
    }
 
    .tabs .top-h1 .caption::after {
@@ -29,7 +29,7 @@
       position: absolute;
       top: 0;
       right: 10%;
-      border-right: 1px solid var(--border);
+      border-right: 1px solid var(--text);
    }
 
    /*===================== h1 top =====================*/
@@ -73,8 +73,8 @@
       bottom: 0;
       width: 100%;
       padding-left: 10vmin;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
+      border-top: 1px solid var(--text);
+      border-bottom: 1px solid var(--text);
    }
 
    .section--third .button {
@@ -129,7 +129,7 @@
       position: relative;
       height: 4.5em;
       bottom: 0;
-      border: 1px solid var(--border);
+      border: 1px solid var(--text);
    }
 
    .link-in h3 {
@@ -137,7 +137,7 @@
       text-align: left;
       line-height: 2;
       padding: 0 10vmin;
-      border-bottom: 1px solid var(--border);
+      border-bottom: 1px solid var(--text);
    }
 
    .link-in p {
@@ -207,7 +207,7 @@
       width: 500px;
       height: 55px;
       position: relative;
-      background: var(--border);
+      background: var(--text);
    }
 
    .top section .top-s .text:nth-child(4) {
@@ -309,7 +309,7 @@
       gap: 0.5rem;
       padding: 0.75rem;
       margin: 0 auto;
-      background-color: var(--border);
+      background-color: var(--text);
    }
 
    .about .section--fourth .bg-aitem {
@@ -325,7 +325,7 @@
    }
 
    .about .section--fourth .bg-aitem:nth-child(2) {
-      color: var(--border);
+      color: var(--text);
       background: var(--hover);
    }
 
@@ -392,7 +392,7 @@
       width: 100%;
       height: 400px;
       padding: 1rem 0.5rem 0;
-      border: 1px solid var(--border);
+      border: 1px solid var(--text);
       display: flex;
       overflow-y: scroll;
       background-image: url("../assets/images/pd-bg-img.jpg");
@@ -407,12 +407,12 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      border: 1px solid var(--border);
+      border: 1px solid var(--text);
    }
 
    .option h4 {
       line-height: 3rem;
-      border-bottom: 1px solid var(--border);
+      border-bottom: 1px solid var(--text);
       padding-left: 0.5rem;
    }
 
@@ -432,7 +432,7 @@
       height: 320px;
       margin-top: 0.5rem;
       padding: 3rem 1rem;
-      border: 1px solid var(--border);
+      border: 1px solid var(--text);
       overflow-x: auto;
    }
 
@@ -483,7 +483,7 @@
    .contents .m-se ol {
       margin-top: 5rem;
       padding: 0 1rem;
-      border: 1px solid var(--border);
+      border: 1px solid var(--text);
    }
 
    .contents .m-se ol h3 {
@@ -500,14 +500,14 @@
       font-weight: 600;
       padding: 2rem;
       margin-bottom: 1rem;
-      border: 1px solid var(--border);
+      border: 1px solid var(--text);
    }
 
    .contents .m-se li p {
       font-size: clamp(1.2rem, calc(1.2rem + 0.5vw), 1.6rem);
       font-weight: 400;
       padding-top: 1rem;
-      border-top: 1px solid var(--border);
+      border-top: 1px solid var(--text);
    }
    /*===================== Contents =====================*/
 }
