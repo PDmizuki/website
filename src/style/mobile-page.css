@@ -120,14 +120,14 @@
       background-image: url('../assets/images/text-gold.png');
    }
 
-   .top .link-in {
+   .link-in {
       position: relative;
       height: 4.5em;
       bottom: 0;
       border: 1px solid var(--border);
    }
 
-   .top .link-in h3 {
+   .link-in h3 {
       font-size: 2.4rem;
       text-align: left;
       line-height: 2;
@@ -135,7 +135,7 @@
       border-bottom: 1px solid var(--border);
    }
 
-   .top .link-in p {
+   .link-in p {
       line-height: 1.6;
       position: absolute;
       right: 10vmin;
