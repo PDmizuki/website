@@ -70,11 +70,12 @@ nav {
     right: 0;
     width: 13vmin;
     height: 13vmin;
-    border-left: 1px solid;
-    border-bottom: 1px solid;
+    /*border-left: 1px solid;
+    border-bottom: 1px solid;*/
     transition: all 1.3s;
     background: url("../assets/images/mobile-main-second.png");
-    border-image: url("../assets/images/text-gold.png") 100;
+    background: var(--bg);
+    /*border-image: url("../assets/images/text-gold.png") 100;*/
     cursor: pointer;
     z-index: 1001;
     transform: translate(0, 0);
@@ -88,6 +89,7 @@ nav {
     height: 0.35vmin;
     right: 0;
     background: url("../assets/images/text-gold.png");
+    background: var(--text);
     overflow: hidden;
     z-index: 10000;
 }
@@ -101,8 +103,9 @@ nav {
     height: 100%;
     background: linear-gradient(90deg,
             transparent,
-            var(--bg) 0%,
-            var(--text) 100%,
+            var(--bg) ,
+            /*var(--bg) 0%,
+            var(--text) 100%,*/
             transparent);
     animation: scroll-left 2s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
     background-size: 200% 100%;
