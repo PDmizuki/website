@@ -3,13 +3,12 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    min-height: 100vh;
     position: relative;
 }
 
 .tabs {
     padding: 3em 0 5em;
-    min-height: fit-content;
+    min-height: 60svh;
 }
 
 .tabs-container {

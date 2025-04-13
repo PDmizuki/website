@@ -1,7 +1,7 @@
 @media only screen and (max-width:599px) {
     footer {
         position: relative;
-        height: 45svh;
+        height: 40svh;
         padding-left: 6vmin;
         border-right: 1px solid var(--border);
         background:

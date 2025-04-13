@@ -119,6 +119,7 @@
       margin-bottom: 2rem;
       color: var(--bg);
       mix-blend-mode: color-dodge;
+      padding-left: 1.5vmin;
    }
 
    h2,
@@ -138,11 +139,6 @@
       font-size: clamp(2rem, 0.545rem + 7.27vw, 6rem);
       width: fit-content;
       line-height: 1;
-   }
-
-   .policy h2 {
-      line-height: 3rem;
-      -webkit-text-stroke-width: 0;
    }
 
    h3 {

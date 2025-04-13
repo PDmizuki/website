@@ -10,7 +10,7 @@ nav {
     mix-blend-mode: screen;
     overflow-x: hidden;
     overflow-y: auto;
-    z-index: 999;
+    z-index: 1001;
     transition: all 1s ease;
 }
 
