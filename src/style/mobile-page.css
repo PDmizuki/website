@@ -84,6 +84,11 @@
    /*===================== .service =====================*/
 
    
+   .policy .mobile-page .link-in::after,
+   .policy .mobile-page .link-in:hover::after,
+   .policy .mobile-page .link-in:focus::after {
+      display: none;
+   }
    .link-in::after {
       content: "";
       position: absolute;
