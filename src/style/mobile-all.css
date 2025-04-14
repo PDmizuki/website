@@ -18,7 +18,7 @@
       font-weight: 500;
       font-style: normal;
       color: var(--text);
-      background: url("../assets/images/mobile-bg.jpg") no-repeat bottom center/cover;
+      background: url("../assets/images/bg-test2.jpg") no-repeat bottom center/cover;
       background-attachment: fixed;
       position: relative;
       width: 100%;
@@ -41,7 +41,7 @@
    /*===================== border =====================*/
    body::before,
    .hr {
-      border-image: url("../assets/images/mobile-main-second.png") 100;
+      border-image: none;
    }
 
    header {
@@ -85,6 +85,10 @@
    background-clip: border-box; /* 追加：他のブラウザ用 */
    background-clip: text; /* 追加：他のブラウザ用 */
    color: transparent; /* 追加：Webkit未対応時にテキストを透明に */
+   }
+
+   footer .noise {
+      -webkit-text-fill-color: darkgray;
    }
 
    @media (prefers-color-scheme: light) {
@@ -132,7 +136,7 @@
       font-optical-sizing: auto;
       font-weight: 400;
       font-style: normal;
-      color: var(--bg);
+      color: var(--text);
    }
 
    h2 {
