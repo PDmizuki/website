@@ -7,8 +7,8 @@
    width: 90%;
    height: 78.75%;
    max-height: 90%;
-   background: linear-gradient(to top, rgba(0, 0, 0, 0.05) 0%, rgba(46, 46, 46, 0.1) 100%),
-   url("../assets/images/pd-body-bg.jpg");
+   /*background: linear-gradient(to top, rgba(0, 0, 0, 0.05) 0%, rgba(46, 46, 46, 0.1) 100%),
+   url("../assets/images/pd-body-bg.jpg");*/
    background: url("../assets/images/pd-bg-img.jpg") no-repeat bottom center/cover;
    opacity: 0;
    border: 5px solid;

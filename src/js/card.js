@@ -1,64 +1,61 @@
-jQuery.noConflict();
-(function ($) {
-    $(function () {
-        $(".card-wrapper").on("click", function () {
-            const $thisCard = $(this);
-            const $cardBackground = $thisCard.find(".card-background");
-            const isActive = $thisCard.hasClass("active");
+document.addEventListener("DOMContentLoaded", function () {
+    const cardWrappers = document.querySelectorAll(".card-wrapper");
 
-            // すべてのカードをリセット
-            $(".card-wrapper").removeClass("active").css({
-                transform: "",
-                zIndex: 1
+    cardWrappers.forEach((cardWrapper) => {
+        cardWrapper.addEventListener("click", function () {
+            const isActive = cardWrapper.classList.contains("active");
+
+            // 全カードをリセット
+            cardWrappers.forEach((el) => {
+                el.classList.remove("active");
+                el.style.transform = "";
+                el.style.zIndex = 1;
+
+                const bg = el.querySelector(".card-background");
+                if (bg) bg.removeAttribute("style");
             });
 
-            $(".card-background").removeAttr("style"); // 既存のスタイルをリセット
-
             if (!isActive) {
-                $thisCard.addClass("active");
-
-                // 1. z-index を最前面に
-                $thisCard.css({ zIndex: 100 });
+                cardWrapper.classList.add("active");
+                cardWrapper.style.zIndex = 100;
 
                 setTimeout(() => {
-                    // 2. <div class="card-wrapper"> を拡大
-                    $thisCard.css({
-                        transform: "scale(1.2)",
-                        transition: "transform 0.3s ease"
-                    });
+                    // 拡大
+                    cardWrapper.style.transition = "transform 0.3s ease";
+                    cardWrapper.style.transform = "scale(1.2)";
 
                     setTimeout(() => {
-                        // 3. カードを中央へ移動
-                        const windowWidth = $(window).width();
-                        const windowHeight = $(window).height();
-                        const cardWidth = $thisCard.outerWidth();
-                        const cardHeight = $thisCard.outerHeight();
-                        const cardOffset = $thisCard.offset();
+                        // ウィンドウサイズ・カードサイズ・位置を取得
+                        const windowWidth = window.innerWidth;
+                        const windowHeight = window.innerHeight;
+                        const cardRect = cardWrapper.getBoundingClientRect();
+                        const scrollX = window.scrollX || window.pageXOffset;
+                        const scrollY = window.scrollY || window.pageYOffset;
 
-                        const translateX = (windowWidth / 3.75 - cardWidth / 3.75) - cardOffset.left;
-                        const translateY = (windowHeight / 2.5 - cardHeight / 2.5) - cardOffset.top;
+                        const translateX = (windowWidth / 3.75 - cardRect.width / 3.75) - (cardRect.left + scrollX);
+                        const translateY = (windowHeight / 2.5 - cardRect.height / 2.5) - (cardRect.top + scrollY);
 
-                        $thisCard.css({
-                            transform: `scale(1.2) translate(${translateX}px, ${translateY}px)`,
-                            transition: "transform 0.25s ease"
-                        });
+                        cardWrapper.style.transition = "transform 0.25s ease";
+                        cardWrapper.style.transform = `scale(1.2) translate(${translateX}px, ${translateY}px)`;
 
                         setTimeout(() => {
-                            // 4. .card-background のスタイルを適用
-                            $cardBackground.css({
-                                fontFamily: "sans-serif",
-                                top: "0",
-                                left: "47%",
-                                width: "75vmin",
-                                height: "auto",
-                                maxHeight: "40vmin",
-                                padding: "1vmin 4vmin 2vmin 22vmin",
-                                transition: "all 0.25s ease, height 1s ease"
-                            });
+                            const cardBackground = cardWrapper.querySelector(".card-background");
+                            if (cardBackground) {
+                                Object.assign(cardBackground.style, {
+                                    fontFamily: "sans-serif",
+                                    top: "0",
+                                    left: "47%",
+                                    width: "75vmin",
+                                    height: "auto",
+                                    maxHeight: "40vmin",
+                                    padding: "1vmin 4vmin 2vmin 22vmin",
+                                    transition: "all 0.25s ease, height 1s ease"
+                                });
+                            }
                         }, 250); // 中央移動後に背景スタイル適用
-                    }, 200); // 拡大後に移動開始
-                }, 50); // z-index 変更後に拡大開始
+                    }, 200); // 拡大後に移動
+                }, 50); // z-index 後に拡大
             }
         });
     });
-})(jQuery);
+});

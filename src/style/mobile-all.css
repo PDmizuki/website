@@ -18,7 +18,8 @@
       font-weight: 500;
       font-style: normal;
       color: var(--text);
-      background: url("../assets/images/mobile-bg.jpg") no-repeat bottom center/cover;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.1)0% , rgba(220, 220, 220, 0.65) 50%, rgba(0, 0, 0, 0.2) 100%),
+      url(https://pdmizuki.github.io/website/js/../assets/images/mobile-bg.jpg) no-repeat bottom center/cover;
       background-attachment: fixed;
       position: relative;
       width: 100%;

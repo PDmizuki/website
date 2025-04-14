@@ -1,21 +1,41 @@
-var $j = jQuery.noConflict();
+document.addEventListener("DOMContentLoaded", function () {
+    const accordionWraps = document.querySelectorAll(".accordion-wrap");
 
-(function ($) {
-    $(document).ready(function () {
-        // Your code here
-        $(".accordion-wrap").on("click", function () {
-            var accordionText = $(this).children().eq(1);
-            accordionText.slideToggle(500);
-            $(this).children().eq(0).toggleClass("accordion-no-bar");
-            $(this).siblings().find(".accordion-header").removeClass("accordion-gold").removeClass("active");
-            $(this).siblings().find(".accordion-header i").removeClass("rotate-fa");
-            $(this).find(".accordion-header").toggleClass("accordion-gold").toggleClass("active");
-            $(this).find(".fa").toggleClass("rotate-fa");
-            $(".accordion-wrap .accordion-text").not(accordionText).slideUp(500);
-        });
+    accordionWraps.forEach((wrap) => {
+        wrap.addEventListener("click", function () {
+            const header = this.querySelector(".accordion-header");
+            const content = this.querySelector(".accordion-text");
 
-        $(".clickable").on("click", function () {
-            $(this).toggleClass("rotated");
+            // トグル開閉
+            content.classList.toggle("active");
+
+            // クラスの切り替え
+            header.classList.toggle("accordion-gold");
+            header.classList.toggle("active");
+
+            const icon = header.querySelector(".fa");
+            if (icon) icon.classList.toggle("rotate-fa");
+
+            // 他のアコーディオンを閉じる
+            accordionWraps.forEach((otherWrap) => {
+                if (otherWrap !== this) {
+                    const otherContent = otherWrap.querySelector(".accordion-text");
+                    const otherHeader = otherWrap.querySelector(".accordion-header");
+                    const otherIcon = otherWrap.querySelector(".fa");
+
+                    otherContent.classList.remove("active");
+                    otherHeader.classList.remove("accordion-gold", "active");
+                    if (otherIcon) otherIcon.classList.remove("rotate-fa");
+                }
+            });
         });
     });
-})(jQuery);
+
+    // 回転クリック処理
+    const clickables = document.querySelectorAll(".clickable");
+    clickables.forEach((el) => {
+        el.addEventListener("click", function () {
+            el.classList.toggle("rotated");
+        });
+    });
+});

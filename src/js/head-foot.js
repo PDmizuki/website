@@ -1,32 +1,27 @@
-    var $j = jQuery.noConflict();
+document.addEventListener("DOMContentLoaded", function () {
+    // ヘッダー読み込み
+    fetch("header.html")
+        .then(response => response.text())
+        .then(html => {
+            document.getElementById("header-container").innerHTML = html;
 
-    $j(function () {
-        // ヘッダー読み込み
-        $j("#header-container").load("header.html", function () {
-            // メニュー関連の初期化（ヘッダー内の要素が読み込まれた後）
-            var $nav = $j('#navArea');
-            var $btn = $j('.toggle_btn');
-            var $mask = $j('#mask');
-            var open = 'open'; // クラス名
+            // メニュー関連
+            const nav = document.getElementById('navArea');
+            const btn = document.querySelector('.toggle_btn');
+            const mask = document.getElementById('mask');
+            const openClass = 'open';
 
-            if ($btn.length && $mask.length) {
-                $btn.on('click', function () {
-                    $nav.toggleClass(open);
-                });
-
-                $mask.on('click', function () {
-                    $nav.removeClass(open);
-                });
-            } else {
-                console.warn('Menu button or mask not found');
+            if (btn && mask && nav) {
+                btn.addEventListener('click', () => nav.classList.toggle(openClass));
+                mask.addEventListener('click', () => nav.classList.remove(openClass));
             }
 
-            // オーディオトグルの初期化
-            var toggleSwitch = document.getElementById('soundToggle');
-            var backgroundAudio = document.getElementById('backgroundAudio');
+            // オーディオトグル
+            const toggleSwitch = document.getElementById('soundToggle');
+            const backgroundAudio = document.getElementById('backgroundAudio');
 
             if (toggleSwitch && backgroundAudio) {
-                toggleSwitch.addEventListener('change', function () {
+                toggleSwitch.addEventListener('change', () => {
                     if (toggleSwitch.checked) {
                         backgroundAudio.play();
                     } else {
@@ -34,33 +29,60 @@
                         backgroundAudio.currentTime = 0;
                     }
                 });
-            } else {
-                console.warn('Toggle switch or background audio element not found');
             }
 
-            // チャットウィンドウ切り替え
+            // チャット切り替え関数
             window.toggleChatWindow = function () {
-                var chatWindow = document.getElementById("chat-window");
+                const chatWindow = document.getElementById("chat-window");
                 if (chatWindow) {
                     chatWindow.style.display = (chatWindow.style.display === "none" || chatWindow.style.display === "") ? "block" : "none";
                 }
             };
+
+            // SEO対応（例：トップページのタイトルとメタ）
+            updateMetaTags("こだわりの創造 - トップページ", "Webデザイン初心者のための学びの場。ポートフォリオ作成やLP制作が身につく。");
         });
 
-        // フッター読み込み
-        $j("#footer-container").load("footer.html", function () {
-            var yearSpan = document.getElementById('year');
+    // フッター読み込み
+    fetch("footer.html")
+        .then(response => response.text())
+        .then(html => {
+            document.getElementById("footer-container").innerHTML = html;
+
+            const yearSpan = document.getElementById('year');
             if (yearSpan) {
                 yearSpan.textContent = new Date().getFullYear();
             }
         });
 
-        // 画像の遅延読み込み
+    // Intersection Observerを使った遅延読み込み
+    function lazyLoadImages() {
         const lazyImages = document.querySelectorAll('img[data-src]');
-        lazyImages.forEach(function (img) {
-            img.setAttribute('src', img.getAttribute('data-src'));
-            img.onload = function () {
-                img.removeAttribute('data-src');
-            };
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.getAttribute('data-src');
+                    img.onload = () => img.removeAttribute('data-src');
+                    obs.unobserve(img);
+                }
+            });
         });
-    });
+
+        lazyImages.forEach(img => observer.observe(img));
+    }
+    lazyLoadImages();
+
+    // メタタグ更新関数
+    function updateMetaTags(titleText, description) {
+        document.title = titleText;
+
+        let metaDesc = document.querySelector('meta[name="description"]');
+        if (!metaDesc) {
+            metaDesc = document.createElement('meta');
+            metaDesc.name = "description";
+            document.head.appendChild(metaDesc);
+        }
+        metaDesc.content = description;
+    }
+});

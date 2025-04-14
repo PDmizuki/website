@@ -1,24 +1,37 @@
-(function ($) {
-    $(document).ready(function () {
-        console.log("Document ready");
+document.addEventListener("DOMContentLoaded", function () {
+    console.log("Document ready");
 
-        $(".list-tab").click(function () {
+    const tabs = document.querySelectorAll(".list-tab");
+    const containers = document.querySelectorAll(".container");
+
+    tabs.forEach(function (tab) {
+        tab.addEventListener("click", function () {
             console.log("Tab clicked");
 
-            // クリックされたタブのIDから「li-tab--」を削除して識別子を取得
-            var tabId = $(this).attr("id").replace("li-tab--", "");
+            const tabId = tab.id.replace("li-tab--", "");
             console.log("Tab ID: " + tabId);
 
-            // すべてのタブから `selected` を削除し、クリックされたタブに追加
-            $(".list-tab").removeClass("selected");
-            $(this).addClass("selected");
+            // すべてのタブから 'selected' を削除し、クリックされたタブに追加
+            tabs.forEach(function (t) {
+                t.classList.remove("selected");
+            });
+            tab.classList.add("selected");
 
             // すべてのコンテンツを非表示にし、対応するコンテンツを表示
-            $(".container").removeClass("show");
-            $("#content--" + tabId).addClass("show");
-        });
+            containers.forEach(function (container) {
+                container.classList.remove("show");
+            });
 
-        // 初期状態で `li-tab--first` をクリックして連動
-        $("#li-tab--first").trigger("click");
+            const targetContent = document.getElementById("content--" + tabId);
+            if (targetContent) {
+                targetContent.classList.add("show");
+            }
+        });
     });
-})(jQuery);
+
+    // 初期状態で li-tab--first をクリックして連動
+    const initialTab = document.getElementById("li-tab--first");
+    if (initialTab) {
+        initialTab.click();
+    }
+});

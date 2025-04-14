@@ -1,67 +1,70 @@
-jQuery.noConflict();
+document.addEventListener("DOMContentLoaded", function () {
+    // カスタムカーソル用要素を作成
+    const cursor = document.createElement("div");
+    const stalker = document.createElement("div");
+    cursor.id = "cursor";
+    stalker.id = "stalker";
 
-(function ($) {
-    $(function () {
-        var cursor = $("<div id='cursor'></div>");
-        var stalker = $("<div id='stalker'></div>");
+    document.body.classList.add("custom-cursor");
+    document.body.appendChild(cursor);
+    document.body.appendChild(stalker);
 
-        // カスタムカーソル用の要素を追加
-        $("body").addClass("custom-cursor").append(cursor).append(stalker);
+    // 基本スタイル適用
+    Object.assign(cursor.style, {
+        opacity: "0",
+        pointerEvents: "none",
+        position: "fixed",
+        zIndex: "9999"
+    });
 
-        // カーソルがクリックを阻害しないように設定
-        cursor.css({
-            "opacity": "0",
-            "pointer-events": "none",
-            "position": "fixed",
-            "z-index": "9999"
+    Object.assign(stalker.style, {
+        opacity: "0",
+        pointerEvents: "none",
+        position: "fixed",
+        zIndex: "9998"
+    });
+
+    // ホバー対象
+    const hoverTargets = document.querySelectorAll("a, .accordion-wrap, .card, .se-tab-w");
+
+    hoverTargets.forEach((el) => {
+        el.addEventListener("mouseenter", () => {
+            cursor.classList.add("cursor--hover");
+            stalker.classList.add("stalker--hover");
+        });
+        el.addEventListener("mouseleave", () => {
+            cursor.classList.remove("cursor--hover");
+            stalker.classList.remove("stalker--hover");
+        });
+    });
+
+    // カーソル追従処理
+    document.addEventListener("mousemove", (e) => {
+        const x = e.clientX;
+        const y = e.clientY;
+
+        Object.assign(cursor.style, {
+            opacity: "1",
+            top: `${y}px`,
+            left: `${x}px`
         });
 
-        stalker.css({
-            "opacity": "0",
-            "pointer-events": "none",
-            "position": "fixed",
-            "z-index": "9998"
-        });
-
-        // ホバーアニメーション
-        $(document).on("mouseenter", "a, .accordion-wrap, .card, .se-tab-w", function () {
-            cursor.addClass('cursor--hover');
-            stalker.addClass('stalker--hover');
-        });
-
-        $(document).on("mouseleave", "a, .accordion-wrap, .card, .se-tab-w", function () {
-            cursor.removeClass('cursor--hover');
-            stalker.removeClass('stalker--hover');
-        });
-
-        // マウス移動時にカーソル位置を更新
-        $(document).on("mousemove", function (e) {
-            var x = e.clientX;
-            var y = e.clientY;
-
-            cursor.css({
-                "opacity": "1",
-                "top": y + "px",
-                "left": x + "px"
+        setTimeout(() => {
+            Object.assign(stalker.style, {
+                opacity: "1",
+                top: `${y}px`,
+                left: `${x}px`
             });
+        }, 150);
+    });
 
-            setTimeout(function () {
-                stalker.css({
-                    "opacity": "1",
-                    "top": y + "px",
-                    "left": x + "px"
-                });
-            }, 150);
-        });
-
-        // クリックイベントの調整（不要な e.preventDefault を削除）
-        $(document).on("click", "a", function (e) {
-            var href = $(this).attr("href");
-
-            // href が "#" や "javascript:void(0)" の場合のみ遷移を防ぐ
+    // a タグクリック時の処理（必要な場合のみ e.preventDefault）
+    document.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", (e) => {
+            const href = link.getAttribute("href");
             if (!href || href.startsWith("#") || href === "javascript:void(0)") {
                 e.preventDefault();
             }
         });
     });
-})(jQuery);
+});
