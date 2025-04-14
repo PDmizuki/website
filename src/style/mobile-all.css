@@ -207,6 +207,7 @@
       width: 1em;
       height: 0.1em;
       background: currentColor;
+      transform: rotate(-45deg);
     }
     
     .link-arrow::before {
