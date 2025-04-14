@@ -957,7 +957,7 @@ npm run build
 //変更の追加
 git add .
 //再コミット（メモ付け）
-git commit -m "bg color link arro"
+git commit -m "link arro"
 //リモートにプッシュ
 git push origin gh-pages
 //全ての変更をコミット
