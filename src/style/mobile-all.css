@@ -18,7 +18,7 @@
       font-weight: 500;
       font-style: normal;
       color: var(--text);
-      background: url("../assets/images/bg-test2.jpg") no-repeat bottom center/cover;
+      background: url("../assets/images/mobile-bg.jpg") no-repeat bottom center/cover;
       background-attachment: fixed;
       position: relative;
       width: 100%;
@@ -197,6 +197,32 @@
    a:active {
       color: rgba(217, 217, 217, 0.5);
    }
+
+   .dli-arrow-right {
+      display: inline-block;
+      vertical-align: middle;
+      color: #333;
+      line-height: 1;
+      position: relative;
+      width: 1em;
+      height: 0.1em;
+      background: currentColor;
+    }
+    
+    .link-arrow::before {
+      content: '';
+      width: 0.65em;
+      height: 0.65em;
+      border: 0.1em solid currentColor;
+      border-left: 0;
+      border-bottom: 0;
+      transform: rotate(45deg);
+      transform-origin: top right;
+      position: absolute;
+      top: 50%;
+      right: -0.05em;
+      box-sizing: border-box;
+    }
 
    /*===================== リンク =====================*/
 

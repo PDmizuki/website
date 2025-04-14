@@ -63,7 +63,7 @@
         font-family: sans-serif;
         font-size: clamp(1.2rem, 1.127rem + 0.36vw, 1.4rem);
         position: absolute; /* 位置を固定 */
-        left: 4vmin;
+        left: 3%;
         bottom: 5vmin;
         transform-origin: left bottom; /* 左下を基準に回転 */
         white-space: nowrap;
