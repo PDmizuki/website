@@ -51,8 +51,6 @@
    /*===================== body =====================*/
    body::before {
       border: 2vh solid;
-      border-left: 4vw solid;
-      border-right: 4vw solid;
       z-index: 1000;
    }   
    body::after {
@@ -70,7 +68,7 @@
    .noise {
       background: linear-gradient(to bottom right, var(--bg), var(--text)) fixed;
       -webkit-background-clip: text;
-      -webkit-text-fill-color: darkgray;
+      -webkit-text-fill-color: var(--text);
       --lines: 0.01px;
       mask: repeating-radial-gradient(circle at center,
             #000,
@@ -123,7 +121,7 @@
       letter-spacing: 0.1rem;
       margin-bottom: 2rem;
       color: var(--text);
-      mix-blend-mode: color-dodge;
+      mix-blend-mode: overlay;
       padding-left: 1.5vmin;
    }
 
