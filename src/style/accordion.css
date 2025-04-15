@@ -60,8 +60,7 @@
     max-height: 0;
     overflow: hidden;
     padding: 0;
-    transition: max-height 0.4s ease, padding 0.4s ease;
-    display: block;
+    transition: max-height 0.8s ease, padding 0.4s ease;
 }
 
 .accordion-text h4 {
@@ -127,7 +126,6 @@
         margin: 1em auto;
     }
 
-    .accordion-item,
     .accordion-header {
         height: 50px;
     }
@@ -146,5 +144,6 @@
     .accordion-text p {
         font-size: clamp(1.4rem, 1.171rem + 1.14vw, 1.6rem);
         width: 90%;
+        color: var(--bg);
     }
 }
