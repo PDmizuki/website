@@ -2,7 +2,7 @@
 .accordion-toggle {
     display: none;
   }
-    
+      
   /* チェックが入ったときに表示 */
   .accordion-toggle:checked + .accordion-header + .accordion-text {
     max-height: 500px;
@@ -54,25 +54,14 @@
     line-height: 2.4;
 }
 
-.accordion-header h3 .active {
-    color: var(--accent);
-}
-
 /*in-text*/
-.accordion-text {
-    max-height: 0;
-    height: auto;
-    margin: 2rem auto;
-    padding: 0 1rem;
-    display: none;
+  .accordion-text {
+      max-height: 0;
+      margin: 2rem auto;
     overflow: hidden;
-    overflow-y: auto;
     transition: max-height 0.4s ease, padding 0.4s ease;
-}
-
-.accordion-text.active {
-    max-height: 500px;
-}
+    padding: 0 1rem; /* 最初のpaddingを0ではなく維持するか、JSで調整してもOK */
+  }
 
 .accordion-text h4 {
     font-size: clamp(1.6rem, 1.267rem + 0.44vw, 1.8rem);
