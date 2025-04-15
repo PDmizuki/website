@@ -55,11 +55,12 @@
       z-index: 1000;
    }
    body::after {
-      top: 2vh;
-      left: 4vw;
-      width: 92vw;
-      height: 96vh;
-      box-shadow: inset 0px 2px 6px 2px #000;
+      top: 1vh;
+      left: 2vw;
+      width: 96vw;
+      height: 98vh;
+      border: 3px solid;
+      box-shadow: inset 0px 1px 5px 0px rgba(0, 0, 0, 0.85);
       z-index: 1000;
       border-image: url("../assets/images/mobile-main-second.png") 100;
    }
