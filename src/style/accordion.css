@@ -7,10 +7,9 @@
     padding: 1rem;
     margin: 0 auto 1em;
     border: 1px solid var(--border);
-    background-color: rgba(255, 255, 255, 0.12);
     backdrop-filter: blur(3px);
     mix-blend-mode: difference;
-    box-shadow: inset 1px 1px 4px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.75);
 }
 
 /*title*/
@@ -27,14 +26,15 @@
     width: 100%;
     padding-left: 6%;
     background-color: var(--bg);
-    border-bottom: 1px solid var(--text);
+    border-bottom: 1px solid var(--bg);
     transition: color 100ms;
 }
 
 .accordion-header h3 {
     font-size: clamp(1.6rem, 0.933rem + 0.89vw, 2rem);
-    border-left: 1px solid var(--text);
+    border-left: 1px solid var(--bg);
     padding: 0 1rem;
+    line-height: 2.4;
 }
 
 .accordion-header h3 .active {
@@ -47,6 +47,7 @@
     margin: 2rem auto;
     display: none;
     overflow-y: auto;
+    transition: max-height 0.4s ease, padding 0.4s ease;
 }
 
 .accordion-text.active {
@@ -56,7 +57,7 @@
 .accordion-text h4 {
     font-size: clamp(1.6rem, 1.267rem + 0.44vw, 1.8rem);
     font-weight: 600;
-    color: var(--text);
+    color: var(--bg);
     margin: 1vmin 10vmin 0;
     mix-blend-mode: normal;
 }
@@ -89,7 +90,7 @@
     position: absolute;
     top: 2.5rem;
     left: 2.25rem;
-    background-color: var(--text);
+    background-color: var(--bg);
 }
 
 .fa span:nth-child(2) {
@@ -124,7 +125,6 @@
         top: 0;
         padding: 0.15rem;
         margin: 1em auto;
-        background-color: rgba(255, 255, 255, 0.3);
         backdrop-filter: blur(3px);
         box-shadow: inset 1px 1px 4px rgba(0, 0, 0, 0.5);
     }
@@ -135,7 +135,6 @@
 
     .contact .mobile .accordion-header h3 {
         font-size: clamp(1.6rem, 1.371rem + 1.14vw, 1.8rem);
-        line-height: 3rem;
         padding: 0.75rem 2em;
     }
 
