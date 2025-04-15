@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
             header.addEventListener("click", function () {
                 const isActive = content.classList.contains("active");
 
-                // 他のアコーディオンをすべて閉じる
+                // 他のアコーディオンを閉じる
                 accordionWraps.forEach((otherWrap) => {
                     const otherHeader = otherWrap.querySelector(".accordion-header");
                     const otherContent = otherWrap.querySelector(".accordion-text");
@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     if (otherIcon) otherIcon.classList.remove("rotate-fa");
                 });
 
-                // 現在クリックしたアコーディオンを開閉
+                // 自身を開く（もし閉じていたら）
                 if (!isActive) {
                     content.classList.add("active");
                     header.classList.add("active");
@@ -30,13 +30,5 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             });
         }
-    });
-
-    // 回転クリック用（別機能としてそのまま保持）
-    const clickables = document.querySelectorAll(".clickable");
-    clickables.forEach((el) => {
-        el.addEventListener("click", function () {
-            el.classList.toggle("rotated");
-        });
     });
 });
