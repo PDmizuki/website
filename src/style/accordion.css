@@ -1,35 +1,35 @@
 /* 非表示にするトグル */
 .accordion-toggle {
     display: none;
-  }
-      
-  /* チェックが入ったときに表示 */
-  .accordion-toggle:checked + .accordion-header + .accordion-text {
+}
+
+/* チェックが入ったときに表示 */
+.accordion-toggle:checked+.accordion-header+.accordion-text {
     max-height: 500px;
     padding: 1rem;
-  }  
+}
 
 /*==アコーディオン==*/
 .accordion-wrap {
     width: calc(60% - 50px);
     position: relative;
-    top: -5vmin;
-    left: 9.5vmin;
     padding: 1rem;
     margin: 0 auto 1em;
-    border: 1px solid var(--border);
-    backdrop-filter: blur(3px);
     mix-blend-mode: difference;
-    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.75);
 }
 
-/*title*/
 .accordion-item {
     width: 100%;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    /* ← 中の要素を縦に並べる */
     cursor: pointer;
     align-items: center;
     justify-items: center;
+    border: 1px solid var(--bg);
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(3px);
 }
 
 .accordion-header {
@@ -42,10 +42,10 @@
     border-bottom: 1px solid var(--bg);
     transition: color 100ms;
 }
-  
-  .accordion-header:hover {
-    background-color: rgba(255,255,255,0.25);
-  }
+
+.accordion-header:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+}
 
 
 .accordion-header h3 {
@@ -56,13 +56,13 @@
 }
 
 /*in-text*/
-  .accordion-text {
-      max-height: 0;
-      margin: 2rem auto;
+.accordion-text {
+    max-height: 0;
     overflow: hidden;
+    padding: 0;
     transition: max-height 0.4s ease, padding 0.4s ease;
-    padding: 0 1rem;
-  }
+    display: block;
+}
 
 .accordion-text h4 {
     font-size: clamp(1.6rem, 1.267rem + 0.44vw, 1.8rem);
@@ -76,8 +76,6 @@
     font-size: clamp(1.4rem, 1.067rem + 0.44vw, 1.6rem);
     width: 80%;
     font-weight: 500;
-    top: 0;
-    left: 0;
     margin: 0 auto;
     letter-spacing: 0.1rem;
     mix-blend-mode: color-burn;
@@ -117,25 +115,27 @@
 }
 
 /* チェックされた時に縦線を回転＝非表示（＋ → －） */
-.accordion-toggle:checked + .accordion-header .fa span:nth-child(2) {
+.accordion-toggle:checked+.accordion-header .fa span:nth-child(2) {
     transform: translateX(-50%) scaleY(0);
-  }
+}
 
 
 @media screen and (max-width: 600px) {
     .accordion-wrap {
         width: 85%;
-        left: 0;
-        top: 0;
         padding: 0.15rem;
         margin: 1em auto;
-        backdrop-filter: blur(3px);
-        box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.75);
     }
 
     .accordion-item,
     .accordion-header {
         height: 50px;
+    }
+
+    .accordion-item {
+        margin-bottom: 2vmin;
+        box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.75);
+        backdrop-filter: blur(3px);
     }
 
     .contact .mobile .accordion-header h3 {
@@ -148,4 +148,3 @@
         width: 90%;
     }
 }
-
