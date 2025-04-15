@@ -1,33 +1,27 @@
-document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll(".accordion-wrap").forEach(wrap => {
-      const checkboxes = wrap.querySelectorAll(".accordion-toggle");
-      const headers = wrap.querySelectorAll(".accordion-header");
-      const icons = wrap.querySelectorAll(".fa");
-  
-      checkboxes.forEach((checkbox, index) => {
-        const icon = icons[index];
-  
-        const updateState = () => {
-          if (checkbox.checked) {
-            // 他のチェックを外す（同じwrap内）
-            checkboxes.forEach((cb, i) => {
-              if (cb !== checkbox) {
-                cb.checked = false;
-                icons[i].classList.remove("rotate-fa");
-              }
-            });
-            icon.classList.add("rotate-fa");
-          } else {
-            icon.classList.remove("rotate-fa");
-          }
-        };
-  
-        checkbox.addEventListener("change", updateState);
-        headers[index].addEventListener("click", () => {
-          checkbox.checked = !checkbox.checked;
-          checkbox.dispatchEvent(new Event("change"));
+  document.querySelectorAll('.accordion-wrap').forEach(wrap => {
+    const headers = wrap.querySelectorAll('.accordion-header');
+
+    headers.forEach(header => {
+      header.addEventListener('click', () => {
+        const item = header.closest('.accordion-item');
+        const isActive = item.classList.contains('active');
+
+        // すべて閉じる
+        wrap.querySelectorAll('.accordion-item').forEach(i => {
+          i.classList.remove('active');
+          i.querySelector('.accordion-text').style.maxHeight = null;
+          i.querySelector('.accordion-text').style.padding = '0';
+          i.querySelector('.fa').classList.remove('rotate-fa');
         });
+
+        // クリックしたものだけ開く（開いてたら閉じる）
+        if (!isActive) {
+          item.classList.add('active');
+          const text = item.querySelector('.accordion-text');
+          text.style.maxHeight = text.scrollHeight + 'px';
+          text.style.padding = '1rem';
+          item.querySelector('.fa').classList.add('rotate-fa');
+        }
       });
     });
   });
-  
