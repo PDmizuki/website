@@ -9,20 +9,28 @@ document.addEventListener("DOMContentLoaded", function () {
             header.addEventListener("click", function () {
                 const isActive = content.classList.contains("active");
 
-                // 他のアコーディオンをすべて閉じる
                 accordionWraps.forEach((otherWrap) => {
-                    const otherHeader = otherWrap.querySelector(".accordion-header");
                     const otherContent = otherWrap.querySelector(".accordion-text");
+                    const otherHeader = otherWrap.querySelector(".accordion-header");
                     const otherIcon = otherHeader.querySelector(".fa");
 
-                    if (otherContent) otherContent.classList.remove("active");
-                    if (otherHeader) otherHeader.classList.remove("active");
-                    if (otherIcon) otherIcon.classList.remove("rotate-fa");
+                    if (otherContent) {
+                        otherContent.classList.remove("active");
+                        otherContent.style.display = "none"; // 閉じる
+                    }
+
+                    if (otherHeader) {
+                        otherHeader.classList.remove("active");
+                    }
+
+                    if (otherIcon) {
+                        otherIcon.classList.remove("rotate-fa");
+                    }
                 });
 
-                // 現在クリックしたアコーディオンを開閉
                 if (!isActive) {
                     content.classList.add("active");
+                    content.style.display = "block"; // ← ここで表示
                     header.classList.add("active");
 
                     const icon = header.querySelector(".fa");
@@ -30,13 +38,5 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             });
         }
-    });
-
-    // 回転クリック用（別機能としてそのまま保持）
-    const clickables = document.querySelectorAll(".clickable");
-    clickables.forEach((el) => {
-        el.addEventListener("click", function () {
-            el.classList.toggle("rotated");
-        });
     });
 });

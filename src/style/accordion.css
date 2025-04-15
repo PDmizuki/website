@@ -126,7 +126,7 @@
         padding: 0.15rem;
         margin: 1em auto;
         backdrop-filter: blur(3px);
-        box-shadow: inset 1px 1px 4px rgba(0, 0, 0, 0.5);
+        box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.75);
     }
 
     .accordion-item {
@@ -153,3 +153,58 @@
         padding-right: 0.25rem;
     }
 }
+
+
+
+/* 非表示にするトグル */
+.accordion-toggle {
+    display: none;
+  }
+  
+  /* アコーディオンテキストを最初は非表示に */
+  .accordion-text {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+    padding: 0 1rem;
+  }
+  
+  /* チェックが入ったときに表示 */
+  .accordion-toggle:checked + .accordion-header + .accordion-text {
+    max-height: 500px;
+    padding: 1rem;
+  }
+  
+  /* 見た目はCSSで自由にカスタム可 */
+  .accordion-header {
+    cursor: pointer;
+    border-bottom: 1px solid var(--text);
+    padding: 1rem;
+    background-color: rgba(255,255,255,0.12);
+    transition: background-color 0.3s;
+  }
+  
+  .accordion-header:hover {
+    background-color: rgba(255,255,255,0.25);
+  }
+  
+
+
+
+  summary {
+    cursor: pointer;
+    padding: 1rem;
+    border-bottom: 1px solid var(--text);
+    background-color: rgba(255,255,255,0.12);
+  }
+  
+  .accordion-text {
+    padding: 1rem;
+    animation: fadeIn 0.4s ease;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
