@@ -18,7 +18,6 @@
         if (!isActive) {
           item.classList.add('active');
           const text = item.querySelector('.accordion-text');
-          text.style.maxHeight = text.scrollHeight + 'px';
           text.style.padding = '1rem';
           item.querySelector('.fa').classList.add('rotate-fa');
         }
