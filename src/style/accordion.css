@@ -26,6 +26,7 @@
 .accordion-header {
     width: 100%;
     padding-left: 6%;
+    background-color: var(--bg);
     border-bottom: 1px solid var(--text);
     transition: color 100ms;
 }
@@ -152,34 +153,4 @@
         padding-top: 0.25rem;
         padding-right: 0.25rem;
     }
-
-
-    .accordion-text {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.4s ease, padding 0.4s ease;
-        padding: 0 1em;
-    }
-    
-    .accordion-text.active {
-        max-height: 500px; /* 内容によって調整可能な最大値 */
-        padding: 1em;
-    }
-    
-    .accordion-header {
-        cursor: pointer;
-        padding: 1em;
-        background-color: #fff;
-        transition: background-color 0.3s ease;
-    }
-    
-    .accordion-header.active {
-        background-color: #f0f0f0;
-    }
-    
-    .rotate-fa {
-        transform: rotate(90deg);
-        transition: transform 0.3s ease;
-    }
-    
 }

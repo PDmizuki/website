@@ -9,20 +9,28 @@ document.addEventListener("DOMContentLoaded", function () {
             header.addEventListener("click", function () {
                 const isActive = content.classList.contains("active");
 
-                // 他のアコーディオンを閉じる
                 accordionWraps.forEach((otherWrap) => {
-                    const otherHeader = otherWrap.querySelector(".accordion-header");
                     const otherContent = otherWrap.querySelector(".accordion-text");
+                    const otherHeader = otherWrap.querySelector(".accordion-header");
                     const otherIcon = otherHeader.querySelector(".fa");
 
-                    if (otherContent) otherContent.classList.remove("active");
-                    if (otherHeader) otherHeader.classList.remove("active");
-                    if (otherIcon) otherIcon.classList.remove("rotate-fa");
+                    if (otherContent) {
+                        otherContent.classList.remove("active");
+                        otherContent.style.display = "none"; // 閉じる
+                    }
+
+                    if (otherHeader) {
+                        otherHeader.classList.remove("active");
+                    }
+
+                    if (otherIcon) {
+                        otherIcon.classList.remove("rotate-fa");
+                    }
                 });
 
-                // 自身を開く（もし閉じていたら）
                 if (!isActive) {
                     content.classList.add("active");
+                    content.style.display = "block"; // ← ここで表示
                     header.classList.add("active");
 
                     const icon = header.querySelector(".fa");
