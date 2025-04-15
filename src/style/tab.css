@@ -116,10 +116,9 @@
     .tab-slider {
         position: absolute;
         bottom: 0;
-        width: 0;
         height: 2px;
         border-radius: 10px;
-        background-color: var(--base);
-        transition: left 0.3s ease;
+        background-color: var(--bg);
+        transition: left 0.25s ease, width 0.3s ease;
     }
 }

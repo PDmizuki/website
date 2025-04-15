@@ -3,11 +3,11 @@ document.addEventListener('DOMContentLoaded', function () {
     constructor() {
       this.currentId = null;
       this.currentTab = null;
-      this.tabContainerHeight = 0;
-      this.offsetAdjust = 0;
       this.tabs = document.querySelectorAll('.tab');
       this.tabSlider = document.querySelector('.tab-slider');
       this.tabsContainer = document.querySelector('.tabs-container');
+      this.tabContainerHeight = this.tabsContainer.offsetHeight || 50; // ← 高さ取得
+      this.offsetAdjust = 0;
 
       this.init();
     }
@@ -18,9 +18,13 @@ document.addEventListener('DOMContentLoaded', function () {
       });
 
       window.addEventListener('scroll', () => this.onScroll());
-      window.addEventListener('resize', () => this.onResize());
+      window.addEventListener('resize', () => {
+        this.tabContainerHeight = this.tabsContainer.offsetHeight;
+        this.setSliderCss();
+      });
 
-      this.onScroll(); // 初期位置設定
+      // 初回実行
+      this.onScroll();
     }
 
     onTabClick(event, tab) {
@@ -34,9 +38,8 @@ document.addEventListener('DOMContentLoaded', function () {
           behavior: 'smooth'
         });
 
-        // スムーズスクロール後にスライダー位置更新
         setTimeout(() => {
-          this.updateTabPosition();
+          this.setSliderCss();
         }, 500);
       }
     }
@@ -46,12 +49,6 @@ document.addEventListener('DOMContentLoaded', function () {
       this.findCurrentTabSelector();
     }
 
-    onResize() {
-      if (this.currentId) {
-        this.setSliderCss();
-      }
-    }
-
     checkTabContainerPosition() {
       const tabs = document.querySelector('.tabs');
       if (!tabs) return;
@@ -59,8 +56,10 @@ document.addEventListener('DOMContentLoaded', function () {
       const offset = tabs.offsetTop + tabs.offsetHeight - this.tabContainerHeight + this.offsetAdjust;
       if (window.scrollY > offset) {
         this.tabsContainer.classList.add('tabs-container--top');
+        this.tabsContainer.style.opacity = '1';
       } else {
         this.tabsContainer.classList.remove('tabs-container--top');
+        this.tabsContainer.style.opacity = '0';
       }
     }
 
@@ -75,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
           const offsetTop = target.offsetTop - this.tabContainerHeight + this.offsetAdjust;
           const offsetBottom = target.offsetTop + target.offsetHeight - this.tabContainerHeight + this.offsetAdjust;
 
-          if (window.scrollY > offsetTop && window.scrollY < offsetBottom) {
+          if (window.scrollY >= offsetTop && window.scrollY < offsetBottom) {
             newCurrentId = id;
             newCurrentTab = tab;
           }
@@ -97,10 +96,6 @@ document.addEventListener('DOMContentLoaded', function () {
         this.tabSlider.style.width = width + 'px';
         this.tabSlider.style.left = left + 'px';
       }
-    }
-
-    updateTabPosition() {
-      this.onScroll();
     }
   }
 
