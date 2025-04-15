@@ -80,9 +80,6 @@
    .section--third .button {
       margin-top: 3rem;
    }
-
-   /*===================== .service =====================*/
-
    
    .policy .mobile-page .link-in::after,
    .policy .mobile-page .link-in:hover::after,
@@ -349,10 +346,6 @@
 
    /*===================== Service =====================*/
 
-   .service .section--first .h2-bg {
-      gap: 5px;
-   }
-
    .service .section--first video {
       width: 70%;
       height: 80%;
@@ -372,6 +365,10 @@
    .flow-ol {
       font-size: clamp(2rem, 1.543rem + 2.29vw, 2.4rem);
       letter-spacing: 0.25rem;
+      width: 80%;
+      margin: 1em auto;
+      display: flex;
+      flex-direction: column;
    }
 
    .flow {

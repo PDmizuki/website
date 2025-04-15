@@ -131,7 +131,7 @@ section #container .se-box {
 
 @media screen and (min-width: 600px) and (max-width: 1299px) {
    .service #wrap {
-      width: 90%;
+      width: 80%;
       margin-top: -0.65vmin;
       padding: 2em;
    }

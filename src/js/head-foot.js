@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
             };
 
             // SEO対応（例：トップページのタイトルとメタ）
-            updateMetaTags("こだわりの創造 - トップページ", "Webデザイン初心者のための学びの場。ポートフォリオ作成やLP制作が身につく。");
+            updateMetaTags("Mizuki Oyama - Portfolio Site");
         });
 
     // フッター読み込み

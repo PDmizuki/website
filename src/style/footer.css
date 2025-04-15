@@ -62,6 +62,7 @@
     .foot {
         font-family: sans-serif;
         font-size: clamp(1.2rem, 1.127rem + 0.36vw, 1.4rem);
+        color: var(--bg);
         position: absolute; /* 位置を固定 */
         left: 3%;
         bottom: 5vmin;

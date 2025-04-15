@@ -1,4 +1,4 @@
-jQuery(document).ready(function ($) {
+document.addEventListener("DOMContentLoaded", function () {
     class StickyNavigation {
         constructor() {
             this.currentId = null;
@@ -9,29 +9,35 @@ jQuery(document).ready(function ($) {
         }
 
         init() {
-            let self = this;
-            $('.tab').click(function (event) {
-                self.onTabClick(event, $(this));
+            const tabs = document.querySelectorAll(".tab");
+            tabs.forEach(tab => {
+                tab.addEventListener("click", (event) => {
+                    this.onTabClick(event, tab);
+                });
             });
-            $(window).scroll(() => {
-                this.onScroll();
-            });
-            $(window).resize(() => {
-                this.onResize();
-            });
+
+            window.addEventListener("scroll", () => this.onScroll());
+            window.addEventListener("resize", () => this.onResize());
             this.onScroll();
         }
 
         onTabClick(event, element) {
             event.preventDefault();
-            let target = $(element.attr('href'));
-            if (target.length) {
-                let scrollTop = target.offset().top - this.tabContainerHeight + 1 + this.offsetAdjust;
-                // アニメーションの速度を500msに設定
-                $('html, body').animate({ scrollTop: scrollTop }, 500, () => {
-                    // アニメーション完了後に強制的にスクロールイベントをトリガー
-                    this.updateTabPosition();
+            const href = element.getAttribute("href");
+            const target = document.querySelector(href);
+
+            if (target) {
+                const tabContainerHeight = this.tabContainerHeight;
+                const scrollTop = target.offsetTop - tabContainerHeight + 1 + this.offsetAdjust;
+
+                window.scrollTo({
+                    top: scrollTop,
+                    behavior: "smooth"
                 });
+
+                setTimeout(() => {
+                    this.updateTabPosition();
+                }, 500); // アニメーション後に更新
             }
         }
 
@@ -47,30 +53,39 @@ jQuery(document).ready(function ($) {
         }
 
         checkTabContainerPosition() {
-            let offset = $('.tabs').offset().top + $('.tabs').height() - this.tabContainerHeight + this.offsetAdjust;
-            if ($(window).scrollTop() > offset) {
-                $('.tabs-container').addClass('tabs-container--top');
+            const tabs = document.querySelector(".tabs");
+            const tabsContainer = document.querySelector(".tabs-container");
+
+            if (!tabs || !tabsContainer) return;
+
+            const offset = tabs.offsetTop + tabs.offsetHeight - this.tabContainerHeight + this.offsetAdjust;
+
+            if (window.scrollY > offset) {
+                tabsContainer.classList.add("tabs-container--top");
             } else {
-                $('.tabs-container').removeClass('tabs-container--top');
+                tabsContainer.classList.remove("tabs-container--top");
             }
-        }        
+        }
 
         findCurrentTabSelector() {
-            let newCurrentId;
-            let newCurrentTab;
-            let self = this;
-            $('.tab').each(function () {
-                let id = $(this).attr('href');
-                let target = $(id);
-                if (target.length) {
-                    let offsetTop = target.offset().top - self.tabContainerHeight + self.offsetAdjust;
-                    let offsetBottom = target.offset().top + target.height() - self.tabContainerHeight + self.offsetAdjust;
-                    if ($(window).scrollTop() > offsetTop && $(window).scrollTop() < offsetBottom) {
+            const tabs = document.querySelectorAll(".tab");
+            let newCurrentId = null;
+            let newCurrentTab = null;
+
+            tabs.forEach(tab => {
+                const id = tab.getAttribute("href");
+                const target = document.querySelector(id);
+                if (target) {
+                    const offsetTop = target.offsetTop - this.tabContainerHeight + this.offsetAdjust;
+                    const offsetBottom = offsetTop + target.offsetHeight;
+
+                    if (window.scrollY > offsetTop && window.scrollY < offsetBottom) {
                         newCurrentId = id;
-                        newCurrentTab = $(this);
+                        newCurrentTab = tab;
                     }
                 }
             });
+
             if (this.currentId !== newCurrentId || this.currentId === null) {
                 this.currentId = newCurrentId;
                 this.currentTab = newCurrentTab;
@@ -80,22 +95,20 @@ jQuery(document).ready(function ($) {
 
         setSliderCss() {
             if (this.currentTab) {
-                // 幅を正確に取得
-                let width = this.currentTab.outerWidth();
-                // タブの左からの位置を取得
-                let left = this.currentTab.position().left;
-                
-                // タブスライダーのCSSを設定
-                $('.tab-slider').css({
-                    width: width,  // 高さではなく幅を設定
-                    left: left     // leftの位置を設定
-                });
+                const slider = document.querySelector(".tab-slider");
+                if (slider) {
+                    const width = this.currentTab.offsetWidth;
+                    const left = this.currentTab.offsetLeft;
+
+                    slider.style.width = width + "px";
+                    slider.style.left = left + "px";
+                }
             }
         }
 
         updateTabPosition() {
-            // 強制的にスクロールイベントをトリガーしてバーの位置を更新
-            $(window).scroll();
+            // scrollイベントを手動で発火
+            this.onScroll();
         }
     }
 
