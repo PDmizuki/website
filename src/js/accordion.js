@@ -1,34 +1,33 @@
-  document.querySelectorAll('.accordion-wrap').forEach(wrap => {
-    const items = wrap.querySelectorAll('.accordion-item');
-
-    items.forEach(item => {
-      const toggle = item.querySelector('.accordion-toggle');
-      const header = item.querySelector('.accordion-header');
-      const text = item.querySelector('.accordion-text');
-      const icon = item.querySelector('.fa');
-
-      header.addEventListener('click', () => {
-        // すでに開いているなら閉じる
-        if (toggle.checked) {
-          toggle.checked = false;
-          text.classList.remove('active');
-          icon.classList.remove('rotate-fa');
-          return;
-        }
-
-        // 他を閉じる
-        items.forEach(other => {
-          if (other !== item) {
-            other.querySelector('.accordion-toggle').checked = false;
-            other.querySelector('.accordion-text').classList.remove('active');
-            other.querySelector('.fa').classList.remove('rotate-fa');
+document.addEventListener("DOMContentLoaded", () => {
+    const accordionWraps = document.querySelectorAll(".accordion-wrap");
+  
+    accordionWraps.forEach(wrap => {
+      const checkboxes = wrap.querySelectorAll(".accordion-toggle");
+      const headers = wrap.querySelectorAll(".accordion-header");
+      const icons = wrap.querySelectorAll(".fa");
+  
+      checkboxes.forEach((checkbox, index) => {
+        checkbox.addEventListener("change", () => {
+          if (checkbox.checked) {
+            // 他のチェックを外す（同じwrap内で）
+            checkboxes.forEach((cb, i) => {
+              if (cb !== checkbox) {
+                cb.checked = false;
+                icons[i].classList.remove("rotate-fa");
+              }
+            });
+            icons[index].classList.add("rotate-fa");
+          } else {
+            icons[index].classList.remove("rotate-fa");
           }
         });
-
-        // 現在のアコーディオンを開く
-        toggle.checked = true;
-        text.classList.add('active');
-        icon.classList.add('rotate-fa');
+  
+        // ヘッダークリックでもトグルできるようにする（任意）
+        headers[index].addEventListener("click", () => {
+          checkbox.checked = !checkbox.checked;
+          checkbox.dispatchEvent(new Event("change"));
+        });
       });
     });
   });
+  
