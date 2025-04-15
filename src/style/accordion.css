@@ -57,12 +57,16 @@
 
 /*in-text*/
 .accordion-text {
-    max-height: 0;
+    display: none;
     overflow: hidden;
     padding: 0;
     transition: max-height 0.8s ease, padding 0.4s ease;
 }
 
+.accordion-toggle:checked + .accordion-header + .accordion-text {
+    display: block;
+  }
+  
 .accordion-text h4 {
     font-size: clamp(1.6rem, 1.267rem + 0.44vw, 1.8rem);
     font-weight: 600;
@@ -92,6 +96,7 @@
     height: 20px;
     left: 1%;
     display: inline-block;
+    transition: transform 0.3s ease;
 }
 
 .fa span {
@@ -112,6 +117,10 @@
     transform: translateX(-50%);
     transition: transform 0.4s ease;
 }
+
+.rotate-fa {
+    transform: rotate(90deg);
+  }
 
 /* チェックされた時に縦線を回転＝非表示（＋ → －） */
 .accordion-toggle:checked+.accordion-header .fa span:nth-child(2) {
