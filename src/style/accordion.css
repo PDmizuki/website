@@ -1,3 +1,14 @@
+/* 非表示にするトグル */
+.accordion-toggle {
+    display: none;
+  }
+    
+  /* チェックが入ったときに表示 */
+  .accordion-toggle:checked + .accordion-header + .accordion-text {
+    max-height: 500px;
+    padding: 1rem;
+  }  
+
 /*==アコーディオン==*/
 .accordion-wrap {
     width: calc(60% - 50px);
@@ -23,12 +34,18 @@
 }
 
 .accordion-header {
+    cursor: pointer;
     width: 100%;
     padding-left: 6%;
     background-color: var(--bg);
     border-bottom: 1px solid var(--bg);
     transition: color 100ms;
 }
+  
+  .accordion-header:hover {
+    background-color: rgba(255,255,255,0.25);
+  }
+
 
 .accordion-header h3 {
     font-size: clamp(1.6rem, 0.933rem + 0.89vw, 2rem);
@@ -43,9 +60,12 @@
 
 /*in-text*/
 .accordion-text {
+    max-height: 0;
     height: auto;
     margin: 2rem auto;
+    padding: 0 1rem;
     display: none;
+    overflow: hidden;
     overflow-y: auto;
     transition: max-height 0.4s ease, padding 0.4s ease;
 }
@@ -154,57 +174,3 @@
     }
 }
 
-
-
-/* 非表示にするトグル */
-.accordion-toggle {
-    display: none;
-  }
-  
-  /* アコーディオンテキストを最初は非表示に */
-  .accordion-text {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease, padding 0.4s ease;
-    padding: 0 1rem;
-  }
-  
-  /* チェックが入ったときに表示 */
-  .accordion-toggle:checked + .accordion-header + .accordion-text {
-    max-height: 500px;
-    padding: 1rem;
-  }
-  
-  /* 見た目はCSSで自由にカスタム可 */
-  .accordion-header {
-    cursor: pointer;
-    border-bottom: 1px solid var(--text);
-    padding: 1rem;
-    background-color: rgba(255,255,255,0.12);
-    transition: background-color 0.3s;
-  }
-  
-  .accordion-header:hover {
-    background-color: rgba(255,255,255,0.25);
-  }
-  
-
-
-
-  summary {
-    cursor: pointer;
-    padding: 1rem;
-    border-bottom: 1px solid var(--text);
-    background-color: rgba(255,255,255,0.12);
-  }
-  
-  .accordion-text {
-    padding: 1rem;
-    animation: fadeIn 0.4s ease;
-  }
-  
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-5px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  
