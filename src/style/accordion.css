@@ -28,13 +28,14 @@
     width: 100%;
     margin: 0 auto;
     cursor: pointer;
-    display: flex;
     align-items: center;
     justify-items: center;
 }
 
 .accordion-header {
     cursor: pointer;
+    display: block;
+    position: relative;
     width: 100%;
     padding-left: 6%;
     background-color: var(--bg);
@@ -117,10 +118,6 @@
     padding-right: 0.5rem;
 }
 
-.accordion-gold .accordion-header {
-    color: var(--accent);
-}
-
 .accordion-no-bar {
     border-bottom: 0;
 }
@@ -138,7 +135,8 @@
         box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.75);
     }
 
-    .accordion-item {
+    .accordion-item,
+    .accordion-header {
         height: 50px;
     }
 
