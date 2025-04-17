@@ -18,7 +18,7 @@
       font-weight: 500;
       font-style: normal;
       color: var(--text);
-      background: linear-gradient(to top, rgba(0, 0, 0, 0.1) 20% , rgba(220, 220, 220, 0.5) 75%, rgba(0, 0, 0, 0.075) 120%),
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.2) 20% , rgba(220, 220, 220, 0.4) 75%, rgba(0, 0, 0, 0.25) 120%),
       url(https://pdmizuki.github.io/website/js/../assets/images/mobile-bg.jpg) no-repeat bottom center/cover;
       background-attachment: fixed;
       position: relative;
@@ -126,7 +126,7 @@
       margin-bottom: 2rem;
       color: var(--text);
       mix-blend-mode: overlay;
-      padding-left: 1.5vmin;
+      padding-left: 10vmin;
    }
 
    h2,

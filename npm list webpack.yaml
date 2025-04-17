@@ -957,11 +957,21 @@ npm run build
 //変更の追加
 git add .
 //再コミット（メモ付け）
-git commit -m "bg"
+git commit -m "bg h1"
 //リモートにプッシュ
 git push origin gh-pages
 //全ての変更をコミット
 c
+
+
+git pull origin gh-pages --rebase
+
+
+git stash                         # 今の作業を退避
+git pull origin gh-pages --rebase # 最新の状態を取得して統合
+git stash pop                    # 退避した作業を戻す
+git push origin gh-pages         # GitHubに反映
+
 
 
 メモ
