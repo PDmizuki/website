@@ -920,6 +920,8 @@ git commit --allow-empty -m "Trigger GitHub Pages update"
 git push origin gh-pages
 
 
+---------------------------------------------------------------------------------
+
 git checkout gh-pages
 git commit --allow-empty -m "Trigger GitHub Pages update"
 git push origin gh-pages
@@ -927,7 +929,11 @@ git push origin gh-pages
 //プッシュ
 npm run build
 git add docs
+<<<<<<< HEAD
 git commit -m "form"
+=======
+git commit -m "s修正 "
+>>>>>>> 4355f5df (bg h1)
 git push origin gh-pages
 
 //webpack修正時
