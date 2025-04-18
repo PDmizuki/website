@@ -21,13 +21,10 @@ form input[type="radio"] {
    appearance: none;
    width: 1.4em;
    height: 1.4em;
-   border-radius: 50%;
+   border-radius: 3px;
    margin-right: 0.8vmin;
    background: var(--bg);
    box-shadow: inset 1px 1px 7px rgba(0, 0, 0, 0.75);
-}
-form input[type="checkbox"] {
-   border-radius: 3px;
 }
 /* チェックされたらラジオボタン内側を表示 */
 form input[type="checkbox"]:checked::before,

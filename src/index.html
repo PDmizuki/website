@@ -439,11 +439,21 @@
                         <div class="form-field col align-center">
                             <p>Contact Form</p>
                             <div class="radio-group">
+                                相談内容
                                 <label>
-                                    <input type="radio" name="inquiryType" value="相談" required>問合せ
+                                    <input type="radio" name="inquiryType" value="相談" required>制作についての相談
                                 </label>
                                 <label>
-                                    <input type="radio" name="inquiryType" value="申込" required>依頼
+                                    <input type="radio" name="inquiryType" value="見積" required>見積の作成
+                                </label>
+                                <label>
+                                    <input type="radio" name="inquiryType" value="制作" required>Webサイト制作
+                                </label>
+                                <label>
+                                    <input type="radio" name="inquiryType" value="リニューアル" required>サイトリニューアル
+                                </label>
+                                <label>
+                                    <input type="radio" name="inquiryType" value="上記以外" required>上記以外の問い合わせ
                                 </label>
                             </div>
                         </div>
@@ -451,18 +461,26 @@
                         <div class="form-row">
                             <div class="form-col">
                                 <div class="form-field col x-50">
+                                    お名前（フリガナ）<span>必須</span>
                                     <input type="text" id="name" name="name" class="input-text" required>
-                                    <label for="name" class="label">氏名</label>
+                                    <label for="name" class="label">山本 太郎（ヤマモト タロウ）</label>
                                 </div>
                                 <div class="form-field col x-50">
+                                    メールアドレス<span>必須</span>
                                     <input type="email" id="email" name="email" class="input-text" required>
-                                    <label for="email" class="label">アドレス</label>
+                                    <label for="email" class="label">ya,mamoto@gmail.com</label>
+                                </div>
+                                <div class="form-field col x-50">
+                                    WebサイトURL
+                                    <input type="email" id="email" name="email" class="input-text" required>
+                                    <label for="email" class="label">ya,mamoto@gmail.com</label>
                                 </div>
                             </div>
 
                             <div class="form-field col x-100">
+                                お問合せ内容 / 備考<span>必須</span>
                                 <textarea id="message" name="message" class="input-text" required></textarea>
-                                <label for="message" class="label label-test">問合せ内容</label>
+                                <label for="message" class="label label-test">例：依頼についての相談</label>
                             </div>
                         </div>
 
@@ -470,6 +488,8 @@
                             <label>
                                 <p>
                                     <input type="checkbox" name="consent" value="同意する" required>
+                                    SitePolicyを確認しました。
+                                    <br>
                                     当サイトをご利用の際は、
                                     <a href="./policy.html" target="_blank">Site Policy</a>
                                     をご確認ください。
