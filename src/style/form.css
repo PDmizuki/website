@@ -8,11 +8,7 @@
 }
 
 form .radio-group label {
-   margin-right: 0.3rem;
-}
-
-form .radio-group label:nth-child(2) {
-   margin-left: 1rem;
+   margin: 0.3rem;
 }
 
 form input[type="checkbox"],
@@ -63,6 +59,7 @@ form input[type="checkbox"]::before {
 .col {
    /*float: left;*/
    flex: 1;
+   font-weight: 600;
 }
 
 .col.x-50 {
@@ -176,18 +173,14 @@ input:-webkit-autofill:focus {
 }
 
 .align-center {
+   font-size: clamp(1rem, 0.667rem + 0.44vw, 1.2rem);
+   font-family: sans-serif;
    display: flex;
    align-items: center;
    justify-content: space-between;
    padding: 0 1.6rem;
    gap: 1.75em;
-}
-
-.align-center div {
-   font-size: clamp(1rem, 0.667rem + 0.44vw, 1.2rem);
-   font-family: sans-serif;
    line-height: 1;
-   z-index: 1;
 }
 
 /*===================== モーダルウィンドウ =====================*/
@@ -343,11 +336,19 @@ form .close:focus {
 
 
 @media screen and (max-width: 599px) {
+   .radio-group label {
+      font-size: 1.6rem;
+   }
    .form-row {
       display: block;
    }
+   .form-row span {
+      font-size: 1.2rem;
+      color: var(--accent);
+   }
 
    .col {
+      font-size: 1.8rem;
       padding: 0;
    }
 
@@ -419,7 +420,7 @@ form .close:focus {
    }
 
    .align-center {
-      display: block;
+      display: grid;
       align-items: center;
    }
 

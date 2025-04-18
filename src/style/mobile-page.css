@@ -302,9 +302,9 @@
    }
 
    .about .section--third .bg-aitem {
-      width: 80%;
+      width: 100%;
       height: 40px;
-      margin: 0;
+      margin: 0 auto;
       padding: 1rem;
       border: 1px solid var(--hover);
    }
