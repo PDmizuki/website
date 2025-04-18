@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
       this.tabs = document.querySelectorAll('.tab');
       this.tabSlider = document.querySelector('.tab-slider');
       this.tabsContainer = document.querySelector('.tabs-container');
-      this.tabContainerHeight = this.tabsContainer.offsetHeight || 50; // ← 高さ取得
+      this.tabContainerHeight = this.tabsContainer.offsetHeight || 50;
       this.offsetAdjust = 0;
 
       this.init();

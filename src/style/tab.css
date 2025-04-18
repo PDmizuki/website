@@ -1,12 +1,13 @@
-.tabs,
-.slide {
+.first,
+.slide,
+.tabs {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     position: relative;
 }
 
-.tabs {
+.first {
     padding: 3em 0 5em;
     min-height: 60svh;
 }

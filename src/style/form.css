@@ -93,6 +93,7 @@ input:-webkit-autofill:focus {
 .contact-form span {
    font-size: 1.2rem;
    color: var(--accent);
+   display: contents;
 }
 
 .get-in-touch {
