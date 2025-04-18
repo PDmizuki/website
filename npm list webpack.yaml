@@ -953,27 +953,36 @@ npx webpack --mode production
 ls src/blog
 
 
+
 npm run build
 //変更の追加
 git add .
 //再コミット（メモ付け）
-git commit -m "head seo header/footer css"
+git commit -m "修正反映"
 //リモートにプッシュ
 git push origin gh-pages
 //全ての変更をコミット
 c
 
+git commit --amend -m "header footer"
+git fetch origin
+git push origin gh-pages --force-with-lease
+
+
 
 git pull origin gh-pages --rebase
 
 git stash
-# 今の作業を退避
+//今の作業を退避
 git pull origin gh-pages --rebase
-# 最新の状態を取得して統合
+//最新の状態を取得して統合
 git stash pop
-# 退避した作業を戻す
+//退避した作業を戻す
 git push origin gh-pages
-# GitHubに反映
+//GitHubに反映
+//強制反映（共同プロジェクトは注意）
+git push origin gh-pages --force
+
 
 
 
