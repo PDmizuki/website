@@ -90,6 +90,11 @@ input:-webkit-autofill:focus {
    mix-blend-mode: color-burn;
 }
 
+.contact-form span {
+   font-size: 1.2rem;
+   color: var(--accent);
+}
+
 .get-in-touch {
    margin: 0 auto;
    position: relative;
@@ -345,9 +350,8 @@ form .close:focus {
    .form-row {
       display: block;
    }
-   .form-row span {
+   .contact-form span {
       font-size: 1.2rem;
-      color: var(--accent);
    }
 
    .col {

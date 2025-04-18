@@ -721,20 +721,20 @@
 
       <!-- Main -->
       <section class="tabs">
-        <div class="top-h1 noise">
+        <div class="top-h1">
           <h1 class="fade_bottom">Contact Us</h1>
           <p class="caption">
             問合せ / 申込ページ.
           </p>
         </div>
-          <p class="fade_bottom caption noise">
+          <p class="fade_bottom caption">
             当ページで制作や見積の申込ができます.
           </p>
         <!-- tab list -->
         <div class="tabs-container">
-          <a class="tab" href="#tab--first">A<span>bout</span><br><span>送信について</span></a>
-          <a class="tab" href="#tab--second">F<span>orm</span><br><span>問合せ/依頼</span></a>
-          <a class="tab" href="#tab--third">Q<span>&A</span><br><span>よくある質問</span></a>
+          <a class="tab" href="#tab--first">About</a>
+          <a class="tab" href="#tab--second">Form</a>
+          <a class="tab" href="#tab--third">Q&A</a>
           <span class="tab-slider"></span>
         </div>
       </section>
@@ -759,44 +759,83 @@
       <section class="slide section--second" id="tab--second">
         <div class="top-s">
           <div class="h2-bg noise">
-            <h2>Contact</h2>
+            <h2>Form</h2>
             <p>問合せ / 申込</p>
           </div>
-          <div class="content-wrapper fade_bottom">
-            <div class="get-in-touch">
 
-              <form id="contactForm" class="contact-form"
-                action="https://script.google.com/macros/s/AKfycbyN2Gl35qjTCreWck6ZkWL2Nf9wrxUD7ZWyQ0yEtPqqGnfcJmMDyaozg90feIz6z51P/exec"
-                method="POST" target="hidden_iframe" onsubmit="submitted=true;">
+          <p class="text fade_bottom">
+            下記フォームから問合せ、依頼の相談を行えます。
+            見積を作成いたしますので、他者との見積の比較をして依頼を検討していただければ幸いです。
+            なので、依頼と前向きに検討されている方だけでなく、迷っている方でもお気軽にお問合せください。
+            <br>
+            ※アドレスの入力ミスにお気を付けください。
+            <br>
+            ※当サイトご利用される方は「Policy」をお読みください。
+        </p>
 
-                <div class="form-row">
-                  <div class="form-col">
-                    <div class="form-field col x-50">
-                      <input type="text" id="name" name="name" class="input-text" required>
-                      <label for="name" class="label">Name</label>
-                    </div>
-                    <div class="form-field col x-50">
-                      <input type="email" id="email" name="email" class="input-text" required>
-                      <label for="email" class="label">Address</label>
-                    </div>
-                    <div class="form-field col x-50">
-                      <input type="text" id="companyName" name="companyName" class="input-text" required>
-                      <label for="companyName" class="label">Business</label>
-                    </div>
-                  </div>
-                  <div class="form-field col x-100">
-                    <textarea id="message" name="message" class="input-text" required></textarea>
-                    <label for="message" class="label label-test">Text</label>
-                  </div>
+        <!-- フォームテンプレート -->
+        <form id="contactForm" class="contact-form"
+            action="https://script.google.com/macros/s/AKfycbywCgodNF4hlCe6p9NdbtlnA-QvDRK2zcCHNKnDmiwv-31JZqLKvSdLZoi3EeG4uJiI/exec"
+            method="POST" target="hidden_iframe" onsubmit="submitted=true;">
+            <div class="form-field col align-center">
+                <div class="radio-group">
+                    相談内容<span>必須</span>
+                    <label>
+                        <input type="radio" name="inquiryType" value="相談" required>制作についての相談
+                    </label>
+                    <label>
+                        <input type="radio" name="inquiryType" value="見積" required>見積の作成
+                    </label>
+                    <label>
+                        <input type="radio" name="inquiryType" value="制作" required>Webサイト制作
+                    </label>
+                    <label>
+                        <input type="radio" name="inquiryType" value="リニューアル" required>サイトリニューアル
+                    </label>
+                    <label>
+                        <input type="radio" name="inquiryType" value="上記以外" required>上記以外の問い合わせ
+                    </label>
                 </div>
-
-                <div class="form-field col align-center">
-                  <p>当サイトをご利用の際は、<a href="https://mizukioyama.github.io/pd/policy.html">SitePolicy</a>をご確認ください。</p>
-                  <button type="submit" class="submit-btn">Send</button>
-                </div>
-              </form>
             </div>
-          </div>
+
+            <div class="form-row">
+                <div class="form-col">
+                    <div class="form-field col x-50">
+                        お名前（フリガナ）<span>必須</span>
+                        <input type="text" id="name" name="name" class="input-text" required>
+                        <label for="name" class="label">例：山本 太郎（ヤマモト タロウ）</label>
+                    </div>
+                    <div class="form-field col x-50">
+                        メールアドレス<span>必須</span>
+                        <input type="email" id="email" name="email" class="input-text" required>
+                        <label for="email" class="label">例：yamamoto@gmail.com</label>
+                    </div>
+                    <div class="form-field col x-50">
+                        WebサイトURL
+                        <input type="email" id="email" name="email" class="input-text" required>
+                        <label for="email" class="label">例：https://pdmizuki.github.io/website</label>
+                    </div>
+                </div>
+
+                <div class="form-field col x-100">
+                    お問合せ内容 / 備考<span>必須</span>
+                    <textarea id="message" name="message" class="input-text" required></textarea>
+                    <label for="message" class="label label-test">例：依頼についての相談</label>
+                </div>
+            </div>
+
+            <div class="form-field col align-center">
+                <label>
+                    <p>
+                        <input type="checkbox" name="consent" value="同意する" required>
+                        SitePolicyを確認しました。
+                        <br>
+                        当サイトをご利用の際は、<a href="./policy.html" target="_blank">Site Policy</a>をご確認ください。
+                    </p>
+                </label>
+                <button type="submit" class="submit-btn">送信</button>
+            </div>
+        </form>
 
         </div>
       </section>
@@ -1012,19 +1051,21 @@
       </section>
 
       <div id="footer-container"></div>
-    </div>
-    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
-    <!-- モーダルウィンドウ -->
-    <div id="thanksModal" class="modal">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <p>
-          問合せありがとうございます。
-          <br>
-          返信まで1日～2日ほどお待ちください。
-        </p>
+      <!-- モーダルウィンドウ -->
+      <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+      <!-- modal -->
+      <div id="thanksModal" class="modal">
+          <div class="modal-content">
+              <span class="close">&times;</span>
+              <p>
+                  問合せありがとうございます。
+                  <br>
+                  確認できましたら折り返しご連絡いたしますので、返信まで1日～2日ほどお待ちください。
+              </p>
+          </div>
       </div>
     </div>
+    <!---- mobile ----->
   </main>
 
   <p class="pc" style="color: var(--bg); position: absolute; right: 23vmin; bottom: 1rem;">©Precision Design</p>
