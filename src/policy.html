@@ -1,44 +1,72 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
-  <meta charset="UTF-8">
-  <title>PD_Site Policy</title>
-  <link rel="icon" href="./assets/images/pd.ico">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-  <!--Search-->
-  <meta name="description" content="想いを形に、こだわりをデザインする。">
-  <meta name="keywords" content="Precision Design, こだわり, デザイン, 想い, 伝える">
-
-  <!-- Meta Tags -->
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="referrer" content="strict-origin-when-cross-origin">
-
-  <!-- Content-Security-Policy -->
-  <meta http-equiv="Content-Security-Policy" content="
+    <meta charset="UTF-8">
+    <title>Policy</title>
+    <link rel="icon" href="./assets/images/pd.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta http-equiv="pragma" content="no-cache">
+    <!-- Search -->
+    <meta name="description" content="想いを形に、こだわりをデザインする。">
+    <meta name="keywords" content="Mizuki Oyama,mizuki,oyama,Precision Design,Web,デザイン,想い,こだわり">
+    <!-- Meta Tags -->
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <!-- Content-Security-Policy -->
+    <meta http-equiv="Content-Security-Policy" content="
     default-src 'self';
-    script-src 'self' https://code.jquery.com 'nonce-random1234' 'unsafe-inline';
-    style-src 'self' https://cdnjs.cloudflare.com https://fonts.googleapis.com 'unsafe-inline';
-    font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com data:;
+    script-src 'self' https://code.jquery.com https://cdnjs.cloudflare.com https://cdn.jsdelivr.net 'unsafe-inline';
+    style-src 'self' https://cdnjs.cloudflare.com https://fonts.googleapis.com https://cdn.jsdelivr.net 'unsafe-inline';
+    font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com https://cdn.jsdelivr.net data:;
     img-src 'self' https://pdmizuki.github.io/website/ data:;
-    connect-src 'self' https://pdmizuki.github.io;
-    frame-ancestors 'self';  /* 'none' から 'self' に変更 */
+    connect-src 'self' https://pdmizuki.github.io https://script.google.com https://script.googleusercontent.com https://cdn.jsdelivr.net https://fonts.googleapis.com;
     object-src 'none';
     base-uri 'self';
     form-action 'self' https://pdmizuki.github.io;
-  ">
-
-  <script nonce="random1234" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-
-  <!-- Preconnect -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    ">
+    <!-- OGP 基本(sns) -->
+    <meta property="og:title" content="Mizuki Oyama｜Webデザイナー・こだわりのデザイン制作">
+    <!-- ↑ サイトのキャッチコピーやブランド名などに変更可能 -->
+    <meta property="og:description" content="想いを形に、こだわりをデザインする。Webデザインと表現のポートフォリオサイト。">
+    <!-- ↑ SNSや検索結果に表示される説明文。140字以内が目安で、短く印象的に -->
+    <meta property="og:image" content="https://mizukioyama.github.io/pd/assets/images/ogp.jpg">
+    <!-- ↑ OGP用の画像URL。後で画像を変更する場合はこのURLを差し替えるだけでOK -->
+    <meta property="og:url" content="https://mizukioyama.github.io/pd/">
+    <!-- ↑ サイトのURLを変更したらここも変更。トップページのURLにしておけばOK -->
+    <meta property="og:type" content="website">
+    <!-- ↑ 通常は "website"、記事ページなら "article" にする -->
+    <meta property="og:site_name" content="Mizuki Oyama Portfolio">
+    <!-- ↑ サイト名やブランド名を記載 -->
+    <!-- ▼ Twitterカード対応（LINEやXでのシェア時） -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mizuki Oyama｜Webデザイナー・こだわりのデザイン制作">
+    <meta name="twitter:description" content="想いを形に、こだわりをデザインする。">
+    <meta name="twitter:image" content="https://mizukioyama.github.io/pd/assets/images/ogp.jpg">
+    <!-- Google検索「リッチリザルト」 -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Mizuki Oyama",
+            "url": "https://mizukioyama.github.io/pd/",
+            "image": "https://mizukioyama.github.io/pd/assets/images/ogp.jpg",
+            "jobTitle": "Webデザイナー",
+            "description": "想いを形に、こだわりをデザインするWebクリエイター。",
+            "sameAs": [
+            "https://twitter.com/your_account",  // ← 実際のXアカウントURLに変更
+            "https://www.instagram.com/your_account"  // ← Instagramアカウントに変更
+            ]
+        }
+    </script>
+    <!-- Preconnect -->
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 
 <!--保護-->
-
 <body data-page="policy" oncontextmenu="return false;" class="policy">
   <div id="header-container"></div>
 

@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
             };
 
             // SEO対応（例：トップページのタイトルとメタ）
-            updateMetaTags("Mizuki Oyama - Portfolio Site");
+            updateMetaTags("Mizuki Oyama - Webデザイナー");
         });
 
     // フッター読み込み

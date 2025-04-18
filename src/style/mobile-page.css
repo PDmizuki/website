@@ -290,18 +290,9 @@
       background: var(--hover);
    }
 
-   /*========== .works */
-
-   .about .work {
-      top: 45%;
-   }
-
-
-   /*========== .works */
-
    /*========== .color */
 
-   .about .section--fourth .color {
+   .about .section--third .color {
       width: 80%;
       display: grid;
       gap: 0.5rem;
@@ -310,33 +301,33 @@
       background-color: var(--text);
    }
 
-   .about .section--fourth .bg-aitem {
-      width: 100%;
+   .about .section--third .bg-aitem {
+      width: 80%;
       height: 40px;
       margin: 0;
       padding: 1rem;
       border: 1px solid var(--hover);
    }
 
-   .about .section--fourth .bg-aitem:nth-child(1) {
+   .about .section--third .bg-aitem:nth-child(1) {
       background: var(--text);
    }
 
-   .about .section--fourth .bg-aitem:nth-child(2) {
+   .about .section--third .bg-aitem:nth-child(2) {
       color: var(--text);
       background: var(--hover);
    }
 
-   .about .section--fourth .bg-aitem:nth-child(3) {
+   .about .section--third .bg-aitem:nth-child(3) {
       color: var(--text);
    }
 
-   .about .section--fourth .bg-aitem:nth-child(4) {
+   .about .section--third .bg-aitem:nth-child(4) {
       color: var(--bg);
       background: var(--accent);
    }
 
-   .about .section--fourth .bg-aitem:nth-child(5) {
+   .about .section--third .bg-aitem:nth-child(5) {
       color: var(--text);
       background: none;
    }
