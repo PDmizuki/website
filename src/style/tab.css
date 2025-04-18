@@ -125,28 +125,3 @@
         z-index: 1;
     }
 }
-
-.tabs {
-    padding: 3em 0 5em;
-    min-height: 100vh;
-  }
-  
-  .tabs-container {
-    display: flex;
-    position: fixed;
-    bottom: -15%;
-    left: 0;
-    width: 100%;
-    padding: 1em;
-    background: rgba(46, 46, 46, 0.65);
-    opacity: 0;
-    transition: all 0.5s ease;
-    z-index: 10;
-    backdrop-filter: blur(5px);
-  }
-  
-  .tabs-container--top {
-    bottom: 0;
-    opacity: 1;
-  }
-  

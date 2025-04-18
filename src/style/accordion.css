@@ -43,7 +43,6 @@
     font-weight: 600;
     border-left: 1px solid var(--text);
     padding: 0 1rem;
-    line-height: 2.4;
 }
 
 /*in-text*/
@@ -83,10 +82,11 @@
 /*== プラスアイコン（＋）の構造 ==*/
 .fa {
     position: absolute;
-    width: 20px;
-    height: 20px;
-    top: 25%;
-    left: 1%;
+    width: 2em;
+    height: 2em;
+    top: 30%;
+    left: 1.5vmin;
+    transform: translate(-50%, -50%);
 }
 
 .fa span {
