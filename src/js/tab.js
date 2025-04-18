@@ -23,7 +23,6 @@ document.addEventListener('DOMContentLoaded', function () {
         this.setSliderCss();
       });
 
-      // 初回実行
       this.onScroll();
     }
 
@@ -56,10 +55,8 @@ document.addEventListener('DOMContentLoaded', function () {
       const offset = tabs.offsetTop + tabs.offsetHeight - this.tabContainerHeight + this.offsetAdjust;
       if (window.scrollY > offset) {
         this.tabsContainer.classList.add('tabs-container--top');
-        this.tabsContainer.style.opacity = '1';
       } else {
         this.tabsContainer.classList.remove('tabs-container--top');
-        this.tabsContainer.style.opacity = '0';
       }
     }
 

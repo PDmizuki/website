@@ -7,6 +7,8 @@ nav {
     bottom: 0;
     width: 100%;
     background: var(--bg);
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
     mix-blend-mode: screen;
     overflow-x: hidden;
     overflow-y: auto;
@@ -189,6 +191,8 @@ nav {
     justify-content: flex-start;
     align-items: end;
     z-index: 998;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
     background: rgba(46, 46, 46, 0.7);
     background-image: repeating-linear-gradient(0deg, transparent, transparent 4px, rgba(146, 146, 146, 0.5) 5px, rgba(146, 146, 146, 0.5) 5px);
     animation: menu-left 1s ease, moveBackground 0.65s linear infinite;
