@@ -4,7 +4,6 @@
     position: relative;
     padding: 1rem;
     margin: 0 auto 1em;
-    mix-blend-mode: difference;
     -webkit-backdrop-filter: blur(3px);
     backdrop-filter: blur(3px);
 }
@@ -17,8 +16,9 @@
     cursor: pointer;
     align-items: center;
     justify-items: center;
-    border: 1px solid var(--bg);
+    border: 1px solid var(--text);
     box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.75);
+    background: rgba(5, 2, 8, 0.6);
 }
 
 .accordion-header {
@@ -28,7 +28,7 @@
     position: relative;
     width: 100%;
     padding-left: 10%;
-    border-bottom: 1px solid var(--bg);
+    border-bottom: 1px solid var(--text);
     transition: color 100ms;
 }
 
@@ -40,9 +40,9 @@
 .accordion-header h3 {
     font-size: clamp(1.6rem, 0.933rem + 0.89vw, 2rem);
     font-weight: 600;
-    border-left: 1px solid var(--bg);
+    border-left: 1px solid var(--text);
     padding: 0 1rem;
-    color: var(--bg);
+    color: var(--text);
 }
 
 /*in-text*/
@@ -56,12 +56,12 @@
 .accordion-item.active .accordion-text {
     overflow: auto;
     min-height: fit-content;
-  }
+}
 
 .accordion-text h4 {
     font-size: clamp(1.6rem, 1.267rem + 0.44vw, 1.8rem);
     font-weight: 600;
-    color: var(--bg);
+    color: var(--text);
     margin: 1vmin 10vmin 0;
     mix-blend-mode: normal;
 }
@@ -95,7 +95,7 @@
     left: 0;
     width: 100%;
     height: 2px;
-    background-color: var(--bg);
+    background-color: var(--text);
     transform: translateY(-50%);
 }
 
@@ -128,17 +128,11 @@
     .accordion-item {
         margin-bottom: 2vmin;
         box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.75);
-        backdrop-filter: blur(3px);
-    }
-
-    .contact .mobile .accordion-header h3 {
-        font-size: clamp(1.6rem, 1.371rem + 1.14vw, 1.8rem);
-        padding: 0.75rem 2em;
     }
 
     .accordion-text p {
         font-size: clamp(1.4rem, 1.171rem + 1.14vw, 1.6rem);
         width: 90%;
-        color: var(--bg);
+        color: var(--text);
     }
 }

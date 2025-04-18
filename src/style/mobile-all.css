@@ -18,7 +18,7 @@
       font-weight: 500;
       font-style: normal;
       color: var(--text);
-      background: linear-gradient(to top, rgba(0, 0, 0, 0.25) 20% , rgba(220, 220, 220, 0.4) 75%, rgba(0, 0, 0, 0.1) 120%),
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.3) 20% , rgba(220, 220, 220, 0.25) 75%, rgba(0, 0, 0, 0) 120%),
       url("../assets/images/pd-body-bg.jpg") no-repeat center center/cover;
       background-attachment: fixed;
       position: relative;
@@ -53,14 +53,17 @@
    body::before {
       border: 1vh solid;
       z-index: 1000;
+      border-image: url("../assets/images/mobile-main-second.png") 100;
+      box-shadow: inset 1px 1px 6px 1px rgba(0, 0, 0, 0.9);
    }
    body::after {
-      top: 1vh;
-      left: 2vw;
-      width: 96vw;
-      height: 98vh;
+      display: none;
+      top: 0.5vh;
+      left: 1vw;
+      width: 98vw;
+      height: 99vh;
       border: 3px solid;
-      box-shadow: inset 0px 1px 5px 0px rgba(0, 0, 0, 0.85);
+      box-shadow: inset 0px 1px 5px 1px rgba(0, 0, 0, 0.5);
       z-index: 1000;
       border-image: url("../assets/images/mobile-main-second.png") 100;
    }
