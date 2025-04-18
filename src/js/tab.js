@@ -49,15 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     checkTabContainerPosition() {
-      const tabs = document.querySelector('.tabs');
-      if (!tabs) return;
-
-      const offset = tabs.offsetTop + tabs.offsetHeight - this.tabContainerHeight + this.offsetAdjust;
-      if (window.scrollY > offset) {
-        this.tabsContainer.classList.add('tabs-container--top');
-      } else {
-        this.tabsContainer.classList.remove('tabs-container--top');
-      }
+      this.tabsContainer.classList.add('tabs-container--top');
     }
 
     findCurrentTabSelector() {

@@ -18,7 +18,7 @@
     justify-items: center;
     border: 1px solid var(--text);
     box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.75);
-    background: rgba(5, 2, 8, 0.6);
+    background: rgba(5, 2, 8, 0.1);
 }
 
 .accordion-header {
@@ -32,13 +32,14 @@
     transition: color 100ms;
 }
 
-.accordion-header:hover {
-    background-color: rgba(255, 255, 255, 0.5);
+.accordion-header:hover,
+.accordion-header:active {
+    background-color: rgba(205, 205, 205, 0.45);
 }
 
 
 .accordion-header h3 {
-    font-size: clamp(1.6rem, 0.933rem + 0.89vw, 2rem);
+    font-size: clamp(1.8rem, 1.381rem + 0.52vw, 2rem);
     font-weight: 600;
     border-left: 1px solid var(--text);
     padding: 0 1rem;
@@ -59,7 +60,7 @@
 }
 
 .accordion-text h4 {
-    font-size: clamp(1.6rem, 1.267rem + 0.44vw, 1.8rem);
+    font-size: clamp(1.6rem, 1.181rem + 0.52vw, 1.8rem);
     font-weight: 600;
     color: var(--text);
     margin: 1vmin 10vmin 0;
@@ -67,12 +68,11 @@
 }
 
 .accordion-text p {
-    font-size: clamp(1.4rem, 1.067rem + 0.44vw, 1.6rem);
+    font-size: clamp(1.4rem, 0.981rem + 0.52vw, 1.6rem);
     width: 80%;
-    font-weight: 500;
+    font-weight: 700;
     margin: 0 auto;
     letter-spacing: 0.1rem;
-    mix-blend-mode: color-burn;
     text-shadow: none;
 }
 
@@ -131,8 +131,7 @@
     }
 
     .accordion-text p {
-        font-size: clamp(1.4rem, 1.171rem + 1.14vw, 1.6rem);
+        font-size: clamp(1.4rem, 1.335rem + 0.33vw, 1.6rem);
         width: 90%;
-        color: var(--text);
     }
 }
