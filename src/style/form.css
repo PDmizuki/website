@@ -336,6 +336,9 @@ form .close:focus {
 
 
 @media screen and (max-width: 599px) {
+   .radio-group {
+      display: grid;
+   }
    .radio-group label {
       font-size: 1.6rem;
    }
@@ -389,14 +392,15 @@ form .close:focus {
 
    .contact-form .label {
       font-size: clamp(1.4rem, 1.171rem + 1.14vw, 1.6rem);
-      color: rgba(87, 87, 87, 0.75);
-      left: 2.75%;
-      top: 13.75%;
+      font-weight: 500;
+      color: var(--hover);
+      left: 1em;
+      top: 4rem;
       line-height: 2rem;
    }
 
    .contact-form .label-test {
-      top: 6.5%;
+      top: 3.8rem;
    }
 
    .contact-form .submit-btn {
@@ -423,6 +427,9 @@ form .close:focus {
       display: grid;
       align-items: center;
    }
+   .align-center:last-child {
+      display: block;
+   }
 
    .align-center p {
       margin: 0;
@@ -438,6 +445,7 @@ form .close:focus {
 
    .align-center p a {
       font-size: clamp(1.6rem, 1.143rem + 2.29vw, 2rem);
+      display: inline;
       margin-top: 0;
       padding: 0.5rem;
    }
