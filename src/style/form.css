@@ -141,6 +141,7 @@ input:-webkit-autofill:focus {
    position: absolute;
    left: 1.4em;/*rem？*/
    top: 0.5rem;
+   pointer-events: none;
    transition: transform 0.2s ease-in-out;
 }
 
