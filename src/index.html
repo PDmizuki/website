@@ -13,25 +13,18 @@
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-C2ZQL9LC8P"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-C2ZQL9LC8P');
-    </script>
-
+    <script src="/google.js"></script>
     <!-- Meta Tags -->
     <meta name="referrer" content="strict-origin-when-cross-origin">
 
     <!-- CSP（緩和バージョン） -->
     <meta http-equiv="Content-Security-Policy" content="
-        default-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://www.googletagmanager.com https://www.google-analytics.com data:;
-        script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com 'unsafe-inline';
-        style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
-        font-src 'self' https://fonts.gstatic.com;
-        connect-src 'self' https://www.google-analytics.com;
-        img-src 'self' data: https://mizukioyama.github.io;
-    ">
+    default-src 'self';
+    script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com;
+    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+    font-src 'self' https://fonts.gstatic.com;
+    connect-src 'self' https://www.google-analytics.com;">
+
 
     <!-- OGP -->
     <meta property="og:title" content="Mizuki Oyama｜Webデザイナー・こだわりのデザイン制作">
