@@ -253,7 +253,7 @@
       border-bottom: 1px solid;
       box-shadow: inset 0px 0px 5px 0px #000;
       background-color: rgba(200, 200, 200);
-      mix-blend-mode: color-burn;
+      mix-blend-mode: multiply;
    }
 
 }
