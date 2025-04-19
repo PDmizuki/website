@@ -27,13 +27,15 @@
     <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains">
     <meta http-equiv="Content-Security-Policy" content="
     default-src 'self';
-    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
-    font-src 'self' https://fonts.gstatic.com;
-    script-src 'self' 'unsafe-inline' https://www.googletagmanager.com;
-    connect-src 'self' https://www.google-analytics.com;
-    img-src 'self' data: https://mizukioyama.github.io;
+    script-src 'self' https://code.jquery.com https://cdnjs.cloudflare.com https://cdn.jsdelivr.net 'unsafe-inline';
+    style-src 'self' https://cdnjs.cloudflare.com https://fonts.googleapis.com https://cdn.jsdelivr.net 'unsafe-inline';
+    font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com https://cdn.jsdelivr.net data:;
+    img-src 'self' https://pdmizuki.github.io/website/ data:;
+    connect-src 'self' https://pdmizuki.github.io https://script.google.com https://script.googleusercontent.com https://cdn.jsdelivr.net https://fonts.googleapis.com;
     object-src 'none';
-  ">
+    base-uri 'self';
+    form-action 'self' https://pdmizuki.github.io;
+    ">
     <!-- OGP 基本(sns) -->
     <meta property="og:title" content="Mizuki Oyama｜Webデザイナー・こだわりのデザイン制作">
     <!-- ↑ サイトのキャッチコピーやブランド名などに変更可能 -->
