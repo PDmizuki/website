@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <title>Mizuki Oyama | Webデザイナー</title>
@@ -8,48 +6,48 @@
     <meta http-equiv="cache-control" content="no-cache">
     <meta http-equiv="expires" content="0">
     <meta http-equiv="pragma" content="no-cache">
+
     <!-- Search -->
     <meta name="description" content="想いを形に、こだわりをデザインする。">
-    <meta name="google-site-verification" content="arT_wWeQn_KLlT4yLyz2Q-Lsv5wn0i6WnakFwjAATbM"/>
-    <!-- Google tag (gtag.js) -->
+    <meta name="google-site-verification" content="arT_wWeQn_KLlT4yLyz2Q-Lsv5wn0i6WnakFwjAATbM" />
+
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-C2ZQL9LC8P"></script>
     <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-C2ZQL9LC8P');
     </script>
+
     <!-- Meta Tags -->
     <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
-    <!-- Content-Security-Policy --><!-- Content-Security-Policy（frame-ancestorsは除外） -->
+
+    <!-- CSP（緩和バージョン） -->
     <meta http-equiv="Content-Security-Policy" content="
-    default-src 'self';
-    script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com;
-    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
-    font-src 'self' https://fonts.gstatic.com;
-    connect-src 'self' https://www.google-analytics.com;
+        default-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://www.googletagmanager.com https://www.google-analytics.com data:;
+        script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com 'unsafe-inline';
+        style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+        font-src 'self' https://fonts.gstatic.com;
+        connect-src 'self' https://www.google-analytics.com;
+        img-src 'self' data: https://mizukioyama.github.io;
     ">
-    <!-- OGP 基本(sns) -->
+
+    <!-- OGP -->
     <meta property="og:title" content="Mizuki Oyama｜Webデザイナー・こだわりのデザイン制作">
-    <!-- ↑ サイトのキャッチコピーやブランド名などに変更可能 -->
     <meta property="og:description" content="想いを形に、こだわりをデザインする。Webデザインと表現のポートフォリオサイト。">
-    <!-- ↑ SNSや検索結果に表示される説明文。140字以内が目安で、短く印象的に -->
     <meta property="og:image" content="https://mizukioyama.github.io/pd/assets/images/ogp.jpg">
-    <!-- ↑ OGP用の画像URL。後で画像を変更する場合はこのURLを差し替えるだけでOK -->
     <meta property="og:url" content="https://mizukioyama.github.io/pd/">
-    <!-- ↑ サイトのURLを変更したらここも変更。トップページのURLにしておけばOK -->
     <meta property="og:type" content="website">
-    <!-- ↑ 通常は "website"、記事ページなら "article" にする -->
     <meta property="og:site_name" content="Mizuki Oyama Portfolio">
-    <!-- ↑ サイト名やブランド名を記載 -->
-    <!-- ▼ Twitterカード対応（LINEやXでのシェア時） -->
+
+    <!-- Twitterカード -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Mizuki Oyama｜Webデザイナー・こだわりのデザイン制作">
     <meta name="twitter:description" content="想いを形に、こだわりをデザインする。">
     <meta name="twitter:image" content="https://mizukioyama.github.io/pd/assets/images/ogp.jpg">
-    <!-- Google検索「リッチリザルト」 -->
+
+    <!-- 構造化データ -->
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
@@ -59,16 +57,14 @@
             "image": "https://mizukioyama.github.io/pd/assets/images/ogp.jpg",
             "jobTitle": "Webデザイナー",
             "description": "想いを形に、こだわりをデザインするWebクリエイター。",
-            "sameAs": [
-            "https://twitter.com/your_account",  // ← 実際のXアカウントURLに変更
-            "https://www.instagram.com/your_account"  // ← Instagramアカウントに変更
-            ]
+            "sameAs": []
         }
     </script>
-    <!-- Preconnect -->
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
 </head>
 
 <!--保護-->
