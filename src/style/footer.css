@@ -7,7 +7,7 @@
             linear-gradient(to top, rgba(0, 0, 0, 0.35) 0%,
                 rgba(0, 0, 0, 0.35) 100%),
             url("../assets/images/pd-bg-img.jpg") no-repeat top center/cover;
-        z-index: 10;
+        z-index: 100;
     }
 
     footer::before {

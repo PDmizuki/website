@@ -20,8 +20,8 @@
       font-weight: 500;
       font-style: normal;
       color: var(--text);
-      background: linear-gradient(to top, rgba(0, 0, 0, 0.3) 20%, rgba(220, 220, 220, 0.25) 75%, rgba(0, 0, 0, 0) 120%),
-         url("../assets/images/pd-body-bg.jpg") no-repeat center center/cover;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%),
+      url("../assets/images/mobile-main-second.png") no-repeat center center/cover;
       background-attachment: fixed;
       position: relative;
       width: 100%;

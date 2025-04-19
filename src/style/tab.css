@@ -4,6 +4,8 @@
     flex-direction: column;
     justify-content: flex-start;
     position: relative;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.3) 20%, rgba(180, 180, 160, 0.5) 75%, rgba(0, 0, 0, 0) 120%),
+    url("../assets/images/pd-body-bg.jpg") no-repeat center center/cover;
 }
 
 .tabs {
