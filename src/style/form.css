@@ -383,7 +383,7 @@ form .close:focus {
       font-weight: 600;
       color: var(--text);
       width: 100%;
-      height: 35pt;
+      height: 40pt;
       padding-left: 1rem;
       box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.75);
       border-radius: 8px;

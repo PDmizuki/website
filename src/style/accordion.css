@@ -17,7 +17,7 @@
     align-items: center;
     justify-items: center;
     border: 1px solid var(--text);
-    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.75);
+    box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.85);
     background: rgba(5, 2, 8, 0.1);
 }
 
@@ -123,13 +123,18 @@
     .accordion-header {
         height: 45pt;
         border-radius: 10px;
-        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
+    }
+
+    .accordion-header:active {
+        box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.5);
+        background-color: rgba(205, 205, 205, 0.45);
     }
 
     .accordion-item {
         border-radius: 10px;
         margin-bottom: 2vmin;
-        box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.75);
+        background-color: rgba(225, 222, 248, 0.2);
+        box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.5);
     }
 
     .accordion-text p {

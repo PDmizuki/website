@@ -20,5 +20,5 @@
    font-style: normal;
    font-weight: 900;
    src: url('./fa-brands-400.woff2') format('woff2'),
-      url('./fa-brands-400.ttf') format('ttf');
+      url('./fa-brands-400.ttf') format('truetype');
 }

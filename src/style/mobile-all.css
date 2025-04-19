@@ -53,7 +53,7 @@
 
    /*===================== body =====================*/
    body::before {
-      border: 1vh solid;
+      border: 1.5vh solid;
       z-index: 1000;
       border-image: url("../assets/images/mobile-main-second.png") 100;
       box-shadow: inset 1px 1px 6px 1px rgba(0, 0, 0, 0.9);
