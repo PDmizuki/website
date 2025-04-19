@@ -36,7 +36,7 @@
 
    /*===================== section =====================*/
    section .top-s {
-      height: auto;
+      height: 100svh;
       min-height: 100svh;
       text-align: justify;
       position: relative;
