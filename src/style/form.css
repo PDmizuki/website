@@ -32,7 +32,7 @@ form input[type="radio"]::before {
    content: "";
    background-color: var(--text);
    box-shadow: 0 1px 2px 0px rgba(46, 46, 46, 0.45);
-   border-radius: 50%;
+   border-radius: 3px;
    margin: auto;
    opacity: 0;
    position: absolute;
@@ -42,9 +42,6 @@ form input[type="radio"]::before {
    left: 0;
    width: 0.7em;
    height: 0.7em;
-}
-form input[type="checkbox"]::before {
-   border-radius: 3px;
 }
 
 .radio-group label {
@@ -87,7 +84,6 @@ input:-webkit-autofill:focus {
    position: absolute;
    top: 25%;
    right: 17.5%;
-   mix-blend-mode: color-burn;
 }
 
 .contact-form span {
@@ -344,6 +340,7 @@ form .close:focus {
 @media screen and (max-width: 599px) {
    .radio-group {
       display: grid;
+      margin-bottom: 2rem;
    }
    .radio-group label {
       font-size: 1.6rem;
@@ -356,7 +353,7 @@ form .close:focus {
    }
 
    .col {
-      font-size: 1.8rem;
+      font-size: 1.4rem;
       padding: 0;
    }
 
@@ -381,13 +378,13 @@ form .close:focus {
    }
 
    .contact-form .input-text {
-      font-size: clamp(1.8rem, 1.343rem + 2.29vw, 2.2rem);
+      font-size: 1.6rem;
       font-weight: 600;
       color: var(--text);
       width: 100%;
-      height: 17vmin;
+      height: 35pt;
       padding-left: 1rem;
-      box-shadow: inset 1px 1px 7px rgba(0, 0, 0, 0.75);
+      box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.75);
       border-radius: 8px;
    }
 
@@ -399,22 +396,21 @@ form .close:focus {
       font-size: clamp(1.4rem, 1.171rem + 1.14vw, 1.6rem);
       font-weight: 500;
       color: var(--hover);
-      left: 1em;
-      top: 4rem;
+      text-align: left;
+      left: 0.75em;
+      top: 3.5rem;
       line-height: 2rem;
-   }
-
-   .contact-form .label-test {
-      top: 3.8rem;
+      letter-spacing: -0.05rem;
    }
 
    .contact-form .submit-btn {
       font-size: 1.8rem;
       font-weight: 600;
       width: 100%;
-      height: 10vmin;
+      height: 25pt;
       color: var(--text);
-      background: rgba(85, 85, 85, 0.1);
+      background: var(--bg);
+      mix-blend-mode: color-burn;
       padding: 0;
       margin: 0;
       margin-bottom: 0.5rem;

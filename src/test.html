@@ -1,71 +1,199 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>自己分析シート</title>
-    <script>
-        let answers = {};
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tabs Example</title>
+  <style>
+    :root {
+  --border: rgba(255, 255, 255, 0.3);
+}
 
-        function saveAnswer(question, answer) {
-            answers[question] = answer;
-            nextStep(answer);
+.tabs {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative;
+  padding: 3em 0 5em;
+  min-height: 60svh;
+}
+
+.tabs-container {
+  display: flex;
+  position: fixed;
+  bottom: -15%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.5rem 1rem;
+  background: rgba(46, 46, 46, 0.65);
+  backdrop-filter: blur(5px);
+  border: 1px solid var(--border);
+  background-image: repeating-linear-gradient(
+    120deg,
+    transparent,
+    transparent 1px,
+    rgba(146, 146, 146, 0.45) 1px,
+    rgba(146, 146, 146, 0.01) 2px
+  );
+  box-shadow: 0px 0px 8px 0px #000;
+  mix-blend-mode: difference;
+  opacity: 0;
+  transition: opacity 0.6s ease, bottom 0.6s ease;
+  z-index: 10;
+}
+
+.tabs-container--top {
+  bottom: 2rem;
+  opacity: 1;
+}
+
+.tab {
+  color: white;
+  text-decoration: none;
+  margin: 0 1rem;
+  font-size: 1.2rem;
+}
+
+.tab-slider {
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  background: white;
+  transition: left 0.3s ease, width 0.3s ease;
+}
+
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+  class StickyNavigation {
+    constructor() {
+      this.currentId = null;
+      this.currentTab = null;
+      this.tabs = document.querySelectorAll('.tab');
+      this.tabSlider = document.querySelector('.tab-slider');
+      this.tabsContainer = document.querySelector('.tabs-container');
+      this.tabContainerHeight = this.tabsContainer.offsetHeight || 50;
+      this.offsetAdjust = 0;
+
+      this.init();
+    }
+
+    init() {
+      this.tabs.forEach(tab => {
+        tab.addEventListener('click', (event) => this.onTabClick(event, tab));
+      });
+
+      window.addEventListener('scroll', () => this.onScroll());
+      window.addEventListener('resize', () => {
+        this.tabContainerHeight = this.tabsContainer.offsetHeight;
+        this.setSliderCss();
+      });
+
+      this.onScroll();
+    }
+
+    onTabClick(event, tab) {
+      event.preventDefault();
+      const targetId = tab.getAttribute('href');
+      const target = document.querySelector(targetId);
+      if (target) {
+        const scrollTop = target.offsetTop - this.tabContainerHeight + 1 + this.offsetAdjust;
+        window.scrollTo({
+          top: scrollTop,
+          behavior: 'smooth'
+        });
+
+        setTimeout(() => {
+          this.setSliderCss();
+        }, 500);
+      }
+    }
+
+    onScroll() {
+      this.checkTabContainerPosition();
+      this.findCurrentTabSelector();
+    }
+
+    checkTabContainerPosition() {
+      const tabs = document.querySelector('.tabs');
+      if (!tabs) return;
+
+      const offset = tabs.offsetTop + tabs.offsetHeight - this.tabContainerHeight + this.offsetAdjust;
+      if (window.scrollY > offset) {
+        this.tabsContainer.classList.add('tabs-container--top');
+      } else {
+        this.tabsContainer.classList.remove('tabs-container--top');
+      }
+    }
+
+    findCurrentTabSelector() {
+      let newCurrentId = null;
+      let newCurrentTab = null;
+
+      this.tabs.forEach(tab => {
+        const id = tab.getAttribute('href');
+        const target = document.querySelector(id);
+        if (target) {
+          const offsetTop = target.offsetTop - this.tabContainerHeight + this.offsetAdjust;
+          const offsetBottom = target.offsetTop + target.offsetHeight - this.tabContainerHeight + this.offsetAdjust;
+
+          if (window.scrollY >= offsetTop && window.scrollY < offsetBottom) {
+            newCurrentId = id;
+            newCurrentTab = tab;
+          }
         }
+      });
 
-        function nextStep(answer) {
-            let next = {
-                "はい": 2, "いいえ": 99,
-                "人間関係": 10, "子育て": 20, "教育": 30, "仕事": 40, "その他": 50,
-                "家族": 11, "親族": 11, "親戚": 11, "職場の上司": 11, "学校の先生": 11, "その他": 11,
-                "0～1才": 11, "2～3才": 11, "4～5才": 11, "5～6才": 11, "それ以上": 11,
-                "経営": 41, "人材": 41, "売り上げ": 41, "認知": 41, "その他": 41,
-                "直ぐにでも": 12, "2週間以内": 12, "1カ月以内": 12, "半年以内": 12, "それ以外": 12,
-                "ある": 2, "ない": 99
-            }[answer] || 12;
+      if (this.currentId !== newCurrentId || this.currentId === null) {
+        this.currentId = newCurrentId;
+        this.currentTab = newCurrentTab;
+        this.setSliderCss();
+      }
+    }
 
-            showQuestion(next);
-        }
+    setSliderCss() {
+      if (this.currentTab && this.tabSlider) {
+        const width = this.currentTab.offsetWidth;
+        const left = this.currentTab.offsetLeft;
 
-        function showQuestion(step) {
-            document.querySelectorAll('.question').forEach(q => q.style.display = 'none');
-            document.getElementById('q' + step).style.display = 'block';
-        }
+        this.tabSlider.style.width = width + 'px';
+        this.tabSlider.style.left = left + 'px';
+      }
+    }
+  }
 
-        function submitForm() {
-            fetch('https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec', {
-                method: 'POST',
-                body: JSON.stringify(answers),
-                headers: {'Content-Type': 'application/json'}
-            }).then(response => response.text()).then(data => {
-                alert("データが保存されました。");
-                showQuestion(99);
-            });
-        }
-    </script>
+  new StickyNavigation();
+});
+
+  </script>
 </head>
 <body>
-    <div id="q1" class="question">
-        <p>お名前もしくはニックネーム</p>
-        <input type="text" id="nameInput">
-        <button onclick="saveAnswer('名前', document.getElementById('nameInput').value)">次へ</button>
+  <section class="tabs">
+    <div class="top-h1">
+      <h1 class="fade_bottom">Service Us</h1>
+      <p class="caption">提供するサービス.</p>
     </div>
-    <div id="q2" class="question" style="display:none;">
-        <p>今、困っていることや悩み事はありますか？</p>
-        <button onclick="saveAnswer('悩み', 'はい')">はい</button>
-        <button onclick="saveAnswer('悩み', 'いいえ')">いいえ</button>
+    <p class="fade_bottom caption">
+      提供するものにこだわりを.<br />
+      触れ合い、関われることに感謝を.
+    </p>
+
+    <!-- tab list -->
+    <div class="tabs-container">
+      <a class="tab" href="#tab--first">Maine</a>
+      <a class="tab" href="#tab--second">Sub</a>
+      <a class="tab" href="#tab--third">Flow</a>
+      <a class="tab" href="#tab--fourth">Plan</a>
+      <span class="tab-slider"></span>
     </div>
-    <div id="q10" class="question" style="display:none;">
-        <p>どのようなことに困っていますか？</p>
-        <button onclick="saveAnswer('悩み内容', '人間関係')">人間関係</button>
-        <button onclick="   saveAnswer('悩み内容', '子育て')">子育て</button>
-        <button onclick="saveAnswer('悩み内容', '教育')">教育</button>
-        <button onclick="saveAnswer('悩み内容', '仕事')">仕事</button>
-        <input type="text" id="otherInput">
-        <button onclick="saveAnswer('悩み内容', document.getElementById('otherInput').value)">その他</button>
-    </div>
-    <div id="q99" class="question" style="display:none;">
-        <p>診断が完了しました！</p>
-        <button onclick="submitForm()">データを保存</button>
-    </div>
+  </section>
+
+  <!-- 各セクション（スクロール対象） -->
+  <div id="tab--first" style="height: 100vh; background: #eee;"></div>
+  <div id="tab--second" style="height: 100vh; background: #ccc;"></div>
+  <div id="tab--third" style="height: 100vh; background: #aaa;"></div>
+  <div id="tab--fourth" style="height: 100vh; background: #888;"></div>
+
+  <script src="script.js"></script>
 </body>
 </html>
