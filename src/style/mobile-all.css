@@ -1,5 +1,6 @@
 /*===================== mobile =====================*/
 @media screen and (max-width: 599px) {
+
    /*===================== all =====================*/
    :root {
       font-size: 62.5%;
@@ -12,14 +13,15 @@
    .mobile {
       display: block;
    }
+
    .mobile-page {
       /*font-family: zen-maru-gothic, sans-serif;*/
       font-family: sans-serif;
       font-weight: 500;
       font-style: normal;
       color: var(--text);
-      background: linear-gradient(to top, rgba(0, 0, 0, 0.3) 20% , rgba(220, 220, 220, 0.25) 75%, rgba(0, 0, 0, 0) 120%),
-      url("../assets/images/pd-body-bg.jpg") no-repeat center center/cover;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.3) 20%, rgba(220, 220, 220, 0.25) 75%, rgba(0, 0, 0, 0) 120%),
+         url("../assets/images/pd-body-bg.jpg") no-repeat center center/cover;
       background-attachment: fixed;
       position: relative;
       width: 100%;
@@ -56,6 +58,7 @@
       border-image: url("../assets/images/mobile-main-second.png") 100;
       box-shadow: inset 1px 1px 6px 1px rgba(0, 0, 0, 0.9);
    }
+
    body::after {
       display: none;
       top: 0.5vh;
@@ -85,9 +88,12 @@
       background-color: lightgray;
       /* フォールバック用のテキスト色 */
       /* サポートされない場合の代替設定 */
-   background-clip: border-box; /* 追加：他のブラウザ用 */
-   background-clip: text; /* 追加：他のブラウザ用 */
-   color: transparent; /* 追加：Webkit未対応時にテキストを透明に */
+      background-clip: border-box;
+      /* 追加：他のブラウザ用 */
+      background-clip: text;
+      /* 追加：他のブラウザ用 */
+      color: transparent;
+      /* 追加：Webkit未対応時にテキストを透明に */
    }
 
    footer .noise {
@@ -100,9 +106,12 @@
          -webkit-background-clip: text;
          -webkit-text-fill-color: darkgray;
          /* サポートされない場合の代替設定 */
-   background-clip: border-box; /* 追加：他のブラウザ用 */
-   background-clip: text; /* 追加：他のブラウザ用 */
-   color: transparent; /* 追加：Webkit未対応時にテキストを透明に */
+         background-clip: border-box;
+         /* 追加：他のブラウザ用 */
+         background-clip: text;
+         /* 追加：他のブラウザ用 */
+         color: transparent;
+         /* 追加：Webkit未対応時にテキストを透明に */
       }
    }
 
@@ -111,12 +120,17 @@
       max-width: 100%;
       width: 65%;
    }
+
    /*===================== img =====================*/
 
    /*===================== text =====================*/
-   h1,h2,h3,h4 {
+   h1,
+   h2,
+   h3,
+   h4 {
       background: none;
    }
+
    h1 {
       /*font-size: 62.5%;=16px 12rem=120px*/
       font-size: clamp(2rem, -0.182rem + 10.91vw, 8rem);
@@ -168,6 +182,7 @@
       letter-spacing: 0.01rem;
       line-height: 2;
    }
+
    .text {
       padding: 1vh 10vmin;
    }
@@ -197,6 +212,7 @@
       text-decoration: none;
       z-index: 9;
    }
+
    a:active {
       color: rgba(217, 217, 217, 0.5);
    }
@@ -211,9 +227,9 @@
       height: 0.1em;
       background: currentColor;
       transform: rotate(-45deg);
-    }
-    
-    .link-arrow::before {
+   }
+
+   .link-arrow::before {
       content: '';
       width: 0.65em;
       height: 0.65em;
@@ -226,7 +242,7 @@
       top: 50%;
       right: -0.05em;
       box-sizing: border-box;
-    }
+   }
 
    /*===================== リンク =====================*/
 
@@ -236,6 +252,8 @@
       border-top: 1px solid;
       border-bottom: 1px solid;
       box-shadow: inset 0px 0px 5px 0px #000;
+      background-color: rgba(200, 200, 200);
+      mix-blend-mode: color-burn;
    }
 
 }
