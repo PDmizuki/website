@@ -341,7 +341,7 @@ form .close:focus {
 @media screen and (max-width: 599px) {
    .radio-group {
       display: grid;
-      margin-bottom: 2rem;
+      margin: 1rem 0;
    }
    .radio-group label {
       font-size: 1.4rem;
@@ -362,7 +362,8 @@ form .close:focus {
    .col.x-50,
    .col.x-100 {
       padding: 0;
-      margin: 0.5rem auto 1rem;
+      margin: 0;
+      margin-bottom: 1rem;
    }
 
    .contact-form .input-text:focus+.label,
@@ -376,7 +377,7 @@ form .close:focus {
       margin: 0 auto;
       position: relative;
       right: 0;
-      top: 10vmin;
+      top: 5vmin;
    }
 
    .contact-form .input-text {

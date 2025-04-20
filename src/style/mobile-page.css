@@ -58,9 +58,8 @@
       position: relative;
       top: 0;
       left: 0;
-      padding: 2% 10vmin 0;
+      padding: 0 10vmin;
       display: grid;
-      gap: 2em;
    }
 
    .policy .h2-bg span {

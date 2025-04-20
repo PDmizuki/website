@@ -65,12 +65,10 @@ html {
     transition: all 0.5s ease;
     text-decoration: none;
     position: relative;
-    z-index: 2;
     /*text-shadow: -1px -1px  var(--text), -1px 1px  var(--text), 1px -1px  var(--text), 1px 1px var(--text);*/
     box-shadow: 0px 0px 8px 0px #000;
     backdrop-filter: blur(5px);
     background: rgba(46, 46, 46, 0.65);
-    border: 1px solid var(--border);
     transition: bottom 0.3s ease, opacity 0.3s ease;
     z-index: 10;
 }
@@ -106,6 +104,10 @@ html {
         bottom: 5em;
         width: 35%;
         padding: 0;
+        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px);
+        border: 1px solid rgba(70, 70, 70, 0.65);
+        box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.75);
     }
 
     .tab {
@@ -127,8 +129,7 @@ html {
     .tabs-container a {
         display: inline;
         line-height: 2.4;
-        border: 1px solid;
-        margin: 0.5em 0;
+        margin: 0.5em 0.5em 0.5em 0;
         align-content: center;
         border-image: url("../assets/images/mobile-main-second.png") 100;
     }
