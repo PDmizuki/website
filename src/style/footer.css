@@ -3,6 +3,7 @@
         position: relative;
         height: 40svh;
         padding-left: 6vmin;
+        border-top: 1px solid var(--border);
         background:
             linear-gradient(to top, rgba(0, 0, 0, 0.35) 0%,
                 rgba(0, 0, 0, 0.35) 100%),
