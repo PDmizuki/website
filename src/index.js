@@ -78,3 +78,5 @@ import "./assets/images/bg-s.png";
 import "./assets/images/bg-p.png";
 //mobile
 import "./assets/images/mobile-main-second.png";
+
+import "./assets/audio/tukinohikari.mp3";
