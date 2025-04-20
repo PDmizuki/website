@@ -22,7 +22,7 @@ html {
     position: fixed;
     bottom: 40px; /* 表示したいY位置（調整可能） */
     left: -100%;  /* 初期位置：画面外 */
-    transform: translateX(0); /* 初期位置用 */
+    transform: translateX(0%); /* 初期位置用 */
     padding: 0.5rem 1rem 0;
     opacity: 0;
     mix-blend-mode: multiply;
@@ -30,6 +30,10 @@ html {
     animation: slideFadeIn 1s ease-out forwards;
     animation-delay: 1s; /* 遅延させたい場合は調整可能 */
     z-index: 100;
+    transition: none;
+}
+.tabs-container.animate-in {
+    animation: slideFadeIn 1s ease-out forwards;
 }
 
 /* アニメーション定義 */

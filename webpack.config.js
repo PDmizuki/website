@@ -56,6 +56,13 @@ module.exports = {
             generator: {
                filename: "assets/images/[name][ext]" // `docs/` を含めず、相対パスを調整
             }
+         },
+         {
+            test: /\.mp3$/i,
+            type: 'asset/resource',
+            generator: {
+               filename: 'assets/audio/[name][ext]', // 出力先を指定
+            },
          }
       ]
    },
