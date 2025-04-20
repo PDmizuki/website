@@ -62,7 +62,7 @@ import "./js/chat.js"; // chat
 import "./js/fade.js"; // fade
 import "./js/head-foot.js"; // head foot
 import "./js/modal.js"; // modal
-import "./js/google.js"; // google
+//import "./js/google.js"; // google
 
 /////////// all images
 import "./assets/images/pd.ico";
