@@ -957,7 +957,7 @@ npm run build
 //変更の追加
 git add .
 //再コミット（メモ付け）
-git commit -m "head csp bg img"
+git commit -m "head csp tab"
 //リモートにプッシュ
 git push origin gh-pages
 //全ての変更をコミット
