@@ -6,17 +6,20 @@
     <!-- Meta Tags -->
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
     <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains">
-    
+    <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com 'sha256-w80BZSCsZWt40owPOBhZNchbLCYImHAjO97/cr46T1Q=';
+    connect-src 'self' https://www.google-analytics.com;
+    img-src 'self' https://www.google-analytics.com;
+    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+    style-src-elem 'self' https://fonts.googleapis.com;
+    font-src 'self' https://fonts.gstatic.com;
+  ">
   <meta http-equiv="Content-Security-Policy" content="
   default-src 'self';
-  script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com 'unsafe-inline';
-  connect-src 'self' https://www.google-analytics.com;
-  img-src 'self' https://www.google-analytics.com;
-  style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
-  style-src-elem 'self' https://fonts.googleapis.com;
-  font-src 'self' https://fonts.gstatic.com;
-">
-
+           style-src 'self' https://fonts.googleapis.com 'unsafe-inline';
+           font-src https://fonts.gstatic.com;
+           script-src 'self' 'sha256-3bq3tT0RPY0Ai/NKnJwL8PH8sYu0vUodqKVAJzCch8Y=';">
 
     <title>Mizuki Oyama | Webデザイナー</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -76,8 +79,7 @@
     <!-- font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet" crossorigin="anonymous">
-
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
 </head>
 
 <!--保護-->
