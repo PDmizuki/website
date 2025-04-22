@@ -3,24 +3,6 @@
 
 <head>
     <meta charset="UTF-8">
-    <!-- Meta Tags -->
-    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
-    <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains">
-    <meta http-equiv="Content-Security-Policy" content="
-    default-src 'self';
-    script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com 'sha256-w80BZSCsZWt40owPOBhZNchbLCYImHAjO97/cr46T1Q=';
-    connect-src 'self' https://www.google-analytics.com;
-    img-src 'self' https://www.google-analytics.com;
-    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
-    style-src-elem 'self' https://fonts.googleapis.com;
-    font-src 'self' https://fonts.gstatic.com;
-  ">
-  <meta http-equiv="Content-Security-Policy" content="
-  default-src 'self';
-           style-src 'self' https://fonts.googleapis.com 'unsafe-inline';
-           font-src https://fonts.gstatic.com;
-           script-src 'self' 'sha256-3bq3tT0RPY0Ai/NKnJwL8PH8sYu0vUodqKVAJzCch8Y=';">
-
     <title>Mizuki Oyama | Webデザイナー</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="cache-control" content="no-cache">
@@ -34,12 +16,17 @@
     <link rel="icon" href="./assets/images/pd.ico" sizes="any" type="image/x-icon">
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-C2ZQL9LC8P"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-C2ZQL9LC8P');
-    </script>
+    <!-- Meta Tags -->
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains">
+    <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self' https://mizukioyama.github.io;
+    script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com;
+    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+    font-src * data:;
+    connect-src 'self' https://www.google-analytics.com;
+    ">
+
     <!-- OGP 基本(sns) -->
     <meta property="og:title" content="Mizuki Oyama｜Webデザイナー・こだわりのデザイン制作">
     <!-- ↑ サイトのキャッチコピーやブランド名などに変更可能 -->
@@ -76,7 +63,11 @@
         }
     </script>
 
-    <!-- font -->
+    <!-- font
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet" crossorigin="anonymous">
+    -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
