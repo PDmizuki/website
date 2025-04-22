@@ -3,6 +3,17 @@
 
 <head>
     <meta charset="UTF-8">
+    <!-- Meta Tags -->
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains">
+<meta http-equiv="Content-Security-Policy" content="
+default-src 'self';
+script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com;
+connect-src 'self' https://www.google-analytics.com;
+img-src 'self' https://www.google-analytics.com;
+style-src 'self' 'unsafe-inline';
+">
+
     <title>Mizuki Oyama | Webデザイナー</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="cache-control" content="no-cache">
@@ -16,19 +27,12 @@
     <link rel="icon" href="./assets/images/pd.ico" sizes="any" type="image/x-icon">
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-C2ZQL9LC8P"></script>
-    <!-- Meta Tags -->
-    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
-    <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains">
-    <meta http-equiv="Content-Security-Policy" content="
-  default-src 'self';
-  script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com;
-  style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
-  font-src 'self' https://fonts.gstatic.com data:;
-  connect-src 'self' https://www.google-analytics.com;
-  img-src 'self' https://www.google-analytics.com;
-  frame-src https://www.googletagmanager.com;
-">
-
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-C2ZQL9LC8P');
+    </script>
     <!-- OGP 基本(sns) -->
     <meta property="og:title" content="Mizuki Oyama｜Webデザイナー・こだわりのデザイン制作">
     <!-- ↑ サイトのキャッチコピーやブランド名などに変更可能 -->
