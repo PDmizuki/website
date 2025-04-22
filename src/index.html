@@ -21,24 +21,11 @@
     <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains">
     <meta http-equiv="Content-Security-Policy" content="
   default-src 'self';
-  script-src 'self' 'nonce-abcd1234XYZ' https://www.googletagmanager.com https://www.google-analytics.com;
+  script-src 'self' 'nonce-XXXX' https://www.googletagmanager.com https://www.google-analytics.com;
   style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
-  font-src * data:;
+  font-src 'self' https://fonts.gstatic.com data:;
   connect-src 'self' https://www.google-analytics.com;
 ">
-<script nonce="abcd1234XYZ">
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-C2ZQL9LC8P');
-  
-    if (window.top !== window.self) {
-       window.addEventListener('DOMContentLoaded', function () {
-          document.body.innerHTML = "";
-       });
-    }
-  </script>
-  
 
     <!-- OGP 基本(sns) -->
     <meta property="og:title" content="Mizuki Oyama｜Webデザイナー・こだわりのデザイン制作">
