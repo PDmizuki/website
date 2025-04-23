@@ -19,13 +19,16 @@
     <!-- Meta Tags -->
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
     <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains">
-    <meta http-equiv="Content-Security-Policy" content="
-    default-src 'self' https://mizukioyama.github.io;
-    script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com;
-    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
-    font-src * data:;
-    connect-src 'self' https://www.google-analytics.com;
-    ">
+<meta http-equiv="Content-Security-Policy" content="
+  default-src 'self';
+  script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com;
+  connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com;
+  style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+  font-src 'self' https://fonts.gstatic.com;
+  img-src 'self' https://www.google-analytics.com https://www.googletagmanager.com data:;
+">
+
+
 
     <!-- OGP 基本(sns) -->
     <meta property="og:title" content="Mizuki Oyama｜Webデザイナー・こだわりのデザイン制作">
@@ -63,11 +66,7 @@
         }
     </script>
 
-    <!-- font
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet" crossorigin="anonymous">
-    -->
+    <!-- font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
