@@ -14,10 +14,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  inputs.forEach(input => {
+  document.querySelectorAll(".input-text").forEach(input => {
     toggleLabel(input);
     input.addEventListener("input", () => toggleLabel(input));
   });
+
 
   if (contactForm) {
     contactForm.addEventListener("submit", function (e) {
