@@ -208,22 +208,23 @@ nav {
 }
 
 .open #mask ul:last-child {
-    margin: calc(25% - 5vw) 0 0;
+    margin: calc(20vmin - 5vw) 0 0;
 }
 
 .open #mask ul p {
     font-size: clamp(2rem, calc(2rem + 0.1vw), 2.4rem);
-    color: var(--bg);
     margin: 0;
 }
 
 .open #mask li {
-    width: 90%;
-    font-size: clamp(1.8rem, calc(1.8rem + 0.1vw), 2rem);
-    color: var(--bg);
-    margin: 0.5rem auto 1.8rem;
+    font-size: 1.2rem;
+    margin: 0 1em 1.8em;
     padding: 0 0.25em 0.15rem;
     border-bottom: 1px solid;
+}
+
+.open #mask li span {
+    font-size: 1rem;
 }
 
 
