@@ -1,4 +1,10 @@
 /*== NAV ==*/
+.head img {
+    width: 45%;
+    margin-top: 0.5em;
+    margin-left: 0.5em;
+}
+
 nav {
     display: block;
     position: fixed;
@@ -20,7 +26,7 @@ nav {
 }
 
 .inner {
-    padding: 2rem 3rem 6rem;
+    padding-left: 2rem;
 }
 
 .inner ul {
@@ -35,7 +41,7 @@ nav {
 }
 
 .inner ul li:nth-child(5) {
-    margin-top: 10rem;
+    margin-top: 5em;
 }
 
 #navArea .inner li a {
@@ -182,9 +188,9 @@ nav {
     position: fixed;
     bottom: 0;
     left: 0;
-    height: 200px;
+    height: 40svh;
     overflow: auto;
-    padding: 3rem;
+    padding-left: 2rem;
     cursor: pointer;
     transition: all 1s ease;
     align-items: end;
@@ -192,7 +198,7 @@ nav {
     -webkit-backdrop-filter: blur(8px);
     backdrop-filter: blur(8px);
     mix-blend-mode: screen;
-    background: rgba(46, 46, 46);
+    background: rgba(46, 46, 46,0.75);
     /*background-image: repeating-linear-gradient(0deg, transparent, transparent 4px, rgba(146, 146, 146, 0.5) 5px, rgba(146, 146, 146, 0.5) 5px);*/
     animation: menu-left 1s ease, moveBackground 0.65s linear infinite;
 }

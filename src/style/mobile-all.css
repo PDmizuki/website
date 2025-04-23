@@ -201,7 +201,6 @@
 
    /*===================== リンク =====================*/
    a {
-      font-family: futura-pt, sans-serif;
       font-size: 1.8rem;
       color: var(--text);
       width: auto;
