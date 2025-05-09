@@ -770,15 +770,17 @@
 
         <!-- フォームテンプレート -->
         <form id="contactForm" class="contact-form"
-            action="https://script.google.com/macros/s/AKfycbywCgodNF4hlCe6p9NdbtlnA-QvDRK2zcCHNKnDmiwv-31JZqLKvSdLZoi3EeG4uJiI/exec"
+            action="https://script.google.com/macros/s/AKfycbwMJiBAGmjPWKRfjlfP5HtxinZXyooxHeTC6phhYZ7uzANB9q_plODh1wwJa8NLgUXi/exec"
             method="POST" target="hidden_iframe" onsubmit="submitted=true;">
 
             <div class="form-row">
                 <div class="form-col">
-                    <div class="form-field col x-50">
+                    <div class="col x-50">
                       <label for="name-title">お名前（フリガナ）<span>必須</span></label>
+                      <div class="form-field">
                         <input type="text" id="name" name="name" class="input-text" required>
                         <label for="name" class="label">例：山本 太郎（ヤマモト タロウ）</label>
+                      </div>
                     </div>
                     <div class="form-field col x-50">
                       <label for="name-title">メールアドレス<span>必須</span></label>
@@ -819,7 +821,9 @@
                 </div>
 
                 <div class="form-field col x-100">
-                  <label for="name-title">お問合せ内容 / 備考（伝えておきたいことがあれば記入してください。）<span>必須</span></label>
+                  <label for="name-title">お問合せ内容 / 備考
+                    <span style="color: var(--text);">（伝えておきたいことがあれば記入してください。）</span><span>必須</span>
+                  </label>
                     <textarea id="message" name="message" class="input-text" required></textarea>
                     <label for="message" class="label label-test">例：依頼についての相談</label>
                 </div>

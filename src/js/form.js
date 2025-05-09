@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  document.querySelectorAll(".input-text").forEach(input => {
+  inputs.forEach(input => {
     toggleLabel(input);
     input.addEventListener("input", () => toggleLabel(input));
   });
@@ -26,27 +26,36 @@ document.addEventListener("DOMContentLoaded", function () {
       const form = e.target;
       const formData = new FormData(form);
 
-      // フォーム送信
+      const submitButton = form.querySelector('.submit-btn');
+      submitButton.disabled = true;
+
       fetch(form.action, {
         method: 'POST',
         body: formData
       })
         .then(response => {
-          if (response.ok) {
-            if (modal) {
-              modal.style.display = "block";
-              modal.classList.add("show");
-            }
-            form.reset(); // 入力値をクリア
-            inputs.forEach(input => input.classList.remove('not-empty'));
+          if (!response.ok) throw new Error('Network response was not ok');
+          return response.text();
+        })
+        .then(result => {
+          if (result.trim() === "Successfully submitted") {
+            modal.style.display = "block";
+            modal.classList.add("show");
+            form.reset();
+            document.querySelectorAll('.input-text').forEach(input => {
+              input.classList.remove('not-empty');
+            });
           } else {
-            alert('送信に問題が発生しました。サーバーからエラーが返されました。');
-            console.error('送信エラー:', response);
+            alert("送信に問題が発生しました。");
+            console.error("送信エラー:", result);
           }
         })
         .catch(error => {
-          alert('送信に問題が発生しました。ネットワークエラーの可能性があります。');
-          console.error('ネットワークエラー:', error);
+          alert("送信に問題が発生しました（ネットワークエラーの可能性）。");
+          console.error("ネットワークエラー:", error);
+        })
+        .finally(() => {
+          submitButton.disabled = false;
         });
     });
   }
