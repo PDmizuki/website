@@ -1,3 +1,5 @@
+import { initializeTyping } from './load.js'; // ★ これを追加
+
 document.addEventListener("DOMContentLoaded", function () {
    // 遅延読み込み画像
    document.querySelectorAll('img[data-src]').forEach(img => {
