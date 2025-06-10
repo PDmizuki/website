@@ -310,13 +310,13 @@ p {
 
 .card__slide:nth-child(even) .image {
   left: 65%;
-  /*background-image: url("../img/couryoku.jpg");*/
+  background-image: url(../assets/images/couryoku.jpg);
   pointer-events: none;
   transition: transform 850ms 550ms linear, opacity 450ms 800ms linear;
 }
 
 .card__slide.active .image {
-  /*clip-path: polygon(0% 0%, 90% 0%, 90% 100%, 100% 100%, 100% 100%, 0 100%, 0 100%);*/
+  clip-path: polygon(0% 0%, 90% 0%, 90% 100%, 100% 100%, 100% 100%, 0 100%, 0 100%);
   opacity: 1;
   z-index: 1;
   transform: translateX(0rem);
