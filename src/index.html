@@ -192,11 +192,11 @@
                     <div class="content__ping content__ping--noanimation"></div>
                 </div>
                 <div class="noise"
-                    style="content: ''; width: 100%; height: 100%; position: absolute; background: rgba(200, 200, 200, 0.15); top: 0; z-index: -1;">
+                    style="content: ''; width: 100%; height: 100%; position: absolute; background: rgba(200, 200, 200, 0.2); top: 0; z-index: -1;">
                 </div>
             </div>
         </div>
-        <div class="noise" style="content: ''; width: 100%; height: 100%; position: absolute; background: rgba(200, 200, 200, 0.2); top: 0; z-index: -1;"></div>
+        <div class="noise" style="content: ''; width: 100%; height: 100%; position: absolute; background: rgba(200, 200, 200, 0.3); top: 0; z-index: -1;"></div>
     </main>
 
     <!-- チェックボックスで状態制御 -->
@@ -424,75 +424,6 @@
             Close
         </label>
     </div>
-
-
-    <style>
-        /* チェックボックスは非表示 */
-        #modal-toggle {
-            display: none;
-        }
-
-        /* オーバーレイ */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(10px);
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease;
-            z-index: 10;
-        }
-
-        /* モーダル本体 */
-        .modal-box {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -60%);
-            padding: 30px;
-            border-radius: 10px 0 0 10px;
-            width: 100%;
-            max-width: 400px;
-            height: 60%;
-            line-height: 2;
-            letter-spacing: 0.08em;
-            overflow: hidden;
-            overflow-y: scroll;
-            border: 1px solid rgba(255, 255, 255, 0.35);
-            backdrop-filter: blur(10px);
-            background: rgba(200, 200, 200, 0.15);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease, transform 0.3s ease;
-            z-index: 20;
-        }
-
-        .modal-box h2 {
-            font-size: 1.8rem;
-        }
-
-        .modal-box h3 {
-            font-size: 1.2rem;
-            margin-top: 2rem;
-        }
-
-        /* 開いた状態 */
-        #modal-toggle:checked~.modal-overlay {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        #modal-toggle:checked~.modal-box {
-            opacity: 1;
-            visibility: visible;
-            transform: translate(-50%, -50%);
-        }
-    </style>
 
 </body>
 
