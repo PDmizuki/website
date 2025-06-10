@@ -1,4 +1,4 @@
-.home-not {
+.home-not,.head a::after {
   display: none;
 }
 

@@ -7,6 +7,7 @@ const page = document.body.dataset.page; // 例: <body data-page="contact"> の�
 switch (page) {
    case "gallery":
       import("./js/security.js");
+      import("./style/gallery.css");
       import("./js/page.js");
       import("./js/bg_wave.js");
       //import("./js/rollup.config-min.js");
