@@ -22,6 +22,9 @@
 
       /* Noise mask effect */
       .noise {
+         position: absolute;
+         top: 0;
+         left: 0;
          animation: liner var(--hour) linear infinite;
          mask: repeating-radial-gradient(circle at center,
                #000,
