@@ -4,6 +4,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 const CspHtmlWebpackPlugin = require("csp-html-webpack-plugin");
+const webpack = require("webpack");
 
 const cspPolicy = {
    'default-src': ["'self'"],
@@ -44,7 +45,6 @@ const cspPolicy = {
    'form-action': ["'self'", "https://mizukioyama.github.io"]
 };
 
-// 複数HTMLページを一括定義
 const htmlPages = [
    "index",
    "information",
@@ -54,7 +54,7 @@ const htmlPages = [
    "matching",
    "header",
    "footer",
-   "sidebaer", // ← sidebar.htmlに修正が必要かも
+   "sidebar", // 修正: sidebaer → sidebar
    "bot"
 ];
 
@@ -62,7 +62,7 @@ module.exports = {
    mode: "production",
    devtool: "source-map",
    entry: {
-      main: "./src/index.js",
+      main: ["jquery", "./src/index.js"]
    },
    output: {
       path: path.resolve(__dirname, "docs"),
@@ -80,10 +80,7 @@ module.exports = {
       rules: [
          {
             test: /\.css$/i,
-            use: [
-               MiniCssExtractPlugin.loader,
-               "css-loader"
-            ]
+            use: [MiniCssExtractPlugin.loader, "css-loader"]
          },
          {
             test: /\.js$/i,
@@ -96,8 +93,8 @@ module.exports = {
             test: /\.(woff|woff2|eot|ttf|otf)$/i,
             type: 'asset/resource',
             generator: {
-               filename: 'assets/fonts/[name][ext]',
-            },
+               filename: 'assets/fonts/[name][ext]'
+            }
          },
          {
             test: /\.(png|jpe?g|gif|svg|ico)$/i,
@@ -110,13 +107,18 @@ module.exports = {
             test: /\.mp3$/i,
             type: 'asset/resource',
             generator: {
-               filename: 'assets/audio/[name][ext]',
-            },
+               filename: 'assets/audio/[name][ext]'
+            }
          }
       ]
    },
    plugins: [
-      // 複数ページのHTMLを一括生成
+      new webpack.ProvidePlugin({
+         $: "jquery",
+         jQuery: "jquery"
+      }),
+
+      // 複数HTMLページを出力
       ...htmlPages.map(page => new HtmlWebpackPlugin({
          template: `./src/${page}.html`,
          filename: `${page}.html`
@@ -130,12 +132,12 @@ module.exports = {
          patterns: [
             {
                from: path.resolve(__dirname, "node_modules/@fortawesome/fontawesome-free/webfonts"),
-               to: path.resolve(__dirname, "docs/assets/fonts"),
+               to: path.resolve(__dirname, "docs/assets/fonts")
             },
             {
                from: path.resolve(__dirname, "src/assets/images"),
-               to: path.resolve(__dirname, "docs/assets/images"),
-            },
+               to: path.resolve(__dirname, "docs/assets/images")
+            }
          ]
       }),
 
@@ -147,13 +149,12 @@ module.exports = {
                   ["mozjpeg", { quality: 75 }],
                   ["pngquant", { quality: [0.6, 0.8] }],
                   ["gifsicle", { interlaced: true }],
-                  ["svgo", {}],
-               ],
-            },
-         },
+                  ["svgo", {}]
+               ]
+            }
+         }
       }),
 
-      // CSPはHtmlWebpackPluginの後に定義
       new CspHtmlWebpackPlugin(cspPolicy, {
          enabled: true,
          hashingMethod: 'sha256',
@@ -162,11 +163,11 @@ module.exports = {
             'style-src': false
          },
          nonceEnabled: false
-      }),
+      })
    ],
    devServer: {
       static: path.resolve(__dirname, "docs"),
       hot: true,
-      historyApiFallback: true,
+      historyApiFallback: true
    }
 };
