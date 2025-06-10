@@ -6,8 +6,8 @@ const page = document.body.dataset.page; // 例: <body data-page="contact"> の�
 // 各ページ固有の処理
 switch (page) {
    case "gallery":
-      import("./js/security.js");
       import("./style/gallery.css");
+      import("./js/security.js");
       import("./js/page.js");
       import("./js/bg_wave.js");
       //import("./js/rollup.config-min.js");
@@ -27,7 +27,7 @@ switch (page) {
 /////////// all css
 
 // audio icon
-import '@fortawesome/fontawesome-free/css/all.min.css';
+//import '@fortawesome/fontawesome-free/css/all.min.css';
 // font
 //import "./assets/fonts/fonts.css";
 
