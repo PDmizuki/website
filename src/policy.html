@@ -1,431 +1,282 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
-    <title>Policy | M.Oyama</title>
-    <link rel="icon" href="./assets/images/pd.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="cache-control" content="no-cache">
-    <meta http-equiv="expires" content="0">
-    <meta http-equiv="pragma" content="no-cache">
-    <!-- Search -->
-    <meta name="description" content="想いを形に、こだわりをデザインする。">
-    <!-- Meta Tags -->
-    <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
-    <!-- Content-Security-Policy --><!-- Content-Security-Policy（frame-ancestorsは除外） -->
-    <meta http-equiv="Content-Security-Policy" content="
-    default-src 'self';
-    script-src 'self' https://code.jquery.com https://cdnjs.cloudflare.com https://cdn.jsdelivr.net 'unsafe-inline';
-    style-src 'self' https://cdnjs.cloudflare.com https://fonts.googleapis.com https://cdn.jsdelivr.net 'unsafe-inline';
-    font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com https://cdn.jsdelivr.net data:;
-    img-src 'self' https://mizukioyama.github.io data:;
-    connect-src 'self' https://mizukioyama.github.io https://script.google.com https://script.googleusercontent.com https://cdn.jsdelivr.net https://fonts.googleapis.com;
-    object-src 'none';
-    base-uri 'self';
-    form-action 'self' https://mizukioyama.github.io;
-    ">
-    <!-- OGP 基本(sns) -->
-    <meta property="og:title" content="Mizuki Oyama｜Webデザイナー・こだわりのデザイン制作">
-    <!-- ↑ サイトのキャッチコピーやブランド名などに変更可能 -->
-    <meta property="og:description" content="想いを形に、こだわりをデザインする。Webデザインと表現のポートフォリオサイト。">
-    <!-- ↑ SNSや検索結果に表示される説明文。140字以内が目安で、短く印象的に -->
-    <meta property="og:image" content="https://mizukioyama.github.io/pd/assets/images/ogp.jpg">
-    <!-- ↑ OGP用の画像URL。後で画像を変更する場合はこのURLを差し替えるだけでOK -->
-    <meta property="og:url" content="https://mizukioyama.github.io/pd/">
-    <!-- ↑ サイトのURLを変更したらここも変更。トップページのURLにしておけばOK -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Nature inspire | Site Policy</title>
+    <!-- Font -->
+    <link rel="stylesheet" href="https://use.typekit.net/meg7mel.css">
+
+    <!-- ✅ SEO強化 -->
+    <meta name="description"
+        content="Nature inspire は、自然とアートの融合をテーマにしたポートフォリオサイトです。繊細なデザインとインスピレーションを通して、独自のビジュアル表現を紹介します。">
+    <meta name="keywords" content="ポートフォリオ, 自然, アート, Webデザイン, 作品集, クリエイティブ, Nature inspire">
+    <meta name="author" content="あなたの名前（またはブランド名）">
+    <link rel="canonical" href="https://mizukioyama.github.io/"> <!-- ご自身のURLに差し替えてください -->
+
+    <!-- OGP（SNSシェア用） -->
+    <meta property="og:title" content="Nature inspire | 自然とアートのポートフォリオ">
+    <meta property="og:description" content="自然から着想を得たアート作品をまとめたポートフォリオサイト。">
     <meta property="og:type" content="website">
-    <!-- ↑ 通常は "website"、記事ページなら "article" にする -->
-    <meta property="og:site_name" content="Mizuki Oyama Portfolio">
-    <!-- ↑ サイト名やブランド名を記載 -->
-    <!-- ▼ Twitterカード対応（LINEやXでのシェア時） -->
+    <meta property="og:url" content="https://mizukioyama.github.io/">
+    <meta property="og:image" content="https://mizukioyama.github.io/images/ogp.jpg"> <!-- OGP画像を用意してください -->
+    <meta property="og:site_name" content="Nature inspire">
+
+    <!-- Twitterカード -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Mizuki Oyama｜Webデザイナー・こだわりのデザイン制作">
-    <meta name="twitter:description" content="想いを形に、こだわりをデザインする。">
-    <meta name="twitter:image" content="https://mizukioyama.github.io/pd/assets/images/ogp.jpg">
-    <!-- Google検索「リッチリザルト」 -->
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "Person",
-            "name": "Mizuki Oyama",
-            "url": "https://mizukioyama.github.io/pd/",
-            "image": "https://mizukioyama.github.io/pd/assets/images/ogp.jpg",
-            "jobTitle": "Webデザイナー",
-            "description": "想いを形に、こだわりをデザインするWebクリエイター。",
-            "sameAs": [
-            "https://twitter.com/your_account",  // ← 実際のXアカウントURLに変更
-            "https://www.instagram.com/your_account"  // ← Instagramアカウントに変更
-            ]
-        }
-    </script>
-    <!-- Preconnect -->
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta name="twitter:title" content="Nature inspire | 自然とアートのポートフォリオ">
+    <meta name="twitter:description" content="自然から着想を得たアート作品をまとめたポートフォリオサイト。">
+    <meta name="twitter:image" content="https://mizukioyama.github.io/images/ogp.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico">
+
+    <!-- キャッシュ制御 -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <!-- セキュリティ -->
+    <meta name="referrer" content="strict-origin">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+
+    <!-- Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self';
+        script-src 'self' https://code.jquery.com https://cdn.jsdelivr.net 'unsafe-inline';
+        style-src 'self' 'unsafe-inline' https://use.typekit.net;
+        font-src 'self' https://use.typekit.net https://fonts.gstatic.com;
+        img-src 'self' data: https:;
+        connect-src 'self';
+        object-src 'none';
+    ">
+
 </head>
 
-<!--保護-->
-<body data-page="policy" oncontextmenu="return false;" class="policy">
-  <div id="header-container"></div>
-
-  <main class="policy">
-    <div class="pc">
-
-      <div class="section displayed-section" id="section--first">
-        <h1>
-          Site Policy
-          <br>
-          <span>Precautions for use.</span>
-        </h1>
-        <p>
-          このページでは、「サイトを利用する際の注意事項、個人情報の取り扱いについて」を紹介しています。
-        </p>
-        <img src="./assets/images/bg-p.png" alt="Precision Design,about,M.Oyama" class="text-a">
-        <a href="#" class="button button-a" data-modal="modal--first">Policy View</a>
-
-        <div class="sec-a">
-          <a href="index.html">Home.</a>
-          <a href="about.html">About Us.</a>
-          <a href="service.html">Service Us.</a>
-          <a href="#">Works.</a>
-          <a href="contact.html">Contact Us.</a>
-          <a href="/blog/categories.html">Blog.</a>
-        </div>
-
-        <div class="bt-text">PD_Site Policy
-          <br>
-          <span>Terms of use, precautions, etc.</span>
-        </div>
-
-        <div class="bottom-btn">
-          <a href="#" class="back">
-            <span class="arrow"><span></span></span>
-          </a>
-          <a href="#" class="next">
-            <span class="arrow"><span></span></span>
-          </a>
-        </div>
-        <div class="left-text">PD_Site Policy</div>
-        <div class="right-text">01</div>
-      </div>
+<body data-page="policy">
+    <div class="noise"
+        style="content: ''; width: 100%; height: 100%; position: absolute; background: rgba(200, 200, 200, 0.2); top: 0; z-index: -1;">
     </div>
+    <div id="header-container"></div>
+    <div class="ripples-2"></div>
+    <main id="policy" class="gallery">
 
-    <!-- モーダルと背景 -->
-    <div class="modal-overlay"></div>
-
-    <div class="modal site-p" id="modal--first">
-      <button class="close">&times;</button>
-      <ol>
-        <h3>Site Policy</h3>
-        <!-- # **サイトポリシー** -->
-        <p>
-          当サイト（以下「本サイト」といいます）は、Precision Design（以下「当社」といいます）。
-          当社が提供・運営するデザイン関連のサービスや個人事業に関する情報提供サイト（オウンドメディア）です。
-          本サイトを安心してご利用いただくために、以下のサイトポリシーを定めます。
-        </p>
-        <h3>当サイト利用関連</h3>
-        <!-- ## **1. サイト利用について** -->
-        <li>
-          <h4>サイト利用について</h4>
-          1. 本サイトの利用は、利用者自身の責任において行うものとします。
-          <br>
-          2. 本サイトに掲載されている情報は、正確性や最新性に細心の注意を払っていますが、完全性を保証するものではありません。
-          <br>
-          3. 本サイトに掲載されている情報の無断転載・複製・改変を禁止します。
-        </li>
-        <!-- ## **1. 個人情報ついて** -->
-        <li>
-          <h4>個人情報</h4>
-          個人情報とは、個人情報保護法にいう個人情報を指すものとし、
-          企業・個人に関する情報であり、当該情報に含まれる企業名、
-          氏名、住所、電話番号、メールアドレス、その他の記述等により特定の企業、
-          または個人を識別できる情報を指します。
-        </li>
-        <!-- アコーディオン -->
-        <div class="accordion-wrap">
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <i class="fa"><span></span><span></span></i>
-              <h3>
-                個人情報の取得方法
-              </h3>
-            </div>
-          </div>
-          <div class="accordion-text">
-            <p>
-              当サイトでは、お問い合わせフォームより、企業名、氏名、住所、電話番号、
-              メールアドレス、その他の記述等から企業・個人を特定できる情報を取得させていただきます。
-            </p>
-          </div>
-        </div>
-        <!-- アコーディオン -->
-        <div class="accordion-wrap">
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <i class="fa"><span></span><span></span></i>
-              <h3>
-                個人情報の利用目的
-              </h3>
-            </div>
-          </div>
-          <div class="accordion-text">
-            <p>
-              個人情報を収集・利用する目的は、以下のとおりです。
-              <br>
-              当方サービスを提供するため
-              <br>
-              当方サービスの情報提供のため
-              <br>
-              ユーザーからのお問い合わせ対応するため（本人確認含）
-              <br>
-              クライアントへの費用請求のため
-              <br>
-              クライアントへの発送のため
-              <br>
-              ユーザーへのメールマガジン、ダイレクトメール、パンフレット等の情報送信のため
-              <br>
-              メンテナンス，重要なお知らせなど必要に応じたご連絡のため
-              <br>
-              利用規約違反し、不正・不当な目的でのサービス利用者を特定し、ご利用をお断りするため
-              <br>
-              上記の利用目的に付随する目的
-              <br>
-              個人情報の第三者提供について
-              <br>
-              当方は法令及びガイドラインに別段の定めがある場合を除き、同意を得ないで第三者に個人情報を提供することは致しません。
-            </p>
-          </div>
-        </div>
-        <!-- アコーディオン -->
-        <div class="accordion-wrap">
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <i class="fa"><span></span><span></span></i>
-              <h3>
-                個人情報の訂正および削除
-              </h3>
-            </div>
-          </div>
-          <div class="accordion-text">
-            <p>
-              ユーザーは，当社の保有する自己の個人情報が誤った情報である場合には，当社が定める手続きにより，
-              当社に対して個人情報の訂正，追加または削除（以下，「訂正等」といいます。）を請求することができます。
-              当方は、ユーザーから前項の請求を受けてその請求に応じる必要があると判断した場合には、遅滞なく、
-              当該個人情報の訂正等を行うものとします。
-              当方は、前項の規定に基づき訂正等を行った場合、または訂正等を行わない旨の決定をしたときは遅滞なく、
-              これをユーザーに通知します。
-            </p>
-          </div>
-        </div>
-        <!-- アコーディオン -->
-        <div class="accordion-wrap">
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <i class="fa"><span></span><span></span></i>
-              <h3>
-                個人情報の利用停止等
-              </h3>
-            </div>
-          </div>
-          <div class="accordion-text">
-            <p>
-              当方は、本人から、個人情報が利用目的の範囲を超えて取り扱われているという理由、
-              または不正の手段により取得されたものであるという理由により、その利用の停止または消去（以下、「利用停止等」という。）
-              を求められた場合には、遅滞なく必要な調査を行います。
-              前項の調査結果に基づき、その請求に応じる必要があると判断した場合には、遅滞なく、
-              当該個人情報の利用停止等を行います。
-              当方は、前項の規定に基づき利用停止等を行った場合、または利用停止等を行わない旨の決定をしたときは、
-              遅滞なく、これをユーザーに通知します。
-              前2項にかかわらず、利用停止等に多額の費用を有する場合その他利用停止等を行うことが困難な場合であって、
-              ユーザーの権利利益を保護するために必要なこれに代わるべき措置をとれる場合は、この代替策を講じるものとします。
-            </p>
-          </div>
-        </div>
-        <!-- アコーディオン -->
-        <div class="accordion-wrap">
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <i class="fa"><span></span><span></span></i>
-              <h3>
-                プライバシーポリシーの変更
-              </h3>
-            </div>
-          </div>
-          <div class="accordion-text">
-            <p>
-              本ポリシーの内容は、法令その他本ポリシーに別段の定めのある事項を除いて、ユーザーに通知することなく、変更することができるものとします。
-              当社が別途定める場合を除いて、変更後のプライバシーポリシーは、本ウェブサイトに掲載したときから効力を生じるものとします。
-              お問い合わせ先
-              本ポリシーに関するお問い合わせは、お問い合わせフォームよりお願いいたします。
-            </p>
-          </div>
-        </div>
-
-        <!-- ## **2. 個人情報の取り扱いについて** -->
-        <li>
-          <h4>個人情報の取り扱いについて</h4>
-          1. 当社は、個人情報保護法および関連法令を遵守し、適切な管理・運用を行います。
-          <br>
-          2. 取得した個人情報は、以下の目的に利用します。
-          <br>
-          - お問い合わせ対応
-          <br>
-          - 依頼・申込み内容の確認および連絡
-          <br>
-          - 当社サービスの改善およびご案内
-          <br>
-          3. 個人情報は第三者に提供しません（法令に基づく場合を除く）。
-        </li>
-        <!-- ## **3. 依頼および契約について** -->
-        <li>
-          <h4>依頼および契約について</h4>
-          1. 本サイトを通じて行われる依頼・契約は、当社が定める契約条件に基づき行われます。
-          <br>
-          2. お見積り、契約内容、納品物に関する詳細は、お客様との協議により決定します。
-          <br>
-          3. 契約成立後のキャンセルや変更については、別途定める契約条件に従います。
-        </li>
-        <!-- ## **4. お申込みについて** -->
-        <li>
-          <h4>お申込みについて</h4>
-          1. お申込み時には、正確な情報を提供してください。
-          <br>
-          2. 虚偽の情報提供、第三者になりすましてのお申込みは固く禁じます。
-          <br>
-          3. 当社はお申込み内容を確認し、必要に応じて連絡を行います。
-        </li>
-        <!-- ## **5. セキュリティ対策について** -->
-        <li>
-          <h4>セキュリティ対策について</h4>
-          当社は、本サイトおよび利用者の情報保護のため、以下の対策を講じています。
-          <br>
-          1. 不正アクセス防止のためのセキュリティ対策
-          <br>
-          2. データ送信時のSSL暗号化通信の使用
-          <br>
-          3. 定期的なサーバーおよびシステムの監査・点検
-        </li>
-        <!-- ## **6. クッキー（Cookie）およびアクセス解析について** -->
-        <li>
-          <h4>クッキー（Cookie）およびアクセス解析について</h4>
-          1. 利便性向上およびサイト改善のため、クッキーおよびトラッキング技術を使用します。
-          <br>
-          2. 取得した情報は統計的な分析に使用し、個人を特定するものではありません。
-          <br>
-          3. クッキーの無効化は、利用者自身でブラウザ設定から行えます。ただし、一部機能が利用できなくなる可能性があります。
-        </li>
-        <!-- ## **7. 著作権および知的財産権について** -->
-        <li>
-          <h4>著作権および知的財産権について</h4>
-          1. 本サイト上の文章、画像、デザイン、ロゴ等の著作権および知的財産権は、当社または正当な権利者に帰属します。
-          <br>
-          2. これらの無断使用・転載・改変・配布を禁止します。
-        </li>
-        <!-- ## **8. ソーシャルメディアの利用について** -->
-        <li>
-          <h4>ソーシャルメディアの利用について</h4>
-          当社は、X、Facebook、Instagram等のソーシャルメディアを活用し情報を発信しています。
-          <br>
-          1. 当社公式アカウントからの情報は正確性を心がけますが、必ずしも最新情報とは限りません。
-          <br>
-          2. 利用者の投稿・共有内容について、当社は一切の責任を負いません。
-        </li>
-        <!-- ## **9. 推奨環境について** -->
-        <li>
-          <h4>推奨環境について</h4>
-          本サイトを快適にご利用いただくため、以下の環境を推奨します。
-          <br>
-          - ブラウザ：最新バージョンのGoogle Chrome、Mozilla Firefox、Safari、Microsoft Edge
-          <br>
-          - 画面解像度：1024×768ピクセル以上
-          <br>
-          - JavaScript：有効に設定
-          <br>
-          - Cookie：受け入れ設定
-          <br>
-          推奨環境以外では、正しく表示されない場合があります。
-        </li>
-        <!-- ## **10. アクセシビリティについて** -->
-        <li>
-          <h4>アクセシビリティについて</h4>
-          当社は、すべての利用者にとって使いやすいサイト運営を心がけ、以下に取り組んでいます。
-          <br>
-          1. テキストの代替情報や適切な見出しタグの使用
-          <br>
-          2. デザインや操作性の向上
-          <br>
-          3. ご意見・ご要望は随時受け付けております。
-        </li>
-        <!-- ## **11. 免責事項** -->
-        <li>
-          <h4>免責事項</h4>
-          1. 本サイトの情報利用によって生じたトラブルや損害について、当社は一切責任を負いません。
-          <br>
-          2. 当社は予告なく本サイトの内容を変更・停止することがあります。
-        </li>
-        <!-- ## **12. 適用法および管轄裁判所** -->
-        <li>
-          <h4>適用法および管轄裁判所</h4>
-          1. 本サイトおよびサイトポリシーに関する紛争については、日本法を適用します。
-          <br>
-          2. 紛争が生じた場合、当社所在地を管轄する裁判所を第一審の専属的管轄裁判所とします。
-        </li>
-        <p>
-          以上のポリシーは、必要に応じて改定される場合があります。
-          本サイトをご利用いただく際には、最新の内容をご確認ください。
-          <br>
-          制定日：2024年12月10日
-          Precision Design
-        </p>
-      </ol>
-    </div>
-
-
-    <!---- mobile ----->
-    <div class="mobile-page mobile">
-      <!-- Main -->
-      <section class="tabs">
-        <div class="top-h1">
-          <h1 class="fade_bottom">
+        <h1 class="noise">
             Site Policy
-          </h1>
-          <p class="caption">
-            サイトご利用について.
-          </p>
-        </div>
-        <p class="fade_bottom caption">
-          当サイトをご利用、閲覧される方はご確認ください。
+        </h1>
+        <p class="noise">
+            Nature inspire
         </p>
-      </section>
+        <div class="scroll"></div>
+        <div id="sidebar-container"></div>
 
-      <div class="hr"></div>
+        <div class="content">
+        <h2 class="noise">Policy</h2>
+        <p lang="ja">
+            当ページは小山瑞樹のPortfolioサイトのご利用についての禁止事項及び注意事項を記載しています。<br>
+            作品の私的ご利用も含めて、作品の取り扱いについての注意事項も記載しているので、必ずご理解の上ご利用をお願いいたします。
+        </p>
+        <p lang="ja">
+            本ウェブサイト（https://mizukioyama.github.io/以下のディレクトリ。以下「当ウェブサイト」といいます。）をご利用されるお客さまは、以下の内容を十分にお読みください。
+        </p>
 
-      <section class="slide section--first" id="tab--first">
-        <div class="top-s">
-          <div class="h2-bg fade_bottom">
-            <h2>Policy</h2>
-            <p>当サイトご利用について</p>
-          </div>
-          <p class="text fade_bottom">
-            PrecisionDesign（以下、「当方」という。）は，本ウェブサイト上で提供するサービス（以下、「本サービス」という。）
-            における、ユーザーの個人情報の取扱いについて、以下のとおりプライバシーポリシー（以下、「本ポリシー」という。）を定めます。
-          </p>
-          <a href="#" class="noise" data-modal="modal--first">
-            <div class="link fade_bottom">
-              <div class="link-in">
-                <h3>Policy</h3>
-                <p>Viwe more</p>
-              </div>
-            </div>
-          </a>
+        <div class="policy" lang="ja">
+
+            <h3 class="noise">免責事項</h3>
+            <p>
+                当ウェブサイトに掲載する情報については、正確性や完全性に細心の注意を払っていますが、その内容について保証するものではありません。<br>
+                掲載された情報に基づいて生じた損害やトラブル等について、小山瑞樹は一切の責任を負いません。<br>
+                内容は予告なく変更・削除されることがあります。
+            </p>
+
+            <h3 class="noise">著作権および知的財産権</h3>
+            <p>
+                当ウェブサイトに掲載されている文章、写真、画像、ロゴ、動画、デザイン等のコンテンツは、小山瑞樹または正当な権利を有する第三者が著作権その他の知的財産権を有しています。<br>
+                著作権法により認められた場合を除き、小山瑞樹の事前の許可なく、複製・改変・転載・配布・再利用・保存など一切の利用を禁止します。
+            </p>
+
+            <h3 class="noise">禁止行為</h3>
+            <p>
+                ・当ウェブサイトの内容を、無断で保存・転載・転用する行為<br>
+                ・当ウェブサイトに掲載されているコンテンツを名誉や信用を毀損する目的で使用する行為<br>
+                ・小山瑞樹本人の許可なく、作品や情報を私的利用の範囲を超えて利用する行為<br>
+                <strong>※特に「文章・画像を含む当サイトのデータを保存しないでください」。</strong>
+            </p>
+
+            <h3 class="noise">リンクについて</h3>
+            <p>
+                当ウェブサイトへのリンクは、営利・非営利を問わず原則として自由です。<br>
+                ただし、以下のいずれかに該当する場合、リンクの削除を求めたり、法的措置を講じることがあります。
+            </p>
+            <ul>
+                <li>小山瑞樹または第三者を誹謗中傷する内容、信用を毀損する意図のある内容を含むウェブサイト</li>
+                <li>小山瑞樹または第三者の著作権・商標権・プライバシー権・肖像権などの権利を侵害する、またはそのおそれのあるウェブサイト</li>
+            </ul>
+
+            <hr>
+
+            <h2 class="noise" style="margin-top: 3rem;">Privacy Policy</h2>
+
+            <h3 class="noise" style="margin: 0;">基本的考え方</h3>
+            <p>
+                当ウェブサイトでは、円滑なサービス提供のため、必要な範囲で個人情報を収集することがあります。収集した情報は利用目的の範囲内で適切に管理・使用します。
+            </p>
+
+            <h3 class="noise">収集する個人情報の範囲</h3>
+            <p>
+                氏名、メールアドレスなど、特定の個人を識別可能な情報が含まれます。
+            </p>
+
+            <h3 class="noise">利用目的</h3>
+            <p>
+                サービス提供、お問い合わせへの対応、確認のご連絡など、運営上必要な目的で使用します。
+            </p>
+
+            <h3 class="noise">利用および提供の制限</h3>
+            <p>
+                法令に基づく場合や不正アクセスなど正当な理由がある場合を除き、目的外の利用や第三者への提供はいたしません。
+            </p>
+
+            <h3 class="noise">安全確保の措置</h3>
+            <p>
+                個人情報の漏洩・滅失・毀損の防止に必要な措置を講じ、委託先にも同様の安全管理を徹底させます。
+            </p>
+
+            <h3 class="noise">個人情報の開示・訂正・削除</h3>
+            <p>
+                ご本人からの請求があった場合には、適切な方法で対応いたします。
+            </p>
+
+            <h3 class="noise">適用範囲</h3>
+            <p>
+                本ポリシーは、当ウェブサイトにおいてのみ適用されます。他サイトではそれぞれの規定に従ってください。
+            </p>
+
+            <h3 class="noise">お問い合わせ先</h3>
+            <p>
+                個人情報の取り扱いや本ポリシーに関するご質問は、当ウェブサイト内のコンタクトページからお問い合わせください。
+            </p>
+
+            <h3 class="noise">プライバシーポリシーの変更</h3>
+            <p>
+                必要に応じて本ポリシーを予告なく変更することがあります。
+            </p>
         </div>
-      </section>
 
-      <div id="footer-container"></div>
-    </div>
-  </main>
-  <p class="pc" style="color: var(--bg); position: absolute; right: 23vmin; bottom: 1rem;">©Precision Design</p>
+
+        <p lang="en">
+            This page describes the prohibited matters and precautions for using Mizuki Koyama's Portfolio site.
+            <br>
+            Please be sure to understand the precautions for handling the works, including personal use of the works,
+            before using the site.
+        </p>
+
+        <p lang="en">
+            Customers who use this website (directory below https://mizukioyama.github.io/. Hereinafter referred to as
+            "this website") should read the following contents carefully.
+
+        </p>
+
+        <div class="policy" lang="en">
+
+            <h3 class="noise">Disclaimer</h3>
+
+            <p>
+                While we pay close attention to the accuracy and completeness of the information posted on this website,
+                we do not guarantee its contents. <br>
+                Mizuki Koyama bears no responsibility for any damage or trouble caused by the information posted on this
+                website. <br>
+                The contents may be changed or deleted without notice.
+            </p>
+
+            <h3 class="noise">Copyright and Intellectual Property Rights</h3>
+            <p>
+                The contents of this website, including text, photos, images, logos, videos, and designs, are
+                copyrighted and owned by Mizuki Koyama or third parties with legitimate rights. <br>
+                Any use, including copying, modification, reprinting, distribution, reuse, and storage, is prohibited
+                without Mizuki Koyama's prior permission, except as permitted by copyright law.
+
+            <h3 class="noise">Prohibited Acts</h3>
+            <p>
+                ・Saving, reprinting, or reusing the contents of this website without permission<br>
+                ・Using the content of this website for the purpose of damaging the reputation or credibility<br>
+                ・Using works or information beyond the scope of personal use without Mizuki Koyama's permission<br>
+                <strong>*In particular, "Do not save data from this website, including text and images." </strong>
+            </p>
+
+            <h3 class="noise">About Links</h3>
+            <p>
+                In principle, links to this website are free, whether for commercial or non-commercial purposes. <br>
+                However, if any of the following applies, we may request the removal of the link or take legal action.
+            </p>
+            <ul>
+                <li>Websites that contain content that slanders or libels Mizuki Koyama or third parties, or content
+                    intended to damage their credibility.</li>
+                <li>Websites that infringe or are likely to infringe on the copyright, trademark, privacy, or portrait
+                    rights of Mizuki Koyama or third parties.</li>
+            </ul>
+
+            <hr>
+
+            <h2 class="noise" style="margin-top: 3rem;">Privacy Policy</h2>
+
+            <h3 class="noise" style="margin: 0;">Basic Policy</h3>
+            <p>
+                This website may collect personal information to the extent necessary to provide smooth service. The
+                collected information will be managed and used appropriately within the scope of the purpose of use.
+            </p>
+
+            <h3 class="noise">Scope of personal information collected</h3>
+            <p>
+                Includes information that can identify a specific individual, such as name and email address.
+            </p>
+
+            <h3 class="noise">Purpose of use</h3>
+            <p>
+                Used for operational purposes such as providing services, responding to inquiries, and contacting you
+                for confirmation.
+            </p>
+
+            <h3 class="noise">Restrictions on use and provision</h3>
+            <p>
+                Except in cases based on laws and regulations or where there is a legitimate reason such as unauthorized
+                access, we will not use it for any other purpose or provide it to a third party.
+            </p>
+
+            <h3 class="noise">Measures to ensure safety</h3>
+            <p>
+                We will take necessary measures to prevent the leakage, loss, and damage of personal information, and
+                will ensure that our subcontractors also implement similar safety management.
+            </p>
+
+            <h3 class="noise">Disclosure, correction, and deletion of personal information</h3>
+            <p>
+                If there is a request from the person in question, we will respond in an appropriate manner.
+            </p>
+
+            <h3 class="noise">Scope</h3>
+            <p>
+                This policy applies only to this website. Please follow the respective regulations for other websites.
+            </p>
+
+            <h3 class="noise">Contact Information</h3>
+            <p>
+                If you have any questions about the handling of personal information or this policy, please contact us
+                via the contact page on this website.
+            </p>
+
+            <h3 class="noise">Changes to Privacy Policy</h3>
+            <p>
+                This policy may be changed without notice as necessary.
+            </p>
+        </div>
+        
+        </div>
+    </main>
+
+    <div id="footer-container"></div>
 
 </body>
 

@@ -1,24 +1,16 @@
 /*== NAV ==*/
-.head img {
-    width: 45%;
-    margin-top: 0.5em;
-    margin-left: 0.5em;
-}
-
 nav {
-    display: block;
+    display: flex;
+    flex-direction: row;
     position: fixed;
     top: 0;
     right: -100%;
     bottom: 0;
     width: 100%;
-    background: rgba(186, 186, 186, 0.2);
-    -webkit-backdrop-filter: blur(8px);
-    backdrop-filter: blur(8px);
-    overflow-x: hidden;
-    overflow-y: auto;
-    z-index: 1001;
-    transition: all 1s ease;
+    overflow: hidden;
+    /*-webkit-overflow-scrolling: touch;*/
+    transition: 0.8s ease;
+    z-index: 101;
 }
 
 .open nav {
@@ -26,79 +18,80 @@ nav {
 }
 
 .inner {
-    padding-left: 2rem;
+    width: 50%;
+    padding: 15vmin;
 }
 
 .inner ul {
-    margin: 0;
     padding: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    align-content: flex-start;
+    justify-content: flex-start;
+    gap: 1rem;
 }
 
 .inner ul li {
-    position: relative;
     width: fit-content;
-    border-bottom: 1px solid var(--hover);
-}
-
-.inner ul li:nth-child(5) {
-    margin-top: 5em;
+    border-bottom: 1px solid rgba(40, 40, 40, .25);
 }
 
 #navArea .inner li a {
+    margin: 0;
+    padding: 0;
+    font-family: "jost", sans-serif;
     display: block;
     position: relative;
-    color: var(--text);
+    font-size: clamp(1.8rem, calc(1.8rem + 0.5vw), 2rem);
+    font-weight: 600;
+    color: var(--bg);
     height: 100%;
-    margin-top: 1.5rem;
-    padding: .35em .65em 0 .2em;
     text-decoration: none;
     overflow: hidden;
+    mix-blend-mode: luminosity;
+    text-shadow: 0px 0px 1px rgba(46, 46, 46, 0.5);
 }
 
 #navArea .inner li a::before {
     content: '-';
+    width: 3px;
+    left: 0;
 }
 
 #navArea .inner li a:hover {
-    color: var(--hover);
-    text-shadow: 0 1px 3px var(--accent);
-    opacity: 0.5;
+    text-shadow: 0 1px 3px var(--inv);
+    opacity: 1;
 }
 
-#navArea .inner li a::after {
-    bottom: 0;
+.home #navArea .inner li a:hover {
+    mix-blend-mode: difference;
 }
 
+/* .toggle_btn styles */
 .toggle_btn {
     display: block;
     position: fixed;
-    top: 0;
-    right: 0;
-    width: 13vmin;
-    height: 13vmin;
-    /*border-left: 1px solid;
-    border-bottom: 1px solid;*/
+    top: 4.5%;
+    right: 5%;
+    width: 40px;
+    height: 30px;
     transition: all 1.3s;
-    /*background: url("../assets/images/mobile-main-second.png");
-    background: var(--bg);
-    border-image: url("../assets/images/text-gold.png") 100;*/
     cursor: pointer;
-    z-index: 1001;
+    z-index: 102;
     transform: translate(0, 0);
 }
 
 .toggle_btn span {
     display: block;
     position: absolute;
-    top: 6vmin;
-    width: 7.5vmin;
-    height: 0.35vmin;
-    right: 0;
-    background: url("../assets/images/text-gold.png");
-    background: var(--text);
+    width: 40px;
+    height: 1px;
+    background: #c0c0c0;
     overflow: hidden;
-    z-index: 10000;
+    z-index: 103;
 }
+
 .toggle_btn span::before {
     content: "";
     display: block;
@@ -107,11 +100,7 @@ nav {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg,
-            transparent,
-            var(--bg) 0%,
-            var(--bg) 100%,
-            transparent);
+    background: linear-gradient(90deg, var(--text) 100%);
     animation: scroll-left 2s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
     background-size: 200% 100%;
     transition: all 2s;
@@ -128,79 +117,93 @@ nav {
         transform: translateX(100%);
     }
 }
+
 /*== OPEN ==*/
 .open nav {
     right: 0;
+    backdrop-filter: blur(20px);
+    background-color: rgba(220, 220, 210, 0.5);
+    mix-blend-mode: hard-light;
 }
 
 .open .toggle_btn {
     transition: all 1s ease;
 }
+
 .open .toggle_btn span {
-    box-shadow: -4px -4px 0px 0 var(--hover-color);
+    background-color: var(--def);
+    box-shadow: 0 0 7px 1px var(--inv);
     width: 100%;
-    height: 0.5px;
-    z-index: 100;
+    height: 1%;
+    z-index: 999;
     transition: all 1s ease;
 }
+
 .toggle_btn span:nth-child(1) {
     transition: all 1s ease;
 }
+
 .open .toggle_btn span:nth-child(1) {
     transform: translate(310%, 0);
     transition: all 1s ease;
     opacity: .5;
 }
+
 .toggle_btn span:nth-child(2) {
-    top: -200%;
+    top: -150%;
     animation-delay: 0.56s;
     transform: translate(0%, 0%) rotate(90deg);
     transition: all 1s ease;
     opacity: 1;
 }
+
 .open .toggle_btn span:nth-child(2) {
     top: 3%;
     transform: translate(0%, 0%) rotate(90deg);
     transition: all 1s ease;
     opacity: 1;
 }
+
 .toggle_btn span:nth-child(3) {
     transform: translate(320%, 0);
     transition: all 1s ease;
     animation-delay: 0.56s;
     opacity: 1;
 }
+
 .open .toggle_btn span:nth-child(3) {
     transform: translate(0%, 0%) rotate(0deg);
     transition: all 1s ease;
     opacity: 1;
 }
+
 /* Mask */
 #mask {
     display: none;
     right: -100%;
-    bottom: 0;
+    top: 0;
     transition: 0.8s ease;
 }
 
 .open #mask {
     display: block;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    height: 40svh;
-    overflow: auto;
-    padding-left: 2rem;
+    position: relative;
+    top: 0;
+    right: 0%;
+    width: 50%;
+    background: rgba(10, 10, 10, 0.3);
+    backdrop-filter: blur(5px);
     cursor: pointer;
     transition: all 1s ease;
-    align-items: end;
+    animation: menu-left 1s ease;
     z-index: 998;
-    -webkit-backdrop-filter: blur(8px);
-    backdrop-filter: blur(8px);
-    mix-blend-mode: screen;
-    background: rgba(46, 46, 46,0.75);
-    /*background-image: repeating-linear-gradient(0deg, transparent, transparent 4px, rgba(146, 146, 146, 0.5) 5px, rgba(146, 146, 146, 0.5) 5px);*/
-    animation: menu-left 1s ease, moveBackground 0.65s linear infinite;
+}
+
+.home .open .nav {
+    background: rgba(180, 180, 170, 0.5);
+}
+.home .open #mask {
+    background: rgba(10, 10, 10, 0.65);
 }
 
 @keyframes menu-left {
@@ -213,163 +216,69 @@ nav {
     }
 }
 
-.open #mask ul:last-child {
-    margin: calc(20vmin - 5vw) 0 0;
+#mask p {
+    font-weight: 500;
+    font-size: clamp(1.2em, calc(1.2em + 0.5vw), 1.4em);
+    position: absolute;
+    left: 5%;
+    text-shadow: 0px 0px 1px rgba(246, 246, 246, 0.5);
 }
 
-.open #mask ul p {
-    font-size: clamp(2rem, calc(2rem + 0.1vw), 2.4rem);
-    margin: 0;
+header .noise {
+    display: block;
+    background-image: linear-gradient(to right, var(--text), var(--bg));
+}
+
+.open #mask ul {
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+    width: 90%;
+    height: 20%;
+    padding: 0.5rem;
+    overflow: hidden scroll;
+    border-bottom: 1px solid rgba(46, 46, 46, 0.55);
 }
 
 .open #mask li {
-    font-size: 1.2rem;
-    margin: 0 1em 1.8em;
-    padding: 0 0.25em 0.15rem;
+    font-weight: 200;
+    color: #ddd;
+    margin-top: 3em;
+    padding: 0.25rem;
+    border-bottom: 1px solid;
+    letter-spacing: 0.07rem;
+    mix-blend-mode: hard-light;
+}
+
+.open #mask li:nth-child(1) {
+    margin-top: 0;
+}
+
+
+@media screen and (min-width: 1299px) {
+        #mask p {
+        bottom: 35%;
+    }
+}
+@media screen and (max-width: 599px) {
+    nav {
+        flex-direction: column;
+    }
+    .inner {
+        width: 100%;
+        min-height: 55%;
+        padding: 2rem;
+    }
+    .open #mask {
+        width: 100%;
+        height: 100%;
+    }
+    #mask p {
+        top: 20%;
+    }
+    .open #mask ul {
+    bottom: 10%;
+    height: 50%;
     border-bottom: 1px solid;
 }
-
-.open #mask li span {
-    font-size: 1rem;
-}
-
-
-@media screen and (min-width: 1300px) {
-
-    /* PC_Menu */
-    .pc_menu,
-    .pc_menu ul,
-    .logo,
-    .audio  {
-        border-image: url("../assets/images/text-gold.png") 100;
-    }
-    .pc_menu {
-        position: absolute;
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        text-align: center;
-        width: 100%;
-        height: fit-content;
-        top: 1.95vh;
-        left: 0;
-        padding: 0.5em;
-        border-bottom: 1px solid;
-        background: url("../assets/images/mobile-main-second.png");
-        z-index: 1;
-        animation: menuIn_bg 2s ease forwards;
-        transition: background-color 0.45s ease;
-        box-shadow: 0px 3px 10px rgba(46, 46, 46, 0.85);
-    }
-    @keyframes menuIn_bg{
-        0% {
-            opacity: 0;
-            transform: translateY(-5px);
-            filter: blur(4px);
-        }
-        100% {
-            opacity: 1;
-            transform: translateY(0);
-            filter: blur(0px);
-        }
-    }
-
-    .pc_menu ul {
-        padding: 0;
-        margin: 0;
-        list-style: none;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 3rem;
-        /*border-bottom: 1px solid;*/
-    }
-
-    /*.pc_menu li {
-        height: 110px;
-    }*/
-
-    .pc_menu a,
-    .pc_menu #chat-icon {
-        font-size: clamp(1.6rem, calc(1.6rem + 0.5vw), 2.2rem);
-        font-weight: 400;
-        width: 114px;
-        height: fit-content;
-        padding: 0.5rem 0;
-        display: flex;
-        justify-content: center;
-        transition: color 0.3s ease;
-    }
-
-    .manu_p a {
-        font-size: clamp(2rem, calc(2rem + 0.5vw), 2rem);
-    }
-
-    .pc_menu a:hover,
-    .pc_menu #chat-icon:hover {
-        mix-blend-mode: difference;
-    }
-
-
-    .logo {
-        position: relative;
-        top: 0;
-        z-index: 1;
-
-        img {
-            width: 100%;
-            max-width: 100%;
-        }
-    }
-
-    /*=========== audio
-    .audio {
-        width: 100%;
-        padding: 2rem 0.5rem 1rem;
-        border-left: 1px solid;
-        border-right: 1px solid;
-    }*/
-    .audio span {
-        position: absolute;
-        left: -6.5px;
-        bottom: -35%;
-        font-size: 1.6rem;
-        line-height: 1;
-    }
-
-    .toggle-switch {
-        position: relative;
-    }
-
-    .toggle-checkbox {
-        display: none;
-    }
-
-    .toggle-label {
-        display: block;
-        /*transform: translate(0px, -4px);*/
-        cursor: pointer;
-        transition: background-color 0.3s;
-    }
-
-    .toggle-label i {
-        font-size: clamp(2.4rem, calc(2.4rem + 0.1vw), 3rem);
-        transition: all 0.3s ease;
-    }
-
-    /* ON状態のスタイル
-    .toggle-checkbox:checked+.toggle-label {
-        background-color: var(--text);
-    }*/
-
-    .toggle-checkbox:checked+.toggle-label i {
-        opacity: 0.5;
-        transform: rotate(-135deg);
-    }
-
-    .fa-power-off:before {
-        font-family: FontAwesome;
-        content: "\f011";
-    }
-
 }

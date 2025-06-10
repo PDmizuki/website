@@ -5,24 +5,16 @@ const page = document.body.dataset.page; // 例: <body data-page="contact"> の�
 
 // 各ページ固有の処理
 switch (page) {
-   case "service":
-      import("./style/se_card.css");
-      import("./style/card.css");
-      import("./style/se-list.css");
-      import("./js/se_card.js");
-      import("./js/card.js");
-      import("./js/se-list.js");
+   case "gallery":
+      import("./js/security.js");
+      import("./js/page.js");
+      import("./js/bg_wave.js");
+      //import("./js/rollup.config-min.js");
       break;
 
    case "contact":
       import("./style/form.css");
       import("./js/form.js");
-      break;
-
-   case "blog":
-      import("./style/blog.css");
-      import("./js/blog.js");
-      import("./js/blog-categories.js");
       break;
 
    case "matching":
@@ -36,33 +28,28 @@ switch (page) {
 // audio icon
 import '@fortawesome/fontawesome-free/css/all.min.css';
 // font
-import "./assets/fonts/fonts.css";
+//import "./assets/fonts/fonts.css";
 
 // Mobile all（共通適用）
-import("./style/mobile-all.css");
-import("./style/mobile-page.css");
-import("./style/tab.css");
-import("./js/tab.js");
+import("./js/page.js");
 
 // PC all
 import "./style/all.css";      // 全ページ共通
+import "./style/home.css";      // 全ページ共通
 import "./style/menu.css";     // メニュー
-import "./style/cursor.css";   // カーソル
-import "./style/section.css";  // セクション
-import "./style/bot.css";      // ボット
+//import "./style/bot.css";      // ボット
 import "./style/footer.css";   // フッター
-import "./style/accordion.css";// アコーディオン
-import "./style/modal.css";    // モーダル
+//import "https://use.typekit.net/meg7mel.css";
 
 // 共通 JavaScript
-import "./js/section.js"; // section
+import "./js/all.js"; // section
 import "./js/cursor.js"; // cursor
-import "./js/accordion.js"; // accordion
 import "./js/chat.js"; // chat
 import "./js/fade.js"; // fade
-import "./js/head-foot.js"; // head foot
-import "./js/modal.js"; // modal
+import "./js/side-foot.js"; // head foot
+import "./js/load.js"; // load
 import "./js/google.js"; // google
+import "./js/time.js"; // google
 
 /////////// all images
 import "./assets/images/pd.ico";

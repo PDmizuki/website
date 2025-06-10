@@ -8,12 +8,10 @@
 
 
 @font-face {
-   font-family: "Jost";
-   src: url("/docs/assets/fonts/jost-600.woff2") format("woff2");
-   font-weight: 600;
-   font-style: normal;
-   font-display: swap;
+  font-family: 'Jost';
+  src: url('../assets/fonts/jost-600.woff2') format('woff2');
 }
+
 
 @font-face {
    font-family: 'Font Awesome 5 Free';

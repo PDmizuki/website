@@ -1,0 +1,2 @@
+(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[900],{5900:()=>{$((function(){var e=$("div.ripples-2");e.ripples({resolution:512,dropRadius:20,perturbance:.5}),$(document).on("mousemove",(function(o){var r=o.clientX,t=o.clientY;e.ripples("drop",r,t,10,.1)})),function o(){var r=Math.random()*e.outerWidth(),t=Math.random()*e.outerHeight(),n=.1+.1*Math.random();e.ripples("drop",r,t,20,n);var a=Math.floor(-149.5*Math.random()+250);setTimeout(o,a)}()}))}}]);
+//# sourceMappingURL=900.main.js.map
