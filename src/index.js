@@ -27,27 +27,27 @@ switch (page) {
 import("./js/page.js");
 
 // PC all
-import "./style/all.css";      // 全ページ共通
 import "./style/noise.css";    // ノイズ
+import "./style/footer.css";   // フッター
+import "./style/gallery.css";   // gallery
 import "./style/home.css";     // Topページ
 import "./style/menu.css";     // メニュー
 //import "./style/bot.css";      // ボット
-import "./style/footer.css";   // フッター
-import "./style/gallery.css";   // フッター
+import "./style/all.css";      // 全ページ共通
 //import "https://use.typekit.net/meg7mel.css";
 
 // 共通 JavaScript
-import "./js/all.js"; // section
-import "./js/cursor.js"; // cursor
-import "./js/chat.js"; // chat
-import "./js/fade.js"; // fade
-import "./js/side-foot.js"; // head foot
-import "./js/load.js"; // load
-import "./js/google.js"; // google
 import "./js/time.js"; // google
 import "./js/security.js";
 import "./js/page.js";
 import "./js/bg_wave.js";
+import "./js/chat.js"; // chat
+import "./js/fade.js"; // fade
+import "./js/google.js"; // google
+import "./js/all.js"; // section
+import "./js/cursor.js"; // cursor
+import "./js/load.js"; // load
+import "./js/side-foot.js"; // head foot
 
 /////////// all images
 import "./assets/images/pd.ico";
