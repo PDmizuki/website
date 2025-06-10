@@ -42,9 +42,9 @@ switch (page) {
 // PC all
 import "./style/footer.css";   // フッター
 //import "./style/bot.css";    // ボット
+import "./style/noise.css";    // ノイズ
 import "./style/all.css";      // 全ページ共通
 import "./style/menu.css";     // メニュー
-import "./style/noise.css";    // ノイズ
 //import "https://use.typekit.net/meg7mel.css";
 
 // 共通 JavaScript
