@@ -40,22 +40,19 @@
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-XSS-Protection" content="1; mode=block">
 
+    <!-- Content Security Policy -->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/shuffle-text@0.3.0/build/shuffle-text.min.js"
         crossorigin="anonymous"></script>
-    <!-- Content Security Policy -->
     <meta http-equiv="Content-Security-Policy" content="
     default-src 'self';
-    script-src 'self' https://code.jquery.com https://cdnjs.cloudflare.com https://cdn.jsdelivr.net 'unsafe-inline';
-    style-src 'self' https://cdnjs.cloudflare.com https://fonts.googleapis.com https://cdn.jsdelivr.net 'unsafe-inline';
-    font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com https://cdn.jsdelivr.net data:;
-    img-src 'self' https://mizukioyama.github.io/website/ data:;
-    connect-src 'self' https://mizukioyama.github.io https://script.google.com https://script.googleusercontent.com https://cdn.jsdelivr.net https://fonts.googleapis.com;
+    script-src 'self' https://code.jquery.com https://cdn.jsdelivr.net;
+    style-src 'self' 'unsafe-inline' https://use.typekit.net;
+    font-src 'self' https://use.typekit.net https://fonts.gstatic.com;
+    img-src 'self' data:;
+    connect-src 'self';
     object-src 'none';
-    base-uri 'self';
-    form-action 'self' https://mizukioyama.github.io;
     ">
-
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
