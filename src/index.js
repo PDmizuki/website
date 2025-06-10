@@ -5,14 +5,6 @@ const page = document.body.dataset.page; // 例: <body data-page="contact"> の�
 
 // 各ページ固有の処理
 switch (page) {
-   case "gallery":
-      import("./style/gallery.css");
-      import("./js/security.js");
-      import("./js/page.js");
-      import("./js/bg_wave.js");
-      //import("./js/rollup.config-min.js");
-      break;
-
    case "contact":
       import("./style/form.css");
       import("./js/form.js");
@@ -41,6 +33,7 @@ import "./style/home.css";     // Topページ
 import "./style/menu.css";     // メニュー
 //import "./style/bot.css";      // ボット
 import "./style/footer.css";   // フッター
+import "./style/gallery.css";   // フッター
 //import "https://use.typekit.net/meg7mel.css";
 
 // 共通 JavaScript
@@ -52,6 +45,9 @@ import "./js/side-foot.js"; // head foot
 import "./js/load.js"; // load
 import "./js/google.js"; // google
 import "./js/time.js"; // google
+import "./js/security.js";
+import "./js/page.js";
+import "./js/bg_wave.js";
 
 /////////// all images
 import "./assets/images/pd.ico";
