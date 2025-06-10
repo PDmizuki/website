@@ -1,8 +1,7 @@
-
-// =======================
-// タイピング初期化
-// =======================
-function initializeTyping() {
+export function initializeTyping() {
+  // =======================
+  // タイピング初期化
+  // =======================
   const lines = document.querySelectorAll('.typing-line');
   const typingSpeed = 50;
 
