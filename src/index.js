@@ -60,6 +60,8 @@ import "./js/side-foot.js"; // head foot
 /////////// all images
 import "./assets/images/pd-bg-img.jpg";
 import "./assets/images/pd-body-bg.jpg";
+import "./assets/images/230053-2.jpg";
+import "./assets/images/sinju-suisai02.png";
 // bg
 import "./assets/images/text-gold.png";
 import "./assets/images/text-bronze.png";
