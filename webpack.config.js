@@ -70,12 +70,12 @@ module.exports = {
       clean: true,
       publicPath: "auto"
    },
-   resolve: {
-      alias: {
-         '@fortawesome': path.resolve(__dirname, 'node_modules/@fortawesome'),
-         "@assets": path.resolve(__dirname, "src/assets")
-      },
-   },
+   //resolve: {
+   //   alias: {
+   //      '@fortawesome': path.resolve(__dirname, 'node_modules/@fortawesome'),
+   //      "@assets": path.resolve(__dirname, "src/assets")
+   //   },
+   //},
    module: {
       rules: [
          {
