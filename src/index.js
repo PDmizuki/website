@@ -5,6 +5,10 @@ const page = document.body.dataset.page; // 例: <body data-page="contact"> の�
 
 // 各ページ固有の処理
 switch (page) {
+   case "home":
+      import("./style/home.css");
+      break;
+
    case "contact":
       import("./style/form.css");
       import("./js/form.js");
@@ -27,13 +31,12 @@ switch (page) {
 import("./js/page.js");
 
 // PC all
-import "./style/noise.css";    // ノイズ
 import "./style/footer.css";   // フッター
-import "./style/gallery.css";   // gallery
-import "./style/home.css";     // Topページ
-import "./style/menu.css";     // メニュー
-//import "./style/bot.css";      // ボット
+import "./style/gallery.css";  // gallery
+//import "./style/bot.css";    // ボット
 import "./style/all.css";      // 全ページ共通
+import "./style/menu.css";     // メニュー
+import "./style/noise.css";    // ノイズ
 //import "https://use.typekit.net/meg7mel.css";
 
 // 共通 JavaScript
