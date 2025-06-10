@@ -5,7 +5,6 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 const CspHtmlWebpackPlugin = require("csp-html-webpack-plugin");
 
-// === CSP POLICYを先に定義 ===
 const cspPolicy = {
    'default-src': ["'self'"],
    'script-src': [
@@ -45,7 +44,22 @@ const cspPolicy = {
    'form-action': ["'self'", "https://mizukioyama.github.io"]
 };
 
+// 複数HTMLページを一括定義
+const htmlPages = [
+   "index",
+   "information",
+   "gallery",
+   "contact",
+   "policy",
+   "matching",
+   "header",
+   "footer",
+   "sidebaer", // ← sidebar.htmlに修正が必要かも
+   "bot"
+];
+
 module.exports = {
+   mode: "production",
    devtool: "source-map",
    entry: {
       main: "./src/index.js",
@@ -62,20 +76,14 @@ module.exports = {
          "@assets": path.resolve(__dirname, "src/assets")
       },
    },
-   mode: "production",
    module: {
       rules: [
          {
             test: /\.css$/i,
             use: [
-               "style-loader",
-               {
-                  loader: "css-loader",
-                  options: {
-                     esModule: false,
-                  },
-               },
-            ],
+               MiniCssExtractPlugin.loader,
+               "css-loader"
+            ]
          },
          {
             test: /\.js$/i,
@@ -108,18 +116,15 @@ module.exports = {
       ]
    },
    plugins: [
-      new HtmlWebpackPlugin({ template: "./src/index.html", filename: "index.html" }),
-      new HtmlWebpackPlugin({ template: "./src/information.html", filename: "information.html" }),
-      new HtmlWebpackPlugin({ template: "./src/gallery.html", filename: "gallery.html" }),
-      new HtmlWebpackPlugin({ template: "./src/contact.html", filename: "contact.html" }),
-      new HtmlWebpackPlugin({ template: "./src/policy.html", filename: "policy.html" }),
-      new HtmlWebpackPlugin({ template: "./src/matching.html", filename: "matching.html" }),
-      new HtmlWebpackPlugin({ template: "./src/header.html", filename: "header.html" }),
-      new HtmlWebpackPlugin({ template: "./src/footer.html", filename: "footer.html" }),
-      new HtmlWebpackPlugin({ template: "./src/sidebaer.html", filename: "sidebaer.html" }),
-      new HtmlWebpackPlugin({ template: "./src/bot.html", filename: "bot.html" }),
+      // 複数ページのHTMLを一括生成
+      ...htmlPages.map(page => new HtmlWebpackPlugin({
+         template: `./src/${page}.html`,
+         filename: `${page}.html`
+      })),
 
-      new MiniCssExtractPlugin({ filename: "styles/main.css" }),
+      new MiniCssExtractPlugin({
+         filename: "styles/main.css"
+      }),
 
       new CopyWebpackPlugin({
          patterns: [
@@ -148,6 +153,7 @@ module.exports = {
          },
       }),
 
+      // CSPはHtmlWebpackPluginの後に定義
       new CspHtmlWebpackPlugin(cspPolicy, {
          enabled: true,
          hashingMethod: 'sha256',
@@ -156,7 +162,7 @@ module.exports = {
             'style-src': false
          },
          nonceEnabled: false
-      })
+      }),
    ],
    devServer: {
       static: path.resolve(__dirname, "docs"),

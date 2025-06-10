@@ -957,13 +957,15 @@ npm run build
 //変更の追加
 git add .
 //再コミット（メモ付け）
-git commit -m "index csp"
+git commit -m "csp webpack"
 //リモートにプッシュ（変更の同期）
 git push origin gh-pages
 //全ての変更をコミット
 c
 
-index head 戻し
+csp読み込み
+imgアップロード
+
 
 git pull origin gh-pages --rebase
 
