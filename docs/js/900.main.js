@@ -1,0 +1,2 @@
+(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[900],{900:(e,r,o)=>{var t=o(692);t((function(){var e=t("div.ripples-2");e.ripples({resolution:512,dropRadius:20,perturbance:.5}),t(document).on("mousemove",(function(r){var o=r.clientX,t=r.clientY;e.ripples("drop",o,t,10,.1)})),function r(){var o=Math.random()*e.outerWidth(),t=Math.random()*e.outerHeight(),a=.1+.1*Math.random();e.ripples("drop",o,t,20,a);var n=Math.floor(-149.5*Math.random()+250);setTimeout(r,n)}()}))}}]);
+//# sourceMappingURL=900.main.js.map

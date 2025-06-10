@@ -7,6 +7,13 @@ const page = document.body.dataset.page; // 例: <body data-page="contact"> の�
 switch (page) {
    case "home":
       import("./style/home.css");
+      import("./js/time.js");
+      break;
+
+   case "gallery":
+      import("./style/gallery.css");
+      import("./js/bg_wave.js");
+      import("./js/page.js");
       break;
 
    case "contact":
@@ -32,7 +39,6 @@ import("./js/page.js");
 
 // PC all
 import "./style/footer.css";   // フッター
-import "./style/gallery.css";  // gallery
 //import "./style/bot.css";    // ボット
 import "./style/all.css";      // 全ページ共通
 import "./style/menu.css";     // メニュー
@@ -40,10 +46,7 @@ import "./style/noise.css";    // ノイズ
 //import "https://use.typekit.net/meg7mel.css";
 
 // 共通 JavaScript
-import "./js/time.js"; // google
 import "./js/security.js";
-import "./js/page.js";
-import "./js/bg_wave.js";
 import "./js/chat.js"; // chat
 import "./js/fade.js"; // fade
 import "./js/google.js"; // google
