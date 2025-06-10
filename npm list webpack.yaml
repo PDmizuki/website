@@ -957,7 +957,7 @@ npm run build
 //変更の追加
 git add .
 //再コミット（メモ付け）
-git commit -m "form text"
+git commit -m "all change"
 //リモートにプッシュ（変更の同期）
 git push origin gh-pages
 //全ての変更をコミット
