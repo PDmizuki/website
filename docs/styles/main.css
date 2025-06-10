@@ -378,6 +378,10 @@ hr {
             -webkit-text-fill-color: transparent;
          }
       }
+.home-not {
+  display: none;
+}
+
 /*=======セキュリティ*/
 canvas {
   display: block;

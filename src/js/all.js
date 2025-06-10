@@ -1,4 +1,4 @@
-import { initializeTyping } from './load.js'; // ★ これを追加
+import { initializeTyping } from './load.js';
 
 document.addEventListener("DOMContentLoaded", function () {
    // 遅延読み込み画像

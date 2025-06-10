@@ -1,3 +1,7 @@
+.home-not {
+  display: none;
+}
+
 /*=======セキュリティ*/
 canvas {
   display: block;
