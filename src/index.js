@@ -35,7 +35,8 @@ import("./js/page.js");
 
 // PC all
 import "./style/all.css";      // 全ページ共通
-import "./style/home.css";      // 全ページ共通
+import "./style/noise.css";    // ノイズ
+import "./style/home.css";     // Topページ
 import "./style/menu.css";     // メニュー
 //import "./style/bot.css";      // ボット
 import "./style/footer.css";   // フッター
