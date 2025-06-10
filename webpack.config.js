@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
+const CspHtmlWebpackPlugin = require("csp-html-webpack-plugin");
 
 module.exports = {
    devtool: "source-map",
@@ -10,10 +11,10 @@ module.exports = {
       main: "./src/index.js",
    },
    output: {
-      path: path.resolve(__dirname, "docs"), // `dist` → `docs`
+      path: path.resolve(__dirname, "docs"),
       filename: "js/main.js",
       clean: true,
-      publicPath: "auto" // GitHub Pages 用
+      publicPath: "auto"
    },
    resolve: {
       alias: {
@@ -31,7 +32,7 @@ module.exports = {
                {
                   loader: "css-loader",
                   options: {
-                     esModule: false, // ✅ これを追加
+                     esModule: false,
                   },
                },
             ],
@@ -54,69 +55,30 @@ module.exports = {
             test: /\.(png|jpe?g|gif|svg|ico)$/i,
             type: "asset/resource",
             generator: {
-               filename: "assets/images/[name][ext]" // `docs/` を含めず、相対パスを調整
+               filename: "assets/images/[name][ext]"
             }
          },
          {
             test: /\.mp3$/i,
             type: 'asset/resource',
             generator: {
-               filename: 'assets/audio/[name][ext]', // 出力先を指定
+               filename: 'assets/audio/[name][ext]',
             },
          }
       ]
    },
    plugins: [
-      new HtmlWebpackPlugin({
-         template: "./src/index.html",
-         filename: "index.html",
-         meta: {
-            "Content-Security-Policy": {
-               "http-equiv": "Content-Security-Policy",
-               content: "default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'"
-            }
-         }
-      }),
-      // 🔹 html を docs/ に出力
-      new HtmlWebpackPlugin({
-         template: "./src/information.html",
-         filename: "information.html",
-      }),
-      new HtmlWebpackPlugin({
-         template: "./src/gallery.html",
-         filename: "gallery.html",
-      }),
-      new HtmlWebpackPlugin({
-         template: "./src/contact.html",
-         filename: "contact.html",
-      }),
-      new HtmlWebpackPlugin({
-         template: "./src/policy.html",
-         filename: "policy.html",
-      }),
-      new HtmlWebpackPlugin({
-         template: "./src/matching.html",
-         filename: "matching.html",
-      }),
-      new HtmlWebpackPlugin({
-         template: "./src/header.html",
-         filename: "header.html",
-      }),
-      new HtmlWebpackPlugin({
-         template: "./src/footer.html",
-         filename: "footer.html",
-      }),
-      new HtmlWebpackPlugin({
-         template: "./src/sidebaer.html",
-         filename: "sidebaer.html",
-      }),
-      new HtmlWebpackPlugin({
-         template: "./src/bot.html",
-         filename: "bot.html",
-      }),
-      new MiniCssExtractPlugin({
-         filename: "styles/main.css"
-      }),
+      new HtmlWebpackPlugin({ template: "./src/index.html", filename: "index.html" }),
+      new HtmlWebpackPlugin({ template: "./src/information.html", filename: "information.html" }),
+      new HtmlWebpackPlugin({ template: "./src/gallery.html", filename: "gallery.html" }),
+      new HtmlWebpackPlugin({ template: "./src/contact.html", filename: "contact.html" }),
+      new HtmlWebpackPlugin({ template: "./src/policy.html", filename: "policy.html" }),
+      new HtmlWebpackPlugin({ template: "./src/matching.html", filename: "matching.html" }),
+      new HtmlWebpackPlugin({ template: "./src/header.html", filename: "header.html" }),
+      new HtmlWebpackPlugin({ template: "./src/footer.html", filename: "footer.html" }),
+      new HtmlWebpackPlugin({ template: "./src/sidebaer.html", filename: "sidebaer.html" }),
+      new HtmlWebpackPlugin({ template: "./src/bot.html", filename: "bot.html" }),
+      new MiniCssExtractPlugin({ filename: "styles/main.css" }),
       new CopyWebpackPlugin({
          patterns: [
             {
@@ -142,6 +104,24 @@ module.exports = {
             },
          },
       }),
+      new CspHtmlWebpackPlugin({
+         'default-src': ["'self"],
+         'script-src': ["'self", "https://code.jquery.com", "https://cdn.jsdelivr.net", "https://cdnjs.cloudflare.com"],
+         'style-src': ["'self", "'unsafe-inline", "https://fonts.googleapis.com", "https://cdn.jsdelivr.net", "https://cdnjs.cloudflare.com"],
+         'font-src': ["'self", "https://fonts.gstatic.com", "https://cdnjs.cloudflare.com", "https://cdn.jsdelivr.net", "data:"],
+         'img-src': ["'self", "https://mizukioyama.github.io/website/", "data:"],
+         'connect-src': ["'self", "https://mizukioyama.github.io", "https://script.google.com", "https://script.googleusercontent.com", "https://cdn.jsdelivr.net", "https://fonts.googleapis.com"],
+         'object-src': ["'none"],
+         'base-uri': ["'self"],
+         'form-action': ["'self", "https://mizukioyama.github.io"]
+      }, {
+         enabled: true,
+         hashingMethod: 'sha256',
+         hashEnabled: {
+            'script-src': true,
+            'style-src': false
+         }
+      })
    ],
    devServer: {
       static: path.resolve(__dirname, "docs"),

@@ -40,16 +40,21 @@
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-XSS-Protection" content="1; mode=block">
 
-    <!-- Content Security Policy -->
-    <meta http-equiv="Content-Security-Policy" content="
-    default-src 'self';
-    script-src 'self' https://code.jquery.com https://cdn.jsdelivr.net;
-    style-src 'self' 'unsafe-inline' https://use.typekit.net;
-    font-src 'self' https://use.typekit.net https://fonts.gstatic.com;
-    img-src 'self' data:;
-    connect-src 'self';
-    object-src 'none';
-    ">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Mizuki Oyama",
+            "url": "https://mizukioyama.github.io/pd/",
+            "image": "https://mizukioyama.github.io/pd/assets/images/ogp.jpg",
+            "jobTitle": "Webデザイナー",
+            "description": "想いを形に、こだわりをデザインするWebクリエイター。",
+            "sameAs": [
+            "https://twitter.com/your_account",  // ← 実際のXアカウントURLに変更
+            "https://www.instagram.com/your_account"  // ← Instagramアカウントに変更
+            ]
+        }
+    </script>
     <!--画像遅延読み込み
   <img data-src="path/to/image.jpg" alt="example">
   -->
