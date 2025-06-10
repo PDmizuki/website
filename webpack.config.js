@@ -54,7 +54,7 @@ const htmlPages = [
    "matching",
    "header",
    "footer",
-   "sidebar", // 修正: sidebaer → sidebar
+   "sidebar",
    "bot"
 ];
 

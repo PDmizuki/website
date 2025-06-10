@@ -707,8 +707,7 @@ header .noise {
 
          display: grid;
          place-content: center;
-
-         background-image: linear-gradient(to right, deeppink, blue);
+         /*background-image: linear-gradient(to right, deeppink, blue);*/
          -webkit-background-clip: text;
          /* サポートされない場合の代替設定 */
          background-clip: text;
@@ -719,7 +718,7 @@ header .noise {
       /* Gradient override for light mode */
       @media (prefers-color-scheme: light) {
          .noise {
-            background-image: linear-gradient(to right, black, gray);
+            /*background-image: linear-gradient(to right, black, gray);*/
             -webkit-background-clip: text;
             /* サポートされない場合の代替設定 */
             background-clip: text;
