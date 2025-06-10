@@ -5,6 +5,48 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 const CspHtmlWebpackPlugin = require("csp-html-webpack-plugin");
 
+// === CSP POLICYを先に定義 ===
+const cspPolicy = {
+   'default-src': ["'self'"],
+   'script-src': [
+      "'self'",
+      "'unsafe-inline'", // 必要に応じて削除
+      "https://code.jquery.com",
+      "https://cdnjs.cloudflare.com",
+      "https://cdn.jsdelivr.net"
+   ],
+   'style-src': [
+      "'self'",
+      "'unsafe-inline'", // 必要に応じて削除
+      "https://cdnjs.cloudflare.com",
+      "https://fonts.googleapis.com",
+      "https://cdn.jsdelivr.net"
+   ],
+   'font-src': [
+      "'self'",
+      "https://fonts.gstatic.com",
+      "https://cdnjs.cloudflare.com",
+      "https://cdn.jsdelivr.net",
+      "data:"
+   ],
+   'img-src': [
+      "'self'",
+      "data:",
+      "https://mizukioyama.github.io/website/"
+   ],
+   'connect-src': [
+      "'self'",
+      "https://mizukioyama.github.io",
+      "https://script.google.com",
+      "https://script.googleusercontent.com",
+      "https://cdn.jsdelivr.net",
+      "https://fonts.googleapis.com"
+   ],
+   'object-src': ["'none'"],
+   'base-uri': ["'self'"],
+   'form-action': ["'self'", "https://mizukioyama.github.io"]
+};
+
 module.exports = {
    devtool: "source-map",
    entry: {
@@ -78,7 +120,9 @@ module.exports = {
       new HtmlWebpackPlugin({ template: "./src/footer.html", filename: "footer.html" }),
       new HtmlWebpackPlugin({ template: "./src/sidebaer.html", filename: "sidebaer.html" }),
       new HtmlWebpackPlugin({ template: "./src/bot.html", filename: "bot.html" }),
+
       new MiniCssExtractPlugin({ filename: "styles/main.css" }),
+
       new CopyWebpackPlugin({
          patterns: [
             {
@@ -91,6 +135,7 @@ module.exports = {
             },
          ]
       }),
+
       new ImageMinimizerPlugin({
          minimizer: {
             implementation: ImageMinimizerPlugin.imageminMinify,
@@ -104,23 +149,15 @@ module.exports = {
             },
          },
       }),
-      new CspHtmlWebpackPlugin({
-         'default-src': ["'self"],
-         'script-src': ["'self", "https://code.jquery.com", "https://cdn.jsdelivr.net", "https://cdnjs.cloudflare.com"],
-         'style-src': ["'self", "'unsafe-inline", "https://fonts.googleapis.com", "https://cdn.jsdelivr.net", "https://cdnjs.cloudflare.com"],
-         'font-src': ["'self", "https://fonts.gstatic.com", "https://cdnjs.cloudflare.com", "https://cdn.jsdelivr.net", "data:"],
-         'img-src': ["'self", "https://mizukioyama.github.io/website/", "data:"],
-         'connect-src': ["'self", "https://mizukioyama.github.io", "https://script.google.com", "https://script.googleusercontent.com", "https://cdn.jsdelivr.net", "https://fonts.googleapis.com"],
-         'object-src': ["'none"],
-         'base-uri': ["'self"],
-         'form-action': ["'self", "https://mizukioyama.github.io"]
-      }, {
+
+      new CspHtmlWebpackPlugin(cspPolicy, {
          enabled: true,
          hashingMethod: 'sha256',
          hashEnabled: {
             'script-src': true,
             'style-src': false
-         }
+         },
+         nonceEnabled: false
       })
    ],
    devServer: {
