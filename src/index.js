@@ -17,10 +17,10 @@ switch (page) {
       break;
 
    case "contact":
+      import("./js/bg_wave.js");
+      import("./style/gallery.css");
       import("./style/form.css");
       import("./js/form.js");
-      import("./style/gallery.css");
-      import("./js/bg_wave.js");
       break;
 
    case "matching":
