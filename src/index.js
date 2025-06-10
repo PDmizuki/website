@@ -19,6 +19,8 @@ switch (page) {
    case "contact":
       import("./style/form.css");
       import("./js/form.js");
+      import("./style/gallery.css");
+      import("./js/bg_wave.js");
       break;
 
    case "matching":
@@ -35,7 +37,7 @@ switch (page) {
 //import "./assets/fonts/fonts.css";
 
 // Mobile all（共通適用）
-import("./js/page.js");
+
 
 // PC all
 import "./style/footer.css";   // フッター
@@ -56,18 +58,11 @@ import "./js/load.js"; // load
 import "./js/side-foot.js"; // head foot
 
 /////////// all images
-import "./assets/images/pd.ico";
-import "./assets/images/logo-tyep.png";
 import "./assets/images/pd-bg-img.jpg";
 import "./assets/images/pd-body-bg.jpg";
 // bg
 import "./assets/images/text-gold.png";
 import "./assets/images/text-bronze.png";
-// section
-import "./assets/images/bg-a.png";
-import "./assets/images/bg-c.png";
-import "./assets/images/bg-s.png";
-import "./assets/images/bg-p.png";
 //mobile
 import "./assets/images/mobile-main-second.png";
 
