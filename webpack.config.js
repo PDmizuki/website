@@ -10,14 +10,12 @@ const cspPolicy = {
    'default-src': ["'self'"],
    'script-src': [
       "'self'",
-      "'unsafe-inline'", // 必要に応じて削除
       "https://code.jquery.com",
       "https://cdnjs.cloudflare.com",
       "https://cdn.jsdelivr.net"
    ],
    'style-src': [
       "'self'",
-      "'unsafe-inline'", // 必要に応じて削除
       "https://cdnjs.cloudflare.com",
       "https://fonts.googleapis.com",
       "https://cdn.jsdelivr.net"
