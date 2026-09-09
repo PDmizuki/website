@@ -1,10 +1,10 @@
 const CACHE_PREFIX='michishirube-beta-';
-const CACHE='michishirube-beta-v08-stable';
-const SHELL=['./','./index.html','./manifest.webmanifest','./icon.svg','./stability-v08.js'];
+const CACHE='michishirube-beta-v09-reflection-submit';
+const SHELL=['./','./index.html','./manifest.webmanifest','./icon.svg','./stability-v09.js'];
 
 function enhanceHtml(text){
-  if(text.includes('stability-v08.js')) return text;
-  return text.replace('<script>','<script src="./stability-v08.js"></script><script>');
+  if(text.includes('stability-v09.js')) return text;
+  return text.replace('<script>','<script src="./stability-v09.js"></script><script>');
 }
 async function enhancedResponse(res){
   const text=enhanceHtml(await res.text());
